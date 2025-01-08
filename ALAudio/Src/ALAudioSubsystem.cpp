@@ -435,8 +435,6 @@ void UALAudioSubsystem::RegisterSound(USound* Sound)
 
 	checkSlow(Sound);
 
-	return; // jmarshall
-
 	if( !Sound->Handle )
 	{
 		// Avoid recursion as USound->Load calls RegisterSound.
