@@ -1,0 +1,8 @@
+[Project]
+Inputs=Textures/*.pcx
+Inputs=Textures/*.bmp
+Inputs=Textures/*.tga
+Inputs=Classes/*.uc
+ClientOptional=False
+ServerSideOnly=False
+AllowDownload=False

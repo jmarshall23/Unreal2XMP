@@ -1,0 +1,339 @@
+
+[Root]
+Class=MultiStateComponent
+State=NULL
+State=GameOverContainer
+Transition=ShowGameOver,1,1,0,NULL
+Transition=HideGameOver,0,0,0,NULL
+Transition=LevelLoadStart,0,0,0,NULL
+TriggerEvent=0,0.0,Event,GameOverActionShow
+TriggerEvent=0,0.0,Event,ShowScoreStats
+TriggerEvent=1,0.0,Event,HideScoreStats
+TriggerEvent=0,0.0,CodeMonkey,NoDrawWorld
+TriggerEvent=0,0.0,ConsoleCommand,STOPSOUNDS
+TriggerEvent=0,0.0,Player,PlayLoadingMusic
+TriggerEvent=1,0.0,CodeMonkey,DrawWorld
+TriggerEvent=1,0.0,Player,StopLoadingMusic
+TriggerEvent=2,0.0,Event,ShowGameOver
+DrawOrder=1
+
+[GameOverContainer]
+Class=FixedSizeContainer
+;Component=U2HUD.TempEditor
+Component=U2Menus.U2Mouse
+Component=GameOverAction
+Component=GameOverContainerText
+Component=Scoreboard
+Component=U2HUD.ScoreStats
+Component=ContinueOption
+Component=ImageComponent
+	Image=Black
+	Size=4096,4096
+	Align=HardCenter,HardCenter
+	DrawOrder=-1
+
+##################################
+
+[GameOverContainerText]
+Class=FixedSizeContainer
+Component=TileContainer
+	Vertical=true
+	FixedSpacing=22
+	;Component=FixedSizeContainer
+	;	Component=Label
+	;		Text=GAME_OVER
+	;		LocalizedFont=GameOverTextFont
+	;		Localize=true
+	;		Align=Center,None
+	Component=FixedSizeContainer
+		Component=WinningTeam
+	Align=Center,Center
+Align=HardCenter,HardTop
+Size=226,212
+Y=16
+
+[WinningTeam]
+Class=MultiStateComponent
+State=NULL
+State=WinningTeamLabel:Red
+State=WinningTeamLabel:Blue
+State=LosingTeamLabel:Red
+State=LosingTeamLabel:Blue
+State=GameTimeUpLabel:White
+;Transition=RedTeamWins,0,1,0.5,WinningTeamLabel:Red
+;Transition=BlueTeamWins,0,2,0.5,WinningTeamLabel:Blue
+;Transition=RedTeamLoses,0,3,0.5,LosingTeamLabel:Red
+;Transition=BlueTeamLoses,0,4,0.5,LosingTeamLabel:Blue
+;Transition=GameTimeUp,0,5,0.5,GameTimeUpLabel:White
+Transition=RedTeamWins,1,1,0,NULL
+Transition=BlueTeamWins,2,2,0,NULL
+Transition=RedTeamLoses,3,3,0,NULL
+Transition=BlueTeamLoses,4,4,0,NULL
+Transition=GameTimeUp,5,5,0,NULL
+TweenLocation=false
+TweenAlpha=true
+Align=Center,None
+
+[WinningTeamLabel]
+Class=Label
+Localize=true
+Text=%0%Wins
+Color=%0%
+LocalizedFont=GameOverTextFont
+Align=Center,None
+
+[LosingTeamLabel]
+Class=Label
+Localize=true
+Text=%0%NoEnergy
+Color=%0%
+LocalizedFont=GameOverTextFont
+Align=Center,None
+
+[GameTimeUpLabel]
+Class=Label
+Localize=true
+Text=TimeUp
+Color=%0%
+LocalizedFont=GameOverTextFont
+Align=Center,None
+
+##################################
+
+[Scoreboard]
+Class=TileContainer
+Horizontal=true
+Component=ScoreTeam
+	Team=Red
+Component=FixedSizeContainer
+	Component=Label
+		Access=NetMonkey,GetCurrentMapName_GameOver
+		Align=Right,None
+		Location=-48,-38
+	DrawOrder=1
+Component=ScoreTeam
+	Team=Blue
+OnEnabled=NetMonkey,SaveScoreboard
+Align=HardRight,HardCenter
+Location=27,24
+
+[ScoreTeam]
+Class=FixedSizeContainer
+Component=RealComponent
+	Enabled=true
+Component=TileContainer
+	Component=PlayerScore:01
+	Component=PlayerScore:02
+	Component=PlayerScore:03
+	Component=PlayerScore:04
+	Component=PlayerScore:05
+	Component=PlayerScore:06
+	Component=PlayerScore:07
+	Component=PlayerScore:08
+	Component=PlayerScore:09
+	Component=PlayerScore:10
+	Component=PlayerScore:11
+	Component=PlayerScore:12
+	ShortCircuit=true
+	Align=Right,None
+	X=-22
+Component=ImageComponent
+	Image=%Team%
+	Alpha=32
+	Size=200,260
+	X=-40
+	DrawOrder=-9999999999
+	Align=Right,Center
+DrawOrder=1
+Size=200,240
+
+[PlayerScore]
+Class=FixedSizeContainer
+Component=FixedSizeContainer
+	Component=Label
+		LocalizedFont=DialogFont
+		Access=NetMonkey,GetPlayerName_%Team%%0%_GameOver
+		X=-39
+	Component=FixedSizeContainer
+		Component=Label
+			Text=%0%:
+			LocalizedFont=DialogFont
+			Align=Right,None
+			X=-44
+	X=22
+Component=Label
+	FloatAccess=NetMonkey,GetPlayerScore_%Team%%0%_GameOver
+	LocalizedFont=DialogFont
+	Format=%.0f
+	Align=Right,None
+	X=-23
+EnabledAccess=NetMonkey,IsEnabled_%Team%%0%_GameOver
+Size=160,20
+
+##############################
+
+[GameOverAction]
+Class=MultiStateComponent
+State=NULL
+State=GameOverActionA
+Transition=GameOverActionOn,1,1,0,NULL
+Transition=GameOverActionShow,1,1,0,NULL
+Transition=GameOverActionOff,0,0,0,NULL
+TriggerEvent=0,0.0,Event,GameOverAction.On
+TriggerEvent=1,0.0,Event,GameOverAction.Show
+TweenLocation=false
+DrawOrder=1
+
+[GameOverActionA]
+Class=MultiStateComponent
+State=GameOverActionC:0/5/-4/-7/0
+State=GameOverActionC:255/0/-16/-2/12
+Transition=GameOverAction.On,1,1,0.0,NULL
+Transition=GameOverAction.Show,0,1,0.8,GameOverActionC:0/0/0/0/0/%0%
+TweenAlpha=true
+Register=GameOverAction
+
+[GameOverActionC]
+Class=FixedSizeContainer
+Component=TileContainer
+	Horizontal=true
+	Component=ImageComponent
+		Image=ObjectivesBackground
+		Height=60
+		Alpha=%0%
+	Component=ImageComponent
+		Image=ObjectivesBackgroundR
+		Height=60
+		Alpha=%0%
+	Align=Center,Center
+	DrawOrder=1
+Component=LabelShadow
+	LocalizedFont=GameOverActionFont
+	Text=GAME_OVER
+	Localize=true
+	Align=Center,Center
+	Alpha=%0%
+	Y=-1
+Component=ImageComponent
+	Image=ObjectivesTopBracket
+	Align=Center,Center
+	Location=%1%,%2%
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=ObjectivesBottomBracket
+		Align=Center,Center
+	Component=ImageComponent
+		Image=ObjectivesTranslucentPiece
+		Location=79,1
+		Align=Center,Center
+	Location=%3%,%4%
+	DrawOrder=1
+Align=HardCenter,HardTop
+Y=66
+
+##############################
+
+[ContinueOption]
+Class=MultiStateComponent
+State=NULL
+State=ContinueButton
+Transition=LevelLoadEnd,1,1,0.0,NULL
+Transition=ShowContinueOption,1,1,0.0,NULL
+Transition=ShowGameOver,0,0,20.0,PleaseWait
+Transition=HideGameOver,0,0,0.0,NULL
+TriggerEvent=0,0.0,Event,ShowContinueOption
+TriggerEvent=2,1.0,Event,ShowContinueOption
+DrawOrder=1
+
+[PleaseWait]
+Class=Label
+Localize=true
+Text=PleaseWait
+Align=HardRight,HardBottom
+Location=-278,-51
+
+[ContinueButton]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=SubMenuBackground
+	X=79
+Component=ImageComponent
+	Image=SubMenuZigZag
+	Y=3
+Component=Label
+	LocalizedFont=ContinueFont
+	Localize=true
+	Text=ContinueButton
+	Location=109,2
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,ContinueButton.On
+	MouseExit=Event,ContinueButton.Off
+	MouseClick=Event,MouseDown.PlaySound
+	MouseClick=Event,HideGameOver
+Component=MultiStateComponent
+	State=NULL
+	State=ContinueButtonHilite
+	Transition=ContinueButton.On,0,1,0.2,ContinueButtonHilite
+	Transition=ContinueButton.Off,1,0,0.3,ContinueButtonHilite
+	TweenLocation=false
+	TweenAlpha=true
+	Location=87,-2
+	DrawOrder=1
+;Component=GameOverQuit
+;Component=KeyEvent
+;	Key=Escape,Press,Event,HideGameOver
+;	Key=Mouse4,Release,Event,HideGameOver
+Register=ContinueButton
+Align=HardRight,HardBottom
+Location=-278,-51
+;Location=-305,-74
+
+[ContinueButtonHilite]
+Class=ImageComponent
+Image=AdvancedGlow
+
+##############################
+
+[GameOverQuit]
+Class=FixedSizeContainer
+Component=Button
+	UpImage=OptionBackground
+	DownImage=OptionButtonDown
+	LocalizedFont=QuitFont
+	;Color=254,241,194,255
+	Localize=true
+	Text=GameOver_Quit
+	Action=ConsoleCommand,EXIT
+	Action=Event,MouseDown.PlaySound
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,GameOverQuit.On
+	MouseExit=Event,GameOverQuit.Off
+	Size=79,23
+	Align=Center,Center
+	DrawOrder=1
+Component=MultiStateComponent
+	State=NULL
+	State=GameOverQuitHilite
+	Transition=GameOverQuit.On,0,1,0.2,GameOverQuitHilite
+	Transition=GameOverQuit.Off,1,0,0.3,GameOverQuitHilite
+	TweenLocation=false
+	TweenAlpha=true
+	Align=Center,Center
+	DrawOrder=1
+Component=ImageComponent
+	Image=OptionZigZag
+	Location=-92,18
+Component=ImageComponent
+	Image=OptionZigZagStretch
+	Width=265
+	Location=300,25
+Register=GameOverQuit
+Size=82,21
+Align=HardRight,HardBottom
+Location=-63,-21
+DrawOrder=1
+
+[GameOverQuitHilite]
+Class=ImageComponent
+Image=OptionGlow
+

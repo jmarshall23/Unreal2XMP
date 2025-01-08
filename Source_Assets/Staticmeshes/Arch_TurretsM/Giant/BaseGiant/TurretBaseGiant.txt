@@ -1,0 +1,4 @@
+
+
+TurretBaseGiantBarrel_TD_001 model needs to be offset by 380.03 deg. on the Z
+axis(or the y... whichever's up from the origin). Restrict her pitch to be from -20 to 45 degrees. 

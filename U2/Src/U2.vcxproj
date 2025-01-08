@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8B374EDB-9EA0-40EE-A221-6CE1AD326387}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\Inc;..\..\Core\Inc;..\..\Core\Loki;..\..\Engine\Inc;..\..\UI\Inc;..\..\metoolkit\include;..\..\Legend\Inc;..\..\ParticleSystems\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>U2_API=__declspec(dllexport);_WINDOWS;UNICODE;_DEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>UninitializedLocalUsageCheck</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>U2.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/U2.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalDependencies>..\..\Core\Lib\Core.lib;..\..\Engine\Lib\Engine.lib;..\..\UI\Lib\UI.lib;..\..\Legend\Lib\Legend.lib;..\..\ParticleSystems\Lib\ParticleSystems.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../system/U2.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>LIBCD;LIBCMTD;MSVCRTD;LIBC;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\Lib/U2.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>../Lib/U2.lib</ImportLibrary>
+      <TargetMachine>NotSet</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\Inc;..\..\Core\Inc;..\..\Core\Loki;..\..\Engine\Inc;..\..\UI\Inc;..\..\metoolkit\include;..\..\Legend\Inc;..\..\ParticleSystems\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>U2_API=__declspec(dllexport);_WINDOWS;NDEBUG;UNICODE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>U2.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Release/U2.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>..\..\Core\Lib\Core.lib;..\..\Engine\Lib\Engine.lib;..\..\UI\Lib\UI.lib;..\..\Legend\Lib\Legend.lib;..\..\ParticleSystems\Lib\ParticleSystems.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../system/U2.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>LIBCD;LIBCMTD;MSVCRTD;LIBC;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>..\Lib/U2.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <ImportLibrary>../Lib/U2.lib</ImportLibrary>
+      <TargetMachine>NotSet</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\Classes\AsteroidGame.uc" />
+    <None Include="..\Classes\DeploySpinner.uc" />
+    <None Include="..\Classes\DeploymentPoint.uc" />
+    <None Include="..\Classes\EnergySource.uc" />
+    <None Include="..\Classes\HackSwitch.uc" />
+    <None Include="..\Classes\HackTrigger.uc" />
+    <None Include="..\Classes\HackTriggerProxied.uc" />
+    <None Include="..\Classes\HitActorDebugInfoManager.uc" />
+    <None Include="..\Classes\IconNode.uc" />
+    <None Include="..\Classes\MapListXMP.uc" />
+    <None Include="..\Classes\ScoreKeeper.uc" />
+    <None Include="..\Classes\ScoreMonkey.uc" />
+    <None Include="..\Classes\ScoreboardInfoManager.uc" />
+    <None Include="..\Classes\StationaryPawn.uc" />
+    <None Include="..\Classes\StationaryPawnController.uc" />
+    <None Include="..\Classes\TeamMeshActor.uc" />
+    <None Include="..\Classes\TripLaser.uc" />
+    <None Include="..\Classes\TripLaserProxy.uc" />
+    <None Include="..\Classes\U2CheatManager.uc" />
+    <None Include="..\Classes\U2Pawn.uc" />
+    <None Include="..\Classes\U2PlayerController.uc" />
+    <None Include="..\Classes\U2WeaponAttachment.uc" />
+    <None Include="..\Classes\WeaponPanel.uc" />
+    <None Include="..\Classes\XMPGame.uc" />
+    <None Include="..\Classes\XMPGameIntro.uc" />
+    <None Include="..\Classes\XMPGameMessage.uc" />
+    <None Include="..\Classes\ArtifactHolder.uc" />
+    <None Include="..\Classes\ArtifactHolderDefense.uc" />
+    <None Include="..\Classes\ArtifactHolderHealth.uc" />
+    <None Include="..\Classes\ArtifactHolderShield.uc" />
+    <None Include="..\Classes\ArtifactHolderSkill.uc" />
+    <None Include="..\Classes\ArtifactHolderStamina.uc" />
+    <None Include="..\Classes\ArtifactHolderWeaponDamage.uc" />
+    <None Include="..\Classes\ArtifactDefense.uc" />
+    <None Include="..\Classes\ArtifactHealth.uc" />
+    <None Include="..\Classes\ArtifactPickup.uc" />
+    <None Include="..\Classes\ArtifactShield.uc" />
+    <None Include="..\Classes\ArtifactSkill.uc" />
+    <None Include="..\Classes\ArtifactStamina.uc" />
+    <None Include="..\Classes\ArtifactWeaponDamage.uc" />
+    <None Include="..\Classes\Artifact.uc" />
+    <None Include="..\Classes\ArtifactInvDefense.uc" />
+    <None Include="..\Classes\ArtifactInvHealth.uc" />
+    <None Include="..\Classes\ArtifactInvShield.uc" />
+    <None Include="..\Classes\ArtifactInvSkill.uc" />
+    <None Include="..\Classes\ArtifactInvStamina.uc" />
+    <None Include="..\Classes\ArtifactInvWeaponDamage.uc" />
+    <None Include="..\Classes\AssaultDamage.uc" />
+    <None Include="..\Classes\AutoTurretDamage.uc" />
+    <None Include="..\Classes\CarnivalMGDamage.uc" />
+    <None Include="..\Classes\DamageTypeBiological.uc" />
+    <None Include="..\Classes\DamageTypeBiologicalGas.uc" />
+    <None Include="..\Classes\DamageTypeEMP.uc" />
+    <None Include="..\Classes\DamageTypeElectrical.uc" />
+    <None Include="..\Classes\DamageTypeEnergyRifle.uc" />
+    <None Include="..\Classes\DamageTypePhysical.uc" />
+    <None Include="..\Classes\DamageTypeThermal.uc" />
+    <None Include="..\Classes\DamageTypeThermalExplosiveRound.uc" />
+    <None Include="..\Classes\FlamethrowerDamage.uc" />
+    <None Include="..\Classes\GardenMGDamage.uc" />
+    <None Include="..\Classes\JuggernautCannonDamage.uc" />
+    <None Include="..\Classes\MortarDamage.uc" />
+    <None Include="..\Classes\PistolDamage.uc" />
+    <None Include="..\Classes\RaptorMGDamage.uc" />
+    <None Include="..\Classes\RocketDamage.uc" />
+    <None Include="..\Classes\RocketTurretDamage.uc" />
+    <None Include="..\Classes\RoundHouseMGDamage.uc" />
+    <None Include="..\Classes\ShotgunDamage.uc" />
+    <None Include="..\Classes\SniperDamage.uc" />
+    <None Include="..\Classes\WingedCannonDamage.uc" />
+    <None Include="..\Classes\DamageFilter.uc" />
+    <None Include="..\Classes\DamageFilterPowerSuit.uc" />
+    <None Include="..\Classes\PowerSuit.uc" />
+    <None Include="..\Classes\PowerSuitHeavy.uc" />
+    <None Include="..\Classes\PowerSuitLight.uc" />
+    <None Include="..\Classes\PowerSuitMedium.uc" />
+    <None Include="..\Classes\ArtifactAttachment.uc" />
+    <None Include="..\Classes\DefenseAttachment.uc" />
+    <None Include="..\Classes\HealthAttachment.uc" />
+    <None Include="..\Classes\ShieldAttachment.uc" />
+    <None Include="..\Classes\SkillAttachment.uc" />
+    <None Include="..\Classes\StaminaAttachment.uc" />
+    <None Include="..\Classes\WeaponDamageAttachment.uc" />
+    <None Include="..\Classes\AmmoPickup.uc" />
+    <None Include="..\Classes\AmmoPowerUp.uc" />
+    <None Include="..\Classes\AmmoStation.uc" />
+    <None Include="..\Classes\EnergyPickup.uc" />
+    <None Include="..\Classes\EnergyPowerUp.uc" />
+    <None Include="..\Classes\EnergyStation.uc" />
+    <None Include="..\Classes\HealthPickup.uc" />
+    <None Include="..\Classes\HealthPowerUp.uc" />
+    <None Include="..\Classes\HealthStation.uc" />
+    <None Include="..\Classes\PowerStation.uc" />
+    <None Include="..\Classes\PowerUp.uc" />
+    <None Include="..\Classes\PowerUpPickup.uc" />
+    <None Include="..\Classes\VM_Acknowledged.uc" />
+    <None Include="..\Classes\VM_AllClear.uc" />
+    <None Include="..\Classes\VM_Artifact.uc" />
+    <None Include="..\Classes\VM_Backup.uc" />
+    <None Include="..\Classes\VM_Base.uc" />
+    <None Include="..\Classes\VM_Defense.uc" />
+    <None Include="..\Classes\VM_Follow.uc" />
+    <None Include="..\Classes\VM_Generator.uc" />
+    <None Include="..\Classes\VM_Hacker.uc" />
+    <None Include="..\Classes\VM_Medic.uc" />
+    <None Include="..\Classes\VM_NoProblem.uc" />
+    <None Include="..\Classes\VM_Offense.uc" />
+    <None Include="..\Classes\VM_Repairs.uc" />
+    <None Include="..\Classes\VM_Sorry.uc" />
+    <None Include="..\Classes\VM_Supplies.uc" />
+    <None Include="..\Classes\VM_Thanks.uc" />
+    <None Include="..\Classes\ArtifactReturnedMessage.uc" />
+    <None Include="..\Classes\ArtifactStolenMessage.uc" />
+    <None Include="..\Classes\ArtifactStoredMessage.uc" />
+    <None Include="..\Classes\DeployPointGainedMessage.uc" />
+    <None Include="..\Classes\DeployPointLostMessage.uc" />
+    <None Include="..\Classes\EnergySourceGainedMessage.uc" />
+    <None Include="..\Classes\EnergySourceLostMessage.uc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ADeploymentPoint.cpp" />
+    <ClCompile Include="AIconNode.cpp" />
+    <ClCompile Include="AU2Pawn.cpp" />
+    <ClCompile Include="AU2PlayerController.cpp" />
+    <ClCompile Include="U2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="UWeaponPanel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Inc\AU2Pawn.h" />
+    <ClInclude Include="..\Inc\AU2PlayerController.h" />
+    <ClInclude Include="..\Inc\U2.h" />
+    <ClInclude Include="..\Inc\U2Classes.h" />
+    <ClInclude Include="..\Inc\UWeaponPanel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Legend\Src\Legend.vcxproj">
+      <Project>{cc5661c9-5752-44eb-8945-506f8887d0e6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ParticleSystems\Src\ParticleSystems.vcxproj">
+      <Project>{f9ef52ab-dc4e-4270-b40e-1f76ab7eac8e}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

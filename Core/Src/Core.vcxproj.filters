@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{bb5ff2d7-d43c-4cf5-a988-382bf009dec0}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{0c95be8f-0908-4fc1-8d9c-949f1e48beff}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{af7d2888-baef-4b31-80a6-944a471b4f3b}</UniqueIdentifier>
+      <Extensions>*.uc</Extensions>
+    </Filter>
+    <Filter Include="Int">
+      <UniqueIdentifier>{caa9b0c7-70ac-4562-a5b2-ee68c61825c4}</UniqueIdentifier>
+      <Extensions>*.int</Extensions>
+    </Filter>
+    <Filter Include="Loki">
+      <UniqueIdentifier>{a3f909e8-0b1d-452f-b3f1-2fa6c54eaa23}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="FTimerManager.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UExporter.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UFactory.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnAnsi.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnBits.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnCache.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnClass.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnCorSc.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnCoreNative.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnCoreNet.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnExec.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnLinker.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnMath.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnMem.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnMisc.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnName.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnObj.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnProp.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnVcWin32.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Loki\SmallObj.cpp">
+      <Filter>Loki</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CorePrivate.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Core.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FCodec.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FConfigCacheIni.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FFeedbackContextAnsi.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FFeedbackContextWindows.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FFileManagerAnsi.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FFileManagerArc.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FFileManagerGeneric.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FFileManagerLinux.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FFileManagerWindows.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FMallocAnsi.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FMallocDebug.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FMallocWindows.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FMutex.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FOutputDeviceAnsiError.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FOutputDeviceDebug.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FOutputDeviceFile.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FOutputDeviceNull.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FOutputDeviceStdout.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FOutputDeviceWindowsError.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FTimerManager.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\THashTable.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\TMatrix.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\TVector.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Tensors.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UExporter.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UFactory.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnArc.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnBits.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnBuild.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnCId.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnCache.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnClass.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnCorObj.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnCoreNative.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnCoreNet.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnExec.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnFile.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnGnuG.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnLinker.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnMath.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnMem.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnMsg.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnName.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnNames.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnObjBas.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnObjVer.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnScript.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnStack.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnTemplate.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnType.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnUnix.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnVcWin32.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnVcWn32SSE.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\afxres.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Loki\SmallObj.h">
+      <Filter>Loki</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\Commandlet.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HelloWorldCommandlet.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Locale.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Object.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SimpleCommandlet.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Subsystem.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Time.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\..\System\Core.int">
+      <Filter>Int</Filter>
+    </None>
+  </ItemGroup>
+</Project>

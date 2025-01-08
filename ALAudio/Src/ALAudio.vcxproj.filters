@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{67fdceca-d256-43e5-9b36-66789b20e4d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{941ab1cd-5940-4c1f-92d0-3ba13c0a6bdf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Inc\ALAudio.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ALAudioSubsystem.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="ALAudioPrivate.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ALAudio.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="ALAudioEAXTools.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="ALAudioSubsystem.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,518 @@
+# Makefile.in generated automatically by automake 1.5 from Makefile.am.
+
+# Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
+# Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+@SET_MAKE@
+
+SHELL = @SHELL@
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+bindir = @bindir@
+sbindir = @sbindir@
+libexecdir = @libexecdir@
+datadir = @datadir@
+sysconfdir = @sysconfdir@
+sharedstatedir = @sharedstatedir@
+localstatedir = @localstatedir@
+libdir = @libdir@
+infodir = @infodir@
+mandir = @mandir@
+includedir = @includedir@
+oldincludedir = /usr/include
+pkgdatadir = $(datadir)/@PACKAGE@
+pkglibdir = $(libdir)/@PACKAGE@
+pkgincludedir = $(includedir)/@PACKAGE@
+top_builddir = ..
+
+ACLOCAL = @ACLOCAL@
+AUTOCONF = @AUTOCONF@
+AUTOMAKE = @AUTOMAKE@
+AUTOHEADER = @AUTOHEADER@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+INSTALL_HEADER = $(INSTALL_DATA)
+transform = @program_transform_name@
+NORMAL_INSTALL = :
+PRE_INSTALL = :
+POST_INSTALL = :
+NORMAL_UNINSTALL = :
+PRE_UNINSTALL = :
+POST_UNINSTALL = :
+host_alias = @host_alias@
+host_triplet = @host@
+AMTAR = @AMTAR@
+AS = @AS@
+AWK = @AWK@
+CC = @CC@
+CPP = @CPP@
+DEBUG = @DEBUG@
+DEPDIR = @DEPDIR@
+DLLTOOL = @DLLTOOL@
+ECHO = @ECHO@
+EXEEXT = @EXEEXT@
+INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+LIBS = @LIBS@
+LIBTOOL = @LIBTOOL@
+LN_S = @LN_S@
+OBJDUMP = @OBJDUMP@
+OBJEXT = @OBJEXT@
+OGG_CFLAGS = @OGG_CFLAGS@
+OGG_LIBS = @OGG_LIBS@
+PACKAGE = @PACKAGE@
+PROFILE = @PROFILE@
+RANLIB = @RANLIB@
+STRIP = @STRIP@
+VERSION = @VERSION@
+VE_LIB_AGE = @VE_LIB_AGE@
+VE_LIB_CURRENT = @VE_LIB_CURRENT@
+VE_LIB_REVISION = @VE_LIB_REVISION@
+VF_LIB_AGE = @VF_LIB_AGE@
+VF_LIB_CURRENT = @VF_LIB_CURRENT@
+VF_LIB_REVISION = @VF_LIB_REVISION@
+V_LIB_AGE = @V_LIB_AGE@
+V_LIB_CURRENT = @V_LIB_CURRENT@
+V_LIB_REVISION = @V_LIB_REVISION@
+am__include = @am__include@
+am__quote = @am__quote@
+install_sh = @install_sh@
+pthread_lib = @pthread_lib@
+
+AUTOMAKE_OPTIONS = foreign
+
+INCLUDES = -I../lib -I$(top_srcdir)/include @OGG_CFLAGS@
+
+EXTRA_PROGRAMS = lspvqtrain genericvqtrain residuevqtrain vqbuild\
+	vqcascade vqmetrics latticebuild latticepare latticehint\
+	latticetune huffbuild residuesplit distribution
+
+CLEANFILES = $(EXTRA_PROGRAMS)
+
+LDFLAGS = -static
+LDADD = ../lib/libvorbis.la
+
+lspvqtrain_SOURCES = lspdata.c train.c vqgen.c bookutil.c\
+	vqgen.h bookutil.h vqext.h
+
+genericvqtrain_SOURCES = genericdata.c train.c vqgen.c bookutil.c\
+	vqgen.h bookutil.h vqext.h
+
+residuevqtrain_SOURCES = residuedata.c train.c vqgen.c bookutil.c\
+	vqgen.h bookutil.h vqext.h
+
+vqbuild_SOURCES = build.c vqgen.c bookutil.c vqsplit.c\
+	vqgen.h bookutil.h vqext.h
+
+vqcascade_SOURCES = run.c cascade.c vqgen.c bookutil.c\
+	vqgen.h bookutil.h
+
+vqmetrics_SOURCES = run.c metrics.c vqgen.c bookutil.c\
+	vqgen.h bookutil.h
+
+latticebuild_SOURCES = latticebuild.c vqgen.c bookutil.c\
+	vqgen.h bookutil.h
+
+latticepare_SOURCES = latticepare.c vqgen.c bookutil.c vqsplit.c\
+	vqgen.h bookutil.h
+
+latticehint_SOURCES = latticehint.c bookutil.c\
+	bookutil.h
+
+latticetune_SOURCES = latticetune.c vqgen.c bookutil.c\
+	vqgen.h bookutil.h
+
+huffbuild_SOURCES = huffbuild.c vqgen.c bookutil.c\
+	vqgen.h bookutil.h
+
+residuesplit_SOURCES = residuesplit.c vqgen.c bookutil.c\
+	vqgen.h bookutil.h
+
+distribution_SOURCES = distribution.c bookutil.c\
+	bookutil.h
+
+
+EXTRA_DIST = residue_entropy auxpartition.pl
+subdir = vq
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+CONFIG_CLEAN_FILES =
+EXTRA_PROGRAMS = lspvqtrain$(EXEEXT) genericvqtrain$(EXEEXT) \
+	residuevqtrain$(EXEEXT) vqbuild$(EXEEXT) vqcascade$(EXEEXT) \
+	vqmetrics$(EXEEXT) latticebuild$(EXEEXT) latticepare$(EXEEXT) \
+	latticehint$(EXEEXT) latticetune$(EXEEXT) huffbuild$(EXEEXT) \
+	residuesplit$(EXEEXT) distribution$(EXEEXT)
+am_distribution_OBJECTS = distribution.$(OBJEXT) bookutil.$(OBJEXT)
+distribution_OBJECTS = $(am_distribution_OBJECTS)
+distribution_LDADD = $(LDADD)
+distribution_DEPENDENCIES = ../lib/libvorbis.la
+distribution_LDFLAGS =
+am_genericvqtrain_OBJECTS = genericdata.$(OBJEXT) train.$(OBJEXT) \
+	vqgen.$(OBJEXT) bookutil.$(OBJEXT)
+genericvqtrain_OBJECTS = $(am_genericvqtrain_OBJECTS)
+genericvqtrain_LDADD = $(LDADD)
+genericvqtrain_DEPENDENCIES = ../lib/libvorbis.la
+genericvqtrain_LDFLAGS =
+am_huffbuild_OBJECTS = huffbuild.$(OBJEXT) vqgen.$(OBJEXT) \
+	bookutil.$(OBJEXT)
+huffbuild_OBJECTS = $(am_huffbuild_OBJECTS)
+huffbuild_LDADD = $(LDADD)
+huffbuild_DEPENDENCIES = ../lib/libvorbis.la
+huffbuild_LDFLAGS =
+am_latticebuild_OBJECTS = latticebuild.$(OBJEXT) vqgen.$(OBJEXT) \
+	bookutil.$(OBJEXT)
+latticebuild_OBJECTS = $(am_latticebuild_OBJECTS)
+latticebuild_LDADD = $(LDADD)
+latticebuild_DEPENDENCIES = ../lib/libvorbis.la
+latticebuild_LDFLAGS =
+am_latticehint_OBJECTS = latticehint.$(OBJEXT) bookutil.$(OBJEXT)
+latticehint_OBJECTS = $(am_latticehint_OBJECTS)
+latticehint_LDADD = $(LDADD)
+latticehint_DEPENDENCIES = ../lib/libvorbis.la
+latticehint_LDFLAGS =
+am_latticepare_OBJECTS = latticepare.$(OBJEXT) vqgen.$(OBJEXT) \
+	bookutil.$(OBJEXT) vqsplit.$(OBJEXT)
+latticepare_OBJECTS = $(am_latticepare_OBJECTS)
+latticepare_LDADD = $(LDADD)
+latticepare_DEPENDENCIES = ../lib/libvorbis.la
+latticepare_LDFLAGS =
+am_latticetune_OBJECTS = latticetune.$(OBJEXT) vqgen.$(OBJEXT) \
+	bookutil.$(OBJEXT)
+latticetune_OBJECTS = $(am_latticetune_OBJECTS)
+latticetune_LDADD = $(LDADD)
+latticetune_DEPENDENCIES = ../lib/libvorbis.la
+latticetune_LDFLAGS =
+am_lspvqtrain_OBJECTS = lspdata.$(OBJEXT) train.$(OBJEXT) \
+	vqgen.$(OBJEXT) bookutil.$(OBJEXT)
+lspvqtrain_OBJECTS = $(am_lspvqtrain_OBJECTS)
+lspvqtrain_LDADD = $(LDADD)
+lspvqtrain_DEPENDENCIES = ../lib/libvorbis.la
+lspvqtrain_LDFLAGS =
+am_residuesplit_OBJECTS = residuesplit.$(OBJEXT) vqgen.$(OBJEXT) \
+	bookutil.$(OBJEXT)
+residuesplit_OBJECTS = $(am_residuesplit_OBJECTS)
+residuesplit_LDADD = $(LDADD)
+residuesplit_DEPENDENCIES = ../lib/libvorbis.la
+residuesplit_LDFLAGS =
+am_residuevqtrain_OBJECTS = residuedata.$(OBJEXT) train.$(OBJEXT) \
+	vqgen.$(OBJEXT) bookutil.$(OBJEXT)
+residuevqtrain_OBJECTS = $(am_residuevqtrain_OBJECTS)
+residuevqtrain_LDADD = $(LDADD)
+residuevqtrain_DEPENDENCIES = ../lib/libvorbis.la
+residuevqtrain_LDFLAGS =
+am_vqbuild_OBJECTS = build.$(OBJEXT) vqgen.$(OBJEXT) bookutil.$(OBJEXT) \
+	vqsplit.$(OBJEXT)
+vqbuild_OBJECTS = $(am_vqbuild_OBJECTS)
+vqbuild_LDADD = $(LDADD)
+vqbuild_DEPENDENCIES = ../lib/libvorbis.la
+vqbuild_LDFLAGS =
+am_vqcascade_OBJECTS = run.$(OBJEXT) cascade.$(OBJEXT) vqgen.$(OBJEXT) \
+	bookutil.$(OBJEXT)
+vqcascade_OBJECTS = $(am_vqcascade_OBJECTS)
+vqcascade_LDADD = $(LDADD)
+vqcascade_DEPENDENCIES = ../lib/libvorbis.la
+vqcascade_LDFLAGS =
+am_vqmetrics_OBJECTS = run.$(OBJEXT) metrics.$(OBJEXT) vqgen.$(OBJEXT) \
+	bookutil.$(OBJEXT)
+vqmetrics_OBJECTS = $(am_vqmetrics_OBJECTS)
+vqmetrics_LDADD = $(LDADD)
+vqmetrics_DEPENDENCIES = ../lib/libvorbis.la
+vqmetrics_LDFLAGS =
+
+DEFS = @DEFS@
+DEFAULT_INCLUDES =  -I. -I$(srcdir)
+CPPFLAGS = @CPPFLAGS@
+LIBS = @LIBS@
+depcomp = $(SHELL) $(top_srcdir)/depcomp
+@AMDEP_TRUE@DEP_FILES = $(DEPDIR)/bookutil.Po $(DEPDIR)/build.Po \
+@AMDEP_TRUE@	$(DEPDIR)/cascade.Po $(DEPDIR)/distribution.Po \
+@AMDEP_TRUE@	$(DEPDIR)/genericdata.Po $(DEPDIR)/huffbuild.Po \
+@AMDEP_TRUE@	$(DEPDIR)/latticebuild.Po $(DEPDIR)/latticehint.Po \
+@AMDEP_TRUE@	$(DEPDIR)/latticepare.Po $(DEPDIR)/latticetune.Po \
+@AMDEP_TRUE@	$(DEPDIR)/lspdata.Po $(DEPDIR)/metrics.Po \
+@AMDEP_TRUE@	$(DEPDIR)/residuedata.Po $(DEPDIR)/residuesplit.Po \
+@AMDEP_TRUE@	$(DEPDIR)/run.Po $(DEPDIR)/train.Po \
+@AMDEP_TRUE@	$(DEPDIR)/vqgen.Po $(DEPDIR)/vqsplit.Po
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+CCLD = $(CC)
+LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+CFLAGS = @CFLAGS@
+DIST_SOURCES = $(distribution_SOURCES) $(genericvqtrain_SOURCES) \
+	$(huffbuild_SOURCES) $(latticebuild_SOURCES) \
+	$(latticehint_SOURCES) $(latticepare_SOURCES) \
+	$(latticetune_SOURCES) $(lspvqtrain_SOURCES) \
+	$(residuesplit_SOURCES) $(residuevqtrain_SOURCES) \
+	$(vqbuild_SOURCES) $(vqcascade_SOURCES) $(vqmetrics_SOURCES)
+DIST_COMMON = Makefile.am Makefile.in
+SOURCES = $(distribution_SOURCES) $(genericvqtrain_SOURCES) $(huffbuild_SOURCES) $(latticebuild_SOURCES) $(latticehint_SOURCES) $(latticepare_SOURCES) $(latticetune_SOURCES) $(lspvqtrain_SOURCES) $(residuesplit_SOURCES) $(residuevqtrain_SOURCES) $(vqbuild_SOURCES) $(vqcascade_SOURCES) $(vqmetrics_SOURCES)
+
+all: all-am
+
+.SUFFIXES:
+.SUFFIXES: .c .lo .o .obj
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+distclean-libtool:
+	-rm -f libtool
+$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+	cd $(top_srcdir) && \
+	  $(AUTOMAKE) --foreign  vq/Makefile
+Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) && \
+	  CONFIG_HEADERS= CONFIG_LINKS= \
+	  CONFIG_FILES=$(subdir)/$@ $(SHELL) ./config.status
+distribution$(EXEEXT): $(distribution_OBJECTS) $(distribution_DEPENDENCIES) 
+	@rm -f distribution$(EXEEXT)
+	$(LINK) $(distribution_LDFLAGS) $(distribution_OBJECTS) $(distribution_LDADD) $(LIBS)
+genericvqtrain$(EXEEXT): $(genericvqtrain_OBJECTS) $(genericvqtrain_DEPENDENCIES) 
+	@rm -f genericvqtrain$(EXEEXT)
+	$(LINK) $(genericvqtrain_LDFLAGS) $(genericvqtrain_OBJECTS) $(genericvqtrain_LDADD) $(LIBS)
+huffbuild$(EXEEXT): $(huffbuild_OBJECTS) $(huffbuild_DEPENDENCIES) 
+	@rm -f huffbuild$(EXEEXT)
+	$(LINK) $(huffbuild_LDFLAGS) $(huffbuild_OBJECTS) $(huffbuild_LDADD) $(LIBS)
+latticebuild$(EXEEXT): $(latticebuild_OBJECTS) $(latticebuild_DEPENDENCIES) 
+	@rm -f latticebuild$(EXEEXT)
+	$(LINK) $(latticebuild_LDFLAGS) $(latticebuild_OBJECTS) $(latticebuild_LDADD) $(LIBS)
+latticehint$(EXEEXT): $(latticehint_OBJECTS) $(latticehint_DEPENDENCIES) 
+	@rm -f latticehint$(EXEEXT)
+	$(LINK) $(latticehint_LDFLAGS) $(latticehint_OBJECTS) $(latticehint_LDADD) $(LIBS)
+latticepare$(EXEEXT): $(latticepare_OBJECTS) $(latticepare_DEPENDENCIES) 
+	@rm -f latticepare$(EXEEXT)
+	$(LINK) $(latticepare_LDFLAGS) $(latticepare_OBJECTS) $(latticepare_LDADD) $(LIBS)
+latticetune$(EXEEXT): $(latticetune_OBJECTS) $(latticetune_DEPENDENCIES) 
+	@rm -f latticetune$(EXEEXT)
+	$(LINK) $(latticetune_LDFLAGS) $(latticetune_OBJECTS) $(latticetune_LDADD) $(LIBS)
+lspvqtrain$(EXEEXT): $(lspvqtrain_OBJECTS) $(lspvqtrain_DEPENDENCIES) 
+	@rm -f lspvqtrain$(EXEEXT)
+	$(LINK) $(lspvqtrain_LDFLAGS) $(lspvqtrain_OBJECTS) $(lspvqtrain_LDADD) $(LIBS)
+residuesplit$(EXEEXT): $(residuesplit_OBJECTS) $(residuesplit_DEPENDENCIES) 
+	@rm -f residuesplit$(EXEEXT)
+	$(LINK) $(residuesplit_LDFLAGS) $(residuesplit_OBJECTS) $(residuesplit_LDADD) $(LIBS)
+residuevqtrain$(EXEEXT): $(residuevqtrain_OBJECTS) $(residuevqtrain_DEPENDENCIES) 
+	@rm -f residuevqtrain$(EXEEXT)
+	$(LINK) $(residuevqtrain_LDFLAGS) $(residuevqtrain_OBJECTS) $(residuevqtrain_LDADD) $(LIBS)
+vqbuild$(EXEEXT): $(vqbuild_OBJECTS) $(vqbuild_DEPENDENCIES) 
+	@rm -f vqbuild$(EXEEXT)
+	$(LINK) $(vqbuild_LDFLAGS) $(vqbuild_OBJECTS) $(vqbuild_LDADD) $(LIBS)
+vqcascade$(EXEEXT): $(vqcascade_OBJECTS) $(vqcascade_DEPENDENCIES) 
+	@rm -f vqcascade$(EXEEXT)
+	$(LINK) $(vqcascade_LDFLAGS) $(vqcascade_OBJECTS) $(vqcascade_LDADD) $(LIBS)
+vqmetrics$(EXEEXT): $(vqmetrics_OBJECTS) $(vqmetrics_DEPENDENCIES) 
+	@rm -f vqmetrics$(EXEEXT)
+	$(LINK) $(vqmetrics_LDFLAGS) $(vqmetrics_OBJECTS) $(vqmetrics_LDADD) $(LIBS)
+
+mostlyclean-compile:
+	-rm -f *.$(OBJEXT) core *.core
+
+distclean-compile:
+	-rm -f *.tab.c
+
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/bookutil.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/build.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/cascade.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/distribution.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/genericdata.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/huffbuild.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/latticebuild.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/latticehint.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/latticepare.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/latticetune.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/lspdata.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/metrics.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/residuedata.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/residuesplit.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/run.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/train.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/vqgen.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/vqsplit.Po@am__quote@
+
+distclean-depend:
+	-rm -rf $(DEPDIR)
+
+.c.o:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(COMPILE) -c `test -f $< || echo '$(srcdir)/'`$<
+
+.c.obj:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(COMPILE) -c `cygpath -w $<`
+
+.c.lo:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(LTCOMPILE) -c -o $@ `test -f $< || echo '$(srcdir)/'`$<
+CCDEPMODE = @CCDEPMODE@
+uninstall-info-am:
+
+tags: TAGS
+
+ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	mkid -fID $$unique $(LISP)
+
+TAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+		$(TAGS_FILES) $(LISP)
+	tags=; \
+	here=`pwd`; \
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
+	  || etags $(ETAGS_ARGS) $$tags  $$unique $(LISP)
+
+GTAGS:
+	here=`CDPATH=: && cd $(top_builddir) && pwd` \
+	  && cd $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) $$here
+
+distclean-tags:
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH
+
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+
+top_distdir = ..
+distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
+
+distdir: $(DISTFILES)
+	@for file in $(DISTFILES); do \
+	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
+	  dir=`echo "$$file" | sed -e 's,/[^/]*$$,,'`; \
+	  if test "$$dir" != "$$file" && test "$$dir" != "."; then \
+	    $(mkinstalldirs) "$(distdir)/$$dir"; \
+	  fi; \
+	  if test -d $$d/$$file; then \
+	    cp -pR $$d/$$file $(distdir) \
+	    || exit 1; \
+	  else \
+	    test -f $(distdir)/$$file \
+	    || cp -p $$d/$$file $(distdir)/$$file \
+	    || exit 1; \
+	  fi; \
+	done
+check-am: all-am
+check: check-am
+all-am: Makefile
+
+installdirs:
+
+install: install-am
+install-exec: install-exec-am
+install-data: install-data-am
+uninstall: uninstall-am
+
+install-am: all-am
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+
+installcheck: installcheck-am
+install-strip:
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	  `test -z '$(STRIP)' || \
+	    echo "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'"` install
+mostlyclean-generic:
+
+clean-generic:
+	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
+
+distclean-generic:
+	-rm -f Makefile $(CONFIG_CLEAN_FILES) stamp-h stamp-h[0-9]*
+
+maintainer-clean-generic:
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
+clean: clean-am
+
+clean-am: clean-generic clean-libtool mostlyclean-am
+
+distclean: distclean-am
+
+distclean-am: clean-am distclean-compile distclean-depend \
+	distclean-generic distclean-libtool distclean-tags
+
+dvi: dvi-am
+
+dvi-am:
+
+info: info-am
+
+info-am:
+
+install-data-am:
+
+install-exec-am:
+
+install-info: install-info-am
+
+install-man:
+
+installcheck-am:
+
+maintainer-clean: maintainer-clean-am
+
+maintainer-clean-am: distclean-am maintainer-clean-generic
+
+mostlyclean: mostlyclean-am
+
+mostlyclean-am: mostlyclean-compile mostlyclean-generic \
+	mostlyclean-libtool
+
+uninstall-am: uninstall-info-am
+
+.PHONY: GTAGS all all-am check check-am clean clean-generic \
+	clean-libtool distclean distclean-compile distclean-depend \
+	distclean-generic distclean-libtool distclean-tags distdir dvi \
+	dvi-am info info-am install install-am install-data \
+	install-data-am install-exec install-exec-am install-info \
+	install-info-am install-man install-strip installcheck \
+	installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic mostlyclean-libtool tags uninstall \
+	uninstall-am uninstall-info-am
+
+
+debugvq:
+	$(MAKE) vq CFLAGS="@DEBUG@"
+
+profilevq:
+	$(MAKE) vq CFLAGS="@PROFILE@"
+
+vq: 
+	$(MAKE) $(EXTRA_PROGRAMS) 
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

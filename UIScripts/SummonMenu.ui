@@ -1,0 +1,687 @@
+[Root]
+Class=FixedSizeContainer
+Component=SummonMenu
+;Register=Root
+
+[SummonMenu]
+Class=MultiStateComponent
+State=NullComponent
+State=SummonMenuPage
+Transition=HideSummonMenu,1,0,0.5,SummonMenuPage
+Transition=ShowSummonMenu,0,1,0.5,SummonMenuPage
+NextTransitionEvent=ToggleSummonMenu
+TweenColor=true
+Alignment=Left,Top
+Location=0,150
+
+[NullComponent]
+Class=RealComponent
+Location=-256,0
+Color=0,0,0,0
+
+[Mouse]
+Class=MouseCursor
+Image=MouseCursor
+
+[SummonClose]
+Class=Container
+Component=Label
+	Font=Engine.smallfont
+	Text=[X]
+	MouseClick=Event,HideSummonMenu
+Component=KeyEvent
+	Key=Escape,Press,Event,HideSummonMenu
+	Key=Mouse4,Release,Event,HideSummonMenu
+Align=Right,Top
+Location=16,0
+DrawOrder=1
+
+[SummonMenuPage]
+Class=FixedSizeContainer
+Component=Mouse
+Component=SummonClose
+Component=ButtonA01
+Component=ButtonA02
+Component=ButtonA03
+Component=ButtonA04
+Component=ButtonA05
+Component=ButtonA06
+Component=ButtonA07
+Component=ButtonA08
+Component=ButtonA09
+Component=ButtonA10
+Component=ButtonA11
+Component=ButtonA12
+Component=ButtonA13
+Component=ButtonA14
+Component=ButtonA15
+Component=ButtonA16
+Component=ButtonA17
+Component=ButtonA18
+Component=ButtonA19
+Component=ButtonA20
+Component=ButtonB01
+Component=ButtonB02
+Component=ButtonB03
+Component=ButtonB04
+Component=ButtonB05
+Component=ButtonB06
+Component=ButtonB07
+Component=ButtonB08
+Component=ButtonB09
+Component=ButtonB10
+Component=ButtonB11
+Component=ButtonB12
+Component=ButtonB13
+Component=ButtonB14
+;Component=ButtonB15
+;Component=ButtonB16
+;Component=ButtonB17
+;Component=ButtonB18
+;Component=ButtonB19
+;Component=ButtonB20
+Component=ButtonC01
+Component=ButtonC02
+Component=ButtonC03
+Component=ButtonC04
+Component=ButtonC05
+Component=ButtonC06
+Component=ButtonC07
+Component=ButtonC08
+Component=ButtonC09
+Component=ButtonC10
+Component=ButtonC11
+Component=ButtonC12
+Component=ButtonC13
+Component=ButtonC14
+Component=ButtonC15
+Component=ButtonC16
+Component=ButtonC17
+Component=ButtonC18
+;Component=ButtonC19
+;Component=ButtonC20
+Size=500,500
+Style=Alpha
+
+[ButtonA01]
+Class=Button
+Text=Araknid Light
+Action=ConsoleCommand,Sum U2AraknidLight
+Size=150,20
+Location=0,0  
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA02]
+Class=Button
+Text=Araknid Medium
+Action=ConsoleCommand,Sum U2AraknidMedium
+Size=150,20
+Location=0,25 
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA03]
+Class=Button
+Text=Araknid Heavy
+Action=ConsoleCommand,Sum U2AraknidHeavy
+Size=150,20
+Location=0,50 
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA04]
+Class=Button
+Text=Drakk Droid
+Action=ConsoleCommand,Sum U2DrakkDroid
+Size=150,20
+Location=0,75 
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA05]
+Class=Button
+Text=Drakk Light
+Action=ConsoleCommand,Sum U2DrakkLight
+Size=150,20
+Location=0,100
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA06]
+Class=Button
+Text=Drakk Medium
+Action=ConsoleCommand,Sum U2DrakkMedium
+Size=150,20
+Location=0,125
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA07]
+Class=Button
+Text=Drakk Boss
+Action=ConsoleCommand,Sum U2DrakkBoss
+Size=150,20
+Location=0,150
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA08]
+Class=Button
+Text=Izarian
+Action=ConsoleCommand,Sum U2Izarian
+Size=150,20
+Location=0,175
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA09]
+Class=Button
+Text=Marine Light
+Action=ConsoleCommand,Sum U2MarineLight
+Size=150,20
+Location=0,200
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA10]
+Class=Button
+Text=Marine Medium
+Action=ConsoleCommand,Sum U2MarineMedium
+Size=150,20
+Location=0,225
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA11]
+Class=Button
+Text=Marine Heavy
+Action=ConsoleCommand,Sum U2MarineHeavy
+Size=150,20
+Location=0,250
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA12]
+Class=Button
+Text=MercFem Light
+Action=ConsoleCommand,Sum U2MercFemLight
+Size=150,20
+Location=0,275
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA13]
+Class=Button
+Text=MercFem Medium
+Action=ConsoleCommand,Sum U2MercFemMedium
+Size=150,20
+Location=0,300
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA14]
+Class=Button
+Text=MercFem Heavy
+Action=ConsoleCommand,Sum U2MercFemHeavy
+Size=150,20
+Location=0,325
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA15]
+Class=Button
+Text=MercJap Light
+Action=ConsoleCommand,Sum U2MercJapLight
+Size=150,20
+Location=0,350
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA16]
+Class=Button
+Text=MercJap Medium
+Action=ConsoleCommand,Sum U2MercJapMedium
+Size=150,20
+Location=0,375
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA17]
+Class=Button
+Text=MercJap Heavy
+Action=ConsoleCommand,Sum U2MercJapHeavy
+Size=150,20
+Location=0,400
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA18]
+Class=Button
+Text=MercMek Light
+Action=ConsoleCommand,Sum U2MercMekLight
+Size=150,20
+Location=0,425
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA19]
+Class=Button
+Text=MercMek Medium
+Action=ConsoleCommand,Sum U2MercMekMedium
+Size=150,20
+Location=0,450
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonA20]
+Class=Button
+Text=MercMek Heavy
+Action=ConsoleCommand,Sum U2MercMekHeavy
+Size=150,20
+Location=0,475
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+;new column
+
+[ButtonB01]
+Class=Button
+Text=Skaarj Light
+Action=ConsoleCommand,Sum U2SkaarjLight
+Size=150,20
+Location=175,0
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB02]
+Class=Button
+Text=Skaarj Medium
+Action=ConsoleCommand,Sum U2SkaarjMedium
+Size=150,20
+Location=175,25
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB03]
+Class=Button
+Text=Skaarj Heavy
+Action=ConsoleCommand,Sum U2SkaarjHeavy
+Size=150,20
+Location=175,50
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB04]
+Class=Button
+Text=Shian Worker
+Action=ConsoleCommand,Sum U2ShianWorker
+Size=150,20
+Location=175,75
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB05]
+Class=Button
+Text=Shian Warrior
+Action=ConsoleCommand,Sum U2ShianWarrior
+Size=150,20
+Location=175,100
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB06]
+Class=Button
+Text=Tosc
+Action=ConsoleCommand,Sum U2Tosc
+Size=150,20
+Location=175,125
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+;gap
+
+[ButtonB07]
+Class=Button
+Text=Aida
+Action=ConsoleCommand,Sum Aida
+Size=150,20
+Location=175,175
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB08]
+Class=Button
+Text=Isaak
+Action=ConsoleCommand,Sum Isaak
+Size=150,20
+Location=175,200 
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB09]
+Class=Button
+Text=Neban
+Action=ConsoleCommand,Sum Neban
+Size=150,20
+Location=175,225
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB10]
+Class=Button
+Text=Kai Clothed
+Action=ConsoleCommand,Sum U2KaiClothed
+Size=150,20
+Location=175,250
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB11]
+Class=Button
+Text=Civilian Scientist
+Action=ConsoleCommand,Sum U2CivilianScientist
+Size=150,20
+Location=175,275
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB12]
+Class=Button
+Text=Female Colonist A
+Action=ConsoleCommand,Sum U2ColonistHumanFemaleA
+Size=150,20
+Location=175,300
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB13]
+Class=Button
+Text=Male Colonist A
+Action=ConsoleCommand,Sum U2ColonistHumanMaleA
+Size=150,20
+Location=175,325
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonB14]
+Class=Button
+Text=Special Civilian
+Action=ConsoleCommand,Sum U2SpecialCivilian
+Size=150,20
+Location=175,350
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+;new column
+
+[ButtonC01]
+Class=Button
+Text=Cockroach
+Action=ConsoleCommand,Sum U2Cockroach
+Size=150,20
+Location=350,0  
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC02]
+Class=Button
+Text=Cyprid
+Action=ConsoleCommand,Sum U2Cyprid
+Size=150,20
+Location=350,25
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC03]
+Class=Button
+Text=Mukhogg
+Action=ConsoleCommand,Sum U2Mukhogg
+Size=150,20
+Location=350,50
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC04]
+Class=Button
+Text=Parata
+Action=ConsoleCommand,Sum U2Parata
+Size=150,20
+Location=350,75
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC05]
+Class=Button
+Text=Rammer
+Action=ConsoleCommand,Sum U2Rammer
+Size=150,20
+Location=350,100
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC06]
+Class=Button
+Text=Seagoat
+Action=ConsoleCommand,Sum U2Seagoat
+Size=150,20
+Location=350,125
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC07]
+Class=Button
+Text=Snipe
+Action=ConsoleCommand,Sum U2Snipe
+Size=150,20
+Location=350,150
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+;gap
+
+[ButtonC08]
+Class=Button
+Text=Flying Snake
+Action=ConsoleCommand,Sum U2FlyingSnake
+Size=150,20
+Location=350,200
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC09]
+Class=Button
+Text=Hummer
+Action=ConsoleCommand,Sum U2Hummer
+Size=150,20
+Location=350,225
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC10]
+Class=Button
+Text=Spore
+Action=ConsoleCommand,Sum U2Spore
+Size=150,20
+Location=350,250
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC11]
+Class=Button
+Text=Diver
+Action=ConsoleCommand,Sum U2Diver
+Size=150,20
+Location=350,275
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC12]
+Class=Button
+Text=Bellow Fish
+Action=ConsoleCommand,Sum U2BellowFish
+Size=150,20
+Location=350,300
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC13]
+Class=Button
+Text=Killer Sprout
+Action=ConsoleCommand,Sum U2KillerSprout
+Size=150,20
+Location=350,325
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC14]
+Class=Button
+Text=Killer Tadpole
+Action=ConsoleCommand,Sum U2KillerTadpole
+Size=150,20
+Location=350,350
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC15]
+Class=Button
+Text=Pinwheel Fish
+Action=ConsoleCommand,Sum U2PinwheelFish
+Size=150,20
+Location=350,375
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC16]
+Class=Button
+Text=School Fish
+Action=ConsoleCommand,Sum U2SchoolFish
+Size=150,20
+Location=350,400
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC17]
+Class=Button
+Text=Ugly Fish
+Action=ConsoleCommand,Sum U2UglyFish
+Size=150,20
+Location=350,425
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+[ButtonC18]
+Class=Button
+Text=Water Dipper
+Action=ConsoleCommand,Sum U2WaterDipper
+Size=150,20
+Location=350,450
+Font=Engine.smallfont
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,192
+
+
+

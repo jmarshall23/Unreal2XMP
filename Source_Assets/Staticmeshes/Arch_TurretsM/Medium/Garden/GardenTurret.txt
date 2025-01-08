@@ -1,0 +1,7 @@
+OFFSETS: 
+
+TurretBase: X:0, Y:0, Z:0 (gun/camera offsets based offa this puppy). [should have unrestricted yaw]
+
+TurretGun: X:-240.79, Y:0, Z:276.6  [Restrict pitch from 15 to -19 Degrees]
+
+TurretCam: X:-9.155, Y:0, Z:297.263

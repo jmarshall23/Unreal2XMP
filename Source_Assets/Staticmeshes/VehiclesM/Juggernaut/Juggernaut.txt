@@ -1,0 +1,81 @@
+All Offsets are relative to the origin of the main body, All values rounded to the nearest hundredth. If no constraint is listed, no constraint is needed (assuming one axis of rotation).
+
+Body		: x:0 y:0 z:0
+COLLISION: MCDCX_Body.
+
+LeftFrontTire   : x:-5.68 y:167.59 z:-73.89 (This is The Juggernaut Tire Staticmesh)
+COLLISION: MCDCY_Tire.
+
+LeftRearTire    : x:-309.15  y:143.17 z:-73.89
+COLLISION: See "LeftFrontTire"
+
+RightFrontTire  : x:-5.68 y:-167.59  z:-73.89 (rotate the "Right" tires 180 degrees from th' top down... make sure the outside faces out)
+COLLISION: See "LeftFrontTire"
+
+RightRearTire   : x:-309.15  y:-143.17  z:-73.89 (rotate the "Right" tires 180 degrees from th' top down... make sure the outside faces out)
+COLLISION: See "LeftFrontTire"
+
+TireArm_Left	: x:-5.68 y:167.59 z:-73.89 (This is the Juggernaut TireArm StaticMesh. Is it possible to mirror it on the right side? Or does that fuck up the normals? Lemmie know.)
+COLLISION: MCDCX_TireArm.
+
+TireArm_Right	: x:-5.68    y:-167.59 z:-73.89
+COLLISION: See "TireArm_Left"
+
+Turret          : x:-148.53  y:0.00    z:116.05 
+COLLSION: MCDCX_Turret01, 16 polys.
+
+TurretBarrelBase: x:-79.16   y:-57.55  z:123.06 (Constrain Rotation from -25 to 20)
+COLLISION: MCDCX_TurretBarrelBase.
+
+TurretBarrel	: x:116.19   y:-57.55  z:123.06
+COLLISION: MCDCY_TurretBarrel.
+
+FrontTurret     : x:25.20    y:98.03   z:50.28 (constrain rotation from -150 to 100 degrees.)
+COLLISION: MCDCX_FrontTurret.
+
+FrontTurretBarrel: x:25.20   y:98.03   z:52.33 (Constrain rotation from -45 to 25 degrees.)
+COLLISION: MCDCX_FrontTurretBarrel.
+
+===================================
+NOTE ON ANTENNÆ: Every antenna section must be rotated 28.5 degrees on the pitch and 3.5 degrees on the yaw (positive or negative 3.5 for the Right or Left side, Respectavely) in order to obtain the base pose.
+===================================
+
+Antenna_Left_Base : x:-359.27  y:86.84  z:20.24 (Discuss constraints with me if the "springs" concept comes to fruition. Otherwise, we'll hafta re-do shit anyway.)
+COLLISION: MCDCX_Antenna_Base.
+
+Antenna_Left_Middle: x:-428.90 y:91.87   z:58.59
+COLLISION: MCDCX_Antenna_Middle.
+
+Antenna_Left_Tip: x:-525.84   y:98.55    z:112.57
+COLLISION: MCDCX_Antenna_Tip.
+
+Antenna_Right_Base: x:-359.27  y:-86.84  z:20.24
+COLLISION: See "Antenna_Left_Base"
+
+Antenna_Right_Middle: x:-428.90 y:-91.87 z:58.59
+COLLISION: See "Antenna_Left_Middle"
+
+Antenna_Right_Tip: x:-525.92   y:-98.55  z:112.57
+COLLISION: See "Antenna_Left_Tip"
+
+DashCam		: x:24.90   y:-23.29   z:0.00    (oriented to front of vehicle)
+TurretCam	: x:-44.31  y:-57.55  z:175.32  (oriented to front of vehicle)
+
+Models Used:
+JuggernautBody_TD_001
+JuggernautTire_TD_001
+JuggernautTireArm_TD_001
+JuggernautTurret_TD_001
+JuggernautTurretBarrelBase_TD_001
+JuggernautTurretBarrel_TD_001
+JuggernautFrontTurret_TD_001
+JuggernautFrontTurretBarrel_TD_001
+JuggernautAntennaTip_TD_001
+JuggernautAntennaMiddle_TD_001
+JuggernautAntennaBase_TD_001
+
+Bitmaps Used:
+Juggernaut_001
+
+201 polys of Convex Mesh Collision,
+4 Cylindrical collision meshes (1 Unique)

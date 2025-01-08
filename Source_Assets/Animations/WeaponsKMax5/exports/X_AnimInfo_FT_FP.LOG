@@ -1,0 +1,64 @@
+
+
+ Unreal skeletal exporter - Animation information for [FT_FP.psa] 
+
+ Bones: 67
+ 
+
+ * Animation sequence AltFire    0  Tracktime: 5.000000 rate: 50.000000 
+	  First raw frame  0  total raw frames 5  group: [None]
+
+ * Animation sequence AltFireLastDown    1  Tracktime: 16.000000 rate: 15.000000 
+	  First raw frame  5  total raw frames 16  group: [None]
+
+ * Animation sequence AltFireLastReload    2  Tracktime: 38.000000 rate: 15.500000 
+	  First raw frame  21  total raw frames 38  group: [None]
+
+ * Animation sequence AltFireLastRound    3  Tracktime: 10.000000 rate: 15.000000 
+	  First raw frame  59  total raw frames 10  group: [None]
+
+ * Animation sequence Ambient    4  Tracktime: 32.000000 rate: 10.000000 
+	  First raw frame  69  total raw frames 32  group: [None]
+
+ * Animation sequence AmbientUnloaded    5  Tracktime: 32.000000 rate: 10.000000 
+	  First raw frame  101  total raw frames 32  group: [None]
+
+ * Animation sequence Down    6  Tracktime: 8.000000 rate: 10.000000 
+	  First raw frame  133  total raw frames 8  group: [None]
+
+ * Animation sequence DownUnloaded    7  Tracktime: 8.000000 rate: 15.000000 
+	  First raw frame  141  total raw frames 8  group: [None]
+
+ * Animation sequence Fire    8  Tracktime: 5.000000 rate: 50.000000 
+	  First raw frame  149  total raw frames 5  group: [None]
+
+ * Animation sequence FireEnd    9  Tracktime: 9.000000 rate: 10.000000 
+	  First raw frame  154  total raw frames 9  group: [None]
+
+ * Animation sequence FireLastDown   10  Tracktime: 16.000000 rate: 15.000000 
+	  First raw frame  163  total raw frames 16  group: [None]
+
+ * Animation sequence FireLastReload   11  Tracktime: 38.000000 rate: 15.500000 
+	  First raw frame  179  total raw frames 38  group: [None]
+
+ * Animation sequence FireLastRound   12  Tracktime: 10.000000 rate: 15.000000 
+	  First raw frame  217  total raw frames 10  group: [None]
+
+ * Animation sequence Idle   13  Tracktime: 15.000000 rate: 10.000000 
+	  First raw frame  227  total raw frames 15  group: [None]
+
+ * Animation sequence OutOfAmmo   14  Tracktime: 10.000000 rate: 15.000000 
+	  First raw frame  242  total raw frames 10  group: [None]
+
+ * Animation sequence Reload   15  Tracktime: 30.000000 rate: 15.000000 
+	  First raw frame  252  total raw frames 30  group: [None]
+
+ * Animation sequence ReloadUnloaded   16  Tracktime: 30.000000 rate: 15.000000 
+	  First raw frame  282  total raw frames 30  group: [None]
+
+ * Animation sequence Select   17  Tracktime: 9.000000 rate: 15.000000 
+	  First raw frame  312  total raw frames 9  group: [None]
+
+ * Animation sequence SelectUnloaded   18  Tracktime: 9.000000 rate: 15.000000 
+	  First raw frame  321  total raw frames 9  group: [None]
+

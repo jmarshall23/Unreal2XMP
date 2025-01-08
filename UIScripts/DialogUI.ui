@@ -1,0 +1,13 @@
+
+### Dialog Subtitles ###
+
+[DialogSubtitlesContainer]
+Class=FixedSizeContainer
+Component=DialogSubtitlesHolder
+Alignment=Center,HardBottom
+Size=700,75
+Location=0,-50
+
+[DialogSubtitlesHolder]
+Class=TileContainer
+Alignment=Center,Center

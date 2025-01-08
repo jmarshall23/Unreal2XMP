@@ -1,0 +1,218 @@
+==============================================================================
+======================== U2 XMP Animation Information ========================
+==============================================================================
+
+NOTE: based on DE's animation doc and updated with U2XMP-specific information
+as applicable.
+
+All characters and content in this file are copyright Digital Extremes.  You 
+have permission to use them for non-commercial use only.  Do not remove this 
+txt file from this zip if you plan on redistributing.  Play nice and have 
+fun with them.
+
+James Edwards, Steve Jones, animator dudes @ DE
+
+
+Name           Comment
+
+Weapon_Switch  From idle or blended with run/jump, quick flick of the arm as 
+weapon is changed, weapon changes in the first frame.  
+
+HitB           Shot in the Front
+HitF           Shot in the Back
+HitL           Shot in the Left
+HitR           Shot in the right
+
+DeathB         Death anim, from rear wep hit, carrying on from HitB, rest on floor
+DeathF         Death, from rear wep hit, carrying on from HitF, rest on floor
+DeathL         Death, from rear wep hit, carrying on from HitL, rest on floor
+DeathR         Death, from rear wep hit, carrying on from HitR, rest on floor
+
+Crouch         Crouch Idle, breathing, weapon held front and mid
+Crouch_TurnL   Fron crouch idle Little foot shuffle, front foot first
+Crouch_TurnR   From crouch idle Little foot shuffle, back foot first
+CrouchB        Crouching back pedal long stride, left leg forward at start, body twisted like idle, weapon held mid
+CrouchF        Crouching walk fowards, long stride, left leg forward at start, body twisted like idle, weapon held mid
+CrouchL        Crouching crab left, long stride push off right leg first, body twisted like idle, weapon held mid
+CrouchR        Crouching crab right, long stride push off left leg first, body twisted like idle, weapon held mid
+
+Rifle_Aimed    From Idle_Rifle, weapon held at shoulder, one big shot with a lot of recoil
+Rifle_Burst    From Idle_Rifle, weapon held at shoulder, shooting, weapon pushs back, jumps about a bit
+Biggun_Aimed   From Idle_Biggun, big weapon held at hip pushed back, one big shot with a lot of recoil
+Biggun_Burst   From Idle_Biggun, big weapon held at hip shooting, weap pushs back, jumps about a bit
+
+TurnL          From stand idle, little foot shuffle, front foot first
+TurnR          From stand idle, little foot shuffle, back foot first
+
+Jump_Takeoff   From idle, launch body to apex of jump
+Jump_Mid       From apex of Takeoff, begin descent
+JumpB_Takeoff  From run back, launch body to apex of jump
+JumpB_Mid      From apex of Takeoff, begin descent
+JumpB_Land     Impact position at point of landing
+JumpF_Takeoff  From run forward, launch body to apex of jump
+JumpF_Mid      From apex of Takeoff, begin descent
+JumpF_Land     Impact position at point of landing
+JumpL_Takeoff  From side step left, launch body to apex of jump
+JumpL_Mid      From apex of Takeoff, begin descent
+JumpL_Land     Impact position at point of landing
+JumpR_Takeoff  From side step right, launch body to apex of jump
+JumpR_Mid      From apex of Takeoff, begin descent
+JumpR_Land     Impact position at point of landing
+
+DoubleJumpB    From JumpB_Takeoff or Dodge, dynamic backwards jump manoever into JumpB_Mid.  
+DoubleJumpF    From JumpF_Takeoff or Dodge, dynamic forward jump manoever into JumpF_Mid.
+DoubleJumpL    From JumpL_Takeoff or Dodge, dynamic left jump manoever into JumpL_Mid.
+DoubleJumpR    From JumpR_Takeoff or Dodge, dynamic right jump manoever into JumpR_Mid.
+
+DodgeB         From running back position, shunt back, into JumpB_Mid 
+DodgeF         From running forward position, shunt forwards, intoJumpF_Mid 
+DodgeL         From running back position, shunt left, into JumpL_Mid 
+DodgeR         From running back position, shunt right, into JumpR_Mid 
+
+Idle_Biggun       Idle for large weapons, weapon held at hip, very lttle movement
+Idle_Rest         From weapon_idles, played after a few seconds of no input from player, weapon low, breathing
+Idle_Rifle        Idle for holding rifles, weapon high, little movement 
+
+RunB        Fast back pedal, long stride, body twisted like idle, weapon held mid
+RunF        Fast run foward, long stride, body twisted like idle, weapon held mid 
+RunL        Big side step left, legs cross a bit, body twisted like idle, weapon held mid 
+RunR        Big side step right, legs cross a bit, body twisted like idle, weapon held mid 
+
+gesture_beckon   From stand idle, big left arm beckon, back to idle
+gesture_cheer    From stand idle, no movement on standard anim, think of something 
+gesture_halt     From stand idle, left hand shows palm and pushs back, back to idle
+gesture_point    From stand idle, left hand does a point, back to idle
+
+WalkB  Back pedal, long stride, body twisted like idle, push off right leg first, weapon held mid, small amount of body movement
+WalkF  Walk foward, long stride, body twisted like idle, push off left leg first, weapon held mid, small amount of body movement
+WalkL  Side step left, legs cross a bit, body twisted like idle, push off left leg first, weapon held mid 
+WalkR  Side step right, legs cross a bit, body twisted like idle, ush off left leg right, weapon held mid 
+
+AssSmack    From idle rest, kiss hand and slap arse, return to rest idle
+ThroatCut   From idle with weapon mid, wave finger with arm held out then make throat cut and return to idle
+Specific_1  From idle, wiggle arse then return to idle. This could be anything
+PThrust     Its the pelvic thrust that really dives then insane, from and return to idle
+
+Further Notes:
+
+Frame lengths and rates:  These are all variable, and depend entirely on your 
+own character needs for animation.  There is no set limit, other than what 
+looks good to you barring a few instances of timing, like firing a weapon, or 
+changing it.  Generally we followed a pretty similar frameset for all the 
+characters with only minor variations in rates and framecounts.  If you need 
+reference just open up the ukx files in Ued.  The animation properties tab 
+gives the framerate for whatever sequence you select from the left hand list.
+Frame counts are listed beside each animation sequence.  Have fun and go 
+crazy with your own.
+
+All of the skeletons use a limited, hard coded form of spine control that 
+links the upper torso to the player's first person POV.  This gives a better 
+indication of where a player may be looking or aiming when viewed in game in 
+third person.  Affected animations include all crouches, runs, walks, weapon 
+firing, turning, and weapon idles.  It also enables limited blending of 
+multiple animations such as running, while firing at the same time.  In order 
+to do this the root node or COM in Character Studio's Biped was not keyframed 
+for these animations so that the code could blend more smoothly.  
+
+Death animations are basically never seen in game unless you turn karma 
+physics off entirely.
+
+Jump sequences are animated in a single scene file and broken down on export 
+into Takeoff, Mid, and Land respectively.  Dodges, Double Jumps and 
+Walldodges all flow from and back into the Jumps.  See sequence notes above.
+
+Gesture_Taunts and Idle_Character are extra animations that were used in UC 
+for specific in-character animations, ie. egyptians doing egyptian-like 
+things and nightmares doing... freakier things.  Feel free to use them in 
+your own characters.
+
+Slide poses are no longer used in the final game.  They were a failed attempt 
+at a blending solution between running animations.  You don't need them in 
+your custom character setups.
+
+Some general Unreal Engine info for convenience...
+
+*To convert unreal units to max units, multiply all unreal units by using the 
+unreal conversion number. Unreal conversion number = 1 / player scale in 
+unreal. Unreal scale is 0.4 of max scale. Thus multiple all following numbers 
+by 2.5*
+
+Unreal World Origin = MAX + 90 degrees Z axis
+
+Unreal Rotation:
+360 degrees = 65536 = 2^16
+ 90 degrees = 16384
+
+jump 60			- height
+double jump 130	- height
+
+run 440			- 100% full speed
+walk 176		- 40 % speed
+crouch 110		- 25 % speed
+
+dodge 650		- after dodge speed is 0 in 0 sec. player must accelerate again
+				- Dodge time = 1/2 sec
+				- 0.1 sec tween to dodge anim after dodge initiated
+
+air times baby...
+jump: 0.72 of a sec
+dodge: 0.45
+dub jump: 1.25
+
+
+Weapon switch		-0.6 sec  0.1 tween 0.5 sec anim time
+
+
+From Jus10:
+
+"tweening into a ready or idle pose is 0.25, tweenign into anything else is 0.1. 
+simple. tweening always happens at the start of an animation."
+
+Tween happens at beginning of animation
+e.g. if dodge is 1/2 and being animated at 30 fps
+dodge is called, tween to first frame in 0.1 sec, play dodge.
+therefore, animated dodge time is actually only 0.4 seconds, or 12 frames
+
+//-----------------------------------------------------------------------------
+// TBD: not used in UT?
+//-----------------------------------------------------------------------------
+
+*SlideB        Sliding back from stand idle
+*SlideF        Sliding Forward from stand idle
+*SlideL        Sliding Left from stand idle
+*SlideR        Sliding Right from stand idle
+
+Hit_Head       Shot in front of the head
+
+Crouch_Aimed   From crouch idle, one big shot with a lot of recoil 
+Crouch_Burst   From crouch idle, shooting, weap pushs back, jumps about a bit
+
+Jump_Land      Impact position at point of landing
+
+Idle_Character01  Character specific Idle sequences in UC, played intermittently from Idle_Rest
+idle_chat         Indicates player is typing a message.  Headset/wrist communicator use in progress.
+*idle_taunt01     Redundant... replaced with character specific Gesture_Taunts in UC
+
+gesture_Taunt01  Character specific taunts used in UC.
+
+*RunF_cjs    Like the normal run, but body more vertical, weapon held quite high - redundant?
+*RunL_new    Run left, body twisted to face forward (not a crab walk). lead on left leg, weapon held high - redundant?
+*RunR_new    Run right, body twisted to face forward (not a crab walk). lead on right leg, weapon held high - redundant?
+*RunF_new    Like the normal run, but body more vertical, weapon held like rifle - redundant?
+
+//-----------------------------------------------------------------------------
+// TBD: not needed for XMP?
+//-----------------------------------------------------------------------------
+
+WallDodgeB     From JumpF or DoubleJumpF into wall, dynamic leap/flip backwards away from wall, into JumpB_Mid
+WallDodgeF     From JumpB or DoubleJumpB into wall, dynamic leap/flip forward away from wall, into JumpF_Mid
+WallDodgeL     From JumpR or DoubleJumpR into wall, dynamic leap/flip to left, away from wall, into JumpL_Mid
+WallDodgeR     From JumpL or DoubleJumpL into wall, dynamic leap/flip to right, away from wall, into JumpR_Mid
+
+(swimming animations aren't used but work afaik, at least in standalone games)
+SwimB          Very similar to tread water 
+SwimF          Swimming with legs, body lent well forward
+SwimL          Very similar to tread water, lean left 
+SwimR          Very similar to tread water , lean right
+Swim_Tread     Upper body/arms in idle, weapon mid, legs treading water 
+

@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{58159f6c-2ad7-4827-8275-21df31092330}</UniqueIdentifier>
+      <Extensions>*.uc</Extensions>
+    </Filter>
+    <Filter Include="Classes\ParticleTypes">
+      <UniqueIdentifier>{d87da47f-c506-459e-b6b6-f573742a1aba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ParticleGenerators">
+      <UniqueIdentifier>{6ca84be7-4624-4a59-9f73-3f61bb43409d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\BaseClasses">
+      <UniqueIdentifier>{d5f2c4e2-d26f-46f6-9ae0-7950fb3f2f54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Forces">
+      <UniqueIdentifier>{b1bc9577-8f84-4215-9776-82cfd0cd31aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Affectors">
+      <UniqueIdentifier>{879f27bd-1644-4408-84df-47dc1f8f2159}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Helpers">
+      <UniqueIdentifier>{76e648df-bee0-4fda-af33-09543cfffd36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{f9103e7d-4299-4ac6-89bb-887f8f5da7b4}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{b2af6493-252c-4779-9ab8-43768091a00f}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Inc\Forces_h">
+      <UniqueIdentifier>{f8f716e4-980a-41cb-9bd7-2dcd0a0856d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inc\Templates_h">
+      <UniqueIdentifier>{e3782eaa-29ef-4ed0-be74-c797546fc057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inc\Actors_h">
+      <UniqueIdentifier>{8fe2eecd-25f0-4a09-890b-343ee0d2aa4f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\ActorParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\BendiBeamTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\LineManagerTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\ParticleDecalTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\PointParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\PulseLineTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\RecursiveParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\RotatingParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\Sprite3DParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\SpriteParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\StrandParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\StreakParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\TarpBuilderTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\TexturedStreakParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\TriParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\TriangleParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\ViewVelocityScaledParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\WetWindshildParticleTemplate.uc">
+      <Filter>Classes\ParticleTypes</Filter>
+    </None>
+    <None Include="..\Classes\BarbbieHareDesigner.uc">
+      <Filter>Classes\ParticleGenerators</Filter>
+    </None>
+    <None Include="..\Classes\BendiBeamGenerator.uc">
+      <Filter>Classes\ParticleGenerators</Filter>
+    </None>
+    <None Include="..\Classes\LineManager.uc">
+      <Filter>Classes\ParticleGenerators</Filter>
+    </None>
+    <None Include="..\Classes\ParticleRadiator.uc">
+      <Filter>Classes\ParticleGenerators</Filter>
+    </None>
+    <None Include="..\Classes\ParticleSalamander.uc">
+      <Filter>Classes\ParticleGenerators</Filter>
+    </None>
+    <None Include="..\Classes\ParticleSkeleton.uc">
+      <Filter>Classes\ParticleGenerators</Filter>
+    </None>
+    <None Include="..\Classes\PulseLineGenerator.uc">
+      <Filter>Classes\ParticleGenerators</Filter>
+    </None>
+    <None Include="..\Classes\SoundHolder.uc">
+      <Filter>Classes\ParticleGenerators</Filter>
+    </None>
+    <None Include="..\Classes\TarpBuilder.uc">
+      <Filter>Classes\ParticleGenerators</Filter>
+    </None>
+    <None Include="..\Classes\Force.uc">
+      <Filter>Classes\BaseClasses</Filter>
+    </None>
+    <None Include="..\Classes\ParticleGenerator.uc">
+      <Filter>Classes\BaseClasses</Filter>
+    </None>
+    <None Include="..\Classes\ParticleTemplate.uc">
+      <Filter>Classes\BaseClasses</Filter>
+    </None>
+    <None Include="..\Classes\ActorCollisionNotifier.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\AnchorForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\AttractionForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\BlowerForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\BoneLocatorForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\CollisionAnchor.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\CollisionDiscForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\CollisionGlider.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\CollisionSphereForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\ColorForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\DecayForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\DestroyOnDamage.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\FadeForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\FadeInForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\FadeOutForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\FrictionForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\GeoCollideAndMerge.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\GeometryCollider.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\GeometryColliderEx.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\GlobalAccelerator.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\InertiaForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\LimitedResizeForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\LocationGrouped.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\LocatorForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\MaxVelocityForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\MeshAnchor.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\MinDecayForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\MoveZig.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\MultiTemplateForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\NeuralNetForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\OnDestroyForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\OscillatingPerParticleForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\ParticleDamage.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\ParticleSalamanderForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\PerParticleFriction.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\PerParticleGravity.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\RepulsionForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\ResizeForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\RigidBody.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\RotationForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\RotationGrouped.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\SlipForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\SpringForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\SpringLocator.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\TarpCollider.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\TriForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\TriangleForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\VariablePerParticleGravity.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\VoidDestroyer.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\WindForce.uc">
+      <Filter>Classes\Forces</Filter>
+    </None>
+    <None Include="..\Classes\NewWind.uc">
+      <Filter>Classes\Affectors</Filter>
+    </None>
+    <None Include="..\Classes\ParticleAffector.uc">
+      <Filter>Classes\Affectors</Filter>
+    </None>
+    <None Include="..\Classes\ParticleBlower.uc">
+      <Filter>Classes\Affectors</Filter>
+    </None>
+    <None Include="..\Classes\ParticleColliderDisc.uc">
+      <Filter>Classes\Affectors</Filter>
+    </None>
+    <None Include="..\Classes\ParticleColliderSphere.uc">
+      <Filter>Classes\Affectors</Filter>
+    </None>
+    <None Include="..\Classes\ElectricGenerator.uc">
+      <Filter>Classes\Helpers</Filter>
+    </None>
+    <None Include="..\Classes\ParticleLoader.uc">
+      <Filter>Classes\Helpers</Filter>
+    </None>
+    <None Include="..\Classes\ParticleRef.uc">
+      <Filter>Classes\Helpers</Filter>
+    </None>
+    <None Include="..\Classes\ParticleSpawner.uc">
+      <Filter>Classes\Helpers</Filter>
+    </None>
+    <None Include="..\Classes\ParticleSystemAssets.uc">
+      <Filter>Classes\Helpers</Filter>
+    </None>
+    <None Include="..\Classes\ReplicatedEffect.uc">
+      <Filter>Classes\Helpers</Filter>
+    </None>
+    <None Include="..\Classes\Squib.uc">
+      <Filter>Classes\Helpers</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ABarbbieHareDesigner.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AElectricGenerator.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="ALineManager.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AParticleGenerator.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AParticleRadiator.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AParticleRef.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AParticleSalamander.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AParticleSkeleton.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="APulseLineGenerator.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="ATarpBuilder.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystems.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="SerializeParticles.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UBendiBeamTemplate.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UForce.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UParticleTemplate.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UPulseLineTemplate.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UTarpBuilderTemplate.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnAffectors.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnForces.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnGeneratorPrimitive.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnTemplates.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Inc\ParticleSystems.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ParticleSystemsClasses.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\SerializeParticles.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UForce.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UParticleTemplate.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnForceVars.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnGeneratorPrimitive.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnParticleRender.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnParticleRenderTypes.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnParticles.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UActorCollisionNotifier.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UAnchorForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UAttractionForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UBlowerForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UBoneLocatorForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UCollisionDiscForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UCollisionSphereForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UColorForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UDecayForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UDestroyOnDamage.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UFadeForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UFadeInForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UFadeOutForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UFrictionForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UGeoCollideAndMerge.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UGeometryCollider.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UGeometryColliderEx.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UGlobalAccelerator.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UInertiaForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ULimitedResizeForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ULocationGrouped.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ULocatorForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UMaxVelocityForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UMeshAnchor.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UMinDecayForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UMoveZig.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UMultiTemplateForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UNeuralNetForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UOnDestroyForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UOscillatingPerParticleForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UParticleSalamanderForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UPerParticleFriction.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UPerParticleGravity.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\URepulsionForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UResizeForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\URigidBody.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\URotationForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\URotationGrouped.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USlipForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USpringForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USpringLocator.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UTarpCollider.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UTriForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UTriangleForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UVariablePerParticleGravity.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UVoidDestroyer.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UWindForce.h">
+      <Filter>Inc\Forces_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UActorParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UBendiBeamTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ULineManagerTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UParticleDecalTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UPointParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UPulseLineTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\URecursiveParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\URotatingParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USprite3DParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USpriteParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UStrandParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UStreakParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UTarpBuilderTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UTexturedStreakParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UTriParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UTriangleParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UViewVelocityScaledParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UWetWindshildParticleTemplate.h">
+      <Filter>Inc\Templates_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ABarbbieHareDesigner.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AElectricGenerator.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ALineManager.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AParticleAffector.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AParticleBlower.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AParticleColliderDisc.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AParticleColliderSphere.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AParticleGenerator.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AParticleRadiator.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AParticleRef.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AParticleSalamander.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AParticleSkeleton.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\APulseLineGenerator.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ATarpBuilder.h">
+      <Filter>Inc\Actors_h</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

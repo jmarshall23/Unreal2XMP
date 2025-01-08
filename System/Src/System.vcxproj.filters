@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="INI">
+      <UniqueIdentifier>{88255578-5366-43ae-a747-b5b5801cb84e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="INT">
+      <UniqueIdentifier>{1e461a35-4eae-45e4-aa2b-571f250d2755}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs">
+      <UniqueIdentifier>{cce0b201-1a46-452c-82ff-8ef6751317ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs\Public">
+      <UniqueIdentifier>{a2212ee5-8aca-4bbf-b27b-bd9cb82569b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs\Public\DevHelp">
+      <UniqueIdentifier>{ef356513-d346-4233-8058-843ffc094c33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs\Public\Help">
+      <UniqueIdentifier>{2072aad5-e782-443a-a831-5aa84f0290f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs\Private">
+      <UniqueIdentifier>{f8634d85-0fa0-4938-ab9d-0e4c8f27013d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\U2XMP.ini">
+      <Filter>INI</Filter>
+    </None>
+    <None Include="..\UDNHelpTopics.ini">
+      <Filter>INI</Filter>
+    </None>
+    <None Include="..\UnrealEd.ini">
+      <Filter>INI</Filter>
+    </None>
+    <None Include="..\UnrealEdTips.ini">
+      <Filter>INI</Filter>
+    </None>
+    <None Include="..\User.ini">
+      <Filter>INI</Filter>
+    </None>
+    <None Include="..\ALAudio.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\Console.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\Core.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\Credits.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\D3DDrv.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\Editor.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\Engine.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\GameOver.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\Intro.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\IpDrv.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\NormalCredits.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\SpecialCredits.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\Startup.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\Titles.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\Tutorial.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\U2HUD.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\U2Menus.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\U2XMP.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\UI.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\UWeb.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\UnrealEd.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\WinDrv.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\Window.int">
+      <Filter>INT</Filter>
+    </None>
+    <None Include="..\..\Docs\Public\DevHelp\SyntaxHighlighting.txt">
+      <Filter>Docs\Public\DevHelp</Filter>
+    </None>
+    <None Include="..\..\Docs\Public\DevHelp\UserType.dat">
+      <Filter>Docs\Public\DevHelp</Filter>
+    </None>
+    <None Include="..\..\Docs\Public\DevHelp\dlg.reg">
+      <Filter>Docs\Public\DevHelp</Filter>
+    </None>
+    <None Include="..\..\Docs\Public\DevHelp\u2s.reg">
+      <Filter>Docs\Public\DevHelp</Filter>
+    </None>
+    <None Include="..\..\Docs\Public\DevHelp\uc.reg">
+      <Filter>Docs\Public\DevHelp</Filter>
+    </None>
+    <None Include="..\..\Docs\Public\Help\U2XMPCommands.doc">
+      <Filter>Docs\Public\Help</Filter>
+    </None>
+    <None Include="..\..\Docs\Public\Help\UnrealIConsole.htm">
+      <Filter>Docs\Public\Help</Filter>
+    </None>
+    <None Include="..\..\Docs\Private\U2AnimationInfo.txt">
+      <Filter>Docs\Private</Filter>
+    </None>
+    <None Include="System.mak" />
+  </ItemGroup>
+</Project>

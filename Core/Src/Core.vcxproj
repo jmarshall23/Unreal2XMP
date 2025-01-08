@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <ProjectGuid>{EA4DB3F7-E398-6BAE-CE34-BF0747A28A0F}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\Lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\Lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm256  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Vorbis\Inc\;..\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CORE_API=__declspec(dllexport);_WINDOWS;UNICODE;_DEBUG;_WIN32_IE=0x0400;_WIN32_WINDOWS=0x0410;_WIN32_WINNT=0x0500;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>UninitializedLocalUsageCheck</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>CorePrivate.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/Core.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>..\..\Vorbis\Lib\ogg.lib;..\..\Vorbis\Lib\vorbis.lib;..\..\Vorbis\Lib\vorbisfile.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../System/Core.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>LIBCD;LIBCMTD;MSVCRTD;LIBC;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\..\Lib/Core.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x10100000</BaseAddress>
+      <ImportLibrary>.\..\Lib/Core.lib</ImportLibrary>
+      <HeapReserveSize>
+      </HeapReserveSize>
+      <HeapCommitSize>
+      </HeapCommitSize>
+      <StackReserveSize>80000000</StackReserveSize>
+      <StackCommitSize>80000000</StackCommitSize>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Lib/Core.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm256  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\Inc;..\..\Vorbis\Inc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CORE_API=__declspec(dllexport);_WINDOWS;NDEBUG;UNICODE;_WIN32_IE=0x0400;_WIN32_WINDOWS=0x0410;_WIN32_WINNT=0x0500;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>CorePrivate.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Release/Core.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <BrowseInformation>
+      </BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>..\..\Vorbis\Lib\ogg.lib;..\..\Vorbis\Lib\vorbis.lib;..\..\Vorbis\Lib\vorbisfile.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../System/Core.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>LIBCD;LIBCMTD;MSVCRTD;LIBC;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>.\..\Lib/Core.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <BaseAddress>0x10100000</BaseAddress>
+      <ImportLibrary>.\..\Lib/Core.lib</ImportLibrary>
+      <StackReserveSize>80000000</StackReserveSize>
+      <StackCommitSize>80000000</StackCommitSize>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Lib/Core.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Core.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="FTimerManager.cpp" />
+    <ClCompile Include="UExporter.cpp" />
+    <ClCompile Include="UFactory.cpp" />
+    <ClCompile Include="UnAnsi.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="UnBits.cpp" />
+    <ClCompile Include="UnCache.cpp" />
+    <ClCompile Include="UnClass.cpp" />
+    <ClCompile Include="UnCorSc.cpp" />
+    <ClCompile Include="UnCoreNative.cpp" />
+    <ClCompile Include="UnCoreNet.cpp" />
+    <ClCompile Include="UnExec.cpp" />
+    <ClCompile Include="UnLinker.cpp" />
+    <ClCompile Include="UnMath.cpp" />
+    <ClCompile Include="UnMem.cpp" />
+    <ClCompile Include="UnMisc.cpp" />
+    <ClCompile Include="UnName.cpp" />
+    <ClCompile Include="UnObj.cpp" />
+    <ClCompile Include="UnProp.cpp" />
+    <ClCompile Include="UnVcWin32.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Loki\SmallObj.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CorePrivate.h" />
+    <ClInclude Include="..\Inc\Core.h" />
+    <ClInclude Include="..\Inc\FCodec.h" />
+    <ClInclude Include="..\Inc\FConfigCacheIni.h" />
+    <ClInclude Include="..\Inc\FFeedbackContextAnsi.h" />
+    <ClInclude Include="..\Inc\FFeedbackContextWindows.h" />
+    <ClInclude Include="..\Inc\FFileManagerAnsi.h" />
+    <ClInclude Include="..\Inc\FFileManagerArc.h" />
+    <ClInclude Include="..\Inc\FFileManagerGeneric.h" />
+    <ClInclude Include="..\Inc\FFileManagerLinux.h" />
+    <ClInclude Include="..\Inc\FFileManagerWindows.h" />
+    <ClInclude Include="..\Inc\FMallocAnsi.h" />
+    <ClInclude Include="..\Inc\FMallocDebug.h" />
+    <ClInclude Include="..\Inc\FMallocWindows.h" />
+    <ClInclude Include="..\Inc\FMutex.h" />
+    <ClInclude Include="..\Inc\FOutputDeviceAnsiError.h" />
+    <ClInclude Include="..\Inc\FOutputDeviceDebug.h" />
+    <ClInclude Include="..\Inc\FOutputDeviceFile.h" />
+    <ClInclude Include="..\Inc\FOutputDeviceNull.h" />
+    <ClInclude Include="..\Inc\FOutputDeviceStdout.h" />
+    <ClInclude Include="..\Inc\FOutputDeviceWindowsError.h" />
+    <ClInclude Include="..\Inc\FTimerManager.h" />
+    <ClInclude Include="..\Inc\THashTable.h" />
+    <ClInclude Include="..\Inc\TMatrix.h" />
+    <ClInclude Include="..\Inc\TVector.h" />
+    <ClInclude Include="..\Inc\Tensors.h" />
+    <ClInclude Include="..\Inc\UExporter.h" />
+    <ClInclude Include="..\Inc\UFactory.h" />
+    <ClInclude Include="..\Inc\UnArc.h" />
+    <ClInclude Include="..\Inc\UnBits.h" />
+    <ClInclude Include="..\Inc\UnBuild.h" />
+    <ClInclude Include="..\Inc\UnCId.h" />
+    <ClInclude Include="..\Inc\UnCache.h" />
+    <ClInclude Include="..\Inc\UnClass.h" />
+    <ClInclude Include="..\Inc\UnCorObj.h" />
+    <ClInclude Include="..\Inc\UnCoreNative.h" />
+    <ClInclude Include="..\Inc\UnCoreNet.h" />
+    <ClInclude Include="..\Inc\UnExec.h" />
+    <ClInclude Include="..\Inc\UnFile.h" />
+    <ClInclude Include="..\Inc\UnGnuG.h" />
+    <ClInclude Include="..\Inc\UnLinker.h" />
+    <ClInclude Include="..\Inc\UnMath.h" />
+    <ClInclude Include="..\Inc\UnMem.h" />
+    <ClInclude Include="..\Inc\UnMsg.h" />
+    <ClInclude Include="..\Inc\UnName.h" />
+    <ClInclude Include="..\Inc\UnNames.h" />
+    <ClInclude Include="..\Inc\UnObjBas.h" />
+    <ClInclude Include="..\Inc\UnObjVer.h" />
+    <ClInclude Include="..\Inc\UnScript.h" />
+    <ClInclude Include="..\Inc\UnStack.h" />
+    <ClInclude Include="..\Inc\UnTemplate.h" />
+    <ClInclude Include="..\Inc\UnType.h" />
+    <ClInclude Include="..\Inc\UnUnix.h" />
+    <ClInclude Include="..\Inc\UnVcWin32.h" />
+    <ClInclude Include="..\Inc\UnVcWn32SSE.h" />
+    <ClInclude Include="..\Inc\afxres.h" />
+    <ClInclude Include="..\Loki\SmallObj.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\Commandlet.uc" />
+    <None Include="..\Classes\HelloWorldCommandlet.uc" />
+    <None Include="..\Classes\Locale.uc" />
+    <None Include="..\Classes\Object.uc" />
+    <None Include="..\Classes\SimpleCommandlet.uc" />
+    <None Include="..\Classes\Subsystem.uc" />
+    <None Include="..\Classes\Time.uc" />
+    <None Include="..\..\System\Core.int" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

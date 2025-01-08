@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{65E82515-9DFC-45E0-B76D-C1A63052C87D}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/Vehicles.tlb</TypeLibraryName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/Vehicles.tlb</TypeLibraryName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\Classes\BaseGiantTurret.uc" />
+    <None Include="..\Classes\BaseGiantTurretBarrel.uc" />
+    <None Include="..\Classes\CarnivalTurret.uc" />
+    <None Include="..\Classes\CarnivalTurretBarrel.uc" />
+    <None Include="..\Classes\DamageFilterVehicles.uc" />
+    <None Include="..\Classes\GardenTurret.uc" />
+    <None Include="..\Classes\GardenTurretBarrel.uc" />
+    <None Include="..\Classes\Harbinger.uc" />
+    <None Include="..\Classes\HarbingerBubbleTurret.uc" />
+    <None Include="..\Classes\HarbingerBubbleTurretBarrel.uc" />
+    <None Include="..\Classes\HarbingerCab.uc" />
+    <None Include="..\Classes\HarbingerDriverTurret.uc" />
+    <None Include="..\Classes\HarbingerHusk.uc" />
+    <None Include="..\Classes\HarbingerMessage.uc" />
+    <None Include="..\Classes\HarbingerTire.uc" />
+    <None Include="..\Classes\HarbingerTrigger.uc" />
+    <None Include="..\Classes\HarbingerTurret.uc" />
+    <None Include="..\Classes\HarbingerTurretBarrel.uc" />
+    <None Include="..\Classes\Juggernaut.uc" />
+    <None Include="..\Classes\JuggernautCab.uc" />
+    <None Include="..\Classes\JuggernautFrontTurret.uc" />
+    <None Include="..\Classes\JuggernautFrontTurretBarrel.uc" />
+    <None Include="..\Classes\JuggernautHusk.uc" />
+    <None Include="..\Classes\JuggernautTire.uc" />
+    <None Include="..\Classes\JuggernautTireArm.uc" />
+    <None Include="..\Classes\JuggernautTurret.uc" />
+    <None Include="..\Classes\JuggernautTurretBarrel.uc" />
+    <None Include="..\Classes\JuggernautTurretBarrelBase.uc" />
+    <None Include="..\Classes\KCar.uc" />
+    <None Include="..\Classes\LowlandsGiantTurret.uc" />
+    <None Include="..\Classes\LowlandsGiantTurretBarrel.uc" />
+    <None Include="..\Classes\LowlandsMediumWingedTurret.uc" />
+    <None Include="..\Classes\LowlandsMediumWingedTurretBarrel.uc" />
+    <None Include="..\Classes\LowlandsRoundhouseTurret.uc" />
+    <None Include="..\Classes\LowlandsRoundhouseTurretBarrel.uc" />
+    <None Include="..\Classes\Raptor.uc" />
+    <None Include="..\Classes\RaptorCab.uc" />
+    <None Include="..\Classes\RaptorDriverTurret.uc" />
+    <None Include="..\Classes\RaptorGrinder.uc" />
+    <None Include="..\Classes\RaptorHusk.uc" />
+    <None Include="..\Classes\RaptorMessage.uc" />
+    <None Include="..\Classes\RaptorTire.uc" />
+    <None Include="..\Classes\RaptorTrigger.uc" />
+    <None Include="..\Classes\RaptorTurret.uc" />
+    <None Include="..\Classes\RaptorTurretBarrel.uc" />
+    <None Include="..\Classes\TurretProxy.uc" />
+    <None Include="..\Classes\TurretProxyBall.uc" />
+    <None Include="..\Classes\VehicleExplosion.uc" />
+    <None Include="..\Classes\VehicleHusk.uc" />
+    <None Include="..\Classes\XMPStationaryTurret.uc" />
+    <None Include="..\Classes\XMPVehicle.uc" />
+    <None Include="..\Classes\XMPVehicleCab.uc" />
+    <None Include="..\Classes\XMPVehicleFactory.uc" />
+    <None Include="..\Classes\XMPVehicleMessage.uc" />
+    <None Include="..\Classes\XMPVehicleTire.uc" />
+    <None Include="..\Classes\XMPVehicleTrigger.uc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

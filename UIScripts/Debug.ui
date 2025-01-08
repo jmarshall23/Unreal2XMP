@@ -1,0 +1,345 @@
+[Root]
+Class=FixedSizeContainer
+Component=DebugBG
+Component=DebugToggle
+;Register=Root
+
+[DebugMouse]
+Class=MouseCursor
+Image=MouseCursor
+
+#### BEGIN : Button with mouse over support ####
+
+[ButtonWithDescContainerContainer]
+Class=Container
+
+[ButtonWithDescContainer]
+Class=FixedSizeContainer
+Size=%10%,%11%
+Component=MouseOverButton
+Component=MouseOverTemplate
+
+[MouseOverButton]
+Class=Button
+UpImage=DarkGray
+DownImage=Gray
+Color=255,255,255,255
+Location=%0%,%1%
+Text=%2%
+Action=%3%,%4%
+Action=%3%,%5%
+Alignment=%7%,%8%
+Font=%9%
+Size=%16%,%17%
+Color=%12%,%13%,%14%,%15%
+MouseEnter=Event,MouseOverButton.TurnOnLabel
+MouseExit=Event,MouseOverButton.TurnOffLabel
+Register=MouseOverButton
+
+[MouseOverTemplate]
+Class=MultiStateComponent
+State=LabelOffTemplate
+State=LabelOnTemplate
+Transition=MouseOverButton.TurnOnLabel,0,1,1,LabelOnTemplate
+Transition=MouseOverButton.TurnOffLabel,1,0,1,LabelOnTemplate
+TweenAlpha=True
+
+[LabelOnTemplate]
+Class=Label
+Alignment=HardCenter,HardBottom
+Location=0,-8
+Style=Alpha
+Color=255,255,255,255
+Font=Engine.SmallFont
+Text=%6%
+
+[LabelOffTemplate]
+Class=Label
+Alignment=HardCenter,HardBottom
+Location=0,20
+Style=Alpha
+Color=0,0,0,0
+Font=Engine.SmallFont
+Text=
+
+#### END : Button with mouse over support ####
+
+
+[DebugBG]
+Class=MultiStateComponent
+State=NULL
+State=DisplayedDebugBG
+Transition=HideDebugMenu,1,0,0.5,DisplayedDebugBG
+Transition=ShowDebugMenu,0,1,0.5,DisplayedDebugBG
+NextTransitionEvent=ToggleDebugMenu
+TweenColor=True
+TweenAlpha=True
+Alignment=HardCenter,HardBottom
+Location=0,0
+
+[DisplayedDebugBG]
+Class=ImageComponent
+Image=White
+Color=64,32,32,128
+Align=HardLeft,None
+Size=1600,210
+;DrawOrder=150.0
+
+[DebugToggle]
+Class=MultiStateComponent
+State=NULL
+State=DebugMenu
+Transition=HideDebugMenu,1,0,0,DebugMenu
+Transition=ShowDebugMenu,0,1,0,DebugMenu
+NextTransitionEvent=ToggleDebugMenu
+TweenAlpha=True
+TweenColor=True
+
+[DebugMenu]
+Class=Container
+Component=DebugMouse
+Component=DebugMenuClose
+Component=MBDisplay
+Component=SDisplay
+Component=DDisplay
+Component=VDisplay
+Component=AIDisplay
+
+[DebugMenuClose]
+Class=Container
+Component=Label
+	Font=Engine.smallfont
+	Text=[X]
+	MouseClick=Event,HideDebugMenu
+Component=KeyEvent
+	Key=Escape,Press,Event,HideDebugMenu
+	Key=Mouse4,Release,Event,HideDebugMenu
+Alignment=Left,HardBottom
+Location=8,-196
+DrawOrder=1
+
+// MAIN BUTTONS MENU
+
+[MBMenu]
+Class=FixedSizeContainer
+Alignment=Left,HardBottom
+Location=0,-170
+Style=Alpha
+Component=MBMacro
+;Component=Title
+
+[MBMacro]
+Class=Macro
+Container=ButtonWithDescContainerContainer
+Component=ButtonWithDescContainer
+Item=50,10,STATS,Event,SShowMenu,MBHideMenu,stat commands,Right,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=50,40,TRACE/SHOW,Event,DShowMenu,MBHideMenu,toggle trace debug info / show/hide various classes or paths,Right,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=50,70,MISC,Event,VShowMenu,MBHideMenu,rmode / behindview / view through NPCs/ god mode / playersonly / teleport,Right,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=50,100,AI,Event,AIShowMenu,MBHideMenu,AI related commands,Right,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+
+;[Title]
+;Class=Label
+;Alignment=HardRight,Center
+;Style=Alpha
+;Color=255,255,255,255
+;Location=0,50
+;Font=Engine.SmallFont
+;Text=Shortcuts Menu
+
+[MBDisplay]
+Class=MultiStateComponent
+State=MBMenu
+State=NULL
+Alignment=Left,Center
+Transition=MBHideMenu,0,1,1,MBMenu
+Transition=MBShowMenu,1,0,1,MBMenu
+TweenAlpha=True
+
+// STATS
+
+[SMenu]
+Class=FixedSizeContainer
+Style=Alpha
+Alignment=Left,HardBottom
+Location=0,-170
+Component=SMacro
+Component=SBack
+
+[SBack]
+Class=Button
+UpImage=DarkGray
+DownImage=Gray
+Alignment=Left,None
+Location=10,10
+Font=Engine.SmallFont
+Text=    Back    
+Action=Event,SHideMenu
+Action=Event,MBShowMenu
+
+[SMacro]
+Class=Macro
+Container=ButtonWithDescContainerContainer
+Component=ButtonWithDescContainer
+
+;!!ARL (mdf)-- why do I need to specify a 2nd dummy command?
+Item=100,10,ALL,ConsoleCommand,stat all,dummy,show all stats,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,40,GAME,ConsoleCommand,stat game,dummy,show game-related stats,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,70,HARDWARE,ConsoleCommand,stat hardware,dummy,show hardware-related stats,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,100,RENDER,ConsoleCommand,stat render,dummy,show rendering-related stats,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,10,QUICK,ConsoleCommand,stat quick,dummy,show main stats,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,40,FPS,ConsoleCommand,stat fps,dummy,show currrent framerate,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,70,CLEAR,ConsoleCommand,stat clear,dummy,reset min / max / avg for applicable stats" data,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,100,TIMEDEMO,ConsoleCommand,toggletimedemo,dummy,toggle timedemo display,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+
+[SDisplay]
+Class=MultiStateComponent
+State=NULL
+State=SMenu
+Transition=SShowMenu,0,1,1,SMenu
+Transition=SHideMenu,1,0,1,SMenu
+TweenAlpha=True
+
+// TRACE / SHOW
+
+[DMenu]
+Class=FixedSizeContainer
+Style=Alpha
+Alignment=Left,HardBottom
+Location=0,-170
+Component=DMacro
+Component=DBack
+
+[DBack]
+Class=Button
+UpImage=DarkGray
+DownImage=Gray
+Alignment=Left,None
+Location=10,10
+Font=Engine.SmallFont
+Text=    Back    
+Action=Event,DHideMenu
+Action=Event,MBShowMenu
+
+[DMacro]
+Class=Macro
+Container=ButtonWithDescContainerContainer
+Component=ButtonWithDescContainer
+Item=100,10,TraceToggle,ConsoleCommand,tracetoggle,dummy,toggle showing debug info for actor under crosshair,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,40,TraceLock,ConsoleCommand,tracelock,dummy,lock actor under crosshair (show debug info even if not under crosshair),Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,70,TraceLevel,ConsoleCommand,tracetogglelevel,dummy,toggle whether to allow trace to hit level geometry,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,100,TraceConsoleLog,ConsoleCommand,tracetoggleconsole,dummy,toggle whether trace information is sent to console,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,130,TraceLog,ConsoleCommand,tracetogglelog,none,toggle whether trace information is sent to log,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+
+Item=240,10,ToggleShowAll,ConsoleCommand,toggleshowall,dummy,toggle showing all hidden actors,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,40,ToggleShowNPs,ConsoleCommand,toggleshownps,dummy,toggle showing navigation points,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,70,ToggleShowKPs,ConsoleCommand,toggleshowkps,dummy,toggle showing keypoints,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,100,ToggleShowPaths,ConsoleCommand,paths show,dummy,toggle showing paths / unclipped / none,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,130,ToggleCC,ConsoleCommand,togglecc,dummy,toggle showing collision cylinder for the actor under the crosshair,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+
+[DDisplay]
+Class=MultiStateComponent
+State=NULL
+State=DMenu
+Transition=DShowMenu,0,1,1,DMenu
+Transition=DHideMenu,1,0,1,DMenu
+TweenAlpha=True
+
+// MISC
+
+[VMenu]
+Class=FixedSizeContainer
+Style=Alpha
+Alignment=Left,HardBottom
+Location=0,-170
+Component=VMacro
+Component=VBack
+
+[VBack]
+Class=Button
+UpImage=DarkGray
+DownImage=Gray
+Alignment=Left,None
+Location=10,10
+Font=Engine.SmallFont
+Text=    Back    
+Action=Event,VHideMenu
+Action=Event,MBShowMenu
+
+[VMacro]
+Class=Macro
+Container=ButtonWithDescContainerContainer
+Component=ButtonWithDescContainer
+Item=100,10,ToggleRMode,ConsoleCommand,togglermode,dummy,cycle through lighting (rmode) modes,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,40,BehindView,ConsoleCommand,togglebehindview,dummy,toggle behindview,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,70,Invisibility,ConsoleCommand,toggleinvisibility,dummy,toggle invisibility,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,100,ViewNPCs,ConsoleCommand,viewclass pawn,dummy,cycle player's viewpoint through non-dormant NPC's in level,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,130,ViewSelf,ConsoleCommand,viewself,dummy,set viewpoint back to player",Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+
+Item=240,10,God Mode,ConsoleCommand,god,dummy,toggle god mode,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,40,PlayersOnly,ConsoleCommand,playersonly,dummy,freeze everything except the player,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,70,EdHitActor,ConsoleCommand,edhitactor,dummy,edit the actor under the crosshair,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,100,Teleport,ConsoleCommand,teleport,dummy,teleport to the location under the crosshair,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,100,Teleport,ConsoleCommand,unteleport,dummy,teleport to the location under the crosshair,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,130,Where,ConsoleCommand,where,dummy,logs current location,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+
+Item=380,10,Weapons,ConsoleCommand,goodies 0 12,dummy,gives player all weapons,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=380,40,AllAmmo,ConsoleCommand,allammo,dummy,sets all ammo to 999,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=380,70,ToggleInfiniteAmmo,ConsoleCommand,toggleinfiniteammo,dummy,toggles infinite ammo mode,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=380,100,ToggleReloads,ConsoleCommand,togglereloads,dummy,toggles reloading,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=380,130,ToggleScoreboard,ConsoleCommand,togglescoreboard,dummy,toggles debug scoreboard,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+
+[VDisplay]
+Class=MultiStateComponent
+State=NULL
+State=VMenu
+Transition=VShowMenu,0,1,1,VMenu
+Transition=VHideMenu,1,0,1,VMenu
+TweenAlpha=True
+
+// AI
+
+[AIMenu]
+Class=FixedSizeContainer
+Style=Alpha
+Alignment=Left,HardBottom
+Location=0,-170
+Component=AIMacro
+Component=AIBack
+
+[AIBack]
+Class=Button
+UpImage=DarkGray
+DownImage=Gray
+Alignment=Left,None
+Location=10,10
+Font=Engine.SmallFont
+Text=    Back    
+Action=Event,AIHideMenu
+Action=Event,MBShowMenu
+
+[AIMacro]
+Class=Macro
+Container=ButtonWithDescContainerContainer
+Component=ButtonWithDescContainer
+Item=100,10,DebugFlags 240,ConsoleCommand,debugflags 240,dummy,turns on full debug mode for NPC under crosshair,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,40,DebugFlags 0,ConsoleCommand,debugflags 0,dummy,turns off debug mode for NPC under crosshair,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,70,Here,ConsoleCommand,here,dummy,orders all NPCs in level to player's location,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=100,100,Nowhere,ConsoleCommand,nowhere,dummy,aborts here/there commands,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+
+Item=240,10,ToggleFreezeNPCs,ConsoleCommand,togglefreezenpcs,dummy,toggles NPCs being able to move/shoot,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,40,ToggleLockNPCs,ConsoleCommand,togglelocknpcs,dummy,toggles NPCs being able to move (can still shoot),Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,70,Health 9999 Hit,ConsoleCommand,sethealth 9999,dummy,sets health of NPC under crosshair to 9999,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=240,100,Health 9999 All,ConsoleCommand,sethealth 9999 all,dummy,sets health for all PCs/NPCs to 9999,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+
+Item=380,10,ReloadScripts,ConsoleCommand,reloadscripts,dummy,reloads and restarts scripts for all NPCs,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=380,40,KillHitActor,ConsoleCommand,killhitactor,dummy,destroys actor under crosshair,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=380,70,KillNPCs,ConsoleCommand,killnpcs,dummy,destroys all NPCs,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+Item=380,100,KillNPCsExcept,ConsoleCommand,killnpcsexcept,dummy,destroys all NPCs except for one under crosshair,Left,None,Engine.SmallFont,80,80,192,192,255,255,120,20
+
+[AIDisplay]
+Class=MultiStateComponent
+State=NULL
+State=AIMenu
+Transition=AIShowMenu,0,1,1,AIMenu
+Transition=AIHideMenu,1,0,1,AIMenu
+TweenAlpha=True

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0FC3C5DB-67B3-49C9-A60C-588C02DC4F39}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\Classes\DamageFilterDeployed.uc" />
+    <None Include="..\Classes\DeployableAmmo.uc" />
+    <None Include="..\Classes\DeployableInventory.uc" />
+    <None Include="..\Classes\DeployedUnit.uc" />
+    <None Include="..\Classes\ProxyPawn.uc" />
+    <None Include="..\Classes\StationaryPawnControllerDefensive.uc" />
+    <None Include="..\Classes\StationaryPawnControllerOffensive.uc" />
+    <None Include="..\Classes\FieldGenerator.uc" />
+    <None Include="..\Classes\FieldGeneratorAmmo.uc" />
+    <None Include="..\Classes\FieldGeneratorDeployable.uc" />
+    <None Include="..\Classes\ForceWall.uc" />
+    <None Include="..\Classes\ForceWallBeam.uc" />
+    <None Include="..\Classes\AutoTurret.uc" />
+    <None Include="..\Classes\AutoTurretAmmo.uc" />
+    <None Include="..\Classes\AutoTurretDeployable.uc" />
+    <None Include="..\Classes\ProximitySensor.uc" />
+    <None Include="..\Classes\ProximitySensorAmmo.uc" />
+    <None Include="..\Classes\ProximitySensorController.uc" />
+    <None Include="..\Classes\ProximitySensorDeployable.uc" />
+    <None Include="..\Classes\RocketTurret.uc" />
+    <None Include="..\Classes\RocketTurretAmmo.uc" />
+    <None Include="..\Classes\RocketTurretDeployable.uc" />
+    <None Include="..\Classes\RocketTurretProjectile.uc" />
+    <None Include="..\Classes\Turret.uc" />
+    <None Include="..\Classes\TurretController.uc" />
+    <None Include="..\Classes\WeaponAutoTurret.uc" />
+    <None Include="..\Classes\WeaponAutoTurretAmmo.uc" />
+    <None Include="..\Classes\WeaponRocketTurret.uc" />
+    <None Include="..\Classes\WeaponRocketTurretAmmo.uc" />
+    <None Include="..\Classes\AmmoPacks.uc" />
+    <None Include="..\Classes\EnergyPacks.uc" />
+    <None Include="..\Classes\HealthPacks.uc" />
+    <None Include="..\Classes\PackBase.uc" />
+    <None Include="..\Classes\PackBaseAmmo.uc" />
+    <None Include="..\Classes\DamageTypeMine.uc" />
+    <None Include="..\Classes\DamageTypeTripMine.uc" />
+    <None Include="..\Classes\LandMineAmmo.uc" />
+    <None Include="..\Classes\LandMineDeployable.uc" />
+    <None Include="..\Classes\LandMines.uc" />
+    <None Include="..\Classes\LaserTripMineAmmo.uc" />
+    <None Include="..\Classes\LaserTripMineDeployable.uc" />
+    <None Include="..\Classes\LaserTripMines.uc" />
+    <None Include="..\Classes\MineBase.uc" />
+    <None Include="..\Classes\ExplosionAutoTurret.uc" />
+    <None Include="..\Classes\ExplosionFieldGenerator.uc" />
+    <None Include="..\Classes\ExplosionProximitySensor.uc" />
+    <None Include="..\Classes\ExplosionRocketTurret.uc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

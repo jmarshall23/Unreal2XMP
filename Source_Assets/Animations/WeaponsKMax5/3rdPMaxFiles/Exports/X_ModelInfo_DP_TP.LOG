@@ -1,0 +1,24 @@
+
+
+ Unreal skeletal exporter - Model information for [DP_TP.psk] 
+
+ Skin faces:   1161
+ Skin vertices:    671
+ Skin wedges (vertices with unique U,V):   1157
+ Total bone-to-vertex linkups:    671
+ Reference bones:      2
+ Unique materials:      1
+
+ = materials =
+ * Index: [ 0]  name: sredhgdahg  
+   Original bitmap: DP_Skin1.tga  Path: C:\!U2XMP\Weapons\Textures
+    - Skin Index:  0
+   - render mode flags:
+ 
+
+ BONE LIST        [2] total bones in reference skeleton. 
+  number     name                           (parent) 
+  [  0 ]    [Weapon01                       ]      (  0 ) 
+  [  1 ]    [#Muzzleflash                   ]      (  0 ) 
+ 
+

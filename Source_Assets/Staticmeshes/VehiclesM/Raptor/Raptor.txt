@@ -1,0 +1,46 @@
+All Offsets are relative to the origin of the main body, All values rounded to the nearest hundredth. If no constraint is listed, no constraint is needed (assuming one axis of rotation).
+
+BODY		: x:0 y:0 z:0
+COLLISION: MCDCX_Body1, 2, 3, and 4. 
+
+LeftFrontTire   : x:106.26 y:96.03 z:-62.04 (This is The Raptor Tire Staticmesh)
+COLLISION: MCDCX_Tire1.
+
+LeftRearTire    : x:-139.92  y:96.03 z:-62.04
+COLLISION: See "LeftFrontTire"
+
+RightFrontTire  : x:106.26 y:-96.73  z:-62.04 (rotate the "Right" tires 180 degrees from th' top down... make sure the outside faces out)
+COLLISION: See "LeftFrontTire"
+
+RightRearTire   : x:-139.92  y:-96.73  z:-62.04 (rotate the "Right" tires 180 degrees from th' top down... make sure the outside faces out)
+COLLISION: See "LeftFrontTire"
+
+Turret          : x:-113.54   y:0.00   z:50.10 (constrain rotation to somewhere within 7 to -45 deg. COLLSION: MCDCX_Turret1.
+
+TurretCollar    : x:-113.54   y:0.00   z:14.43
+COLLISION: MCDCX_TurretCollar1.
+
+LeftGrinder     : x:151.97 y:29.19 z:-33.91 (This is the Raptor Grinder StaticMesh)
+Rotate this puppy 38 degrees on its pitch.
+COLLISION: MCDCX_Grinder1.
+
+RightGrinder    : x:151.97 y:-29.88 z:-33.91 (offset initial rotation 15 degrees along local heading (if this is confusing, talk to Travis), to ensure that teeth mesh)
+COLLISION: See "LeftGrinder"
+
+DashCam		: x:7.62   y:0.00  z:17.39  (oriented in the direction of the vehicle)
+LIMITS: -90 to 90 on the Yaw, -16 to 45 on the Pitch
+
+TurretCam	: x:-61.19 y:0.00  z:75.60 (oriented in the direction of the vehicle)
+
+Models Used:
+RaptorBody_TD_001
+RaptorGrinder_TD_001
+RaptorTire_TD_001
+RaptorTurret_TD_001
+RaptorTurretCollar_TD_001
+
+Bitmaps Used:
+Raptor_001
+
+92 polys of Convex Mesh Collision, 
+Four Cylindrical collision meshes (One Unique)

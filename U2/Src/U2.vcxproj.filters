@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{1b008ca4-349a-49f5-9de1-d6ec33e82677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Artifact Holders">
+      <UniqueIdentifier>{7810a27d-8c04-4c03-91c9-6be13241296a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Artifact Pickups">
+      <UniqueIdentifier>{9c663933-5f2f-4948-8a6e-7cfdc5385696}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Artifact Inventory">
+      <UniqueIdentifier>{c04ea23d-4e25-4497-9799-92da86ca4f0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\DamageTypes">
+      <UniqueIdentifier>{1c25a9ea-c5bb-4fc4-a32a-1c51156c6e0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Damage Filters">
+      <UniqueIdentifier>{d63aa9a4-453c-4700-beb6-d4bb62ba23b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\PowerSuits">
+      <UniqueIdentifier>{c2224759-6237-460b-856b-1f61ff321461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Artifact Attachments">
+      <UniqueIdentifier>{24982355-0050-4f8f-aba8-217cd6fa604a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\PowerUps">
+      <UniqueIdentifier>{eb866ead-9d58-4d43-97e8-49982c62b4a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\VoiceMessages">
+      <UniqueIdentifier>{84762e00-5492-4652-8193-f4e4cf06d387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game Notifies">
+      <UniqueIdentifier>{cb4c8751-acd7-4f64-b5af-ce41eccb94f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{681b1adb-9651-437d-979e-12ca7bee86a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{c0d82fee-7e1c-4044-8463-6efe61aa66ea}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\AsteroidGame.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DeploySpinner.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DeploymentPoint.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\EnergySource.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HackSwitch.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HackTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HackTriggerProxied.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HitActorDebugInfoManager.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\IconNode.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MapListXMP.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ScoreKeeper.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ScoreMonkey.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ScoreboardInfoManager.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\StationaryPawn.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\StationaryPawnController.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TeamMeshActor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TripLaser.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TripLaserProxy.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\U2CheatManager.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\U2Pawn.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\U2PlayerController.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\U2WeaponAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\WeaponPanel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPGame.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPGameIntro.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPGameMessage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactHolder.uc">
+      <Filter>Classes\Artifact Holders</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactHolderDefense.uc">
+      <Filter>Classes\Artifact Holders</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactHolderHealth.uc">
+      <Filter>Classes\Artifact Holders</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactHolderShield.uc">
+      <Filter>Classes\Artifact Holders</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactHolderSkill.uc">
+      <Filter>Classes\Artifact Holders</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactHolderStamina.uc">
+      <Filter>Classes\Artifact Holders</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactHolderWeaponDamage.uc">
+      <Filter>Classes\Artifact Holders</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactDefense.uc">
+      <Filter>Classes\Artifact Pickups</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactHealth.uc">
+      <Filter>Classes\Artifact Pickups</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactPickup.uc">
+      <Filter>Classes\Artifact Pickups</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactShield.uc">
+      <Filter>Classes\Artifact Pickups</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactSkill.uc">
+      <Filter>Classes\Artifact Pickups</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactStamina.uc">
+      <Filter>Classes\Artifact Pickups</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactWeaponDamage.uc">
+      <Filter>Classes\Artifact Pickups</Filter>
+    </None>
+    <None Include="..\Classes\Artifact.uc">
+      <Filter>Classes\Artifact Inventory</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactInvDefense.uc">
+      <Filter>Classes\Artifact Inventory</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactInvHealth.uc">
+      <Filter>Classes\Artifact Inventory</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactInvShield.uc">
+      <Filter>Classes\Artifact Inventory</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactInvSkill.uc">
+      <Filter>Classes\Artifact Inventory</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactInvStamina.uc">
+      <Filter>Classes\Artifact Inventory</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactInvWeaponDamage.uc">
+      <Filter>Classes\Artifact Inventory</Filter>
+    </None>
+    <None Include="..\Classes\AssaultDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\AutoTurretDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\CarnivalMGDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\DamageTypeBiological.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\DamageTypeBiologicalGas.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\DamageTypeEMP.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\DamageTypeElectrical.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\DamageTypeEnergyRifle.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\DamageTypePhysical.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\DamageTypeThermal.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\DamageTypeThermalExplosiveRound.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\FlamethrowerDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\GardenMGDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautCannonDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\MortarDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\PistolDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorMGDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\RocketDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\RocketTurretDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\RoundHouseMGDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\ShotgunDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\SniperDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\WingedCannonDamage.uc">
+      <Filter>Classes\DamageTypes</Filter>
+    </None>
+    <None Include="..\Classes\DamageFilter.uc">
+      <Filter>Classes\Damage Filters</Filter>
+    </None>
+    <None Include="..\Classes\DamageFilterPowerSuit.uc">
+      <Filter>Classes\Damage Filters</Filter>
+    </None>
+    <None Include="..\Classes\PowerSuit.uc">
+      <Filter>Classes\PowerSuits</Filter>
+    </None>
+    <None Include="..\Classes\PowerSuitHeavy.uc">
+      <Filter>Classes\PowerSuits</Filter>
+    </None>
+    <None Include="..\Classes\PowerSuitLight.uc">
+      <Filter>Classes\PowerSuits</Filter>
+    </None>
+    <None Include="..\Classes\PowerSuitMedium.uc">
+      <Filter>Classes\PowerSuits</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactAttachment.uc">
+      <Filter>Classes\Artifact Attachments</Filter>
+    </None>
+    <None Include="..\Classes\DefenseAttachment.uc">
+      <Filter>Classes\Artifact Attachments</Filter>
+    </None>
+    <None Include="..\Classes\HealthAttachment.uc">
+      <Filter>Classes\Artifact Attachments</Filter>
+    </None>
+    <None Include="..\Classes\ShieldAttachment.uc">
+      <Filter>Classes\Artifact Attachments</Filter>
+    </None>
+    <None Include="..\Classes\SkillAttachment.uc">
+      <Filter>Classes\Artifact Attachments</Filter>
+    </None>
+    <None Include="..\Classes\StaminaAttachment.uc">
+      <Filter>Classes\Artifact Attachments</Filter>
+    </None>
+    <None Include="..\Classes\WeaponDamageAttachment.uc">
+      <Filter>Classes\Artifact Attachments</Filter>
+    </None>
+    <None Include="..\Classes\AmmoPickup.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\AmmoPowerUp.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\AmmoStation.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\EnergyPickup.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\EnergyPowerUp.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\EnergyStation.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\HealthPickup.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\HealthPowerUp.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\HealthStation.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\PowerStation.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\PowerUp.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\PowerUpPickup.uc">
+      <Filter>Classes\PowerUps</Filter>
+    </None>
+    <None Include="..\Classes\VM_Acknowledged.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_AllClear.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Artifact.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Backup.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Base.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Defense.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Follow.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Generator.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Hacker.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Medic.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_NoProblem.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Offense.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Repairs.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Sorry.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Supplies.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\VM_Thanks.uc">
+      <Filter>Classes\VoiceMessages</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactReturnedMessage.uc">
+      <Filter>Classes\Game Notifies</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactStolenMessage.uc">
+      <Filter>Classes\Game Notifies</Filter>
+    </None>
+    <None Include="..\Classes\ArtifactStoredMessage.uc">
+      <Filter>Classes\Game Notifies</Filter>
+    </None>
+    <None Include="..\Classes\DeployPointGainedMessage.uc">
+      <Filter>Classes\Game Notifies</Filter>
+    </None>
+    <None Include="..\Classes\DeployPointLostMessage.uc">
+      <Filter>Classes\Game Notifies</Filter>
+    </None>
+    <None Include="..\Classes\EnergySourceGainedMessage.uc">
+      <Filter>Classes\Game Notifies</Filter>
+    </None>
+    <None Include="..\Classes\EnergySourceLostMessage.uc">
+      <Filter>Classes\Game Notifies</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ADeploymentPoint.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AIconNode.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AU2Pawn.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AU2PlayerController.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="U2.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UWeaponPanel.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Inc\AU2Pawn.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AU2PlayerController.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\U2.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\U2Classes.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UWeaponPanel.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

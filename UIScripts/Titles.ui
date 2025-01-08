@@ -1,0 +1,221 @@
+
+[Root]
+Class=FixedSizeContainer
+Component=TitlesTextures
+;Component=U2HUD.TempEditor
+Component=Dispatcher
+Component=FadeDown
+Component=MainLogo
+Component=XMPFlash
+Component=XMPText
+Component=LegendLogo
+Component=PressEscape
+
+[Dispatcher]
+Class=MultiStateComponent
+State=NULL
+Transition=Dispatcher.StartSequence,0,0,100.0,NULL
+TriggerEvent=0,0.000,Event,Dispatcher.FadeDown
+TriggerEvent=0,0.000,Event,Dispatcher.ShowMainLogo
+TriggerEvent=0,0.016,Event,Dispatcher.StartPulse
+TriggerEvent=0,0.026,Event,Dispatcher.FadeInFullText
+TriggerEvent=0,0.040,Event,Dispatcher.ShowLogoLegend
+TriggerEvent=0,0.050,Trigger,xmp_logo
+TriggerEvent=0,0.030,Event,Dispatcher.ShowPressEscape
+InitialEvent=Event,Dispatcher.StartSequence
+Register=Dispatcher
+
+[MainLogo]
+Class=MultiStateComponent
+State=LogoImage:760/180/0
+State=LogoImage:512/128/255
+Transition=Dispatcher.ShowMainLogo,0,1,2.3,LogoImage:0/0/0
+TweenReverseEase=true
+TweenSize=true
+TweenAlpha=true
+TweenLocation=false
+DrawOrder=1
+
+[LogoImage]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=Unreal2Logo
+	Size=%0%,%1%
+	Alpha=%2%
+	Align=Center,Bottom
+Align=HardCenter,HardCenter
+
+[XMPFlash]
+Class=FixedSizeContainer
+Component=PulseEffect:A/400
+Component=PulseEffect:B/-400
+Component=MultiStateComponent
+	State=TweenPiece:0/0
+	State=TweenPiece:58/255
+	State=TweenPiece:620/0
+	Transition=Dispatcher.ExpandXMPFlash,1,2,1.5,TweenPiece:0/0
+	TweenLocation=false
+	TweenSize=true
+	TweenAlpha=true
+	Align=Center,None
+Component=FlashEffect
+Align=HardCenter,HardCenter
+Y=-12
+
+[PulseEffect]
+Class=MultiStateComponent
+State=NULL
+State=PulseEffectImage:%0%/%1%/0
+State=PulseEffectImage:%0%/0/255
+Transition=Dispatcher.StartPulse,1,2,0.6,PulseEffectImage:%0%/0/0
+Transition=PulseEffect.Hide,0,0,0,NULL
+TriggerEvent=0,1.0,Event,PulseEffect.Hide
+TriggerEvent=0,1.0,Event,Dispatcher.ExpandXMP
+TriggerEvent=0,1.0,Event,Dispatcher.ExpandXMPFlash
+TweenReverseEase=true
+TweenLocation=true
+TweenAlpha=true
+Register=PulseEffect
+
+[PulseEffectImage]
+Class=ImageComponent
+Image=PulseEffect%0%
+Size=128,16
+Align=HardCenter,HardCenter
+X=%1%
+Alpha=%2%
+
+[TweenPiece]
+Class=RealComponent
+Width=%0%
+Alpha=%1%
+
+[FlashEffect]
+Class=TileContainer
+Horizontal=true
+Component=ImageComponent
+	Image=FlashEffectLeft
+	Size=40,56
+	AlphaAccess=exp(Parent.Parent.TweenPiece.Alpha)
+Component=ImageComponent
+	Image=FlashEffectMid
+	Height=56
+	WidthAccess=exp(Parent.Parent.TweenPiece.Width)
+	AlphaAccess=exp(Parent.Parent.TweenPiece.Alpha)
+Component=ImageComponent
+	Image=FlashEffectRight
+	Size=40,56
+	AlphaAccess=exp(Parent.Parent.TweenPiece.Alpha)
+Align=Center,None
+Location=-2,-19
+
+[XMPText]
+Class=FixedSizeContainer
+Component=MultiStateComponent
+	State=NULL
+	State=XMPFullText
+	Transition=Dispatcher.FadeInFullText,0,1,5.0,XMPFullText
+	TweenLocation=false
+	TweenAlpha=true
+	Align=Center,None
+Component=XMPLetterTween:X/-32/-119
+Component=XMPLetterTween:M/-12/-12
+Component=XMPLetterTween:P/14/51
+Align=HardCenter,HardCenter
+DrawOrder=1
+Y=-12
+
+[XMPLetterTween]
+Class=MultiStateComponent
+State=NULL
+State=XMPLetter:%0%/%1%/BLACK
+State=XMPLetter:%0%/%2%/BLUE
+State=XMPLetter:%0%/%2%/GOLDENROD
+State=XMPLetter:%0%/%2%/ORANGERED
+Transition=Dispatcher.ExpandXMP,1,2,2.0,XMPLetter:%0%/0/WHITE
+Transition=XMPLetterTween.ColorXMP,2,3,3.5,XMPLetter:%0%/0/WHITE
+Transition=XMPLetterTween.ColorCycleA,3,4,5.0,XMPLetter:%0%/0/WHITE
+Transition=XMPLetterTween.ColorCycleB,4,3,6.0,XMPLetter:%0%/0/WHITE
+TriggerEvent=0,0.7,Event,XMPLetterTween.ColorXMP
+TriggerEvent=1,1.0,Event,XMPLetterTween.ColorCycleA
+TriggerEvent=2,1.0,Event,XMPLetterTween.ColorCycleB
+TriggerEvent=3,1.0,Event,XMPLetterTween.ColorCycleA
+TweenLocation=true
+TweenColor=true
+Register=XMPLetterTween
+
+[XMPLetter]
+Class=Label
+Color=%2%
+Text=%0%
+X=%1%
+
+[XMPFullText]
+Class=Label
+Text=EXPANDED MULTIPLAYER
+Align=Center,None
+
+[FadeDown]
+Class=MultiStateComponent
+State=BlackScreen
+State=NULL
+Transition=Dispatcher.FadeDown,0,1,8.0,BlackScreen
+TweenLocation=false
+TweenAlpha=true
+TweenLinear=true
+DrawOrder=-100
+
+[BlackScreen]
+Class=ImageComponent
+Image=Black
+Size=4096,4096
+Align=HardCenter,HardCenter
+
+[LegendLogo]
+Class=MultiStateComponent
+State=NULL
+State=LegendLogoImage
+Transition=Dispatcher.ShowLogoLegend,0,1,4.0,LegendLogoImage
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=1
+
+[LegendLogoImage]
+Class=ImageComponent
+Image=LegendLogo
+Size=171,85
+Align=HardCenter,HardCenter
+Y=220
+
+[PressEscape]
+Class=MultiStateComponent
+State=NULL
+State=PressEscapeText
+Transition=Dispatcher.ShowPressEscape,0,1,2.0,PressEscapeText
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=1
+
+[PressEscapeText]
+Class=Label
+Localize=true
+Text=PressEscape
+Align=HardCenter,HardBottom
+
+[TitlesTextures]
+Class=FixedSizeContainer
+Component=Image
+	Material=UIResT.Misc.Unreal2strip_blue
+	FullImage=Unreal2Logo
+Component=Image
+	Material=UIResT.Misc.LEGENDlogo_A512
+	FullImage=LegendLogo
+Component=Image
+	Material=UIResT.SpecialCredits.FlashEffect
+	Image=FlashEffectLeft,0,0,62,128
+	Image=FlashEffectRight,66,0,62,128
+	Image=FlashEffectMid,62,0,4,128
+Component=Image
+	Material=UIResT.SpecialCredits.PulseEffect
+	Image=PulseEffectA,0,0,256,128
+	Image=PulseEffectB,256,0,-256,128

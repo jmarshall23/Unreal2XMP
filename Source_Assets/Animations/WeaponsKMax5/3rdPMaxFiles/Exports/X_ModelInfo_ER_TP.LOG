@@ -1,0 +1,24 @@
+
+
+ Unreal skeletal exporter - Model information for [ER_TP.psk] 
+
+ Skin faces:   1226
+ Skin vertices:    634
+ Skin wedges (vertices with unique U,V):   1055
+ Total bone-to-vertex linkups:    634
+ Reference bones:      2
+ Unique materials:      1
+
+ = materials =
+ * Index: [ 0]  name: gun  
+   Original bitmap: ER_Skin1.tga  Path: C:\!U2XMP\Weapons\Textures
+    - Skin Index:  0
+   - render mode flags:
+ 
+
+ BONE LIST        [2] total bones in reference skeleton. 
+  number     name                           (parent) 
+  [  0 ]    [Weapon01                       ]      (  0 ) 
+  [  1 ]    [#Muzzleflash                   ]      (  0 ) 
+ 
+

@@ -1,0 +1,29 @@
+
+
+ Unreal skeletal exporter - Model information for [LR_TP.psk] 
+
+ Skin faces:    895
+ Skin vertices:    557
+ Skin wedges (vertices with unique U,V):    881
+ Total bone-to-vertex linkups:    557
+ Reference bones:      2
+ Unique materials:      2
+
+ = materials =
+ * Index: [ 0]  name: rifle  
+   Original bitmap: LR_Skin1.tga  Path: C:\!U2XMP\Weapons\Textures
+    - Skin Index:  0
+   - render mode flags:
+ * Index: [ 1]  name: barrel.trans  
+   Original bitmap: LG_FP_Skin1.tga  Path: C:\!U2XMP\Weapons\Textures
+    - Skin Index:  0
+   - render mode flags:
+		- Translucent
+ 
+
+ BONE LIST        [2] total bones in reference skeleton. 
+  number     name                           (parent) 
+  [  0 ]    [Weapon01                       ]      (  0 ) 
+  [  1 ]    [#Muzzleflash                   ]      (  0 ) 
+ 
+

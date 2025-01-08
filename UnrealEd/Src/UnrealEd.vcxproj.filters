@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{f39e8b06-5cbf-473d-aff6-8f30bf621f8c}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{5574e26d-150c-446c-b35e-a0c8a43e2b96}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Res">
+      <UniqueIdentifier>{dd3ae9b6-7bac-47c9-937a-51932b1bed02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{2ab9c3ce-ecf3-42c5-8c5a-0f53509af6bd}</UniqueIdentifier>
+      <Extensions>*.uc</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Browser.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="BrowserAnimation.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPropSheet.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTexProp.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="EdHook.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="EdModes.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericDlgOptions.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="GeomFitUtils.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KarmaEditorSupport.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="SurfacePropSheet.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnEdAct.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnEdCam.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnEdClick.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnEdModeTools.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnEdRend.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnSyntax.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnTexAlignTools.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnrealEd.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnrealEdMisc.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnrealEdSrv.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewportFrame.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeomFitUtils.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BottomBar.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BottomBarStandard.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Browser.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BrowserActor.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BrowserAnimation.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BrowserGroup.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BrowserMaster.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BrowserMesh.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BrowserMusic.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BrowserParticles.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BrowserPrefab.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BrowserSound.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BrowserStaticMesh.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BrowserTexture.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\BuildPropSheet.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ButtonBar.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\CodeFrame.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgAddSpecial.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgBrushBuilder.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgBrushImport.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgDepth.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgGeneric.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgLoadErrors.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgMapCheck.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgMapImport.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgNewMaterial.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgProgress.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgRename.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgScaleLights.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgSearchActors.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgTexProp.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgTexReplace.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgTipOfTheDay.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DlgViewportConfig.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\DockingFrame.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\EdModes.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\GenericDlgOptions.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ImportShader.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\KarmaEditorSupport.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\MDIFrame.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\MRUList.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\MatineePreview.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\MatineeSheet.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\SurfacePropSheet.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\TerrainEditSheet.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\TopBar.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\TwoDeeShapeEditor.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnEdModeTools.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnEditorOptions.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnMaterialTools.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnMatineeTools.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnTexAlignTools.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnrealEd.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnrealEdClasses.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnrealEdMisc.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ViewportFrame.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Res\resource.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\BuildChangedLights.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\MatPreviewEdit.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\MatRefresh.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\MatShowPath.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\MatShowRotations.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\PlayControls.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\ToggleCinView.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\UdnContextHelp.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\Unreal.ico">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bb_grid1.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bb_lock1.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bb_log_w.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bb_rotat.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bb_vtx_s.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bb_zoomc.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bmp00001.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bmp00002.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bmp00003.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bmp00004.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bmp00005.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bmp00006.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bmp00007.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00008.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00009.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00010.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00011.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00012.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00013.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00014.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00015.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00016.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00017.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00018.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00019.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00020.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00021.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00022.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00023.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00024.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00025.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00026.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00027.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00028.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00029.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00030.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00031.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00032.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00033.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00034.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00035.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp00036.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\bmp00037.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\bmp7839.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\browserg.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\browserm.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\browsers.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\browsert.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\cf_toolb.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\dtp_backdrop.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\dtp_cube.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\dtp_plane.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\dtp_sphere.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\dtp_toplevel.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_2ds.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_an_backward.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_an_begin.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_an_end.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_an_forward.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_an_loop.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_an_noloop.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_an_pause.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_an_play.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_ani.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_bac.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_bui.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_buildall.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_cam.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_del.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_dow.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_dtp.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_dup.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_edi.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_exe.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_fil.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_for.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_gri.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_map.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_mat.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_mes.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_mov.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_mus.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_new.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_pla.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_pre.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_sur.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_tex.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_unr.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\idbm_up.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\idbm_vie.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\reset.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="Res\toolbar1.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\totd.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\vcrbackward.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\vcrfirst.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\vcrforward.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\vcrlast.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\vcrplay.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="res\vcrstop.bmp">
+      <Filter>Res</Filter>
+    </None>
+    <None Include="..\Classes\AnimBrowserMesh.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AnimEditProps.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MeshEditProps.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\NotifyProperties.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SequEditProps.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SkelPrefsEditProps.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\UnrealEdEngine.uc">
+      <Filter>Classes</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Res\UnrealEd.rc">
+      <Filter>Res</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

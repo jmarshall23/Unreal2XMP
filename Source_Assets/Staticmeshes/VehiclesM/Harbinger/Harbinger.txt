@@ -1,0 +1,42 @@
+All Offsets are relative to the origin of the main body, All values rounded to the nearest hundredth. If no constraint is listed, no constraint is needed (assuming one axis of rotation).
+
+BODY		: x:0 y:0 z:0
+COLLISION: MCDCX_Body.
+
+LeftFrontTire   : x:-17.17 y:101.69 z:-118.18 (This is The Harbinger Tire Staticmesh)
+COLLISION: MCDCY_Tire.
+
+LeftRearTire    : x:-253.24  y:101.69 z:-118.18
+COLLISION: See "LeftFrontTire"
+
+RightFrontTire  : x:-17.17 y:-101.69  z:-118.18 (rotate the "Right" tires 180 degrees from th' top down... make sure the outside faces out)
+COLLISION: See "LeftFrontTire"
+
+RightRearTire   : x:-253.24  y:-101.69  z:-118.18 (rotate the "Right" tires 180 degrees from th' top down... make sure the outside faces out)
+COLLISION: See "LeftFrontTire"
+
+Turret          : x:-216.63   y:0.00   z:120.07 (constrain rotation from 15 to about -90, I suppose. The geometry will TOLERATE up to almost 145 deg, but that looks silly.)
+COLLSION: MCDCX_Turret01.
+
+TurretCollar    : x:-156.085   y:0.00   z:79.06
+COLLISION: MCDCX_Turretcollar.
+
+BubbleTurret    : x:-353.00    y:0.00   z:12.71 (constrain rotation in the pitch from -62 to 45 <reversed from the turret... I assume it's 'cuz it's pointing backwards> like the turret, the geometry can handle up to about -100 degrees of rotation, But that would be Dumb. Yaw can tolerate from -22 to 22 degrees before clipping.)
+COLLISION: MCDCX_Bubbleturret.
+
+DashCam		: x:15.50      y:40.08  z:0.00 (NOTE: the camera isn't at the origin, you'll see. there are a LOT of issues about this guy's dashcam. More on that later. Oh, and orient this puppy to the front of the vehicle)
+TurretCam	: x:-203.88    y:0.00   z:135.92 (oriented to front of vehicle)
+BubbleTurretCam	: x:-378.7    y:0.00   z:39.70 (oriented to rear of vehicle)
+
+Models Used:
+HarbingerBody_TD_001
+HarbingerBubbleTurret_TD_001
+HarbingerTire_TD_001
+HarbingerTurret_TD_001
+HarbingerTurretCollar_TD_001
+
+Bitmaps Used:
+Harbinger_001
+
+174 polys of Convex Mesh Collision,
+Four Cylindrical collision meshes (One Unique)

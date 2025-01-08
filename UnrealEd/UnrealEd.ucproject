@@ -1,0 +1,5 @@
+[Project]
+Inputs=Classes/*.uc
+ClientOptional=False
+ServerSideOnly=False
+AllowDownload=False

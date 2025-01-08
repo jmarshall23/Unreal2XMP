@@ -1,0 +1,15 @@
+
+[General]
+DefaultFont=SubTFonts.EE16
+
+[StatusMessages]
+PauseMessage=%s paused the game.
+Paused=PAUSED
+LoadingMessage=LOADING
+SavingMessage=SAVING
+ConnectingMessage=CONNECTING
+PausedMessage=PAUSED
+PrecachingMessage=INITIALIZING
+GameOver=GAME OVER
+MissionFailed=MISSION FAILED
+InitializingMessage=STAND BY

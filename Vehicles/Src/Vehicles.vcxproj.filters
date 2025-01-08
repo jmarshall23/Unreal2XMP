@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{ef90ec56-cbe3-4585-893b-a46bcd79addb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\BaseGiantTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\BaseGiantTurretBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\CarnivalTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\CarnivalTurretBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DamageFilterVehicles.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GardenTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GardenTurretBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Harbinger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HarbingerBubbleTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HarbingerBubbleTurretBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HarbingerCab.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HarbingerDriverTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HarbingerHusk.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HarbingerMessage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HarbingerTire.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HarbingerTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HarbingerTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HarbingerTurretBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Juggernaut.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautCab.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautFrontTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautFrontTurretBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautHusk.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautTire.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautTireArm.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautTurretBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautTurretBarrelBase.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KCar.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LowlandsGiantTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LowlandsGiantTurretBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LowlandsMediumWingedTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LowlandsMediumWingedTurretBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LowlandsRoundhouseTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LowlandsRoundhouseTurretBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Raptor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorCab.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorDriverTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorGrinder.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorHusk.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorMessage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorTire.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorTurretBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TurretProxy.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TurretProxyBall.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\VehicleExplosion.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\VehicleHusk.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPStationaryTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPVehicle.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPVehicleCab.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPVehicleFactory.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPVehicleMessage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPVehicleTire.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPVehicleTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+  </ItemGroup>
+</Project>

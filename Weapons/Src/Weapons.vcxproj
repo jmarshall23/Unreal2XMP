@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5345A7C0-EB3D-47AD-971B-72EAF22E96A0}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\Classes\AssaultAttachment.uc" />
+    <None Include="..\Classes\AssaultExplosionAlt.uc" />
+    <None Include="..\Classes\AssaultProjectileAlt.uc" />
+    <None Include="..\Classes\AssaultRifle.uc" />
+    <None Include="..\Classes\AssaultRifleAmmo.uc" />
+    <None Include="..\Classes\AssaultRifleAmmoAlt.uc" />
+    <None Include="..\Classes\Blood.uc" />
+    <None Include="..\Classes\CarnivalMG.uc" />
+    <None Include="..\Classes\CarnivalMGAmmo.uc" />
+    <None Include="..\Classes\CarnivalMGAttachment.uc" />
+    <None Include="..\Classes\Dirt.uc" />
+    <None Include="..\Classes\EMPExplosion.uc" />
+    <None Include="..\Classes\EMPProjectile.uc" />
+    <None Include="..\Classes\EnergyCannon.uc" />
+    <None Include="..\Classes\EnergyCannonAmmo.uc" />
+    <None Include="..\Classes\EnergyCannonAttachment.uc" />
+    <None Include="..\Classes\EnergyRifle.uc" />
+    <None Include="..\Classes\EnergyRifleAmmo.uc" />
+    <None Include="..\Classes\EnergyRifleAmmoAlt.uc" />
+    <None Include="..\Classes\EnergyRifleAttachment.uc" />
+    <None Include="..\Classes\FT_Light.uc" />
+    <None Include="..\Classes\Flamethrower.uc" />
+    <None Include="..\Classes\FlamethrowerAmmo.uc" />
+    <None Include="..\Classes\FlamethrowerAmmoAlt.uc" />
+    <None Include="..\Classes\FlamethrowerAttachment.uc" />
+    <None Include="..\Classes\GardenMG.uc" />
+    <None Include="..\Classes\GardenMGAmmo.uc" />
+    <None Include="..\Classes\GardenMGAttachment.uc" />
+    <None Include="..\Classes\GenericExplosionBlower.uc" />
+    <None Include="..\Classes\GenericExplosionBlowerSmall.uc" />
+    <None Include="..\Classes\GrenadeEffectEMP.uc" />
+    <None Include="..\Classes\GrenadeEffectEMPbeams.uc" />
+    <None Include="..\Classes\GrenadeLauncher.uc" />
+    <None Include="..\Classes\GrenadeLauncherAmmo.uc" />
+    <None Include="..\Classes\GrenadeLauncherAmmoConcussion.uc" />
+    <None Include="..\Classes\GrenadeLauncherAmmoEMP.uc" />
+    <None Include="..\Classes\GrenadeLauncherAmmoFragment.uc" />
+    <None Include="..\Classes\GrenadeLauncherAmmoIncendiary.uc" />
+    <None Include="..\Classes\GrenadeLauncherAmmoSmoke.uc" />
+    <None Include="..\Classes\GrenadeLauncherAmmoToxic.uc" />
+    <None Include="..\Classes\GrenadeLauncherAttachment.uc" />
+    <None Include="..\Classes\GrenadeLauncherHeavy.uc" />
+    <None Include="..\Classes\GrenadeLauncherLight.uc" />
+    <None Include="..\Classes\GrenadeLauncherMedium.uc" />
+    <None Include="..\Classes\GrenadeProjectile.uc" />
+    <None Include="..\Classes\GrenadeProjectileConcussion.uc" />
+    <None Include="..\Classes\GrenadeProjectileEMP.uc" />
+    <None Include="..\Classes\GrenadeProjectileFragment.uc" />
+    <None Include="..\Classes\GrenadeProjectileIncendiary.uc" />
+    <None Include="..\Classes\GrenadeProjectileSmoke.uc" />
+    <None Include="..\Classes\GrenadeProjectileToxic.uc" />
+    <None Include="..\Classes\JuggernautCannon.uc" />
+    <None Include="..\Classes\JuggernautCannonAmmo.uc" />
+    <None Include="..\Classes\JuggernautCannonAttachment.uc" />
+    <None Include="..\Classes\JuggernautCannonProjectile.uc" />
+    <None Include="..\Classes\JuggernautFlamethrower.uc" />
+    <None Include="..\Classes\JuggernautFlamethrowerAmmo.uc" />
+    <None Include="..\Classes\JuggernautFlamethrowerAttachment.uc" />
+    <None Include="..\Classes\LowLandsGiantMortar.uc" />
+    <None Include="..\Classes\LowlandsGiantMortarAmmo.uc" />
+    <None Include="..\Classes\LowlandsGiantMortarAttachment.uc" />
+    <None Include="..\Classes\LowlandsGiantMortarProjectile.uc" />
+    <None Include="..\Classes\Mortar.uc" />
+    <None Include="..\Classes\MortarAmmo.uc" />
+    <None Include="..\Classes\MortarAttachment.uc" />
+    <None Include="..\Classes\MortarProjectile.uc" />
+    <None Include="..\Classes\MultiRocket.uc" />
+    <None Include="..\Classes\MultiRocketAmmo.uc" />
+    <None Include="..\Classes\MultiRocketAttachment.uc" />
+    <None Include="..\Classes\MultiRocketProjectile.uc" />
+    <None Include="..\Classes\Pistol.uc" />
+    <None Include="..\Classes\PistolAmmo.uc" />
+    <None Include="..\Classes\PistolAmmoAlt.uc" />
+    <None Include="..\Classes\PistolAttachment.uc" />
+    <None Include="..\Classes\RL_Blower.uc" />
+    <None Include="..\Classes\RL_Explosion.uc" />
+    <None Include="..\Classes\RL_ExplosionAlt.uc" />
+    <None Include="..\Classes\RL_Sucker.uc" />
+    <None Include="..\Classes\RaptorMG.uc" />
+    <None Include="..\Classes\RaptorMGAmmo.uc" />
+    <None Include="..\Classes\RaptorMGAttachment.uc" />
+    <None Include="..\Classes\RocketAttachment.uc" />
+    <None Include="..\Classes\RocketLauncher.uc" />
+    <None Include="..\Classes\RocketLauncherAmmo.uc" />
+    <None Include="..\Classes\RocketLauncherAmmoAlt.uc" />
+    <None Include="..\Classes\RocketLauncherEx.uc" />
+    <None Include="..\Classes\RocketProjectileAlt.uc" />
+    <None Include="..\Classes\RocketProjectileDrunken.uc" />
+    <None Include="..\Classes\RocketProjectileHeavy.uc" />
+    <None Include="..\Classes\RocketProjectileSeeking.uc" />
+    <None Include="..\Classes\RoundHouseMG.uc" />
+    <None Include="..\Classes\RoundHouseMGAmmo.uc" />
+    <None Include="..\Classes\RoundHouseMGAttachment.uc" />
+    <None Include="..\Classes\Shotgun.uc" />
+    <None Include="..\Classes\ShotgunAmmo.uc" />
+    <None Include="..\Classes\ShotgunAmmoAlt.uc" />
+    <None Include="..\Classes\ShotgunAttachment.uc" />
+    <None Include="..\Classes\ShotgunProjectile.uc" />
+    <None Include="..\Classes\ShotgunProjectileAlt.uc" />
+    <None Include="..\Classes\SniperAttachment.uc" />
+    <None Include="..\Classes\SniperRifle.uc" />
+    <None Include="..\Classes\SniperRifleAmmo.uc" />
+    <None Include="..\Classes\SniperRifleAmmoAlt.uc" />
+    <None Include="..\Classes\Sparks.uc" />
+    <None Include="..\Classes\TurretWeapon.uc" />
+    <None Include="..\Classes\WingedCannon.uc" />
+    <None Include="..\Classes\WingedCannonAmmo.uc" />
+    <None Include="..\Classes\WingedCannonAttachment.uc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

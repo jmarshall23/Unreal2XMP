@@ -1,0 +1,858 @@
+
+### Add a UIComponents entry to your LevelInfo
+### Set Component to Tutorial.Root
+### Set Parent to TutorialHook
+
+### Use console commands to "SendEvent ShowSectionA" etc to show sections
+### Showing other sections will automatically hide the previous one, but if you need to manually hide it use "SendEvent HideSectionA" etc
+### You can also use "SendEvent SectionResetAll" in case you don't know which one is currently up
+
+[Root]
+;Class=ScaleContainer
+;RelativeSize=1024,768
+Class=FixedSizeContainer
+;Component=U2HUD.TempEditor
+Component=U2Menus.U2Mouse
+Component=Descriptions
+Component=SectionHeaders
+InitialEvent=Trigger,Tutorial_Start
+DrawOrder=1
+
+### Add additional section headers here, set the text in System\Tutorial.int
+### Replace the 'SetNextSectionTriggerEventHere's below with whatever event each of those matinee paths are triggered with to start.
+### Replace 'StartMainSequence' way down below with whatever event your main menu matinee path is triggered with (for the back button to work).
+
+[SectionHeaders]
+Class=FixedSizeContainer
+Component=TutorialTextures
+Component=SectionHeader:A/MainMenuAnimated
+Component=SectionHeader:B/PrevNextButtons/iconnode_tut
+Component=SectionHeader:C/PrevNextButtons/hack_tut
+Component=SectionHeader:D/PrevNextButtons/energy_tut
+Component=SectionHeader:E/PrevNextButtons/deploy_tut
+Component=SectionHeader:F/PrevNextButtons/deploy_tut
+Component=SectionHeader:G/PrevNextButtons/vehicle_tut
+Component=SectionHeader:H/PrevNextButtons/turrets_tut
+Component=SectionHeader:I/PrevNextButtons/classes_tut
+Component=SectionHeader:J/PrevNextButtons/movement_tut
+Component=SectionHeader:K/PrevNextButtons/ranger_tut
+Component=SectionHeader:L/PrevNextButtons/tech_tut
+Component=SectionHeader:M/PrevNextButtons/gunner_tut
+Component=SectionHeader:N/PrevNextButtons/tutorial_start
+;Align=HardCenter,HardCenter
+;Location=-380,-270
+Align=HardLeft,HardTop
+Location=132,8
+
+[MainMenuAnimated]
+Class=FixedSizeContainer
+Component=MultiStateComponent
+	State=TweenX:-240
+	State=TweenX:-10
+	Transition=MainMenuAnimated.Go,0,0,4.3,TweenX:0
+	Transition=MainMenuAnimated.DoneWaiting,0,1,4.0,TweenX:0
+	TriggerEvent=0,1.0,Event,MainMenuAnimated.DoneWaiting
+	TweenLocation=true
+Component=MainMenu
+OnEnabled=Event,MainMenuAnimated.Go
+Register=MainMenuAnimated
+
+[TweenX]
+Class=RealComponent
+Name=XPos
+X=%0%
+
+[MainMenu]
+Class=FixedSizeContainer
+Component=MainMenuItemHolders
+Component=MainMenuItems
+XAccess=exp(Parent.XPos.X)
+Align=HardLeft,HardCenter
+DrawOrder=1
+
+[MainMenuItemHolders]
+Class=TileContainer
+Vertical=true
+FixedSpacing=46
+Component=MainMenuItemHolder:artifact_tut
+Component=MainMenuItemHolder:iconnode_tut
+Component=MainMenuItemHolder:hack_tut
+Component=MainMenuItemHolder:energy_tut
+Component=MainMenuItemHolder:deploy_tut
+Component=MainMenuItemHolder:vehicle_tut
+Component=MainMenuItemHolder:turrets_tut
+Component=MainMenuItemHolder:classes_tut
+Align=Left,Center
+Location=137,93
+DrawOrder=1
+
+[MainMenuItemHolder]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=TypeBackground
+	Align=Center,None
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,MainMenuItemHolder.On
+	MouseExit=Event,MainMenuItemHolder.Off
+Component=ImageComponent
+	Image=CoverBar
+	Align=Center,None
+	Location=10,-2
+;Component=ImageComponent
+;	Image=ZigZagNextToTypeBackground
+;	Location=79,19
+Component=ImageComponent
+	Image=LeftAngleGradientPiece
+	Location=-128,15
+Component=ImageComponent
+	Image=LeftAngleGradientPieceStretchDot
+	Location=-86,37
+	Size=70,2
+Component=ImageComponent
+	Image=LeftAngleGradientPieceStretchDotR
+	Location=-322,19
+	Size=195,2
+Component=Button
+	DownImage=ButtonPressedPiece
+	Action=Trigger,%0%
+	Action=ConsoleCommand,STOPSOUNDS
+	Action=PawnMonkey,ResetScripting
+	Action=PawnMonkey,AbortScenes
+	Action=Event,MouseDown.PlaySound
+	Align=Center,None
+	Size=133,23
+	Location=-2,8
+	DrawOrder=1
+Component=MainMenuHighlite
+Register=MainMenuItemHolder
+DrawOrder=1
+
+[MainMenuHighlite]
+Class=MultiStateComponent
+State=NULL
+State=MainMenuHighliteImage
+Transition=MainMenuItemHolder.On,0,1,0.2,MainMenuHighliteImage
+Transition=MainMenuItemHolder.Off,1,0,0.2,MainMenuHighliteImage
+TweenLocation=false
+TweenAlpha=true
+Align=Center,None
+Location=-1,4
+DrawOrder=1
+
+[MainMenuHighliteImage]
+Class=ImageComponent
+Image=SelectGlow
+
+[MainMenuItems]
+Class=TileContainer
+FixedSpacing=46
+Vertical=true
+Component=MainMenuLabel:01
+Component=MainMenuLabel:02
+Component=MainMenuLabel:03
+Component=MainMenuLabel:04
+Component=MainMenuLabel:05
+Component=MainMenuLabel:06
+Component=MainMenuLabel:07
+Component=MainMenuLabel:08
+Align=Left,Center
+Location=73,103
+DrawOrder=1
+
+[MainMenuLabel]
+Class=LabelShadow
+LocalizedFont=MainLabelFont
+Localize=true
+Text=MainButtonText%0%
+DrawOrder=1
+
+### Add additional descriptions here, set the text in System\Tutorial.int
+### If you need more than 50 lines per description we'll need to add more show events below
+
+[Descriptions]
+Class=FixedSizeContainer
+Component=TileContainer
+	Component=Desc:A00
+	Component=Desc:A01
+	Component=Desc:A02
+	Component=Desc:A03
+	Component=Desc:A04
+	Component=Desc:A05
+Component=TileContainer
+	Component=Desc:B00
+	Component=Desc:B01
+	Component=Desc:B02
+	Component=Desc:B03
+	Component=Desc:B04
+	Component=Desc:B05
+	Component=Desc:B06
+	Component=Desc:B07
+Component=TileContainer
+	Component=Desc:C00
+	Component=Desc:C01
+	Component=Desc:C02
+	Component=Desc:C03
+	Component=Desc:C04
+	Component=Desc:C05
+	Component=Desc:C06
+	Component=Desc:C07
+	Component=Desc:C08
+Component=TileContainer
+	Component=Desc:D00
+	Component=Desc:D01
+	Component=Desc:D02
+	Component=Desc:D03
+	Component=Desc:D04
+	Component=Desc:D05
+	Component=Desc:D06
+	Component=Desc:D07
+	Component=Desc:D08
+	Component=Desc:D09
+	Component=Desc:D10
+	Component=Desc:D11
+Component=TileContainer
+	Component=Desc:E00
+	Component=Desc:E01
+	Component=Desc:E02
+	Component=Desc:E03
+	Component=Desc:E04
+	Component=Desc:E05
+	Component=Desc:E06
+	Component=Desc:E07
+	Component=Desc:E08
+	Component=Desc:E09
+	Component=Desc:E10
+	Component=Desc:E11
+	Component=Desc:E12
+	Component=Desc:E13
+	Component=Desc:E14
+	Component=Desc:E15
+	Component=Desc:E16
+	Component=Desc:E17
+	Component=Desc:E18
+	Component=Desc:E19
+	Component=Desc:E20
+	Component=Desc:E21
+	Component=Desc:E22
+	Component=Desc:E23
+Component=TileContainer
+	Component=Desc:F00
+	Component=Desc:F01
+	Component=Desc:F02
+	Component=Desc:F03
+	Component=Desc:F04
+	Component=Desc:F05
+	Component=Desc:F06
+	Component=Desc:F07
+	Component=Desc:F08
+	Component=Desc:F09
+	Component=Desc:F10
+Component=TileContainer
+	Component=Desc:G00
+	Component=Desc:G01
+	Component=Desc:G02
+	Component=Desc:G03
+	Component=Desc:G04
+	Component=Desc:G05
+	Component=Desc:G06
+	Component=Desc:G07
+	Component=Desc:G08
+	Component=Desc:G09
+	Component=Desc:G10
+	Component=Desc:G11
+	Component=Desc:G12
+	Component=Desc:G13
+	Component=Desc:G14
+	Component=Desc:G15
+	Component=Desc:G16
+	Component=Desc:G17
+	Component=Desc:G18
+	Component=Desc:G19
+	Component=Desc:G20
+Component=TileContainer
+	Component=Desc:H00
+	Component=Desc:H01
+	Component=Desc:H02
+	Component=Desc:H03
+	Component=Desc:H04
+	Component=Desc:H05
+	Component=Desc:H06
+	Component=Desc:H07
+	Component=Desc:H08
+	Component=Desc:H09
+	Component=Desc:H10
+	Component=Desc:H11
+Component=TileContainer
+	Component=Desc:I00
+	Component=Desc:I01
+	Component=Desc:I02
+	Component=Desc:I03
+	Component=Desc:I04
+	Component=Desc:I05
+	Component=Desc:I06
+	Component=Desc:I07
+Component=TileContainer
+	Component=Desc:J00
+	Component=Desc:J01
+	Component=Desc:J02
+	Component=Desc:J03
+	Component=Desc:J04
+	Component=Desc:J05
+	Component=Desc:J06
+	Component=Desc:J07
+	Component=Desc:J08
+	Component=Desc:J09
+	Component=Desc:J10
+	Component=Desc:J11
+	Component=Desc:J12
+	Component=Desc:J13
+	Component=Desc:J14
+	Component=Desc:J15
+	Component=Desc:J16
+	Component=Desc:J17
+	Component=Desc:J18
+	Component=Desc:J19
+	Component=Desc:J20
+	Component=Desc:J21
+	Component=Desc:J22
+	Component=Desc:J23
+Component=TileContainer
+	Component=Desc:K00
+	Component=Desc:K01
+	Component=Desc:K02
+	Component=Desc:K03
+	Component=Desc:K04
+	Component=Desc:K05
+	Component=Desc:K06
+	Component=Desc:K07
+	Component=Desc:K08
+	Component=Desc:K09
+	Component=Desc:K10
+	Component=Desc:K11
+	Component=Desc:K12
+	Component=Desc:K13
+	Component=Desc:K14
+	Component=Desc:K15
+	Component=Desc:K16
+	Component=Desc:K17
+	Component=Desc:K18
+	Component=Desc:K19
+	Component=Desc:K20
+	Component=Desc:K21
+	Component=Desc:K22
+Component=TileContainer
+	Component=Desc:L00
+	Component=Desc:L01
+	Component=Desc:L02
+	Component=Desc:L03
+	Component=Desc:L04
+	Component=Desc:L05
+	Component=Desc:L06
+	Component=Desc:L07
+	Component=Desc:L08
+	Component=Desc:L09
+	Component=Desc:L10
+	Component=Desc:L11
+	Component=Desc:L12
+	Component=Desc:L13
+	Component=Desc:L14
+	Component=Desc:L15
+	Component=Desc:L16
+	Component=Desc:L17
+	Component=Desc:L18
+	Component=Desc:L19
+	Component=Desc:L20
+	Component=Desc:L21
+	Component=Desc:L22
+	Component=Desc:L23
+	Component=Desc:L24
+	Component=Desc:L25
+	Component=Desc:L26
+	Component=Desc:L27
+Component=TileContainer
+	Component=Desc:M00
+	Component=Desc:M01
+	Component=Desc:M02
+	Component=Desc:M03
+	Component=Desc:M04
+	Component=Desc:M05
+	Component=Desc:M06
+	Component=Desc:M07
+	Component=Desc:M08
+	Component=Desc:M09
+	Component=Desc:M10
+	Component=Desc:M11
+	Component=Desc:M12
+	Component=Desc:M13
+	Component=Desc:M14
+	Component=Desc:M15
+	Component=Desc:M16
+	Component=Desc:M17
+	Component=Desc:M18
+	Component=Desc:M19
+	Component=Desc:M20
+	Component=Desc:M21
+	Component=Desc:M22
+	Component=Desc:M23
+	Component=Desc:M24
+	Component=Desc:M25
+	Component=Desc:M26
+	Component=Desc:M27
+	Component=Desc:M28
+	Component=Desc:M29
+Component=TileContainer
+	Component=Desc:N00
+	Component=Desc:N01
+	Component=Desc:N02
+	Component=Desc:N03
+	Component=Desc:N04
+	Component=Desc:N05
+	Component=Desc:N06
+	Component=Desc:N07
+	Component=Desc:N08
+	Component=Desc:N09
+	Component=Desc:N10
+	Component=Desc:N11
+	Component=Desc:N12
+	Component=Desc:N13
+	Component=Desc:N14
+	Component=Desc:N15
+	Component=Desc:N16
+	Component=Desc:N17
+	Component=Desc:N18
+	Component=Desc:N19
+	Component=Desc:N20
+	Component=Desc:N21
+	Component=Desc:N22
+	Component=Desc:N23
+	Component=Desc:N24
+	Component=Desc:N25
+	Component=Desc:N26
+	Component=Desc:N27
+	Component=Desc:N28
+	Component=Desc:N29
+Register=Descriptions
+;Align=HardCenter,HardCenter
+;Location=0,-210
+Align=HardRight,HardTop
+Width=512
+Y=68
+
+[SectionHeader]
+Class=MultiStateComponent
+State=NULL
+Transition=Section.Show,0,0,3000.0,Section
+Transition=ShowSection%0%,0,0,0,NULL
+Transition=HideSection%0%,0,0,0,NULL
+Transition=SectionResetAll,0,0,0,NULL
+TriggerEvent=0,0.0004,Event,Section.ShowFrame
+TriggerEvent=0,0.0007,Event,Section.BeginPulse
+TriggerEvent=0,0.0010,Event,Descriptions.Show%0%00
+TriggerEvent=0,0.0011,Event,Descriptions.Show%0%01
+TriggerEvent=0,0.0012,Event,Descriptions.Show%0%02
+TriggerEvent=0,0.0013,Event,Descriptions.Show%0%03
+TriggerEvent=0,0.0014,Event,Descriptions.Show%0%04
+TriggerEvent=0,0.0015,Event,Descriptions.Show%0%05
+TriggerEvent=0,0.0016,Event,Descriptions.Show%0%06
+TriggerEvent=0,0.0017,Event,Descriptions.Show%0%07
+TriggerEvent=0,0.0018,Event,Descriptions.Show%0%08
+TriggerEvent=0,0.0019,Event,Descriptions.Show%0%09
+TriggerEvent=0,0.0020,Event,Descriptions.Show%0%10
+TriggerEvent=0,0.0021,Event,Descriptions.Show%0%11
+TriggerEvent=0,0.0022,Event,Descriptions.Show%0%12
+TriggerEvent=0,0.0023,Event,Descriptions.Show%0%13
+TriggerEvent=0,0.0024,Event,Descriptions.Show%0%14
+TriggerEvent=0,0.0025,Event,Descriptions.Show%0%15
+TriggerEvent=0,0.0026,Event,Descriptions.Show%0%16
+TriggerEvent=0,0.0027,Event,Descriptions.Show%0%17
+TriggerEvent=0,0.0028,Event,Descriptions.Show%0%18
+TriggerEvent=0,0.0029,Event,Descriptions.Show%0%19
+TriggerEvent=0,0.0030,Event,Descriptions.Show%0%20
+TriggerEvent=0,0.0031,Event,Descriptions.Show%0%21
+TriggerEvent=0,0.0032,Event,Descriptions.Show%0%22
+TriggerEvent=0,0.0033,Event,Descriptions.Show%0%23
+TriggerEvent=0,0.0034,Event,Descriptions.Show%0%24
+TriggerEvent=0,0.0035,Event,Descriptions.Show%0%25
+TriggerEvent=0,0.0036,Event,Descriptions.Show%0%26
+TriggerEvent=0,0.0037,Event,Descriptions.Show%0%27
+TriggerEvent=0,0.0038,Event,Descriptions.Show%0%28
+TriggerEvent=0,0.0039,Event,Descriptions.Show%0%29
+TriggerEvent=0,0.0040,Event,Descriptions.Show%0%30
+TriggerEvent=0,0.0041,Event,Descriptions.Show%0%31
+TriggerEvent=0,0.0042,Event,Descriptions.Show%0%32
+TriggerEvent=0,0.0043,Event,Descriptions.Show%0%33
+TriggerEvent=0,0.0044,Event,Descriptions.Show%0%34
+TriggerEvent=0,0.0045,Event,Descriptions.Show%0%35
+TriggerEvent=0,0.0046,Event,Descriptions.Show%0%36
+TriggerEvent=0,0.0047,Event,Descriptions.Show%0%37
+TriggerEvent=0,0.0048,Event,Descriptions.Show%0%38
+TriggerEvent=0,0.0049,Event,Descriptions.Show%0%39
+TriggerEvent=0,0.0050,Event,Descriptions.Show%0%40
+TriggerEvent=0,0.0051,Event,Descriptions.Show%0%41
+TriggerEvent=0,0.0052,Event,Descriptions.Show%0%42
+TriggerEvent=0,0.0053,Event,Descriptions.Show%0%43
+TriggerEvent=0,0.0054,Event,Descriptions.Show%0%44
+TriggerEvent=0,0.0055,Event,Descriptions.Show%0%45
+TriggerEvent=0,0.0056,Event,Descriptions.Show%0%46
+TriggerEvent=0,0.0057,Event,Descriptions.Show%0%47
+TriggerEvent=0,0.0058,Event,Descriptions.Show%0%48
+TriggerEvent=0,0.0059,Event,Descriptions.Show%0%49
+TriggerEvent=1,0.0000,Event,SectionResetAll
+TriggerEvent=1,0.0000,Event,Section.Show
+TriggerEvent=2,0.0000,Event,Section.Reset
+TriggerEvent=2,0.0000,Event,Descriptions.Reset
+TriggerEvent=3,0.0000,Event,Section.Reset
+TriggerEvent=3,0.0000,Event,Descriptions.Reset
+TweenLocation=false
+Register=Section
+
+[Section]
+Class=FixedSizeContainer
+Component=SoundComponent
+	Sound=U2AmbientA.Hum.Hum29S
+	Register=Whoosh
+Component=MultiStateComponent
+	State=CircuitFrame:0/-96
+	State=CircuitFrame:255/0.5
+	Transition=Section.ShowFrame,0,1,3.0,CircuitFrame:0/0
+	Transition=Section.Reset,0,0,0,NULL
+	TweenLocation=true
+	TweenAlpha=true
+Component=MaterialContainer
+	Component=MultiStateComponent
+		State=CurcuitHookY:Yellow/-1
+		State=CurcuitHookY:Yellow/1
+		Transition=Section.CircuitGlowYellow,0,1,2.0,CurcuitHookY:Yellow/0
+		Transition=Section.Reset,0,0,0,NULL
+		TriggerEvent=0,0.25,Event,Section.CircuitGlowYellowR
+		TweenLinearEase=true
+		TweenLocation=true
+	Component=ImageComponent
+		Image=YellowCircuits
+		Size=128,32
+		Y=18
+	X=-16
+Component=MaterialContainer
+	Component=MultiStateComponent
+		State=CurcuitHookY:Yellow/-1
+		State=CurcuitHookY:Yellow/1
+		Transition=Section.CircuitGlowYellowR,0,1,2.6,CurcuitHookY:Yellow/0
+		Transition=Section.Reset,0,0,0,NULL
+		TweenLinearEase=true
+		TweenLocation=true
+	Component=ImageComponent
+		Image=YellowCircuitsR
+		Size=128,32
+		Y=18
+	X=-16
+Component=MaterialContainer
+	Component=MultiStateComponent
+		State=CurcuitHookX:Green/0.2
+		State=CurcuitHookX:Green/-1.8
+		Transition=Section.CircuitGlowGreen,0,1,2.0,CurcuitHookX:Green/0
+		Transition=Section.Reset,0,0,0,NULL
+		TriggerEvent=0,0.1,Event,Section.CircuitGlowBlue
+		TweenLocation=true
+	Component=ImageComponent
+		Image=GreenCircuits
+		Size=128,32
+		Y=18
+	Component=MultiStateComponent
+		State=CurcuitHookX:Blue/-1.2
+		State=CurcuitHookX:Blue/0.8
+		Transition=Section.CircuitGlowBlue,0,1,3.0,CurcuitHookX:Blue/0
+		Transition=Section.Reset,0,0,0,NULL
+		TweenLocation=true
+	Component=ImageComponent
+		Image=BlueCircuits
+		Size=148,32
+		Y=18
+	X=-16
+Component=MultiStateComponent
+	State=NULL
+	State=SectionLabel:64/10/%0%
+	State=SectionLabel:255/0/%0%
+	Transition=Section.ShowText,1,2,0.4,SectionLabel:0/0/%0%
+	Transition=Section.Reset,0,0,0,NULL
+	TweenLocation=true
+	TweenAlpha=true
+	Y=26
+Component=MultiStateComponent
+	State=PulseEffect
+	State=PulseEffectX
+	State=NULL
+	Transition=Section.BeginPulse,0,1,1.0,PulseEffect
+	Transition=PulseEffect.Hide,2,2,0,NULL
+	Transition=Section.Reset,2,2,0,NULL
+	;TriggerEvent=0,0.0,Event,Whoosh.PlaySound
+	TriggerEvent=0,1.0,Event,PulseEffect.Hide
+	TriggerEvent=0,1.0,Event,Section.Flash
+	TriggerEvent=0,1.0,Event,Section.ShowText
+	TriggerEvent=0,1.0,Event,Section.CircuitGlowYellow
+	TriggerEvent=0,1.0,Event,Section.CircuitGlowGreen
+	TweenReverseEase=true
+	TweenLocation=true
+	TweenColor=true
+	Register=PulseEffect
+Component=MultiStateComponent
+	State=NULL
+	State=FlashEffect
+	Transition=Section.Flash,1,0,4.0,FlashEffect
+	Transition=Section.Reset,0,0,0,NULL
+	TweenLocation=false
+	TweenColor=true
+	Y=21
+Component=%1%:%2%
+Height=64
+
+[PrevNextButtons]
+Class=FixedSizeContainer
+Component=NextButton:%0%
+Component=MainMenuBackButton
+
+##############################
+
+[SectionLabel]
+Class=Label
+Localize=true
+Text=Section%2%
+Name=CreditLabel
+;Font=UI_Fonts.Micro12
+LocalizedFont=TitleFont
+Color=255,221,141
+Alpha=%0%
+X=%1%
+
+[PulseEffect]
+Class=ImageComponent
+Image=PulseEffect
+Style=Translucent
+Color=0,0,0
+Size=128,16
+Location=600,36
+
+[PulseEffectX]
+Class=ImageComponent
+Image=PulseEffect
+Style=Translucent
+Size=128,16
+XAccess=exp(Parent.Parent.CreditLabel.Width*0.8-20)
+Y=36
+
+[FlashEffect]
+Class=TileContainer
+Horizontal=true
+Component=ImageComponent
+	Image=FlashEffectLeft
+	Size=32,32
+Component=ImageComponent
+	Image=FlashEffectMid
+	Height=32
+	WidthAccess=exp(Parent.Parent.Parent.CreditLabel.Width)
+Component=ImageComponent
+	Image=FlashEffectRight
+	Size=32,32
+Style=Translucent
+Location=-32,-2
+
+[CurcuitHookX]
+Class=RealComponent
+Name=%0%CircuitGlow
+X=%1%
+
+[CurcuitHookY]
+Class=RealComponent
+Name=%0%CircuitGlow
+Y=%1%
+
+[CircuitFrame]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=CircuitFrame
+	Size=212,64
+	Location=-32,2
+	Alpha=%0%
+Component=ImageComponent
+	Image=CircuitFrameStretch
+	Size=212,64
+	Location=-244,2
+	Alpha=%0%
+X=%1%
+
+##############################
+
+[Desc]
+Class=FixedSizeContainer
+Component=MultiStateComponent
+	State=NameLabelB:GlyphFont/%0%
+	State=NameLabelC:GlyphFont/%0%
+	State=NULL
+	Transition=Name.Start,0,0,0.50,NameLabelC:GlyphFont/%0%
+	Transition=Name.Glow,0,1,0.85,NameLabelC:GlyphFont/%0%
+	Transition=Name.Fade,1,2,1.0,NameLabelC:GlyphFont/%0%
+	Transition=Descriptions.Show%0%,2,0,1.25,NameLabelC:GlyphFont/%0%
+	Transition=Descriptions.Reset,2,2,0,NULL
+	TriggerEvent=0,1.0,Event,Name.Glow
+	TriggerEvent=1,1.0,Event,Name.Fade
+	TriggerEvent=3,1.0,Event,Name.Start
+	InitialState=2
+	TweenReverseEase=true
+	TweenLocation=false
+	TweenAlpha=true
+	TweenColor=true
+Component=MultiStateComponent
+	State=NULL
+	State=NameLabel:NameFont/%0%
+	Transition=Name.Start,0,0,1.35,NameLabel:NameFont/%0%
+	Transition=Name.Fade,0,1,1.6,NameLabel:NameFont/%0%
+	Transition=Descriptions.Reset,0,0,0,NULL
+	TweenLocation=false
+	TweenAlpha=true
+Register=Name
+Height=16
+
+[NameLabel]
+Class=Label
+Name=CreditLabel
+Localize=true
+Text=Desc%1%
+LocalizedFont=%0%
+
+[NameLabelB]
+Class=Label
+Name=CreditLabel
+Localize=true
+Text=Desc%1%
+LocalizedFont=%0%
+Color=80,80,80
+
+[NameLabelC]
+Class=Label
+Name=CreditLabel
+Localize=true
+Text=Desc%1%
+LocalizedFont=%0%
+Color=128,128,255
+
+##############################
+
+[NextButton]
+Class=FixedSizeContainer
+Component=Button
+	UpImage=OptionBackground
+	DownImage=OptionButtonDown
+	LocalizedFont=NextButtonFont
+	;Color=254,241,194,255
+	Localize=true
+	Text=NextButton
+	Action=Trigger,%0%
+	Action=ConsoleCommand,STOPSOUNDS
+	Action=PawnMonkey,ResetScripting
+	Action=PawnMonkey,AbortScenes
+	Action=Event,MouseDown.PlaySound
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,NextButton.On
+	MouseExit=Event,NextButton.Off
+	Size=79,23
+	Align=Center,Center
+	DrawOrder=1
+Component=MultiStateComponent
+	State=NULL
+	State=NextButtonHilite
+	Transition=NextButton.On,0,1,0.2,NextButtonHilite
+	Transition=NextButton.Off,1,0,0.3,NextButtonHilite
+	TweenLocation=false
+	TweenAlpha=true
+	Align=Center,Center
+	DrawOrder=1
+Component=ImageComponent
+	Image=OptionZigZag
+	Location=-92,18
+Component=ImageComponent
+	Image=OptionZigZagStretch
+	Width=265
+	Location=300,25
+Register=NextButton
+Size=82,21
+Align=HardRight,HardBottom
+Location=-63,-21
+DrawOrder=1
+
+[NextButtonHilite]
+Class=ImageComponent
+Image=OptionGlow
+
+##############################
+
+[MainMenuBackButton]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=BackStretchDotR
+	Location=-175,6
+	Size=175,1
+Component=ImageComponent
+	Image=BackR
+	Location=0,0
+Component=Label
+	LocalizedFont=SmallButtonFont
+	;Color=254,241,194,255
+	Color=255,221,141,255
+	Localize=true
+	Text=BackButton
+	MouseClick=Trigger,tutorial_start
+	MouseClick=ConsoleCommand,STOPSOUNDS
+	MouseClick=PawnMonkey,ResetScripting
+	MouseClick=PawnMonkey,AbortScenes
+	MouseClick=Event,MouseDown.PlaySound
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,BackButton.On
+	MouseExit=Event,BackButton.Off
+	Align=Center,Center
+	Location=52,8
+Component=MultiStateComponent
+	State=NULL
+	State=BackButtonHilite
+	Transition=BackButton.On,0,1,0.2,BackButtonHilite
+	Transition=BackButton.Off,1,0,0.3,BackButtonHilite
+	TweenLocation=false
+	TweenAlpha=true
+	Location=16,-2
+	DrawOrder=1
+Component=KeyEvent
+	Key=Escape,Press,Event,%0%
+	Key=Mouse4,Release,Event,%0%
+Register=BackButton
+Align=HardLeft,HardBottom
+Location=67,-39
+DrawOrder=1
+
+[BackButtonHilite]
+Class=ImageComponent
+Image=BackGlow
+
+##############################
+
+[TutorialTextures]
+Class=FixedSizeContainer
+Component=Image
+	Material=UIResT.SpecialCredits.PulseEffect
+	FullImage=PulseEffect
+Component=Image
+	Material=UIResT.SpecialCredits.FlashEffect
+	Image=FlashEffectLeft,0,0,62,128
+	Image=FlashEffectRight,66,0,62,128
+	Image=FlashEffectMid,62,0,4,128
+Component=Image
+	Material=UIResT.CircuitBoard.CircuitBoardYellow
+	Image=YellowCircuits,0,0,512,128
+	Image=YellowCircuitsR,0,128,512,-128
+Component=Image
+	Material=UIResT.CircuitBoard.CircuitBoardGreen
+	FullImage=GreenCircuits
+Component=Image
+	Material=UIResT.CircuitBoard.CircuitBoardBlue
+	FullImage=BlueCircuits
+Component=Image
+	Material=UIResT.CircuitBoard.CircuitFrame
+	Image=CircuitFrameStretch,0,0,44,64
+	Image=CircuitFrame,44,0,212,64

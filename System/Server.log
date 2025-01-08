@@ -1,0 +1,99 @@
+Log: Log file open, 01/07/25 14:26:54
+Init: Name subsystem initialized
+Init: Detected: Microsoft Windows NT 6.2 (Build: 9200)
+Init: Version: 2226
+Init: Compiled: Jan  7 2025 14:18:25
+Init: Command line: -server -log=Server.log
+Init: Base directory: C:\Projects\Unreal2\System\
+Init: Character set: Unicode
+Progress: Bound to Window.dll
+Progress: Calling PackageInit
+Progress: Bound to Core.dll
+Progress: Calling PackageInit
+Progress: Bound to Engine.dll
+Progress: Calling PackageInit
+Init: Object subsystem initialized
+Init: Computer: LAZEROUS
+Init: User: justi
+Init: CPU Page size=4096, Processors=28
+Init: CPU Detected: PentiumPro-class processor (GenuineIntel)
+Init: CPU Features: CMov FPU RDTSC PAE MMX SSE
+Init: CPU Speed=3419.644750 MHz
+Init: Memory total: Phys=2097151K Pagef=4194303K Virt=2097024K
+Init: Working set: 32000 / 159000
+Init: Unreal engine initialized
+Log: (Karma): Beginning Karma for game.
+Log: (Karma): Creating MeAssetDB.
+Log: (Karma): Finished Creating MeAssetDB (0 Assets).
+Log: Adding MD5 Entry for A3852AEF454EB1CB687C4B9C622938FC [5cd52877a39210bb5a3d5e2a238aebc7]
+Log: Adding MD5 Entry for 6B2894114541D2F9F8D7A78B36CA2A27 [8c05f84a7197cd4eaa023b37e3020f2e]
+Log: Adding MD5 Entry for 1F85B4A14216DD863F9A12B555DA8DF5 [e509d456a73609d9a406cd5f7e6f6fc2]
+Log: Adding MD5 Entry for 422325D64F0FB1D19AB59395180E35CC [5b684e6b79e8b7ae1dd5d4f93ecd600c]
+Log: Adding MD5 Entry for CD7FAEF845C9C16E4B33A5837148BB1D [ed8ba81054393e91aeb5479fece2265a]
+Log: Adding MD5 Entry for 8AD045364125171FDEFBFEA7339ECBD8 [9b34aa7b64888cf7216fe5563a71a22c]
+Log: Adding MD5 Entry for 8B1D7F9D4DCD85923842A2BA91273FE8 [4e483527d337ab5187d6ea264ad7f69e]
+Log: Adding MD5 Entry for B083300D48105D82C7E35080C5703D68 [be385a53d0abfc37c2e245b662c102bc]
+Log: Adding MD5 Entry for 1BD6948145D136AB1FE5338EF65804A2 [81f2bcc7d974a65ce70a7347960f7e4b]
+Log: Adding MD5 Entry for 30E614924E87C0F3EEA75C8331D31BAB [759dea24ff90d28f85678cb592f88b9b]
+Log: Adding MD5 Entry for BB7114E2400B8D933A1A5F823A3A880D [952ccfad5463726fa5868f2810458317]
+Log: Adding MD5 Entry for 869E95324B32BEA6EC024BB809D7CA7D [291fff12aaac93cf0587c166f814822d]
+Log: Adding MD5 Entry for E7F5AFB1478DB325F74E61889B9B512A [9a1f86477f90936d10c9a1327d53fb30]
+Log: Adding MD5 Entry for BA98964046D6BE2652448691D741BAE9 [c7f5f36bd722d121f0ede00aef9c1b47]
+Log: Adding MD5 Entry for DA5C1AF54B5378640C18A7936291EEF4 [bbdf3f7f7086459dd5126204e4b8e581]
+Log: Browse: Intro.unr?Name=Player?Class=Pawns.Ranger?Team=0
+Log: LoadMap: Intro.unr?Name=Player?Class=Pawns.Ranger?Team=0
+Progress: Bound to ParticleSystems.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Progress: Bound to Fire.dll
+Progress: Calling PackageInit
+Progress: Bound to Legend.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Progress: Bound to UI.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Progress: Bound to Editor.dll
+Progress: Calling PackageInit
+Progress: Bound to WinDrv.dll
+Progress: Calling PackageInit
+Log: (Karma): Initialising Karma for Level.
+Log: (Karma): Autodetecting CPU for SSE
+Log: (Karma): Using SSE Optimizations
+Log: Collecting garbage
+Log: Purging garbage
+Log: FTimerManager::ValidateRefs
+Log: Garbage: objects: 10997->10997; refs: 0
+Progress: Bound to U2.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Log: Game class is 'XMPGameIntro'
+Progress: Bound to IpDrv.dll
+Progress: Calling PackageInit
+Init: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+Init: WinSock: Socket queue 131072 / 131072
+Init: WinSock: I am Lazerous (192.168.0.22)
+DevNet: TcpNetDriver on port 7777
+Log: Server Package: Pawns
+Log: Server Package: Weapons
+Log: Server Package: Deployables
+Log: Spawning: IpDrv.UdpBeacon
+Log: Level is Level Intro.myLevel
+Log: Bringing Level Intro.myLevel up for play (20)...
+ScriptLog: InitGame: ?Name=Player?Class=Pawns.Ranger?Team=0
+ScriptLog: Base Mutator is Intro.Mutator0
+ScriptLog: GameInfo::InitGame	: bEnableStatLogging False
+Init: Game engine initialized
+Log: Startup time: 0.531509 seconds
+DevNet: NotifyAcceptingConnection: Server myLevel accept
+NetComeGo: Open myLevel 01/07/25 14:28:02 10.5.0.2:52408
+DevNet: NotifyAcceptingChannel Control 0 server Level Intro.myLevel: Accepted
+DevNet: Level server received: HELLO REVISION=0 MINVER=2000 VER=2226
+DevNet: Level server received: NETSPEED 10000
+Log: Client netspeed is 7000
+DevNet: Level server received: LOGIN RESPONSE=515152693 URL=Index.unr?Name=Player?Class=Pawns.Ranger?Team=255.00?Player=Player
+DevNet: Login request: Index.unr?Name=Player?Class=Pawns.Ranger?Team=255.00?Player=Player
+DevNet: Level server received: CRITOBJCNT 9
+DevNet: Level server received: GAMESTATE 52448691D741BAE946D6BE26BA989640c7f5f36bd722d121f0ede00aef9c1b47
+DevNet: Level server received: GAMESTATE 0C18A7936291EEF44B537864DA5C1AF5bbdf3f7f7086459dd5126204e4b8e581
+DevNet: Level server received: G

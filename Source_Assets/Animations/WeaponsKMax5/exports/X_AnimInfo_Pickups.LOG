@@ -1,0 +1,37 @@
+
+
+ Unreal skeletal exporter - Animation information for [Pickups.psa] 
+
+ Bones: 62
+ 
+
+ * Animation sequence Ambient    0  Tracktime: 32.000000 rate: 12.000000 
+	  First raw frame  0  total raw frames 32  group: [None]
+
+ * Animation sequence AmbientUnloaded    1  Tracktime: 10.000000 rate: 12.000000 
+	  First raw frame  32  total raw frames 10  group: [None]
+
+ * Animation sequence Down    2  Tracktime: 20.000000 rate: 30.000000 
+	  First raw frame  42  total raw frames 20  group: [None]
+
+ * Animation sequence DownUnloaded    3  Tracktime: 8.000000 rate: 15.000000 
+	  First raw frame  62  total raw frames 8  group: [None]
+
+ * Animation sequence Fire    4  Tracktime: 27.000000 rate: 16.000000 
+	  First raw frame  70  total raw frames 27  group: [None]
+
+ * Animation sequence FireLastDown    5  Tracktime: 27.000000 rate: 16.000000 
+	  First raw frame  97  total raw frames 27  group: [None]
+
+ * Animation sequence FireLastRound    6  Tracktime: 27.000000 rate: 16.000000 
+	  First raw frame  124  total raw frames 27  group: [None]
+
+ * Animation sequence ReloadUnloaded    7  Tracktime: 26.000000 rate: 22.000000 
+	  First raw frame  151  total raw frames 26  group: [None]
+
+ * Animation sequence Select    8  Tracktime: 18.000000 rate: 30.000000 
+	  First raw frame  177  total raw frames 18  group: [None]
+
+ * Animation sequence SelectUnloaded    9  Tracktime: 11.000000 rate: 30.000000 
+	  First raw frame  195  total raw frames 11  group: [None]
+

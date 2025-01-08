@@ -1,0 +1,29 @@
+class GardenTurret extends XMPStationaryTurret
+	placeable;	
+
+defaultproperties
+{
+	AlternateSkins(0)=Shader'Arch_TurretsT.Medium.GardenTurretFX_TD_01_Red'
+	AlternateSkins(1)=Shader'Arch_TurretsT.Medium.GardenTurretFX_TD_01_Blue'
+	MaxRotation=25000
+	bUsable=false
+	bProxyControlled=true
+	DrawType=DT_StaticMesh
+	StaticMesh=StaticMesh'Arch_TurretsM.GardenTurretBase_TD_01'
+	bHardAttach=True
+	DrawScale=1
+	bArticulated=true
+	bRelativeRotation=true
+	GunBarrelClass=class'GardenTurretBarrel'
+	Barrel1FiringOffset=(X=550,Y=0,Z=435)
+	Barrel2FiringOffset=(X=0,Y=0,Z=0)
+	CameraOffset=(X=-25.155,Y=0,Z=297.263)
+	//CameraOffset=(X=-550,Y=0,Z=435)
+	TurretOffset=(x=0,y=0.00,z=0)
+	RateOfFire=0.2
+	RotationCenter=(Pitch=0,Yaw=0,Roll=0)
+	PitchConstraint=4551
+	YawConstraint=65536
+	Health=600
+	//bNetInitialRotation=true
+}

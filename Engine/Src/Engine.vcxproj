@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <ProjectGuid>{492F2EE5-FD48-D89C-923B-DA9FE849C827}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\Lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\Lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm256  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Core\Inc;..\Inc;..\..\metoolkit\include;..\..\Roq\Inc;..\..\IFC\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ENGINE_API=__declspec(dllexport);_WINDOWS;UNICODE;_DEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>UninitializedLocalUsageCheck</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>EnginePrivate.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/Engine.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>..\..\nvTriStrip\lib\nvtristrip.lib;Mdt.lib;MdtKea.lib;MdtBcl.lib;Mst.lib;McdFrame.lib;McdCommon.lib;McdPrimitives.lib;McdConvex.lib;McdConvexCreateHull.lib;MeGlobals.lib;MeAssetFactory.lib;MeAssetDB.lib;MeAssetDBXMLIO.lib;MeXML.lib;..\..\Core\Lib\Core.lib;..\..\nvdxt\Lib\nvdxtlib.lib;RoQ.lib;wsock32.lib;IFC23.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../system/Engine.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\metoolkit\lib.dbg\win32;..\..\metoolkit\src\components\lib.dbg\win32_single_msvcrt;..\..\metoolkit\lib.dbg\win32_single_msvcrt;..\..\metoolkit\lib.chk\win32_single_msvcrt;..\..\RoQ\Lib;..\..\IFC\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcp.lib;LIBCD;LIBCMTD;MSVCRTD;LIBC;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\..\Lib/Engine.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x10300000</BaseAddress>
+      <ImportLibrary>.\..\Lib/Engine.lib</ImportLibrary>
+      <StackReserveSize>8000000</StackReserveSize>
+      <StackCommitSize>8000000</StackCommitSize>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Lib/Engine.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm256  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\Core\Inc;..\Inc;..\..\metoolkit\include;..\..\Roq\Inc;..\..\IFC\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ENGINE_API=__declspec(dllexport);_WINDOWS;NDEBUG;UNICODE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>EnginePrivate.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Release/Engine.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <BrowseInformation>
+      </BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>..\..\nvTriStrip\lib\nvtristrip.lib;Mdt.lib;MdtKea.lib;MdtBcl.lib;Mst.lib;McdFrame.lib;McdCommon.lib;McdPrimitives.lib;McdConvex.lib;McdConvexCreateHull.lib;MeGlobals.lib;MeAssetFactory.lib;MeAssetDB.lib;MeAssetDBXMLIO.lib;MeXML.lib;..\..\Core\Lib\Core.lib;..\..\nvdxt\Lib\nvdxtlib.lib;RoQ.lib;wsock32.lib;IFC23.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../system/Engine.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\metoolkit\lib.rel\win32;..\..\metoolkit\lib.rel\win32_single_msvcrt;..\..\RoQ\Lib;..\..\IFC\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCD;LIBCMTD;MSVCRTD;LIBC;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>.\..\Lib/Engine.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <BaseAddress>0x10300000</BaseAddress>
+      <ImportLibrary>.\..\Lib/Engine.lib</ImportLibrary>
+      <StackReserveSize>8000000</StackReserveSize>
+      <StackCommitSize>8000000</StackCommitSize>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Lib/Engine.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AFileLog.cpp" />
+    <ClCompile Include="AGameStats.cpp" />
+    <ClCompile Include="AStatLog.cpp" />
+    <ClCompile Include="AUtil.cpp" />
+    <ClCompile Include="Engine.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="FLineManager.cpp" />
+    <ClCompile Include="FStatAccumulator.cpp" />
+    <ClCompile Include="KConstraint.cpp" />
+    <ClCompile Include="KDebugDraw.cpp" />
+    <ClCompile Include="KDynStep.cpp" />
+    <ClCompile Include="KFarfield.cpp" />
+    <ClCompile Include="KPhysic.cpp" />
+    <ClCompile Include="KScript.cpp" />
+    <ClCompile Include="KSkeletal.cpp" />
+    <ClCompile Include="KTriListGen.cpp" />
+    <ClCompile Include="KUtils.cpp" />
+    <ClCompile Include="KarmaSupport.cpp" />
+    <ClCompile Include="NullDrv.cpp" />
+    <ClCompile Include="ULodMesh.cpp" />
+    <ClCompile Include="UnActCol.cpp" />
+    <ClCompile Include="UnActor.cpp" />
+    <ClCompile Include="UnAudio.cpp" />
+    <ClCompile Include="UnCDKey.cpp" />
+    <ClCompile Include="UnCamMgr.cpp" />
+    <ClCompile Include="UnCamera.cpp" />
+    <ClCompile Include="UnCameraEffects.cpp" />
+    <ClCompile Include="UnCanvas.cpp" />
+    <ClCompile Include="UnCon.cpp" />
+    <ClCompile Include="UnController.cpp" />
+    <ClCompile Include="UnConvexVolume.cpp" />
+    <ClCompile Include="UnEngine.cpp" />
+    <ClCompile Include="UnErrorChecking.cpp" />
+    <ClCompile Include="UnFPoly.cpp" />
+    <ClCompile Include="UnFluidSurface.cpp" />
+    <ClCompile Include="UnFont.cpp" />
+    <ClCompile Include="UnGame.cpp" />
+    <ClCompile Include="UnGameUtilities.cpp" />
+    <ClCompile Include="UnIn.cpp" />
+    <ClCompile Include="UnLevAct.cpp" />
+    <ClCompile Include="UnLevTic.cpp" />
+    <ClCompile Include="UnLevel.cpp" />
+    <ClCompile Include="UnLodMesh.cpp" />
+    <ClCompile Include="UnMaterial.cpp" />
+    <ClCompile Include="UnMatineeTools.cpp" />
+    <ClCompile Include="UnMesh.cpp" />
+    <ClCompile Include="UnModel.cpp" />
+    <ClCompile Include="UnModelLight.cpp" />
+    <ClCompile Include="UnMover.cpp" />
+    <ClCompile Include="UnMovie.cpp" />
+    <ClCompile Include="UnNavigationPoint.cpp" />
+    <ClCompile Include="UnOctree.cpp" />
+    <ClCompile Include="UnPackageCheckInfo.cpp" />
+    <ClCompile Include="UnParams.cpp" />
+    <ClCompile Include="UnPath.cpp" />
+    <ClCompile Include="UnPawn.cpp" />
+    <ClCompile Include="UnPhysic.cpp" />
+    <ClCompile Include="UnPlayer.cpp" />
+    <ClCompile Include="UnPrim.cpp" />
+    <ClCompile Include="UnProjector.cpp" />
+    <ClCompile Include="UnReach.cpp" />
+    <ClCompile Include="UnRebuildTools.cpp" />
+    <ClCompile Include="UnRender.cpp" />
+    <ClCompile Include="UnRenderBSP.cpp" />
+    <ClCompile Include="UnRenderBatch.cpp" />
+    <ClCompile Include="UnRenderEditorActor.cpp" />
+    <ClCompile Include="UnRenderLight.cpp" />
+    <ClCompile Include="UnRenderPool.cpp" />
+    <ClCompile Include="UnRenderResource.cpp" />
+    <ClCompile Include="UnRenderStaticMesh.cpp" />
+    <ClCompile Include="UnRenderUtil.cpp" />
+    <ClCompile Include="UnRenderVisibility.cpp" />
+    <ClCompile Include="UnRoute.cpp" />
+    <ClCompile Include="UnSVehicle.cpp" />
+    <ClCompile Include="UnSceneManager.cpp" />
+    <ClCompile Include="UnScript.cpp" />
+    <ClCompile Include="UnScriptedTexture.cpp" />
+    <ClCompile Include="UnSecurity.cpp" />
+    <ClCompile Include="UnShadowProjector.cpp" />
+    <ClCompile Include="UnSkeletalMesh.cpp" />
+    <ClCompile Include="UnSkeletalMeshCollision.cpp" />
+    <ClCompile Include="UnSkeletalTools.cpp" />
+    <ClCompile Include="UnStatGraph.cpp" />
+    <ClCompile Include="UnStaticMesh.cpp" />
+    <ClCompile Include="UnStaticMeshBuild.cpp" />
+    <ClCompile Include="UnStaticMeshCollision.cpp" />
+    <ClCompile Include="UnStats.cpp" />
+    <ClCompile Include="UnTerrain.cpp" />
+    <ClCompile Include="UnTerrainTools.cpp" />
+    <ClCompile Include="UnTex.cpp" />
+    <ClCompile Include="UnTrace.cpp" />
+    <ClCompile Include="UnURL.cpp" />
+    <ClCompile Include="UnVehicle.cpp" />
+    <ClCompile Include="UnVertMesh.cpp" />
+    <ClCompile Include="UnVolume.cpp" />
+    <ClCompile Include="palette.cpp" />
+    <ClCompile Include="xForceFeedback.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="UnBunch.cpp" />
+    <ClCompile Include="UnChan.cpp" />
+    <ClCompile Include="UnConn.cpp" />
+    <ClCompile Include="UnDemoPenLev.cpp" />
+    <ClCompile Include="UnDemoRec.cpp" />
+    <ClCompile Include="UnDownload.cpp" />
+    <ClCompile Include="UnNetDrv.cpp" />
+    <ClCompile Include="UnPenLev.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Amd3d.h" />
+    <ClInclude Include="EnginePrivate.h" />
+    <ClInclude Include="KDebugDraw.h" />
+    <ClInclude Include="KarmaSupport.h" />
+    <ClInclude Include="NvTriStrip.h" />
+    <ClInclude Include="UnOctreePrivate.h" />
+    <ClInclude Include="UnRenderPrivate.h" />
+    <ClInclude Include="..\Inc\AAIController.h" />
+    <ClInclude Include="..\Inc\AActor.h" />
+    <ClInclude Include="..\Inc\AAmmunition.h" />
+    <ClInclude Include="..\Inc\ABrush.h" />
+    <ClInclude Include="..\Inc\ACamera.h" />
+    <ClInclude Include="..\Inc\AController.h" />
+    <ClInclude Include="..\Inc\ADecoration.h" />
+    <ClInclude Include="..\Inc\ADoor.h" />
+    <ClInclude Include="..\Inc\AGameReplicationInfo.h" />
+    <ClInclude Include="..\Inc\AInterpolationPoint.h" />
+    <ClInclude Include="..\Inc\AInventory.h" />
+    <ClInclude Include="..\Inc\ALadder.h" />
+    <ClInclude Include="..\Inc\ALadderVolume.h" />
+    <ClInclude Include="..\Inc\ALevelInfo.h" />
+    <ClInclude Include="..\Inc\ALiftCenter.h" />
+    <ClInclude Include="..\Inc\ALight.h" />
+    <ClInclude Include="..\Inc\ALineOfSightTrigger.h" />
+    <ClInclude Include="..\Inc\AMatSubAction.h" />
+    <ClInclude Include="..\Inc\AMover.h" />
+    <ClInclude Include="..\Inc\ANavigationPoint.h" />
+    <ClInclude Include="..\Inc\ANote.h" />
+    <ClInclude Include="..\Inc\APawn.h" />
+    <ClInclude Include="..\Inc\APhysicsVolume.h" />
+    <ClInclude Include="..\Inc\APickup.h" />
+    <ClInclude Include="..\Inc\APlayerController.h" />
+    <ClInclude Include="..\Inc\APlayerReplicationInfo.h" />
+    <ClInclude Include="..\Inc\APlayerStart.h" />
+    <ClInclude Include="..\Inc\APowerups.h" />
+    <ClInclude Include="..\Inc\AProjectile.h" />
+    <ClInclude Include="..\Inc\AProjector.h" />
+    <ClInclude Include="..\Inc\ASceneManager.h" />
+    <ClInclude Include="..\Inc\AScout.h" />
+    <ClInclude Include="..\Inc\ASecurity.h" />
+    <ClInclude Include="..\Inc\AStationaryWeapons.h" />
+    <ClInclude Include="..\Inc\ATeamInfo.h" />
+    <ClInclude Include="..\Inc\ATeleporter.h" />
+    <ClInclude Include="..\Inc\AUtil.h" />
+    <ClInclude Include="..\Inc\AVehicle.h" />
+    <ClInclude Include="..\Inc\AVolume.h" />
+    <ClInclude Include="..\Inc\AWarpZoneInfo.h" />
+    <ClInclude Include="..\Inc\AWarpZoneMarker.h" />
+    <ClInclude Include="..\Inc\AWeapon.h" />
+    <ClInclude Include="..\Inc\AWeaponAttachment.h" />
+    <ClInclude Include="..\Inc\AZoneInfo.h" />
+    <ClInclude Include="..\Inc\Bezier.h" />
+    <ClInclude Include="..\Inc\Engine.h" />
+    <ClInclude Include="..\Inc\EngineClasses.h" />
+    <ClInclude Include="..\Inc\FLineManager.h" />
+    <ClInclude Include="..\Inc\FStatAccumulator.h" />
+    <ClInclude Include="..\Inc\KTypes.h" />
+    <ClInclude Include="..\Inc\Palette.h" />
+    <ClInclude Include="..\Inc\S3tc.h" />
+    <ClInclude Include="..\Inc\SafeBuild.h" />
+    <ClInclude Include="..\Inc\UCombiner.h" />
+    <ClInclude Include="..\Inc\UFinalBlend.h" />
+    <ClInclude Include="..\Inc\UI3DL2Listener.h" />
+    <ClInclude Include="..\Inc\ULevelSummary.h" />
+    <ClInclude Include="..\Inc\UMatAction.h" />
+    <ClInclude Include="..\Inc\UMatSubAction.h" />
+    <ClInclude Include="..\Inc\UModifier.h" />
+    <ClInclude Include="..\Inc\UMovie.h" />
+    <ClInclude Include="..\Inc\UMovieTexture.h" />
+    <ClInclude Include="..\Inc\UPausedCameraControl.h" />
+    <ClInclude Include="..\Inc\UReachSpec.h" />
+    <ClInclude Include="..\Inc\UShader.h" />
+    <ClInclude Include="..\Inc\USubActionCameraShake.h" />
+    <ClInclude Include="..\Inc\USubActionConsoleCommand.h" />
+    <ClInclude Include="..\Inc\USubActionFOV.h" />
+    <ClInclude Include="..\Inc\USubActionFade.h" />
+    <ClInclude Include="..\Inc\USubActionGameSpeed.h" />
+    <ClInclude Include="..\Inc\USubActionOrientation.h" />
+    <ClInclude Include="..\Inc\USubActionParticleTrigger.h" />
+    <ClInclude Include="..\Inc\USubActionSceneSpeed.h" />
+    <ClInclude Include="..\Inc\USubActionTrigger.h" />
+    <ClInclude Include="..\Inc\UTextureArray.h" />
+    <ClInclude Include="..\Inc\UnActor.h" />
+    <ClInclude Include="..\Inc\UnAnim.h" />
+    <ClInclude Include="..\Inc\UnAudio.h" />
+    <ClInclude Include="..\Inc\UnCDKey.h" />
+    <ClInclude Include="..\Inc\UnCamera.h" />
+    <ClInclude Include="..\Inc\UnCameraEffects.h" />
+    <ClInclude Include="..\Inc\UnCanvas.h" />
+    <ClInclude Include="..\Inc\UnComponents.h" />
+    <ClInclude Include="..\Inc\UnCon.h" />
+    <ClInclude Include="..\Inc\UnConvexVolume.h" />
+    <ClInclude Include="..\Inc\UnDDraw.h" />
+    <ClInclude Include="..\Inc\UnEngine.h" />
+    <ClInclude Include="..\Inc\UnEngineGnuG.h" />
+    <ClInclude Include="..\Inc\UnEngineWin.h" />
+    <ClInclude Include="..\Inc\UnFluidSurface.h" />
+    <ClInclude Include="..\Inc\UnGame.h" />
+    <ClInclude Include="..\Inc\UnIn.h" />
+    <ClInclude Include="..\Inc\UnLevel.h" />
+    <ClInclude Include="..\Inc\UnLodMesh.h" />
+    <ClInclude Include="..\Inc\UnMaterial.h" />
+    <ClInclude Include="..\Inc\UnMatineeTools.h" />
+    <ClInclude Include="..\Inc\UnMesh.h" />
+    <ClInclude Include="..\Inc\UnModel.h" />
+    <ClInclude Include="..\Inc\UnMovie.h" />
+    <ClInclude Include="..\Inc\UnNullRenderDevice.h" />
+    <ClInclude Include="..\Inc\UnObj.h" />
+    <ClInclude Include="..\Inc\UnPackageCheckInfo.h" />
+    <ClInclude Include="..\Inc\UnPath.h" />
+    <ClInclude Include="..\Inc\UnPhysic.h" />
+    <ClInclude Include="..\Inc\UnPlayer.h" />
+    <ClInclude Include="..\Inc\UnPrim.h" />
+    <ClInclude Include="..\Inc\UnProjector.h" />
+    <ClInclude Include="..\Inc\UnReach.h" />
+    <ClInclude Include="..\Inc\UnRebuildTools.h" />
+    <ClInclude Include="..\Inc\UnRenDev.h" />
+    <ClInclude Include="..\Inc\UnRender.h" />
+    <ClInclude Include="..\Inc\UnRenderResource.h" />
+    <ClInclude Include="..\Inc\UnRenderUtil.h" />
+    <ClInclude Include="..\Inc\UnSkeletalMesh.h" />
+    <ClInclude Include="..\Inc\UnStatGraph.h" />
+    <ClInclude Include="..\Inc\UnStaticMesh.h" />
+    <ClInclude Include="..\Inc\UnStats.h" />
+    <ClInclude Include="..\Inc\UnTerrain.h" />
+    <ClInclude Include="..\Inc\UnTerrainTools.h" />
+    <ClInclude Include="..\Inc\UnTex.h" />
+    <ClInclude Include="..\Inc\UnURL.h" />
+    <ClInclude Include="..\Inc\UnVertMesh.h" />
+    <ClInclude Include="..\Inc\UnVoiceChat.h" />
+    <ClInclude Include="..\Inc\UnVolume.h" />
+    <ClInclude Include="..\Inc\xForceFeedback.h" />
+    <ClInclude Include="..\Inc\UnBunch.h" />
+    <ClInclude Include="..\Inc\UnChan.h" />
+    <ClInclude Include="..\Inc\UnConn.h" />
+    <ClInclude Include="..\Inc\UnDemoPenLev.h" />
+    <ClInclude Include="..\Inc\UnDemoRec.h" />
+    <ClInclude Include="..\Inc\UnDownload.h" />
+    <ClInclude Include="..\Inc\UnNet.h" />
+    <ClInclude Include="..\Inc\UnNetDrv.h" />
+    <ClInclude Include="..\Inc\UnPenLev.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\AIController.uc" />
+    <None Include="..\Classes\AIMarker.uc" />
+    <None Include="..\Classes\AIScript.uc" />
+    <None Include="..\Classes\AccessControl.uc" />
+    <None Include="..\Classes\ActionMoveCamera.uc" />
+    <None Include="..\Classes\ActionPause.uc" />
+    <None Include="..\Classes\Actor.uc" />
+    <None Include="..\Classes\Admin.uc" />
+    <None Include="..\Classes\AmbientSound.uc" />
+    <None Include="..\Classes\Ammo.uc" />
+    <None Include="..\Classes\Ammunition.uc" />
+    <None Include="..\Classes\AnimNotify.uc" />
+    <None Include="..\Classes\AnimNotify_DestroyEffect.uc" />
+    <None Include="..\Classes\AnimNotify_Effect.uc" />
+    <None Include="..\Classes\AnimNotify_MatSubAction.uc" />
+    <None Include="..\Classes\AnimNotify_Script.uc" />
+    <None Include="..\Classes\AnimNotify_Scripted.uc" />
+    <None Include="..\Classes\AnimNotify_Sound.uc" />
+    <None Include="..\Classes\AnimNotify_Trigger.uc" />
+    <None Include="..\Classes\AntiPortalActor.uc" />
+    <None Include="..\Classes\Armor.uc" />
+    <None Include="..\Classes\ArmorPickup.uc" />
+    <None Include="..\Classes\AutoDoor.uc" />
+    <None Include="..\Classes\AutoLadder.uc" />
+    <None Include="..\Classes\AvoidMarker.uc" />
+    <None Include="..\Classes\Bitmap.uc" />
+    <None Include="..\Classes\BitmapMaterial.uc" />
+    <None Include="..\Classes\BlockingVolume.uc" />
+    <None Include="..\Classes\BroadcastHandler.uc" />
+    <None Include="..\Classes\Brush.uc" />
+    <None Include="..\Classes\Camera.uc" />
+    <None Include="..\Classes\CameraEffect.uc" />
+    <None Include="..\Classes\CameraOverlay.uc" />
+    <None Include="..\Classes\Canvas.uc" />
+    <None Include="..\Classes\CarriedObject.uc" />
+    <None Include="..\Classes\CheatManager.uc" />
+    <None Include="..\Classes\Client.uc" />
+    <None Include="..\Classes\ClipMarker.uc" />
+    <None Include="..\Classes\ColorModifier.uc" />
+    <None Include="..\Classes\Combiner.uc" />
+    <None Include="..\Classes\Console.uc" />
+    <None Include="..\Classes\ConsolePlugIn.uc" />
+    <None Include="..\Classes\ConstantColor.uc" />
+    <None Include="..\Classes\ConstantMaterial.uc" />
+    <None Include="..\Classes\Controller.uc" />
+    <None Include="..\Classes\Crushed.uc" />
+    <None Include="..\Classes\Cubemap.uc" />
+    <None Include="..\Classes\DamTypeTelefragged.uc" />
+    <None Include="..\Classes\DamageFilter.uc" />
+    <None Include="..\Classes\DamageType.uc" />
+    <None Include="..\Classes\DamageTypeImpact.uc" />
+    <None Include="..\Classes\DeathMessage.uc" />
+    <None Include="..\Classes\Decal.uc" />
+    <None Include="..\Classes\DecoVolumeObject.uc" />
+    <None Include="..\Classes\Decoration.uc" />
+    <None Include="..\Classes\DecorationList.uc" />
+    <None Include="..\Classes\DefaultPhysicsVolume.uc" />
+    <None Include="..\Classes\DemoRecSpectator.uc" />
+    <None Include="..\Classes\Door.uc" />
+    <None Include="..\Classes\DynamicLight.uc" />
+    <None Include="..\Classes\DynamicProjector.uc" />
+    <None Include="..\Classes\Effects.uc" />
+    <None Include="..\Classes\Engine.uc" />
+    <None Include="..\Classes\Engine.upkg" />
+    <None Include="..\Classes\FadeColor.uc" />
+    <None Include="..\Classes\FailedConnect.uc" />
+    <None Include="..\Classes\FellLava.uc" />
+    <None Include="..\Classes\FileLog.uc" />
+    <None Include="..\Classes\FinalBlend.uc" />
+    <None Include="..\Classes\FluidSurfaceInfo.uc" />
+    <None Include="..\Classes\FluidSurfaceOscillator.uc" />
+    <None Include="..\Classes\Fragment.uc" />
+    <None Include="..\Classes\GameEngine.uc" />
+    <None Include="..\Classes\GameInfo.uc" />
+    <None Include="..\Classes\GameMessage.uc" />
+    <None Include="..\Classes\GameReplicationInfo.uc" />
+    <None Include="..\Classes\GameRules.uc" />
+    <None Include="..\Classes\GameStats.uc" />
+    <None Include="..\Classes\Gibbed.uc" />
+    <None Include="..\Classes\HardwareShader.uc" />
+    <None Include="..\Classes\I3DL2Listener.uc" />
+    <None Include="..\Classes\Info.uc" />
+    <None Include="..\Classes\InternetInfo.uc" />
+    <None Include="..\Classes\InterpolationPoint.uc" />
+    <None Include="..\Classes\Inventory.uc" />
+    <None Include="..\Classes\InventoryAttachment.uc" />
+    <None Include="..\Classes\InventorySpot.uc" />
+    <None Include="..\Classes\JumpDest.uc" />
+    <None Include="..\Classes\JumpPad.uc" />
+    <None Include="..\Classes\KActor.uc" />
+    <None Include="..\Classes\KBSJoint.uc" />
+    <None Include="..\Classes\KCarWheelJoint.uc" />
+    <None Include="..\Classes\KConeLimit.uc" />
+    <None Include="..\Classes\KConstraint.uc" />
+    <None Include="..\Classes\KHinge.uc" />
+    <None Include="..\Classes\KRepulsor.uc" />
+    <None Include="..\Classes\KTire.uc" />
+    <None Include="..\Classes\KVehicle.uc" />
+    <None Include="..\Classes\KVehicleFactory.uc" />
+    <None Include="..\Classes\KarmaParams.uc" />
+    <None Include="..\Classes\KarmaParamsCollision.uc" />
+    <None Include="..\Classes\KarmaParamsRBFull.uc" />
+    <None Include="..\Classes\KarmaParamsSkel.uc" />
+    <None Include="..\Classes\Keypoint.uc" />
+    <None Include="..\Classes\Ladder.uc" />
+    <None Include="..\Classes\LadderVolume.uc" />
+    <None Include="..\Classes\LevelInfo.uc" />
+    <None Include="..\Classes\LevelSummary.uc" />
+    <None Include="..\Classes\LiftCenter.uc" />
+    <None Include="..\Classes\LiftExit.uc" />
+    <None Include="..\Classes\Light.uc" />
+    <None Include="..\Classes\LineOfSightTrigger.uc" />
+    <None Include="..\Classes\LocalMessage.uc" />
+    <None Include="..\Classes\LookTarget.uc" />
+    <None Include="..\Classes\MapList.uc" />
+    <None Include="..\Classes\MatAction.uc" />
+    <None Include="..\Classes\MatDemoActor.uc" />
+    <None Include="..\Classes\MatObject.uc" />
+    <None Include="..\Classes\MatSubAction.uc" />
+    <None Include="..\Classes\MatchInfo.uc" />
+    <None Include="..\Classes\Material.uc" />
+    <None Include="..\Classes\MaterialSequence.uc" />
+    <None Include="..\Classes\MaterialSwitch.uc" />
+    <None Include="..\Classes\MaterialTrigger.uc" />
+    <None Include="..\Classes\MeshObject.uc" />
+    <None Include="..\Classes\MessagingSpectator.uc" />
+    <None Include="..\Classes\Modifier.uc" />
+    <None Include="..\Classes\MotionBlur.uc" />
+    <None Include="..\Classes\Mover.uc" />
+    <None Include="..\Classes\Movie.uc" />
+    <None Include="..\Classes\MovieTexture.uc" />
+    <None Include="..\Classes\MusicTrigger.uc" />
+    <None Include="..\Classes\Mutator.uc" />
+    <None Include="..\Classes\NavigationPoint.uc" />
+    <None Include="..\Classes\Note.uc" />
+    <None Include="..\Classes\ObjectPool.uc" />
+    <None Include="..\Classes\OpacityModifier.uc" />
+    <None Include="..\Classes\Palette.uc" />
+    <None Include="..\Classes\PathNode.uc" />
+    <None Include="..\Classes\Pawn.uc" />
+    <None Include="..\Classes\PhysicsVolume.uc" />
+    <None Include="..\Classes\Pickup.uc" />
+    <None Include="..\Classes\Player.uc" />
+    <None Include="..\Classes\PlayerController.uc" />
+    <None Include="..\Classes\PlayerInput.uc" />
+    <None Include="..\Classes\PlayerReplicationInfo.uc" />
+    <None Include="..\Classes\PlayerStart.uc" />
+    <None Include="..\Classes\PolyMarker.uc" />
+    <None Include="..\Classes\PotentialClimbWatcher.uc" />
+    <None Include="..\Classes\Powerups.uc" />
+    <None Include="..\Classes\Projectile.uc" />
+    <None Include="..\Classes\Projector.uc" />
+    <None Include="..\Classes\ProjectorMaterial.uc" />
+    <None Include="..\Classes\ReachSpec.uc" />
+    <None Include="..\Classes\RenderedMaterial.uc" />
+    <None Include="..\Classes\ReplicationInfo.uc" />
+    <None Include="..\Classes\SVehicle.uc" />
+    <None Include="..\Classes\SVehicleFactory.uc" />
+    <None Include="..\Classes\SVehicleTrigger.uc" />
+    <None Include="..\Classes\SVehicleWheel.uc" />
+    <None Include="..\Classes\SavedMove.uc" />
+    <None Include="..\Classes\SceneManager.uc" />
+    <None Include="..\Classes\Scout.uc" />
+    <None Include="..\Classes\ScriptedTexture.uc" />
+    <None Include="..\Classes\Security.uc" />
+    <None Include="..\Classes\Shader.uc" />
+    <None Include="..\Classes\ShadowBitmapMaterial.uc" />
+    <None Include="..\Classes\ShadowProjector.uc" />
+    <None Include="..\Classes\SkyZoneInfo.uc" />
+    <None Include="..\Classes\SmallNavigationPoint.uc" />
+    <None Include="..\Classes\StaticMeshActor.uc" />
+    <None Include="..\Classes\StationaryTurret.uc" />
+    <None Include="..\Classes\StationaryWeapons.uc" />
+    <None Include="..\Classes\SubActionCameraEffect.uc" />
+    <None Include="..\Classes\SubActionCameraShake.uc" />
+    <None Include="..\Classes\SubActionConsoleCommand.uc" />
+    <None Include="..\Classes\SubActionFOV.uc" />
+    <None Include="..\Classes\SubActionFade.uc" />
+    <None Include="..\Classes\SubActionGameSpeed.uc" />
+    <None Include="..\Classes\SubActionOrientation.uc" />
+    <None Include="..\Classes\SubActionParticleTrigger.uc" />
+    <None Include="..\Classes\SubActionSceneSpeed.uc" />
+    <None Include="..\Classes\SubActionTrigger.uc" />
+    <None Include="..\Classes\Suicided.uc" />
+    <None Include="..\Classes\TeamInfo.uc" />
+    <None Include="..\Classes\Teleporter.uc" />
+    <None Include="..\Classes\TerrainInfo.uc" />
+    <None Include="..\Classes\TerrainMaterial.uc" />
+    <None Include="..\Classes\TestInfo.uc" />
+    <None Include="..\Classes\TestObj.uc" />
+    <None Include="..\Classes\TexCoordSource.uc" />
+    <None Include="..\Classes\TexEnvMap.uc" />
+    <None Include="..\Classes\TexMatrix.uc" />
+    <None Include="..\Classes\TexModifier.uc" />
+    <None Include="..\Classes\TexOscillator.uc" />
+    <None Include="..\Classes\TexOscillatorTriggered.uc" />
+    <None Include="..\Classes\TexPanner.uc" />
+    <None Include="..\Classes\TexPannerTriggered.uc" />
+    <None Include="..\Classes\TexRotator.uc" />
+    <None Include="..\Classes\TexScaler.uc" />
+    <None Include="..\Classes\Texture.uc" />
+    <None Include="..\Classes\TextureArray.uc" />
+    <None Include="..\Classes\Trigger.uc" />
+    <None Include="..\Classes\Triggers.uc" />
+    <None Include="..\Classes\TurretCam.uc" />
+    <None Include="..\Classes\UseProjector.uc" />
+    <None Include="..\Classes\UseTrigger.uc" />
+    <None Include="..\Classes\Util.uc" />
+    <None Include="..\Classes\UtilGame.uc" />
+    <None Include="..\Classes\VehiclePart.uc" />
+    <None Include="..\Classes\VertexColor.uc" />
+    <None Include="..\Classes\VoiceMessage.uc" />
+    <None Include="..\Classes\VoicePack.uc" />
+    <None Include="..\Classes\Volume.uc" />
+    <None Include="..\Classes\VolumeTimer.uc" />
+    <None Include="..\Classes\WarpZoneInfo.uc" />
+    <None Include="..\Classes\WarpZoneMarker.uc" />
+    <None Include="..\Classes\WayBeacon.uc" />
+    <None Include="..\Classes\Weapon.uc" />
+    <None Include="..\Classes\WeaponAttachment.uc" />
+    <None Include="..\Classes\WeaponPickup.uc" />
+    <None Include="..\Classes\XMPVehicleBarrel.uc" />
+    <None Include="..\Classes\XMPVehicleTurret.uc" />
+    <None Include="..\Classes\ZoneInfo.uc" />
+    <None Include="..\Classes\ZoneTrigger.uc" />
+    <None Include="..\Classes\fell.uc" />
+    <None Include="..\Classes\vehicle.uc" />
+    <None Include="..\..\System\Engine.int" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,183 @@
+Log: Log file open, 01/07/25 15:25:54
+Init: Name subsystem initialized
+Init: Detected: Microsoft Windows NT 6.2 (Build: 9200)
+Init: Version: 2226
+Init: Compiled: Jan  7 2025 14:18:25
+Init: Command line: -debug -donesound -nobind -noloadwarn -silent
+Init: Base directory: C:\Projects\Unreal2\System\
+Init: Character set: Unicode
+Progress: Bound to Core.dll
+Progress: Calling PackageInit
+Init: Object subsystem initialized
+Init: Computer: LAZEROUS
+Init: User: justi
+Init: CPU Page size=4096, Processors=28
+Init: CPU Detected: PentiumPro-class processor (GenuineIntel)
+Init: CPU Features: CMov FPU RDTSC PAE MMX SSE
+Init: CPU Speed=3428.260610 MHz
+Init: Memory total: Phys=2097151K Pagef=4194303K Virt=2097024K
+Init: Working set: 32000 / 159000
+Progress: Bound to Editor.dll
+Progress: Bound to Engine.dll
+Progress: Calling PackageInit
+Progress: Calling PackageInit
+Log: Executing Class Editor.MakeCommandlet
+Progress: Bound to Fire.dll
+Progress: Calling PackageInit
+Init: Unreal engine initialized
+Log: 
+Log: debug build
+Log: 
+Heading: --------------------Core - Debug--------------------
+Heading: --------------------Engine - Debug--------------------
+Heading: --------------------Fire - Debug--------------------
+Heading: --------------------Editor - Debug--------------------
+Heading: --------------------UI - Debug--------------------
+Progress: Bound to UI.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Heading: --------------------ParticleSystems - Debug--------------------
+Progress: Bound to ParticleSystems.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Heading: --------------------UnrealEd - Debug--------------------
+Heading: --------------------IpDrv - Debug--------------------
+Progress: Bound to IpDrv.dll
+Progress: Calling PackageInit
+Heading: --------------------UWeb - Debug--------------------
+Progress: Bound to UWeb.dll
+Progress: Calling PackageInit
+Heading: --------------------Legend - Debug--------------------
+Progress: Bound to Legend.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Heading: --------------------U2 - Debug--------------------
+Progress: Bound to U2.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Progress: Bound to WinDrv.dll
+Progress: Bound to Window.dll
+Progress: Calling PackageInit
+Progress: Calling PackageInit
+Heading: --------------------Vehicles - Debug--------------------
+Heading: --------------------Weapons - Debug--------------------
+Heading: --------------------Deployables - Debug--------------------
+Heading: --------------------Pawns - Debug--------------------
+Log: Success - 0 error(s), 0 warning(s), 0 update(s)
+Exit: Preparing to exit.
+Log: Purging garbage
+Progress: Unbound to Core.dll
+Progress: Unbound to Editor.dll
+Progress: Unbound to Engine.dll
+Exit: Editor shut down
+Log: 1105.0ms Unloading: Package Core
+Log: 1105.5ms Unloading: Package Editor
+Log: 1105.5ms Unloading: Package Engine
+Progress: Unbound to Fire.dll
+Log: 1106.0ms Unloading: Package Fire
+Progress: Unbound to UI.dll
+Log: 1110.6ms Unloading: Package UI
+Progress: Unbound to ParticleSystems.dll
+Log: 1111.2ms Unloading: Package ParticleSystems
+Log: 1111.8ms Unloading: Package UnrealEd
+Progress: Unbound to IpDrv.dll
+Log: 1111.9ms Unloading: Package IpDrv
+Progress: Unbound to UWeb.dll
+Log: 1112.2ms Unloading: Package UWeb
+Progress: Unbound to Legend.dll
+Log: 1112.3ms Unloading: Package Legend
+Progress: Unbound to U2.dll
+Log: 1113.4ms Unloading: Package U2
+Log: 1113.5ms Unloading: Package U2A
+Log: 1113.6ms Unloading: Package XMPT
+Log: 1113.6ms Unloading: Package XMPWorldItemsT
+Log: 1113.6ms Unloading: Package SpecialFX
+Log: 1113.7ms Unloading: Package XMPM
+Log: 1113.7ms Unloading: Package HUD_Fonts
+Log: 1113.7ms Unloading: Package U2XMPA
+Log: 1113.8ms Unloading: Package XMPWorldItemsM
+Log: 1113.8ms Unloading: Package Pickup_FX
+Log: 1113.8ms Unloading: Package Artifact_Carry_FX
+Log: 1113.9ms Unloading: Package ScottT
+Log: 1113.9ms Unloading: Package JamesT
+Log: 1113.9ms Unloading: Package Station_FX
+Log: 1114.0ms Unloading: Package Deploy_FX
+Log: 1114.1ms Unloading: Package U2Ambient2A
+Log: 1114.1ms Unloading: Package onfire_fx
+Log: 1114.1ms Unloading: Package EMP_Hit_FX
+Log: 1114.1ms Unloading: Package Toxic_Hit_FX
+Log: 1114.1ms Unloading: Package WeaponsA
+Progress: Unbound to WinDrv.dll
+Progress: Unbound to Window.dll
+Log: 1116.2ms Unloading: Package Vehicles
+Log: 1116.2ms Unloading: Package VehiclesT
+Log: 1116.2ms Unloading: Package DetailTextures
+Log: 1116.3ms Unloading: Package VehiclesM
+Log: 1116.3ms Unloading: Package Arch_TurretsM
+Log: 1116.3ms Unloading: Package Arch_TurretsT
+Log: 1116.3ms Unloading: Package Arch_BuildingsT
+Log: 1116.4ms Unloading: Package VehiclesA
+Log: 1116.4ms Unloading: Package Vehicle_WheelDust_FX
+Log: 1116.4ms Unloading: Package Vehicle_GutBlower_FX
+Log: 1116.4ms Unloading: Package U2AmbientA
+Log: 1116.4ms Unloading: Package Vehicle_Explosion_FX
+Log: 1116.5ms Unloading: Package Vehicle_Damage_FX
+Log: 1117.1ms Unloading: Package Weapons
+Log: 1117.1ms Unloading: Package AssaultFX
+Log: 1117.2ms Unloading: Package PrimitivesK
+Log: 1117.2ms Unloading: Package WeaponsK
+Log: 1117.2ms Unloading: Package WeaponsT
+Log: 1117.2ms Unloading: Package Weapons3rdPK
+Log: 1117.2ms Unloading: Package Turret_Harbinger_FX
+Log: 1117.3ms Unloading: Package Turret_SwingArm_FX
+Log: 1117.3ms Unloading: Package Turret_Post_FX
+Log: 1117.3ms Unloading: Package Turret_Roundhouse_FX
+Log: 1117.3ms Unloading: Package 343M
+Log: 1117.4ms Unloading: Package 343T
+Log: 1117.4ms Unloading: Package Arch_WalkwaysT
+Log: 1117.4ms Unloading: Package EnergyFX
+Log: 1117.4ms Unloading: Package ShotgunFX
+Log: 1117.4ms Unloading: Package Turret_Artillery_Plasma_FX
+Log: 1117.5ms Unloading: Package PistolEffects
+Log: 1117.5ms Unloading: Package Turret_Chaingun_FX
+Log: 1117.5ms Unloading: Package Turret_Winged_FX
+Log: 1117.5ms Unloading: Package RocketEffects
+Log: 1117.5ms Unloading: Package Flamethrower_Effects
+Log: 1117.6ms Unloading: Package Pyro
+Log: 1117.6ms Unloading: Package Turret_Artillery_FX
+Log: 1117.6ms Unloading: Package RocketEffects2
+Log: 1117.6ms Unloading: Package Turret_Juggernaut_FX
+Log: 1117.7ms Unloading: Package GrenadeFX
+Log: 1117.7ms Unloading: Package Turret_Juggernaut_Flame_FX
+Log: 1117.7ms Unloading: Package FlameAltFX
+Log: 1117.7ms Unloading: Package SniperTracer
+Log: 1117.7ms Unloading: Package SniperFX
+Log: 1117.7ms Unloading: Package ER_Alt_Projectile_volatile
+Log: 1117.8ms Unloading: Package concussion_grenade_FX
+Log: 1117.8ms Unloading: Package GL_cluster_fx
+Log: 1117.8ms Unloading: Package ER_EMP
+Log: 1117.8ms Unloading: Package GL_EMP
+Log: 1117.8ms Unloading: Package GL_Frag
+Log: 1117.9ms Unloading: Package GL_Smoke
+Log: 1117.9ms Unloading: Package GL_Toxic
+Log: 1117.9ms Unloading: Package Blood
+Log: 1117.9ms Unloading: Package ImpactFX
+Log: 1117.9ms Unloading: Package Impact_Metal_AR
+Log: 1119.9ms Unloading: Package Deployables
+Log: 1120.0ms Unloading: Package LaserTripMine_FX
+Log: 1120.0ms Unloading: Package DeveloperT
+Log: 1120.7ms Unloading: Package Pawns
+Log: 1120.8ms Unloading: Package XMPPlayerA
+Log: 1120.8ms Unloading: Package JumpJet_FX
+Log: 1120.8ms Unloading: Package Ranger
+Log: 1120.9ms Unloading: Package CharactersT
+Log: 1120.9ms Unloading: Package Gunner
+Log: 1120.9ms Unloading: Package Tech
+Log: FTimerManager::ValidateRefs
+Log: Garbage: objects: 25517->0; refs: 0
+Exit: Object subsystem successfully closed.
+Exit: Exiting.
+Log: Waiting for file streaming thread to finish...
+Uninitialized: Name subsystem shut down
+Uninitialized: Allocation checking disabled
+Uninitialized: Log file closed, 01/07/25 15:25:56

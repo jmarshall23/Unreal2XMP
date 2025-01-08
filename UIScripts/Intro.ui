@@ -1,0 +1,403 @@
+
+#######
+
+[dmFadeThing]
+Class=MultiStateComponent
+State=None
+State=UI.BlackBackground
+Transition=dmFade,0,0,0.5,NULL
+Transition=dmFadeOut,0,1,4,UI.BlackBackground
+Transition=dmUnFade,0,0,0,UI.BlackBackground
+Transition=dmBlackout,1,1,0,NULL
+Transition=LevelChange,0,0,0,NULL
+TriggerEvent=0,1.0,Event,dmFadeOut
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=100000
+
+[Stuff]
+Class=FixedSizeContainer
+Component=IntroTitleBars
+Component=IntroWhite
+Component=IntroSpots
+Component=dmFadeThing
+DrawOrder=1
+
+[IntroTitleBars]
+Class=MultiStateComponent
+State=NULL
+State=IntroTitleBar:0.00
+State=IntroTitleBar:0.10
+State=IntroTitleBarA:0.20
+State=IntroTitleBar:0.30
+Transition=ShowTitleBars,1,3,1.0,IntroTitleBarTrans
+Transition=HideTitleBars,3,1,1.0,IntroTitleBarTrans
+Transition=LevelChange,0,0,0,NULL
+TweenLocation=false
+TweenSize=true
+DrawOrder=100
+
+[IntroTitleBar]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=Black
+	Align=None,HardTop
+	Width=10000
+	HeightAccess=exp(Root.Height*%0%)
+Component=ImageComponent
+	Image=Black
+	Align=None,HardBottom
+	Width=10000
+	HeightAccess=exp(Root.Height*%0%)
+
+[IntroTitleBarA]
+Class=FixedSizeContainer
+Component=IntroScanlines
+Component=ImageComponent
+	Image=Black
+	Align=None,HardTop
+	Width=10000
+	HeightAccess=exp(Root.Height*%0%)
+Component=ImageComponent
+	Image=Black
+	Align=None,HardBottom
+	Width=10000
+	HeightAccess=exp(Root.Height*%0%)
+Component=IntroInstructions:Top/8
+Component=IntroInstructions:Bottom/-8
+Component=IntroMusicTriggerBar
+
+[IntroInstructions]
+Class=Container
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=LoadSaveGradientPiece
+		Align=Right,Center
+	Align=Left,Center
+	X=-2
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=LoadSaveGradientPieceR
+		Align=Left,Center
+	Align=Right,Center
+	X=1
+Component=Label
+	Localize=true
+	Text=PressEsc
+	LocalizedFont=EE16
+Align=HardCenter,Hard%0%
+Y=%1%
+DrawOrder=10
+
+[IntroTitleBarTrans]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=Black
+	Align=None,HardTop
+Component=ImageComponent
+	Image=Black
+	Align=None,HardBottom
+	
+[IntroScanlines]
+Class=FixedSizeContainer
+Component=Image
+	Material=IntroT.UIEffects.Scanlines
+	Image=IntroScanlinesRight,4,0,124,128
+	Image=IntroScanlinesLeft,128,0,-124,128
+Component=IntroScanlinesTile:Left/-4
+Component=IntroScanlinesTile:Right/4
+
+[IntroScanlinesTile]
+Class=TileContainer
+FixedSpacing=64
+Component=IntroScanlinesImage:%0%/ScanelineA/400
+Component=IntroScanlinesImage:%0%/ScanlineB/550
+Component=IntroScanlinesImage:%0%/ScanlineC/300
+Component=IntroScanlinesImage:%0%/ScanlineD/300
+Component=IntroScanlinesImage:%0%/ScanelineA/400
+Component=IntroScanlinesImage:%0%/ScanlineB/550
+Component=IntroScanlinesImage:%0%/ScanlineC/300
+Component=IntroScanlinesImage:%0%/ScanlineD/300
+Component=IntroScanlinesImage:%0%/ScanelineA/400
+Component=IntroScanlinesImage:%0%/ScanlineB/550
+Component=IntroScanlinesImage:%0%/ScanlineC/300
+Component=IntroScanlinesImage:%0%/ScanlineD/300
+Component=IntroScanlinesImage:%0%/ScanelineA/400
+Component=IntroScanlinesImage:%0%/ScanlineB/550
+Component=IntroScanlinesImage:%0%/ScanlineC/300
+Component=IntroScanlinesImage:%0%/ScanlineD/300
+Align=Hard%0%,HardCenter
+YAccess=Keyframe|0|0.0|-256|12|0|0.0|-256|12
+X=%1%
+
+[IntroScanlinesImage]
+Class=FixedSizeContainer
+Component=MultiStateComponent
+	State=IntroScanlinesImageC:%0%/64
+	State=IntroScanlinesImageC:%0%/%2%
+	Transition=%1%,0,1,0.15,IntroScanlinesImageC:%0%/0
+	Transition=IntroScanlinesImage.Return,1,0,5.0,IntroScanlinesImageC:%0%/0
+	TriggerEvent=0,1.0,Event,IntroScanlinesImage.Return
+	TweenLocation=false
+	TweenSize=true
+	Align=%0%,None
+	Register=IntroScanlinesImage
+
+[IntroScanlinesImageC]
+Class=ImageComponent
+Image=IntroScanlines%0%
+Width=%1%
+
+#######
+	
+[IntroWhite]
+Class=MultiStateComponent
+State=NULL
+State=IntroWhiteImage
+Transition=WhiteOn,1,1,0,NULL
+Transition=WhiteFlash,1,0,0.6,IntroWhiteImage
+Transition=LevelChange,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=1
+
+[IntroWhiteImage]
+Class=ImageComponent
+Image=White
+Size=10000,10000
+
+[IntroSpots]
+Class=FixedSizeContainer
+Component=IntroSpotTextures
+Component=IntroSpot:A/-100/-100/-75/-50
+Component=IntroSpot:B/200/-75/150/-50
+Component=IntroSpot:C/-150/50/-125/-25
+Component=IntroSpot:D/-100/-100/-75/-50
+Component=IntroSpot:E/200/-75/150/-50
+Component=IntroSpot:F/-150/50/-125/-25
+Component=IntroSpot:G/-100/-100/-75/-50
+Component=IntroSpot:H/200/-75/150/-50
+Component=IntroSpot:I/-150/50/-125/-25
+Component=IntroSpot:J/-100/-100/-75/-50
+Component=IntroSpot:K/200/-75/150/-50
+Align=HardCenter,HardCenter
+DrawOrder=1
+
+[IntroSpot]
+Class=MultiStateComponent
+State=NULL
+Transition=LevelChange,0,0,0,NULL
+Transition=TriggerOverlay%0%,0,0,2.0,IntroSpotC
+TriggerEvent=1,0.0,Event,IntroSpot.Move
+TriggerEvent=1,0.0,Event,IntroSpot.Scale
+TriggerEvent=1,0.0,Event,IntroSpot.Glow
+Register=IntroSpot
+
+[IntroSpotC]
+Class=FixedSizeContainer
+Component=MultiStateComponent
+	State=IntroSpotLocation:%1%/%2%
+	State=IntroSpotLocation:%3%/%4%
+	Transition=IntroSpot.Move,0,1,2.0,IntroSpotTransA
+	TweenLocation=true
+Component=MultiStateComponent
+	State=IntroSpotSize:600
+	State=IntroSpotSize:900
+	Transition=IntroSpot.Scale,0,1,1.5,IntroSpotTransB
+	TweenLocation=false
+	TweenSize=true
+Component=MultiStateComponent
+	State=IntroSpotColor:0/0/0
+	State=IntroSpotColor:120/120/120
+	State=IntroSpotColor:120/120/255
+	State=IntroSpotColor:150/220/150
+	Transition=IntroSpot.Glow,3,0,0.3125,IntroSpotTransC
+	Transition=IntroSpot.Glow1,2,0,0.3125,IntroSpotTransC
+	Transition=IntroSpot.Glow2,1,0,0.3125,IntroSpotTransC
+	TriggerEvent=0,1.0,Event,IntroSpot.Glow1
+	TriggerEvent=1,1.0,Event,IntroSpot.Glow2
+	TweenLocation=false
+	TweenColor=true
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=IntroSpot%0%
+		Style=Translucent
+		WidthAccess=exp(Parent.Parent.IntroSpotTransB.Width)
+		HeightAccess=exp(Parent.Parent.IntroSpotTransB.Height)
+		RAccess=exp(Parent.Parent.IntroSpotTransC.R)
+		GAccess=exp(Parent.Parent.IntroSpotTransC.G)
+		BAccess=exp(Parent.Parent.IntroSpotTransC.B)
+		Align=Center,Center
+	XAccess=exp(Parent.IntroSpotTransA.X)
+	YAccess=exp(Parent.IntroSpotTransA.Y)
+
+[IntroSpotTransA]
+Class=RealComponent
+
+[IntroSpotTransB]
+Class=RealComponent
+
+[IntroSpotTransC]
+Class=RealComponent
+
+[IntroSpotLocation]
+Class=RealComponent
+Location=%0%,%1%
+
+[IntroSpotSize]
+Class=RealComponent
+Size=%0%,%0%
+
+[IntroSpotColor]
+Class=RealComponent
+Color=%0%,%1%,%2%
+
+[IntroSpotTextures]
+Class=FixedSizeContainer
+Component=IntroSpotTexture:A/GhostImage001
+Component=IntroSpotTexture:B/GhostImage002
+Component=IntroSpotTexture:C/GhostImage003
+Component=IntroSpotTexture:D/GhostImage004
+Component=IntroSpotTexture:E/GhostImage005
+Component=IntroSpotTexture:F/GhostImage006
+Component=IntroSpotTexture:G/GhostImage007
+Component=IntroSpotTexture:H/GhostImage008
+Component=IntroSpotTexture:I/GhostImage009
+Component=IntroSpotTexture:J/GhostImage010
+Component=IntroSpotTexture:K/GhostImage011
+
+[IntroSpotTexture]
+Class=Image
+Material=IntroT.Overlays.%1%
+FullImage=IntroSpot%0%
+
+#####
+
+[IntroMusicTriggerBar]
+Class=FixedSizeContainer
+Component=IntroMusicTriggers
+	ReverseOrder=true
+	Align=HardCenter,HardTop
+	YAccess=exp(Root.Height*0.20-12)
+	Color=64,64,180,196
+	LineY=6
+Component=IntroMusicTriggers
+	ReverseOrder=true
+	Align=HardCenter,HardBottom
+	YAccess=exp(-Root.Height*0.20+4)
+	Color=64,150,64,196
+Component=IntroMusicTriggers
+	Align=HardCenter,HardTop
+	YAccess=exp(Root.Height*0.20-12)
+	Color=48,100,48,196
+	LineY=6
+Component=IntroMusicTriggers
+	Align=HardCenter,HardBottom
+	YAccess=exp(-Root.Height*0.20+4)
+	Color=48,48,120,196
+DrawOrder=1
+
+[IntroMusicTriggers]
+Class=TileContainer
+Horizontal=true
+%ReverseOrder
+%Align
+%YAccess
+X=-6
+Component=FixedSizeContainer
+	Width=500
+	Component=ImageComponent
+		Image=White
+		Color=32,32,32,40
+		Size=507,2
+		Align=Center,None
+		%LineY=Y
+Component=IntroMusicTrigger:Boom
+Component=IntroMusicTrigger:tchh
+Component=IntroMusicTrigger:tchh02
+Component=IntroMusicTrigger:bongo1
+Component=IntroMusicTrigger:bongo2
+Component=IntroMusicTrigger:weirdsubtle
+Component=IntroMusicTrigger:BassTom01
+Component=IntroMusicTrigger:smack
+Component=IntroMusicTrigger:steam
+Component=IntroMusicTrigger:hihat01
+Component=IntroMusicTrigger:hihat02
+Component=IntroMusicTrigger:WarmSynth
+Component=IntroMusicTrigger:Echo1
+Component=IntroMusicTrigger:Echo2
+Component=IntroMusicTrigger:Echo3
+Component=IntroMusicTrigger:HiPulse
+Component=IntroMusicTrigger:BuildScale
+Component=IntroMusicTrigger:BassTom02
+Component=IntroMusicTrigger:hihat03
+Component=IntroMusicTrigger:hihat04
+Component=IntroMusicTrigger:SubtleBass
+Component=IntroMusicTrigger:SoftBass
+Component=IntroMusicTrigger:BassPedal
+Component=IntroMusicTrigger:simpledrums01
+Component=IntroMusicTrigger:simpledrums02
+Component=IntroMusicTrigger:warmchord
+Component=IntroMusicTrigger:warmchordmid
+Component=IntroMusicTrigger:frogchirp
+Component=IntroMusicTrigger:voice01
+Component=IntroMusicTrigger:metalbang
+Component=IntroMusicTrigger:synthbuild
+Component=IntroMusicTrigger:LowBass
+Component=IntroMusicTrigger:HardGuitar
+Component=IntroMusicTrigger:OverlayFlash
+Component=IntroMusicTrigger:overBeep
+Component=IntroMusicTrigger:afterBeep
+Component=IntroMusicTrigger:grumble_subtle
+Component=IntroMusicTrigger:preScaryStrings
+Component=IntroMusicTrigger:ScaryStrings
+Component=IntroMusicTrigger:woodblockRiff
+Component=IntroMusicTrigger:guitarRiff
+Component=IntroMusicTrigger:ScaryVoice
+Component=IntroMusicTrigger:beginGrow
+Component=IntroMusicTrigger:AlienBass
+Component=IntroMusicTrigger:AlienPulse01
+Component=IntroMusicTrigger:AlienPulse02
+Component=IntroMusicTrigger:AlienPulse03
+Component=IntroMusicTrigger:woodBlock
+Component=IntroMusicTrigger:MGS_moan
+Component=IntroMusicTrigger:buildGuitars
+Component=IntroMusicTrigger:bassBeat
+Component=IntroMusicTrigger:FinalEvent
+Component=FixedSizeContainer
+	Width=500
+	Component=ImageComponent
+		Image=White
+		Color=32,32,32,40
+		Size=507,2
+		Align=Center,None
+		%LineY=Y
+
+[IntroMusicTrigger]
+Class=FixedSizeContainer
+Component=MultiStateComponent
+	State=MusicTriggerOff
+	State=MusicTriggerOn
+	Transition=%0%,1,0,0.8,MusicTriggerTrans
+	TweenLocation=false
+	TweenColor=true
+	Align=Center,None
+Width=12
+
+[MusicTriggerOn]
+Class=ImageComponent
+Image=White
+%Color
+Size=5,8
+
+[MusicTriggerOff]
+Class=ImageComponent
+Image=White
+Color=32,32,32,40
+Size=5,8
+
+[MusicTriggerTrans]
+Class=ImageComponent
+Image=White
+Size=5,8
+

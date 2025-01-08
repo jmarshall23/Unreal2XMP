@@ -1,0 +1,1449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{f5887cdd-3cad-40c3-a97f-ac2771c9a9bb}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{8ac7f2a6-0ec0-4fc7-b7c0-c1e41c3962af}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{d2692ec5-16b8-4373-bb93-d159ab137de9}</UniqueIdentifier>
+      <Extensions>*.uc</Extensions>
+    </Filter>
+    <Filter Include="Net">
+      <UniqueIdentifier>{834ee04d-f384-47b6-b806-85f518ba17f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Int">
+      <UniqueIdentifier>{c27c4c9b-737f-41a6-aa36-ee9237980d74}</UniqueIdentifier>
+      <Extensions>*.int</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AFileLog.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AGameStats.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AStatLog.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="AUtil.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="FLineManager.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="FStatAccumulator.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KConstraint.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KDebugDraw.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KDynStep.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KFarfield.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KPhysic.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KScript.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KSkeletal.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KTriListGen.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KUtils.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="KarmaSupport.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="NullDrv.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="ULodMesh.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnActCol.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnActor.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnAudio.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnCDKey.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnCamMgr.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnCamera.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnCameraEffects.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnCanvas.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnCon.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnController.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnConvexVolume.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnEngine.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnErrorChecking.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnFPoly.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnFluidSurface.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnFont.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnGame.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnGameUtilities.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnIn.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnLevAct.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnLevTic.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnLevel.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnLodMesh.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnMaterial.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnMatineeTools.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnMesh.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnModel.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnModelLight.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnMover.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnMovie.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnNavigationPoint.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnOctree.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnPackageCheckInfo.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnParams.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnPath.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnPawn.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnPhysic.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnPlayer.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnPrim.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnProjector.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnReach.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRebuildTools.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRender.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRenderBSP.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRenderBatch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRenderEditorActor.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRenderLight.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRenderPool.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRenderResource.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRenderStaticMesh.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRenderUtil.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRenderVisibility.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnRoute.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnSVehicle.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnSceneManager.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnScript.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnScriptedTexture.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnSecurity.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnShadowProjector.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnSkeletalMesh.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnSkeletalMeshCollision.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnSkeletalTools.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnStatGraph.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnStaticMesh.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnStaticMeshBuild.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnStaticMeshCollision.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnStats.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnTerrain.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnTerrainTools.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnTex.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnTrace.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnURL.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnVehicle.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnVertMesh.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnVolume.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="palette.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="xForceFeedback.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnBunch.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="UnChan.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="UnConn.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="UnDemoPenLev.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="UnDemoRec.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="UnDownload.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="UnNetDrv.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="UnPenLev.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Amd3d.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="EnginePrivate.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="KDebugDraw.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="KarmaSupport.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="NvTriStrip.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="UnOctreePrivate.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="UnRenderPrivate.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AAIController.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AActor.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AAmmunition.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ABrush.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ACamera.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AController.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ADecoration.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ADoor.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AGameReplicationInfo.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AInterpolationPoint.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AInventory.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ALadder.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ALadderVolume.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ALevelInfo.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ALiftCenter.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ALight.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ALineOfSightTrigger.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AMatSubAction.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AMover.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ANavigationPoint.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ANote.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\APawn.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\APhysicsVolume.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\APickup.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\APlayerController.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\APlayerReplicationInfo.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\APlayerStart.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\APowerups.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AProjectile.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AProjector.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ASceneManager.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AScout.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ASecurity.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AStationaryWeapons.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ATeamInfo.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ATeleporter.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AUtil.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AVehicle.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AVolume.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AWarpZoneInfo.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AWarpZoneMarker.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AWeapon.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AWeaponAttachment.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\AZoneInfo.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Bezier.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Engine.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\EngineClasses.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FLineManager.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\FStatAccumulator.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\KTypes.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Palette.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\S3tc.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\SafeBuild.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UCombiner.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UFinalBlend.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UI3DL2Listener.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ULevelSummary.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UMatAction.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UMatSubAction.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UModifier.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UMovie.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UMovieTexture.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UPausedCameraControl.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UReachSpec.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UShader.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USubActionCameraShake.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USubActionConsoleCommand.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USubActionFOV.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USubActionFade.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USubActionGameSpeed.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USubActionOrientation.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USubActionParticleTrigger.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USubActionSceneSpeed.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\USubActionTrigger.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UTextureArray.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnActor.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnAnim.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnAudio.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnCDKey.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnCamera.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnCameraEffects.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnCanvas.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnComponents.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnCon.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnConvexVolume.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnDDraw.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnEngine.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnEngineGnuG.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnEngineWin.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnFluidSurface.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnGame.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnIn.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnLevel.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnLodMesh.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnMaterial.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnMatineeTools.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnMesh.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnModel.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnMovie.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnNullRenderDevice.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnObj.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnPackageCheckInfo.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnPath.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnPhysic.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnPlayer.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnPrim.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnProjector.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnReach.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnRebuildTools.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnRenDev.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnRender.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnRenderResource.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnRenderUtil.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnSkeletalMesh.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnStatGraph.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnStaticMesh.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnStats.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnTerrain.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnTerrainTools.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnTex.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnURL.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnVertMesh.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnVoiceChat.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnVolume.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\xForceFeedback.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnBunch.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnChan.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnConn.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnDemoPenLev.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnDemoRec.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnDownload.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnNet.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnNetDrv.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnPenLev.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\AIController.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AIMarker.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AIScript.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AccessControl.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ActionMoveCamera.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ActionPause.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Actor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Admin.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AmbientSound.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Ammo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Ammunition.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AnimNotify.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AnimNotify_DestroyEffect.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AnimNotify_Effect.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AnimNotify_MatSubAction.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AnimNotify_Script.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AnimNotify_Scripted.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AnimNotify_Sound.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AnimNotify_Trigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AntiPortalActor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Armor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ArmorPickup.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AutoDoor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AutoLadder.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AvoidMarker.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Bitmap.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\BitmapMaterial.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\BlockingVolume.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\BroadcastHandler.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Brush.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Camera.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\CameraEffect.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\CameraOverlay.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Canvas.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\CarriedObject.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\CheatManager.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Client.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ClipMarker.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ColorModifier.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Combiner.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Console.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ConsolePlugIn.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ConstantColor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ConstantMaterial.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Controller.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Crushed.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Cubemap.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DamTypeTelefragged.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DamageFilter.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DamageType.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DamageTypeImpact.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DeathMessage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Decal.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DecoVolumeObject.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Decoration.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DecorationList.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DefaultPhysicsVolume.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DemoRecSpectator.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Door.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DynamicLight.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DynamicProjector.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Effects.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Engine.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Engine.upkg">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FadeColor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FailedConnect.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FellLava.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FileLog.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FinalBlend.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FluidSurfaceInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FluidSurfaceOscillator.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Fragment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GameEngine.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GameInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GameMessage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GameReplicationInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GameRules.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GameStats.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Gibbed.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\HardwareShader.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\I3DL2Listener.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Info.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\InternetInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\InterpolationPoint.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Inventory.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\InventoryAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\InventorySpot.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JumpDest.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JumpPad.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KActor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KBSJoint.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KCarWheelJoint.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KConeLimit.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KConstraint.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KHinge.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KRepulsor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KTire.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KVehicle.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KVehicleFactory.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KarmaParams.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KarmaParamsCollision.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KarmaParamsRBFull.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\KarmaParamsSkel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Keypoint.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Ladder.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LadderVolume.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LevelInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LevelSummary.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LiftCenter.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LiftExit.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Light.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LineOfSightTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LocalMessage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LookTarget.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MapList.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MatAction.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MatDemoActor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MatObject.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MatSubAction.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MatchInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Material.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MaterialSequence.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MaterialSwitch.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MaterialTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MeshObject.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MessagingSpectator.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Modifier.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MotionBlur.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Mover.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Movie.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MovieTexture.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MusicTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Mutator.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\NavigationPoint.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Note.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ObjectPool.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\OpacityModifier.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Palette.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\PathNode.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Pawn.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\PhysicsVolume.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Pickup.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Player.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\PlayerController.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\PlayerInput.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\PlayerReplicationInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\PlayerStart.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\PolyMarker.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\PotentialClimbWatcher.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Powerups.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Projectile.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Projector.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ProjectorMaterial.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ReachSpec.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RenderedMaterial.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ReplicationInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SVehicle.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SVehicleFactory.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SVehicleTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SVehicleWheel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SavedMove.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SceneManager.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Scout.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ScriptedTexture.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Security.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Shader.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ShadowBitmapMaterial.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ShadowProjector.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SkyZoneInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SmallNavigationPoint.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\StaticMeshActor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\StationaryTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\StationaryWeapons.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SubActionCameraEffect.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SubActionCameraShake.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SubActionConsoleCommand.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SubActionFOV.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SubActionFade.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SubActionGameSpeed.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SubActionOrientation.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SubActionParticleTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SubActionSceneSpeed.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SubActionTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Suicided.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TeamInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Teleporter.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TerrainInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TerrainMaterial.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TestInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TestObj.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TexCoordSource.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TexEnvMap.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TexMatrix.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TexModifier.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TexOscillator.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TexOscillatorTriggered.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TexPanner.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TexPannerTriggered.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TexRotator.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TexScaler.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Texture.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TextureArray.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Trigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Triggers.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TurretCam.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\UseProjector.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\UseTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Util.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\UtilGame.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\VehiclePart.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\VertexColor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\VoiceMessage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\VoicePack.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Volume.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\VolumeTimer.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\WarpZoneInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\WarpZoneMarker.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\WayBeacon.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Weapon.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\WeaponAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\WeaponPickup.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPVehicleBarrel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\XMPVehicleTurret.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ZoneInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ZoneTrigger.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\fell.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\vehicle.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\..\System\Engine.int">
+      <Filter>Int</Filter>
+    </None>
+  </ItemGroup>
+</Project>

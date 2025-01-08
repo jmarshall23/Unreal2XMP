@@ -1,0 +1,462 @@
+
+
+[Title]
+Class=MultiStateComponent
+State=TitleC
+Transition=FlashTitle,0,0,0,NULL
+TriggerEvent=0,0.0,Event,Title.Flash
+Register=Title
+
+[TitleC]
+Class=TileContainer
+Component=RealComponent
+	Height=32
+Component=Label
+	Name=CreditLabel
+	LocalizedFont=TitleFont
+Component=FixedSizeContainer
+	Component=MultiStateComponent
+		State=NULL
+		State=TitleFlashEffect
+		Transition=Title.FlashOut,1,0,4.6,TitleFlashEffect
+		TweenLocation=false
+		TweenColor=true
+		Y=13
+	Component=MultiStateComponent
+		State=NULL
+		State=TitleFlashEffect
+		Transition=Title.Flash,0,1,0.7,TitleFlashEffect
+		Transition=Title.FlashOut,0,0,0.0,NULL
+		TriggerEvent=0,1.0,Event,Title.FlashOut
+		TweenReverseEase=true
+		TweenLocation=false
+		TweenColor=true
+		Y=13
+	Component=ScaleContainer
+		RelativeSize=110,82
+		Component=Label
+			Name=CreditLabel
+			LocalizedFont=TitleFont
+			X=240
+			Color=32,32,48,64
+	Component=ScaleContainer
+		RelativeSize=220,165
+		Component=Label
+			Name=CreditLabel
+			LocalizedFont=TitleFont
+			X=210
+			Color=64,64,96,64
+	DrawOrder=-1
+
+[TitleFlashEffect]
+Class=TileContainer
+Horizontal=true
+Component=ImageComponent
+	Image=FlashEffectLeft
+	Size=64,64
+Component=ImageComponent
+	Image=FlashEffectMid
+	Height=64
+	WidthAccess=exp(Parent.Parent.Parent.Parent.CreditLabel.Width)
+Component=ImageComponent
+	Image=FlashEffectRight
+	Size=64,64
+Style=Translucent
+;Color=200,200,200
+;Color=255,144,0
+;Color=243,255,165
+Color=255,243,165
+Location=-64,-4
+
+[Header]
+Class=Label
+Name=CreditLabel
+LocalizedFont=HeaderFont
+
+[Italics]
+Class=TileContainer
+Component=RealComponent
+	Height=10
+Component=Label
+	Name=CreditLabel
+	LocalizedFont=ItalicFont
+	Wrap=true
+	Size=600,16
+X=32
+
+[Break]
+Class=FixedSizeContainer
+Component=Label
+	Name=CreditLabel
+	LocalizedFont=HeaderFont
+	Align=Center,Center
+Align=Center,None
+Height=96
+
+[Section]
+Class=MultiStateComponent
+State=SectionC
+Transition=Pulse,0,0,0,NULL
+Transition=Frame,0,0,0,NULL
+TriggerEvent=0,0.0,Event,Section.BeginPulse
+TriggerEvent=1,0.0,Event,Section.ShowFrame
+Register=Section
+
+[SectionC]
+Class=FixedSizeContainer
+Component=SoundComponent
+	Sound=U2AmbientA.Hum.Hum29S
+	Register=Whoosh
+Component=MultiStateComponent
+	State=CircuitFrame:0/-96
+	State=CircuitFrame:255/0.5
+	Transition=Section.ShowFrame,0,1,3.0,CircuitFrame:0/0
+	TweenLocation=true
+	TweenAlpha=true
+Component=MaterialContainer
+	Component=MultiStateComponent
+		State=CurcuitHookY:Yellow/-1
+		State=CurcuitHookY:Yellow/1
+		Transition=Section.CircuitGlowYellow,0,1,2.0,CurcuitHookY:Yellow/0
+		TriggerEvent=0,0.25,Event,Section.CircuitGlowYellowR
+		TweenLinearEase=true
+		TweenLocation=true
+	Component=ImageComponent
+		Image=YellowCircuits
+		Size=128,32
+		Y=18
+	X=-16
+Component=MaterialContainer
+	Component=MultiStateComponent
+		State=CurcuitHookY:Yellow/-1
+		State=CurcuitHookY:Yellow/1
+		Transition=Section.CircuitGlowYellowR,0,1,2.6,CurcuitHookY:Yellow/0
+		TweenLinearEase=true
+		TweenLocation=true
+	Component=ImageComponent
+		Image=YellowCircuitsR
+		Size=128,32
+		Y=18
+	X=-16
+Component=MaterialContainer
+	Component=MultiStateComponent
+		State=CurcuitHookX:Green/0.2
+		State=CurcuitHookX:Green/-1.8
+		Transition=Section.CircuitGlowGreen,0,1,2.0,CurcuitHookX:Green/0
+		TriggerEvent=0,0.1,Event,Section.CircuitGlowBlue
+		TweenLocation=true
+	Component=ImageComponent
+		Image=GreenCircuits
+		Size=128,32
+		Y=18
+	Component=MultiStateComponent
+		State=CurcuitHookX:Blue/-1.2
+		State=CurcuitHookX:Blue/0.8
+		Transition=Section.CircuitGlowBlue,0,1,3.0,CurcuitHookX:Blue/0
+		TweenLocation=true
+	Component=ImageComponent
+		Image=BlueCircuits
+		Size=148,32
+		Y=18
+	X=-16
+Component=MultiStateComponent
+	State=NULL
+	State=SectionLabel:64/10
+	State=SectionLabel:255/0
+	Transition=Section.ShowText,1,2,0.4,SectionLabel:0/0
+	TweenLocation=true
+	TweenAlpha=true
+	Y=26
+Component=MultiStateComponent
+	State=PulseEffect
+	State=PulseEffectX
+	State=NULL
+	Transition=Section.BeginPulse,0,1,1.0,PulseEffect
+	Transition=PulseEffect.Hide,2,2,0,NULL
+	;TriggerEvent=0,0.0,Event,Whoosh.PlaySound
+	TriggerEvent=0,1.0,Event,PulseEffect.Hide
+	TriggerEvent=0,1.0,Event,Section.Flash
+	TriggerEvent=0,1.0,Event,Section.ShowText
+	TriggerEvent=0,1.0,Event,Section.CircuitGlowYellow
+	TriggerEvent=0,1.0,Event,Section.CircuitGlowGreen
+	TweenReverseEase=true
+	TweenLocation=true
+	TweenColor=true
+	Register=PulseEffect
+Component=MultiStateComponent
+	State=NULL
+	State=FlashEffect
+	Transition=Section.Flash,1,0,4.0,FlashEffect
+	TweenLocation=false
+	TweenColor=true
+	Y=21
+Height=64
+
+[SectionLabel]
+Class=Label
+Name=CreditLabel
+;Font=UI_Fonts.Micro12
+LocalizedFont=TitleFont
+Color=255,221,141
+Alpha=%0%
+X=%1%
+
+[PulseEffect]
+Class=ImageComponent
+Image=PulseEffect
+Style=Translucent
+Color=0,0,0
+Size=128,16
+Location=400,157
+Align=HardCenter,HardCenter
+
+[PulseEffectX]
+Class=ImageComponent
+Image=PulseEffect
+Style=Translucent
+Size=128,16
+Y=157
+XAccess=exp(Parent.Parent.CreditLabel.Width*0.8-300)
+Align=HardCenter,HardCenter
+
+[FlashEffect]
+Class=TileContainer
+Horizontal=true
+Component=ImageComponent
+	Image=FlashEffectLeft
+	Size=32,32
+Component=ImageComponent
+	Image=FlashEffectMid
+	Height=32
+	WidthAccess=exp(Parent.Parent.Parent.CreditLabel.Width)
+Component=ImageComponent
+	Image=FlashEffectRight
+	Size=32,32
+Style=Translucent
+Location=-32,-2
+
+[CurcuitHookX]
+Class=RealComponent
+Name=%0%CircuitGlow
+X=%1%
+
+[CurcuitHookY]
+Class=RealComponent
+Name=%0%CircuitGlow
+Y=%1%
+
+[CircuitFrame]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=CircuitFrame
+	Size=212,64
+	Location=-32,2
+	Alpha=%0%
+Component=ImageComponent
+	Image=CircuitFrameStretch
+	Size=212,64
+	Location=-244,2
+	Alpha=%0%
+X=%1%
+
+[Name]
+Class=Container
+Component=MultiStateComponent
+	State=NameLabelB:GlyphFont
+	State=NameLabelC:GlyphFont
+	State=NULL
+	Transition=Name.Start,0,0,1.00,NameLabelC:GlyphFont
+	Transition=Name.Glow,0,1,1.85,NameLabelC:GlyphFont
+	Transition=Name.Fade,1,2,1.0,NameLabelC:GlyphFont
+	TriggerEvent=0,1.0,Event,Name.Glow
+	TriggerEvent=1,1.0,Event,Name.Fade
+	TweenReverseEase=true
+	TweenLocation=false
+	TweenAlpha=true
+	TweenColor=true
+Component=MultiStateComponent
+	State=NULL
+	State=NameLabel:NameFont
+	Transition=Name.Start,0,0,2.85,NameLabel:NameFont
+	Transition=Name.Fade,0,1,1.6,NameLabel:NameFont
+	TweenLocation=false
+	TweenAlpha=true
+InitialEvent=Event,Name.Start
+Register=Name
+
+[NameLabel]
+Class=Label
+Name=CreditLabel
+LocalizedFont=%0%
+%Height
+Height=26
+%Wrap
+%Size
+%Color
+%X
+%Y
+X=64
+
+[NameLabelB]
+Class=Label
+Name=CreditLabel
+LocalizedFont=%0%
+%Height
+Height=26
+%Wrap
+%Size
+%X
+%Y
+X=64
+Color=80,80,80
+
+[NameLabelC]
+Class=Label
+Name=CreditLabel
+LocalizedFont=%0%
+%Height
+Height=26
+%Wrap
+%Size
+%X
+%Y
+X=64
+Color=128,128,255
+
+[NameTitle]
+Class=TileContainer
+Component=RealComponent
+	Height=10
+Component=Container
+	Component=Name
+		Color=255,144,0
+		X=48
+	DrawOrder=1
+
+[NameNoSpace]
+Class=FixedSizeContainer
+Component=Name
+
+[NameJobDescription]
+Class=Container
+Component=Name
+	Wrap=true
+	Size=364,24
+	X=240
+
+[NameVoiceActor]
+Class=Container
+Component=Name
+	Height=24
+	X=332
+	Y=-16
+	
+[GlyphHookY]
+Class=RealComponent
+Name=GlyphHook
+Y=%0%
+
+[GlyphComponent]
+Class=FixedSizeContainer
+Component=MaterialContainer
+	Component=MultiStateComponent
+		State=GlyphHookY:-1
+		State=GlyphHookY:1
+		Transition=TestGlyph%0%,0,1,1.0,GlyphHookY:0
+		TriggerEvent=0,0.25,Event,TestGlyph%1%
+		TweenLinearEase=true
+		TweenLocation=true
+	Component=ImageComponent
+		Image=GlyphTitle%0%
+		;Size=128,32
+Size=64,64
+
+[Root]
+Class=FixedSizeContainer
+Component=SpecialCreditsTextures
+;Component=TileContainer
+;	Horizontal=true
+;	Align=HardCenter,HardCenter
+;	Component=GlyphComponent:01/02
+;	Component=GlyphComponent:02/03
+;	Component=GlyphComponent:03/04
+;	Component=GlyphComponent:04/01
+;	InitialEvent=Event,TestGlyph01
+Component=Frame
+	Component=Credits.U2Credits:SpecialCredits
+		SpecialEvent=0.40,FlashTitle
+		SpecialEvent=0.14,Frame
+		SpecialEvent=0.19,Pulse
+		SpecialEvent=0.26,Translate
+		CreditEvent=0.0,CodeMonkey,PlayMusic_Credits
+		CreditEvent=0.185,CodeMonkey,TriggerSpecialCreditsParticles_yellow
+		CreditEvent=0.185,Event,SpecialCredits.FadeUp
+		CreditEvent=0.4,CodeMonkey,TriggerSpecialCreditsParticles_yellow
+		CreditEvent=0.4,CodeMonkey,TriggerSpecialCreditsParticles_blue
+		CreditEvent=0.6,CodeMonkey,TriggerSpecialCreditsParticles_blue
+		CreditEvent=0.6,CodeMonkey,TriggerSpecialCreditsParticles_purple
+		CreditEvent=0.8,CodeMonkey,TriggerSpecialCreditsParticles_purple
+		CreditEvent=0.8,CodeMonkey,TriggerSpecialCreditsParticles_gold
+		CreditEvent=1.0,CodeMonkey,StopMusic
+		CreditEvent=1.0,CodeMonkey,TriggerLevelChange
+		Rate=32.0
+		Height=528
+	FrameSize=1600,480
+	FrameLocation=-800,24
+	Align=HardCenter,HardCenter
+Component=MultiStateComponent
+	State=NULL
+	State=SpecialCreditsBackground
+	Transition=SpecialCredits.FadeDown,0,1,1.0,SpecialCreditsBackground
+	Transition=SpecialCredits.FadeUp,1,0,4.0,SpecialCreditsBackground
+	Transition=LevelChange,0,0,0,NULL
+	TriggerEvent=2,0.0,Event,SpecialCreditsStop
+	TweenLocation=false
+	TweenLinear=true
+	TweenAlpha=true
+	DrawOrder=-1
+Register=SpecialCredits
+DrawOrder=1
+
+[SpecialCreditsBackground]
+Class=ImageComponent
+Image=Black
+Size=40000,40000
+Align=HardCenter,HardCenter
+
+[SpecialCreditsTextures]
+Class=FixedSizeContainer
+Component=Image
+	Material=UIResT.SpecialCredits.PulseEffect
+	FullImage=PulseEffect
+Component=Image
+	Material=UIResT.SpecialCredits.FlashEffect
+	Image=FlashEffectLeft,0,0,62,128
+	Image=FlashEffectRight,66,0,62,128
+	Image=FlashEffectMid,62,0,4,128
+Component=Image
+	Material=UIResT.CircuitBoard.CircuitBoardYellow
+	Image=YellowCircuits,0,0,512,128
+	Image=YellowCircuitsR,0,128,512,-128
+Component=Image
+	Material=UIResT.CircuitBoard.CircuitBoardGreen
+	FullImage=GreenCircuits
+Component=Image
+	Material=UIResT.CircuitBoard.CircuitBoardBlue
+	FullImage=BlueCircuits
+Component=Image
+	Material=UIResT.CircuitBoard.CircuitFrame
+	Image=CircuitFrameStretch,0,0,44,64
+	Image=CircuitFrame,44,0,212,64
+;Component=Image
+;	Material=UIResT.GlyphTitle.GlyphTitle01
+;	FullImage=GlyphTitle01
+;Component=Image
+;	Material=UIResT.GlyphTitle.GlyphTitle02
+;	FullImage=GlyphTitle02
+;Component=Image
+;	Material=UIResT.GlyphTitle.GlyphTitle03
+;	FullImage=GlyphTitle03
+;Component=Image
+;	Material=UIResT.GlyphTitle.GlyphTitle04
+;	FullImage=GlyphTitle04

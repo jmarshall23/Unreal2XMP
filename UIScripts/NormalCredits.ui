@@ -1,0 +1,84 @@
+
+
+[Title]
+Class=TileContainer
+Component=RealComponent
+	Height=32
+Component=Label
+	Name=CreditLabel
+	LocalizedFont=TitleFont
+
+[Header]
+Class=Label
+Name=CreditLabel
+LocalizedFont=HeaderFont
+
+[Italics]
+Class=TileContainer
+Component=RealComponent
+	Height=10
+Component=Label
+	Name=CreditLabel
+	LocalizedFont=ItalicFont
+	Wrap=true
+	Size=600,16
+X=32
+
+[Break]
+Class=FixedSizeContainer
+Component=Label
+	Name=CreditLabel
+	LocalizedFont=HeaderFont
+	Align=Center,Center
+Align=Center,None
+Height=96
+
+[Section]
+Class=FixedSizeContainer
+Component=Label
+	Name=CreditLabel
+	LocalizedFont=TitleFont
+	Align=None,Center
+	Color=255,221,141
+	Y=6
+Height=42
+
+[Name]
+Class=Label
+Name=CreditLabel
+LocalizedFont=NameFont
+Height=26
+%Color
+%X
+X=64
+
+[NameTitle]
+Class=TileContainer
+Component=RealComponent
+	Height=10
+Component=Container
+	Component=Name
+		Color=255,144,0
+		X=48
+	DrawOrder=1
+
+[NameNoSpace]
+Class=FixedSizeContainer
+Component=Name
+
+[NameJobDescription]
+Class=Container
+Component=Label
+	Name=CreditLabel
+	LocalizedFont=NameFont
+	Wrap=true
+	Size=360,24
+	X=240
+
+[NameVoiceActor]
+Class=Container
+Component=Label
+	Name=CreditLabel
+	LocalizedFont=NameFont
+	Height=24
+	Location=332,-16

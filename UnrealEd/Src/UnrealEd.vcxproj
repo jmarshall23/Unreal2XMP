@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <ProjectGuid>{E80EF01C-E74C-1487-3BAD-6036DB43BF91}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\Lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\Lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\Core\Inc;..\..\Engine\Inc;..\..\Window\Inc;..\..\Editor\Inc;..\Inc;..\..\metoolkit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_EDITOR_;NDEBUG;_WINDOWS;UNICODE;_WIN32_IE=0x0200;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>UnrealEd.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Release/UnrealEd.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <BrowseInformation>
+      </BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Mdt.lib;MdtKea.lib;MdtBcl.lib;Mst.lib;McdFrame.lib;McdCommon.lib;McdPrimitives.lib;McdConvex.lib;McdConvexCreateHull.lib;MeGlobals.lib;MeAssetFactory.lib;MeAssetDB.lib;MeXML.lib;comctl32.lib;..\..\Core\Lib\Core.lib;..\..\Engine\Lib\Engine.lib;..\..\Window\Lib\Window.lib;..\..\Editor\Lib\Editor.lib;..\..\zlib\Release\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../system/UnrealEd.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\metoolkit\lib.rel\win32;..\..\metoolkit\lib.rel\win32_single_msvcrt;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCD;LIBCMTD;MSVCRTD;LIBC;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>.\..\Lib/UnrealEd.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <BaseAddress>0x10E00000</BaseAddress>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Lib/UnrealEd.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Core\Inc;..\..\Engine\Inc;..\..\Window\Inc;..\..\Editor\Inc;..\Inc;..\..\metoolkit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_EDITOR_;_WINDOWS;UNICODE;_DEBUG;_WIN32_IE=0x0200;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>UninitializedLocalUsageCheck</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>UnrealEd.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/UnrealEd.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Mdt.lib;MdtKea.lib;MdtBcl.lib;Mst.lib;McdFrame.lib;McdCommon.lib;McdPrimitives.lib;McdConvex.lib;McdConvexCreateHull.lib;MeGlobals.lib;MeAssetFactory.lib;MeAssetDB.lib;MeXML.lib;comctl32.lib;..\..\Core\Lib\Core.lib;..\..\Engine\Lib\Engine.lib;..\..\Window\Lib\Window.lib;..\..\Editor\Lib\Editor.lib;..\..\zlib\Debug\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../system/UnrealEd.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\metoolkit\lib.dbg\win32;..\..\metoolkit\src\components\lib.dbg\win32_single_msvcrt;..\..\metoolkit\lib.dbg\win32_single_msvcrt;..\..\metoolkit\lib.chk\win32_single_msvcrt;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCD;LIBCMTD;MSVCRTD;LIBC;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\..\Lib/UnrealEd.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <StackReserveSize>1048576</StackReserveSize>
+      <StackCommitSize>1048576</StackCommitSize>
+      <BaseAddress>0x10E00000</BaseAddress>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Lib/UnrealEd.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Browser.cpp" />
+    <ClCompile Include="BrowserAnimation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="BuildPropSheet.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="DlgTexProp.cpp" />
+    <ClCompile Include="EdHook.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="EdModes.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="GenericDlgOptions.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="GeomFitUtils.cpp" />
+    <ClCompile Include="KarmaEditorSupport.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="SurfacePropSheet.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="UnEdAct.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="UnEdCam.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="UnEdClick.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="UnEdModeTools.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="UnEdRend.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="UnSyntax.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="UnTexAlignTools.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="UnrealEd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="UnrealEdMisc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="UnrealEdSrv.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="ViewportFrame.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UnrealEd.h</PrecompiledHeaderFile>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeomFitUtils.h" />
+    <ClInclude Include="..\Inc\BottomBar.h" />
+    <ClInclude Include="..\Inc\BottomBarStandard.h" />
+    <ClInclude Include="..\Inc\Browser.h" />
+    <ClInclude Include="..\Inc\BrowserActor.h" />
+    <ClInclude Include="..\Inc\BrowserAnimation.h" />
+    <ClInclude Include="..\Inc\BrowserGroup.h" />
+    <ClInclude Include="..\Inc\BrowserMaster.h" />
+    <ClInclude Include="..\Inc\BrowserMesh.h" />
+    <ClInclude Include="..\Inc\BrowserMusic.h" />
+    <ClInclude Include="..\Inc\BrowserParticles.h" />
+    <ClInclude Include="..\Inc\BrowserPrefab.h" />
+    <ClInclude Include="..\Inc\BrowserSound.h" />
+    <ClInclude Include="..\Inc\BrowserStaticMesh.h" />
+    <ClInclude Include="..\Inc\BrowserTexture.h" />
+    <ClInclude Include="..\Inc\BuildPropSheet.h" />
+    <ClInclude Include="..\Inc\ButtonBar.h" />
+    <ClInclude Include="..\Inc\CodeFrame.h" />
+    <ClInclude Include="..\Inc\DlgAddSpecial.h" />
+    <ClInclude Include="..\Inc\DlgBrushBuilder.h" />
+    <ClInclude Include="..\Inc\DlgBrushImport.h" />
+    <ClInclude Include="..\Inc\DlgDepth.h" />
+    <ClInclude Include="..\Inc\DlgGeneric.h" />
+    <ClInclude Include="..\Inc\DlgLoadErrors.h" />
+    <ClInclude Include="..\Inc\DlgMapCheck.h" />
+    <ClInclude Include="..\Inc\DlgMapImport.h" />
+    <ClInclude Include="..\Inc\DlgNewMaterial.h" />
+    <ClInclude Include="..\Inc\DlgProgress.h" />
+    <ClInclude Include="..\Inc\DlgRename.h" />
+    <ClInclude Include="..\Inc\DlgScaleLights.h" />
+    <ClInclude Include="..\Inc\DlgSearchActors.h" />
+    <ClInclude Include="..\Inc\DlgTexProp.h" />
+    <ClInclude Include="..\Inc\DlgTexReplace.h" />
+    <ClInclude Include="..\Inc\DlgTipOfTheDay.h" />
+    <ClInclude Include="..\Inc\DlgViewportConfig.h" />
+    <ClInclude Include="..\Inc\DockingFrame.h" />
+    <ClInclude Include="..\Inc\EdModes.h" />
+    <ClInclude Include="..\Inc\GenericDlgOptions.h" />
+    <ClInclude Include="..\Inc\ImportShader.h" />
+    <ClInclude Include="..\Inc\KarmaEditorSupport.h" />
+    <ClInclude Include="..\Inc\MDIFrame.h" />
+    <ClInclude Include="..\Inc\MRUList.h" />
+    <ClInclude Include="..\Inc\MatineePreview.h" />
+    <ClInclude Include="..\Inc\MatineeSheet.h" />
+    <ClInclude Include="..\Inc\SurfacePropSheet.h" />
+    <ClInclude Include="..\Inc\TerrainEditSheet.h" />
+    <ClInclude Include="..\Inc\TopBar.h" />
+    <ClInclude Include="..\Inc\TwoDeeShapeEditor.h" />
+    <ClInclude Include="..\Inc\UnEdModeTools.h" />
+    <ClInclude Include="..\Inc\UnEditorOptions.h" />
+    <ClInclude Include="..\Inc\UnMaterialTools.h" />
+    <ClInclude Include="..\Inc\UnMatineeTools.h" />
+    <ClInclude Include="..\Inc\UnTexAlignTools.h" />
+    <ClInclude Include="..\Inc\UnrealEd.h" />
+    <ClInclude Include="..\Inc\UnrealEdClasses.h" />
+    <ClInclude Include="..\Inc\UnrealEdMisc.h" />
+    <ClInclude Include="..\Inc\ViewportFrame.h" />
+    <ClInclude Include="Res\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\BuildChangedLights.bmp" />
+    <None Include="res\MatPreviewEdit.bmp" />
+    <None Include="res\MatRefresh.bmp" />
+    <None Include="res\MatShowPath.bmp" />
+    <None Include="res\MatShowRotations.bmp" />
+    <None Include="res\PlayControls.bmp" />
+    <None Include="res\ToggleCinView.bmp" />
+    <None Include="res\UdnContextHelp.bmp" />
+    <None Include="Res\Unreal.ico" />
+    <None Include="Res\bb_grid1.bmp" />
+    <None Include="Res\bb_lock1.bmp" />
+    <None Include="Res\bb_log_w.bmp" />
+    <None Include="Res\bb_rotat.bmp" />
+    <None Include="Res\bb_vtx_s.bmp" />
+    <None Include="Res\bb_zoomc.bmp" />
+    <None Include="Res\bmp00001.bmp" />
+    <None Include="Res\bmp00002.bmp" />
+    <None Include="Res\bmp00003.bmp" />
+    <None Include="Res\bmp00004.bmp" />
+    <None Include="Res\bmp00005.bmp" />
+    <None Include="Res\bmp00006.bmp" />
+    <None Include="Res\bmp00007.bmp" />
+    <None Include="res\bmp00008.bmp" />
+    <None Include="res\bmp00009.bmp" />
+    <None Include="res\bmp00010.bmp" />
+    <None Include="res\bmp00011.bmp" />
+    <None Include="res\bmp00012.bmp" />
+    <None Include="res\bmp00013.bmp" />
+    <None Include="res\bmp00014.bmp" />
+    <None Include="res\bmp00015.bmp" />
+    <None Include="res\bmp00016.bmp" />
+    <None Include="res\bmp00017.bmp" />
+    <None Include="res\bmp00018.bmp" />
+    <None Include="res\bmp00019.bmp" />
+    <None Include="res\bmp00020.bmp" />
+    <None Include="res\bmp00021.bmp" />
+    <None Include="res\bmp00022.bmp" />
+    <None Include="res\bmp00023.bmp" />
+    <None Include="res\bmp00024.bmp" />
+    <None Include="res\bmp00025.bmp" />
+    <None Include="res\bmp00026.bmp" />
+    <None Include="res\bmp00027.bmp" />
+    <None Include="res\bmp00028.bmp" />
+    <None Include="res\bmp00029.bmp" />
+    <None Include="res\bmp00030.bmp" />
+    <None Include="res\bmp00031.bmp" />
+    <None Include="res\bmp00032.bmp" />
+    <None Include="res\bmp00033.bmp" />
+    <None Include="res\bmp00034.bmp" />
+    <None Include="res\bmp00035.bmp" />
+    <None Include="res\bmp00036.bmp" />
+    <None Include="Res\bmp00037.bmp" />
+    <None Include="res\bmp7839.bmp" />
+    <None Include="res\browserg.bmp" />
+    <None Include="res\browserm.bmp" />
+    <None Include="res\browsers.bmp" />
+    <None Include="res\browsert.bmp" />
+    <None Include="Res\cf_toolb.bmp" />
+    <None Include="res\dtp_backdrop.bmp" />
+    <None Include="res\dtp_cube.bmp" />
+    <None Include="res\dtp_plane.bmp" />
+    <None Include="res\dtp_sphere.bmp" />
+    <None Include="res\dtp_toplevel.bmp" />
+    <None Include="res\idbm_.bmp" />
+    <None Include="res\idbm_2ds.bmp" />
+    <None Include="res\idbm_an_backward.bmp" />
+    <None Include="res\idbm_an_begin.bmp" />
+    <None Include="res\idbm_an_end.bmp" />
+    <None Include="res\idbm_an_forward.bmp" />
+    <None Include="res\idbm_an_loop.bmp" />
+    <None Include="res\idbm_an_noloop.bmp" />
+    <None Include="res\idbm_an_pause.bmp" />
+    <None Include="res\idbm_an_play.bmp" />
+    <None Include="res\idbm_ani.bmp" />
+    <None Include="res\idbm_bac.bmp" />
+    <None Include="res\idbm_bui.bmp" />
+    <None Include="res\idbm_buildall.bmp" />
+    <None Include="res\idbm_cam.bmp" />
+    <None Include="res\idbm_del.bmp" />
+    <None Include="res\idbm_dow.bmp" />
+    <None Include="res\idbm_dtp.bmp" />
+    <None Include="res\idbm_dup.bmp" />
+    <None Include="res\idbm_edi.bmp" />
+    <None Include="res\idbm_exe.bmp" />
+    <None Include="res\idbm_fil.bmp" />
+    <None Include="res\idbm_for.bmp" />
+    <None Include="res\idbm_gri.bmp" />
+    <None Include="res\idbm_map.bmp" />
+    <None Include="res\idbm_mat.bmp" />
+    <None Include="res\idbm_mes.bmp" />
+    <None Include="res\idbm_mov.bmp" />
+    <None Include="res\idbm_mus.bmp" />
+    <None Include="res\idbm_new.bmp" />
+    <None Include="res\idbm_pla.bmp" />
+    <None Include="res\idbm_pre.bmp" />
+    <None Include="res\idbm_sur.bmp" />
+    <None Include="res\idbm_tex.bmp" />
+    <None Include="res\idbm_unr.bmp" />
+    <None Include="res\idbm_up.bmp" />
+    <None Include="Res\idbm_vie.bmp" />
+    <None Include="res\reset.bmp" />
+    <None Include="Res\toolbar1.bmp" />
+    <None Include="res\totd.bmp" />
+    <None Include="res\vcrbackward.bmp" />
+    <None Include="res\vcrfirst.bmp" />
+    <None Include="res\vcrforward.bmp" />
+    <None Include="res\vcrlast.bmp" />
+    <None Include="res\vcrplay.bmp" />
+    <None Include="res\vcrstop.bmp" />
+    <None Include="..\Classes\AnimBrowserMesh.uc" />
+    <None Include="..\Classes\AnimEditProps.uc" />
+    <None Include="..\Classes\MeshEditProps.uc" />
+    <None Include="..\Classes\NotifyProperties.uc" />
+    <None Include="..\Classes\SequEditProps.uc" />
+    <None Include="..\Classes\SkelPrefsEditProps.uc" />
+    <None Include="..\Classes\UnrealEdEngine.uc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Res\UnrealEd.rc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Res</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Res</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

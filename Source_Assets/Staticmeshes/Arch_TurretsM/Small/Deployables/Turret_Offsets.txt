@@ -1,0 +1,12 @@
+Offsets and Constraints
+
+BASE: X: 0 Y: 0 Z: 0
+
+ARMS: X: 0 Y: 0 Z: 40.51 Constraint: None. 360 degree movement along heading.
+
+Cannon (Or Rocket): X: -23.8 y:0 z:80.82 
+
+Rocket Constraint: -51 to 57 degrees of pitch
+
+Cannon Constraint: -39 to 52 degrees of Pitch
+

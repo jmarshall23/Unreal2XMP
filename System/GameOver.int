@@ -1,0 +1,15 @@
+[General]
+GameOverActionFont=SubTFonts.EE16
+GameOverTextFont=SubTFonts.EE16
+DialogFont=HUD_Fonts.EuroExt14
+ContinueFont=HUD_Fonts.EuroExt14
+QuitFont=UI_Fonts.Micro12UC
+GAME_OVER=GAME OVER
+TimeUp=Game Time Up!
+RedNoEnergy=Red Team ran out of energy!
+BlueNoEnergy=Blue Team ran out of energy!
+RedWins=Red Team Wins!
+BlueWins=Blue Team Wins!
+ContinueButton=CONTINUE
+GameOver_Quit=QUIT
+PleaseWait=[Loading next level...]

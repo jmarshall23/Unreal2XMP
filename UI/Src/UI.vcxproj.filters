@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{d18ebe33-d616-4153-89ab-bb3aac368f11}</UniqueIdentifier>
+      <Extensions>*.uc</Extensions>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{42a8243b-e3ad-44f1-92d4-be6bcc09db59}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{f4a9b2d9-debe-481e-a9b7-29c30ea08f5b}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{a8d870bb-ed13-4ad4-ab01-2411344209d1}</UniqueIdentifier>
+      <Extensions>*.ui</Extensions>
+    </Filter>
+    <Filter Include="Feast">
+      <UniqueIdentifier>{52de48a7-f2fe-4289-a2e0-ab5ce31ba2d9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\CodeMonkey.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\NetMonkey.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TexUIhook.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\UIConsole.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\UIHelper.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\..\UIScripts\ArtifactScore.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\Console.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\Credits.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\Crosshairs.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\Debug.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\DialogUI.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\UIScripts\GameOver.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\Intro.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\UIScripts\LowerHUD.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\NormalCredits.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\PID.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\SpecialCredits.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\SummonMenu.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\Titles.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\UIScripts\Tutorial.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\U2HUD.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\U2Menus.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\UIScripts\U2XMP.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\uiscripts\UI.ui">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\System\UI.int" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ActionEvents.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="ImportUI.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="SerializeUI.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UComponent.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UContainer.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UIComponents.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UMouseCursor.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UMultiStateComponent.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UUIConsole.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Inc\ActionEvents.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\ImportUI.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\SerializeUI.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\TDoubleLinkList.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UComponent.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UI.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UIClasses.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UIComponents.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UInputSelector.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UMouseCursor.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UMultiStateComponent.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UUIConsole.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UUIHelper.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnUIRender.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnUIRenderTypes.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Feast\Inc\DataType.h">
+      <Filter>Feast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Feast\Inc\FeastExpressions.h">
+      <Filter>Feast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Feast\Inc\StandardFeastNodes.h">
+      <Filter>Feast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UIFeastNodes.h">
+      <Filter>Feast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Feast\Inc\feast.h">
+      <Filter>Feast</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

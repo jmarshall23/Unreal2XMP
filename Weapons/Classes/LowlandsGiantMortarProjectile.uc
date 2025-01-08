@@ -1,0 +1,2 @@
+class LowlandsGiantMortarProjectile extends Projectile;
+

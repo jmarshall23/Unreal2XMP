@@ -1,0 +1,76 @@
+
+
+ Unreal skeletal exporter - Model information for [test.psk] 
+
+ Skin faces:    780
+ Skin vertices:    441
+ Skin wedges (vertices with unique U,V):    622
+ Total bone-to-vertex linkups:    632
+ Reference bones:     54
+ Unique materials:      1
+
+ = materials =
+ * Index: [ 0]  name: skin00  
+   Original bitmap: PH_Skin1.tga  Path: D:\!Meshes\Weapons\Playerarm
+    - Skin Index:  0
+   - render mode flags:
+ 
+
+ BONE LIST        [54] total bones in reference skeleton. 
+  number     name                           (parent) 
+  [  0 ]    [__hands_root                   ]      (  0 ) 
+  [  1 ]    [arm_right_upper                ]      (  0 ) 
+  [  2 ]    [arm_right_lower                ]      (  1 ) 
+  [  3 ]    [hand_right (bone)              ]      (  2 ) 
+  [  4 ]    [hand_right_end                 ]      (  3 ) 
+  [  5 ]    [thumb_right_1                  ]      (  3 ) 
+  [  6 ]    [thumb_right_2                  ]      (  5 ) 
+  [  7 ]    [thumb_right_3                  ]      (  6 ) 
+  [  8 ]    [thumb_right_end                ]      (  7 ) 
+  [  9 ]    [forefinger_right_1             ]      (  3 ) 
+  [ 10 ]    [forefinger_right_2             ]      (  9 ) 
+  [ 11 ]    [forefinger_rigjht_3            ]      ( 10 ) 
+  [ 12 ]    [forefinger_rigjht_end          ]      ( 11 ) 
+  [ 13 ]    [middlefinger_right_1           ]      (  3 ) 
+  [ 14 ]    [middlefinger_right_2           ]      ( 13 ) 
+  [ 15 ]    [middlefinger_right_3           ]      ( 14 ) 
+  [ 16 ]    [middlefinger_right_end         ]      ( 15 ) 
+  [ 17 ]    [ringfinger_right_1             ]      (  3 ) 
+  [ 18 ]    [ringfinger_right_2             ]      ( 17 ) 
+  [ 19 ]    [ringfinger_right_3             ]      ( 18 ) 
+  [ 20 ]    [ringfinger_right_end           ]      ( 19 ) 
+  [ 21 ]    [li'lfinger_right_1             ]      (  3 ) 
+  [ 22 ]    [li'lfinger_right_2             ]      ( 21 ) 
+  [ 23 ]    [li'lfinger_right_3             ]      ( 22 ) 
+  [ 24 ]    [li'lfinger_right_end           ]      ( 23 ) 
+  [ 25 ]    [arm_left_upper                 ]      (  0 ) 
+  [ 26 ]    [arm_left_lower                 ]      ( 25 ) 
+  [ 27 ]    [hand_left (bone)               ]      ( 26 ) 
+  [ 28 ]    [hand_left_end                  ]      ( 27 ) 
+  [ 29 ]    [forefinger_left_1              ]      ( 27 ) 
+  [ 30 ]    [forefinger_left_2              ]      ( 29 ) 
+  [ 31 ]    [forefinger_left_3              ]      ( 30 ) 
+  [ 32 ]    [forefinger_left_3_end          ]      ( 31 ) 
+  [ 33 ]    [middlefinger_left_1            ]      ( 27 ) 
+  [ 34 ]    [middlefinger_left_2            ]      ( 33 ) 
+  [ 35 ]    [middlefinger_left_3            ]      ( 34 ) 
+  [ 36 ]    [middlefinger_left_end          ]      ( 35 ) 
+  [ 37 ]    [ringfinger_left_1              ]      ( 27 ) 
+  [ 38 ]    [ringfinger_left_2              ]      ( 37 ) 
+  [ 39 ]    [ringfinger_left_3              ]      ( 38 ) 
+  [ 40 ]    [ringfinger_left_end            ]      ( 39 ) 
+  [ 41 ]    [li'lfinger_left_1              ]      ( 27 ) 
+  [ 42 ]    [li'lfinger_left_2              ]      ( 41 ) 
+  [ 43 ]    [li'lfinger_left_3              ]      ( 42 ) 
+  [ 44 ]    [li'lfinger_left_end            ]      ( 43 ) 
+  [ 45 ]    [thumb_left_1                   ]      ( 27 ) 
+  [ 46 ]    [thumb_left_2                   ]      ( 45 ) 
+  [ 47 ]    [thumb_left_3                   ]      ( 46 ) 
+  [ 48 ]    [thumb_left_end                 ]      ( 47 ) 
+  [ 49 ]    [MissingLink                    ]      (  0 ) 
+  [ 50 ]    [_hand_right                    ]      ( 49 ) 
+  [ 51 ]    [Root_NOPHYS                    ]      ( 50 ) 
+  [ 52 ]    [pickup                         ]      ( 51 ) 
+  [ 53 ]    [takkraEnd                      ]      ( 52 ) 
+ 
+

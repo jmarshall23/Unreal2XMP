@@ -1,0 +1,2504 @@
+
+[Root]
+Class=MultiStateComponent
+State=NonMain
+State=Main
+Transition=ResetMenus,0,0,0,NULL
+Transition=ShowMenus,1,1,0,NULL
+;TriggerEvent=0,0.0,CodeMonkey,UnPause
+;TriggerEvent=1,0.0,CodeMonkey,Pause
+TriggerEvent=0,0.0,CodeMonkey,DrawWorld
+TriggerEvent=1,0.0,CodeMonkey,NoDrawWorld
+TriggerEvent=1,0.0,Event,MenuBackgroundBlurry.FadeOut
+TriggerEvent=1,0.0,Event,MainMenuBackgroundLarge.Grow
+TriggerEvent=1,0.0,Event,MainMenuBackgroundSmall.Show
+DrawOrder=99
+Localize=true
+
+[NonMain]
+Class=FixedSizeContainer
+;Component=U2HUD.EndGame
+Component=GameOver.Root
+Localize=false
+
+[Main]
+Class=FixedSizeContainer
+;Component=U2MenuAssets
+Component=MainMenuCommonBackground
+Component=U2Mouse
+;Component=CodeMonkey
+Component=Dispatcher
+;Component=Background
+Component=Menus
+Component=Credits
+Component=MainMenuMovingLine
+Component=UIEditor
+Component=U2MenusTimedHolder
+
+[U2MenusTimedHolder]
+Class=Container
+Align=HardCenter,HardCenter
+Location=0,178
+
+[UIEditor]
+Class=MultiStateComponent
+State=NULL
+State=Editor
+NextStateEvent=ToggleEditor
+DrawOrder=100
+
+[Dispatcher]
+Class=MultiStateComponent
+State=NULL
+Transition=Dispatcher.NewGame,0,0,1,NULL
+Transition=Dispatcher.Multiplayer,0,0,1,NULL
+Transition=Dispatcher.Options,0,0,1,NULL
+Transition=Dispatcher.XMP,0,0,1,NULL
+Transition=Dispatcher.Quit,0,0,1,NULL
+Transition=Dispatcher.StartHard,0,0,1,NULL
+Transition=Dispatcher.StartNormal,0,0,1,NULL
+Transition=Dispatcher.StartEasy,0,0,1,NULL
+Transition=Dispatcher.Credits,0,0,1,NULL
+Transition=Dispatcher.DebugMenu,0,0,1,NULL
+Transition=Dispatcher.SummonMenuButton,0,0,1,NULL
+Transition=Dispatcher.DebugMenuButton,0,0,1,NULL
+Transition=Dispatcher.AudioStats,0,0,1,NULL
+Transition=Dispatcher.ServerOptions,0,0,1,NULL
+;TriggerEvent=0,0,Event,ShowMenuNewGame
+TriggerEvent=0,0,Event,ResetMenus
+TriggerEvent=0,0,ConsoleCommand,OPEN Tutorial
+TriggerEvent=1,0,Event,ShowMenuMultiplayer
+;TriggerEvent=1,0,NetMonkey,CreateReceiver
+TriggerEvent=2,0,Event,ShowMenuOptions
+TriggerEvent=3,0,Event,ShowMenuXMP
+TriggerEvent=4,0,CodeMonkey,StopMusic
+TriggerEvent=4,0,ConsoleCommand,EXIT
+//!!MERGE TriggerEvent=5,0,CodeMonkey,SetDifficulty2
+TriggerEvent=5,0,Event,ResetMenus
+TriggerEvent=5,0,ConsoleCommand,OPEN Entry
+//!!MERGE TriggerEvent=6,0,CodeMonkey,SetDifficulty1
+TriggerEvent=6,0,Event,ResetMenus
+TriggerEvent=6,0,ConsoleCommand,OPEN Entry
+//!!MERGE TriggerEvent=7,0,CodeMonkey,SetDifficulty0
+TriggerEvent=7,0,Event,ResetMenus
+TriggerEvent=7,0,ConsoleCommand,OPEN Entry
+TriggerEvent=8,0,Event,HideMenus
+TriggerEvent=8,0.0001,Event,RollCredits
+TriggerEvent=9,0,Event,ShowMenuDebugMenu
+TriggerEvent=10,0,Event,ResetMenus
+TriggerEvent=10,0,Event,ShowSummonMenu
+TriggerEvent=11,0,Event,ResetMenus
+TriggerEvent=11,0,Event,ShowDebugMenu
+TriggerEvent=12,0,Event,ResetMenus
+TriggerEvent=12,0,Event,ToggleAudioStats
+TriggerEvent=13,0,Event,ShowMenuServerOptions
+Register=Dispatcher
+
+[Menus]
+Class=MultiStateComponent
+State=MainMenu
+State=NewMenu
+State=MultiplayerMenu
+State=OptionsMenu
+;State=XMPMenu
+;State=DebugMenu
+State=NULL
+State=ServerOptionsMenu
+Transition=ShowMenuMainMenu,0,0,0,NULL
+Transition=ShowMenuNewGame,1,1,0,NULL
+Transition=ShowMenuMultiplayer,2,2,0,NULL
+Transition=ShowMenuOptions,3,3,0,NULL
+;Transition=ShowMenuXMP,4,4,0,NULL
+;Transition=ShowMenuDebugMenu,5,5,0,NULL
+Transition=ShowMenuServerOptions,5,5,0,NULL
+Transition=ResetMenus,0,0,0,NULL
+Transition=HideMenus,4,4,0,NULL
+
+
+### Main menu ###
+
+[MainMenu]
+Class=FixedSizeContainer
+Component=MainMenuBackground
+Component=MainMenuItems
+Component=MainMenuBackButton:ResetMenus
+
+[MainMenuBackground]
+Class=FixedSizeContainer
+Component=MainMenuOuterBrackets
+Component=MainMenuItemHolders
+Component=Label
+	Access=CodeMonkey,GetEngineVersion
+	Font=Engine.DefaultFont
+	Localize=false
+	Align=HardRight,HardBottom
+	Location=-5,-3
+DrawOrder=1
+
+[MainMenuCommonBackground]
+Class=FixedSizeContainer
+Component=ScaleContainer
+	RelativeSize=1024,768
+	Component=TileContainer
+		Component=ImageComponent
+			Image=MainMenuBackground01
+			Style=Normal
+		Component=ImageComponent
+			Image=MainMenuBackground02
+			Style=Normal
+		Align=HardCenter,HardCenter
+	Component=MenuBackgroundBlurry
+Component=MainMenuBackgroundLarge
+Component=MainMenuBackgroundSmall
+Component=MainMenuLine:-243
+Component=MainMenuLine:+205
+DrawOrder=-999
+
+[MenuBackgroundBlurry]
+Class=MultiStateComponent
+State=NULL
+State=MenuBackgroundSmall
+Transition=MenuBackgroundBlurry.FadeOut,1,0,7.0,MenuBackgroundSmall
+;Transition=MenuBackgroundBlurry.Reset,1,1,0.0,NULL
+TweenLocation=false
+TweenLinear=true
+TweenAlpha=true
+Register=MenuBackgroundBlurry
+Align=HardCenter,HardCenter
+DrawOrder=1
+Y=-3
+
+[MenuBackgroundSmall]
+Class=ImageComponent
+Image=MenuBackgroundSmall
+Size=1024,774
+
+[MainMenuLine]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=UpperLine
+	Align=Right,None
+Component=ImageComponent
+	Image=UpperLineR
+	Align=Left,None
+Align=HardCenter,HardCenter
+Y=%0%
+DrawOrder=1
+
+[MainMenuMovingLine]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=UpperLine
+	Align=Right,None
+Component=ImageComponent
+	Image=UpperLineR
+	Align=Left,None
+Align=HardCenter,HardCenter
+YAccess=Keyframe|-277|0.0|255|8.0
+;Style=Modulated
+Alpha=40
+DrawOrder=1
+
+[MainMenuBackButton]
+Class=FixedSizeContainer
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=BackStretchDotR
+		Location=-175,6
+		Size=175,1
+	Component=ImageComponent
+		Image=BackR
+		Location=0,0
+	Component=Label
+		LocalizedFont=SmallButtonFont
+		;Color=254,241,194,255
+		Color=255,221,141,255
+		Text=BackButton
+		MouseClick=Event,%0%
+		MouseClick=Event,MouseDown.PlaySound
+		MouseEnter=Event,MouseOver.PlaySound
+		MouseEnter=Event,BackButton.On
+		MouseExit=Event,BackButton.Off
+		Align=Center,Center
+		Location=52,8
+	Component=MultiStateComponent
+		State=NULL
+		State=BackButtonHilite
+		Transition=BackButton.On,0,1,0.2,BackButtonHilite
+		Transition=BackButton.Off,1,0,0.3,BackButtonHilite
+		TweenLocation=false
+		TweenAlpha=true
+		Location=16,-2
+		DrawOrder=1
+	Component=KeyEvent
+		Key=Escape,Press,Event,%0%
+		Key=Mouse4,Release,Event,%0%
+	Register=BackButton
+	Align=HardCenter,HardCenter
+	Location=-304,186
+DrawOrder=1
+
+[BackButtonHilite]
+Class=ImageComponent
+Image=BackGlow
+
+[MainMenuForwardButton]
+Class=FixedSizeContainer
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=BackStretchDot
+		Location=103,6
+		Size=175,1
+	Component=ImageComponent
+		Image=Back
+		Location=0,0
+	Component=Label
+		LocalizedFont=SmallButtonFont
+		;Color=254,241,194,255
+		Color=255,221,141,255
+		Text=NextButton
+		MouseClick=Event,%0%
+		MouseClick=Event,MouseDown.PlaySound
+		MouseEnter=Event,MouseOver.PlaySound
+		MouseEnter=Event,BackButton.On
+		MouseExit=Event,BackButton.Off
+		EnabledAccess=Player,AutoSaveEnabled%1%
+		Align=Center,Center
+		Location=52,8
+	Component=MultiStateComponent
+		State=NULL
+		State=BackButtonHilite
+		Transition=BackButton.On,0,1,0.2,BackButtonHilite
+		Transition=BackButton.Off,1,0,0.3,BackButtonHilite
+		TweenLocation=false
+		TweenAlpha=true
+		Location=16,-2
+		DrawOrder=1
+	Register=BackButton
+	Align=HardCenter,HardCenter
+	Location=168,186
+EnabledAccess=Player,AutoSaveEnabled%1%
+DrawOrder=1
+
+[MainMenuItemHolders]
+Class=TileContainer
+Vertical=true
+FixedSpacing=46
+Component=MainMenuItemHolder:NewGame
+Component=MainMenuItemHolder:Multiplayer
+Component=MainMenuItemHolder:ServerOptions
+;Component=MainMenuItemHolder:DebugMenu
+Component=MainMenuItemHolder:Options
+;Component=MainMenuItemHolder:XMP
+Component=MainMenuItemHolder:Credits
+Component=MainMenuItemHolder:Quit
+Align=HardCenter,HardCenter
+Location=0,-2
+DrawOrder=1
+
+[MainMenuItemHolder]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=TypeBackground
+	Align=Center,None
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,MainMenuItemHolder.On
+	MouseExit=Event,MainMenuItemHolder.Off
+Component=ImageComponent
+	Image=CoverBar
+	Align=Center,None
+	Location=10,-2
+Component=ImageComponent
+	Image=ZigZagNextToTypeBackground
+	Location=79,19
+Component=ImageComponent
+	Image=LeftAngleGradientPiece
+	Location=-128,15
+Component=ImageComponent
+	Image=LeftAngleGradientPieceStretchDot
+	Location=-86,37
+	Size=70,2
+Component=ImageComponent
+	Image=LeftAngleGradientPieceStretchDotR
+	Location=-322,19
+	Size=195,2
+Component=Button
+	DownImage=ButtonPressedPiece
+	Action=Event,Dispatcher.%0%
+	Action=Event,MouseDown.PlaySound
+	Align=Center,None
+	Size=133,23
+	Location=-2,8
+	DrawOrder=1
+Component=MainMenuHighlite
+Register=MainMenuItemHolder
+DrawOrder=1
+
+[MainMenuHighlite]
+Class=MultiStateComponent
+State=NULL
+State=MainMenuHighliteImage
+Transition=MainMenuItemHolder.On,0,1,0.2,MainMenuHighliteImage
+Transition=MainMenuItemHolder.Off,1,0,0.2,MainMenuHighliteImage
+TweenLocation=false
+TweenAlpha=true
+Align=Center,None
+Location=-1,4
+DrawOrder=1
+
+[MainMenuHighliteImage]
+Class=ImageComponent
+Image=SelectGlow
+
+[MainMenuBackgroundLarge]
+Class=MultiStateComponent
+State=MainMenuBackgroundLargeC:4
+State=MainMenuBackgroundLargeC:532
+Transition=MainMenuBackgroundLarge.Grow,0,1,0.7,MainMenuBackgroundLargeC:4
+;Transition=MainMenuBackgroundLarge.Reset,0,0,0,NULL
+TweenReverseEase=true
+TweenLocation=false
+TweenSize=true
+Register=MainMenuBackgroundLarge
+DrawOrder=1
+
+[MainMenuBackgroundLargeC]
+Class=TileContainer
+Horizontal=true
+Component=ImageComponent
+	Image=LargeBackgroundGlow
+	Height=%0%
+Component=ImageComponent
+	Image=LargeBackgroundGlowR
+	Height=%0%
+Align=HardCenter,HardCenter
+
+[MainMenuBackgroundSmall]
+Class=MultiStateComponent
+State=MainMenuBackgroundSmallC
+State=NULL
+Transition=MainMenuBackgroundSmall.Hide,0,1,2.0,MainMenuBackgroundSmallC
+Transition=MainMenuBackgroundSmall.Show,1,0,2.0,MainMenuBackgroundSmallC
+TweenLocation=false
+TweenLinear=true
+TweenAlpha=true
+Register=MainMenuBackgroundSmall
+Align=HardCenter,HardCenter
+Location=0,-6
+DrawOrder=1
+
+[MainMenuBackgroundSmallC]
+Class=TileContainer
+Horizontal=true
+Component=ImageComponent
+	Image=SmallBackgroundGlow
+	Height=310
+Component=ImageComponent
+	Image=SmallBackgroundGlowR
+	Height=310
+
+[MainMenuOuterBrackets]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=UpperOuterBracket
+	Align=Center,Top
+Component=ImageComponent
+	Image=LowerOuterBracket
+	Align=Center,Bottom
+Align=HardCenter,HardCenter
+Height=375
+Y=-6
+DrawOrder=1
+
+[MainMenuItems]
+Class=TileContainer
+FixedSpacing=46
+Vertical=true
+Component=MainMenuLabel:NewGame
+Component=MainMenuLabel:Multiplayer
+Component=MainMenuLabel:ServerOptions
+;Component=MainMenuLabel:DebugMenu
+Component=MainMenuLabel:Options
+;Component=MainMenuLabel:XMP
+Component=MainMenuLabel:Credits
+Component=MainMenuLabel:Quit
+Align=HardCenter,HardCenter
+Location=-4,8
+DrawOrder=1
+
+[MainMenuLabel]
+Class=LabelShadow
+LocalizedFont=MainLabelFont
+Text=%0%
+DrawOrder=1
+
+### New menu ###
+
+[NewMenu]
+Class=FixedSizeContainer
+Component=U2Label:NewTitle/-223/18
+Component=NewOptions
+Component=PlayButton
+Component=MainMenuBackButton:ShowMenuMainMenu
+Align=HardCenter,HardCenter
+Y=-228
+DrawOrder=1
+
+[NewOptions]
+Class=TileContainer
+Horizontal=True
+Component=OptionDescriptions_NEW
+Component=OptionWidgets_NEW
+Align=HardCenter,HardCenter
+Location=-87,-114
+DrawOrder=1
+
+[OptionDescriptions_NEW]
+Class=FixedSizeContainer
+Component=OptionDescription:01/0/GameType
+Component=OptionDescription:02/26/Map
+Component=OptionDescription:03/52/UseAllMaps
+
+[OptionWidgets_NEW]
+Class=FixedSizeContainer
+Component=U2Selector:0
+	Group=OptionWidgets_NEW
+	Accessor=CodeMonkey,GetGameTypeList
+	Modifier=CodeMonkey,SetGameType
+	CurrentText=CodeMonkey,GetGameType
+Component=U2Selector:26
+	Group=OptionWidgets_NEW
+	Accessor=CodeMonkey,GetMapList
+	Modifier=CodeMonkey,SetMap
+	CurrentText=CodeMonkey,GetMap
+Component=U2CheckBox:52
+	Object=CodeMonkey
+	Variable=UseAllMaps
+Register=OptionWidgets_NEW
+
+[PlayButton]
+Class=FixedSizeContainer
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=SubMenuBackground
+		X=79
+	Component=ImageComponent
+		Image=SubMenuZigZag
+		Y=3
+	Component=Label
+		LocalizedFont=HUD_Fonts_EuroExt14
+		Text=PlayButton
+		Location=112,2
+		MouseEnter=Event,MouseOver.PlaySound
+		MouseEnter=Event,PlayButton.On
+		MouseExit=Event,PlayButton.Off
+		MouseClick=Event,MouseDown.PlaySound
+		MouseClick=Event,ResetMenus
+		MouseClick=CodeMonkey,PlayMap
+	Component=MultiStateComponent
+		State=NULL
+		State=PlayButtonHilite
+		Transition=PlayButton.On,0,1,0.2,PlayButtonHilite
+		Transition=PlayButton.Off,1,0,0.3,PlayButtonHilite
+		TweenLocation=false
+		TweenAlpha=true
+		Location=87,-2
+		DrawOrder=1
+	Register=PlayButton
+	Location=77,395
+DrawOrder=1
+
+[PlayButtonHilite]
+Class=ImageComponent
+Image=AdvancedGlow
+
+
+### Multiplayer menu ###
+
+[MultiplayerMenu]
+Class=FixedSizeContainer
+Component=U2Label:MultiplayerTitle/-223/18
+Component=MultiplayerOptions
+Component=JoinButton
+Component=MainMenuBackButton:ShowMenuMainMenu
+Align=HardCenter,HardCenter
+Y=-228
+DrawOrder=1
+
+[MultiplayerOptions]
+Class=TileContainer
+Horizontal=True
+Component=OptionDescriptions_MP
+Component=OptionWidgets_MP
+Align=HardCenter,HardCenter
+Location=-87,-114
+DrawOrder=1
+
+[OptionDescriptions_MP]
+Class=FixedSizeContainer
+;Component=OptionMouseOvers:MULTIPLAYER
+Component=OptionDescription:01/0/Server
+Component=OptionDescription:02/26/Name
+
+[OptionWidgets_MP]
+Class=FixedSizeContainer
+Component=U2Selector:0
+	Group=OptionWidgets_MP
+	Accessor=NetMonkey,GetServerList
+	Modifier=NetMonkey,SetServer
+	CurrentText=NetMonkey,GetServer
+Component=U2TextField:26
+	Object=NetMonkey
+	Variable=PlayerName
+Register=OptionWidgets_MP
+
+[JoinButton]
+Class=FixedSizeContainer
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=SubMenuBackground
+		X=79
+	Component=ImageComponent
+		Image=SubMenuZigZag
+		Y=3
+	Component=Label
+		LocalizedFont=HUD_Fonts_EuroExt14
+		Text=JoinButton
+		Location=109,2
+		MouseEnter=Event,MouseOver.PlaySound
+		MouseEnter=Event,JoinButton.On
+		MouseExit=Event,JoinButton.Off
+		MouseClick=Event,MouseDown.PlaySound
+		MouseClick=Event,ResetMenus
+		MouseClick=NetMonkey,JoinGame
+	Component=MultiStateComponent
+		State=NULL
+		State=JoinButtonHilite
+		Transition=JoinButton.On,0,1,0.2,JoinButtonHilite
+		Transition=JoinButton.Off,1,0,0.3,JoinButtonHilite
+		TweenLocation=false
+		TweenAlpha=true
+		Location=87,-2
+		DrawOrder=1
+	Register=JoinButton
+	;Location=77,406
+	Location=73,382
+DrawOrder=1
+
+[JoinButtonHilite]
+Class=ImageComponent
+Image=AdvancedGlow
+
+
+### Server Options menu ###
+
+[ServerOptionsMenu]
+Class=FixedSizeContainer
+Component=U2Label:ServerOptionsTitle/-223/18
+Component=ServerOptions
+Component=ServerButton
+Component=MainMenuBackButton:ShowMenuMainMenu
+Align=HardCenter,HardCenter
+Y=-228
+DrawOrder=1
+
+[ServerOptions]
+Class=TileContainer
+Horizontal=True
+Component=OptionDescriptions_SO
+Component=OptionWidgets_SO
+Align=HardCenter,HardCenter
+Location=-87,-114
+DrawOrder=1
+
+[OptionDescriptions_SO]
+Class=FixedSizeContainer
+;Component=OptionMouseOvers:XMP_SERVER
+Component=OptionDescription:01/0/Name
+Component=OptionDescription:02/26/ShowAllMaps
+Component=OptionDescription:03/52/MapList
+Component=OptionDescription:04/78/ServerMapList
+Component=OptionDescription:05/104/Listen
+Component=OptionDescription:06/130/TimeLimit
+Component=OptionDescription:07/156/TeamDamage
+Component=OptionDescription:08/182/PreMatchWait
+
+[OptionWidgets_SO]
+Class=FixedSizeContainer
+Component=U2TextField:0
+	Object=NetMonkey
+	Variable=PlayerName
+Component=U2CheckBox:26
+	Object=NetMonkey
+	Variable=ShowAllMaps
+Component=U2Selector:52
+	Group=OptionWidgets_SO
+	Accessor=NetMonkey,GetMapList
+	Modifier=NetMonkey,SetMap
+	CurrentText=NetMonkey,GetMap
+Component=U2Button:52
+	Text=AddMap
+	Object=NetMonkey
+	Event=AddMap
+	UIEvent=ServerMapList.Refresh
+Component=U2Selector:78
+	Group=OptionWidgets_SO
+	Accessor=NetMonkey,GetServerMapList
+	CurrentAccess=NetMonkey,GetServerMapIndex
+	CurrentModify=NetMonkey,SetServerMapIndex
+	Register=ServerMapList
+Component=U2Button:78
+	Text=RemoveMap
+	Object=NetMonkey
+	Event=RemoveMap
+	UIEvent=ServerMapList.Refresh
+Component=U2CheckBox:104
+	Object=NetMonkey
+	Variable=Listen
+Component=U2Slider:130
+	Range=0,60
+	Step=1
+	Format=ByteFormat
+	Object=NetMonkey
+	Variable=TimeLimit
+Component=U2Slider:156
+	Range=0,1
+	Format=Float2Format
+	Object=NetMonkey
+	Variable=TeamDamage
+Component=U2Slider:182
+	Range=0,100
+	Format=ByteFormat
+	Object=NetMonkey
+	Variable=PreMatchWait
+Register=OptionWidgets_SO
+
+[ServerButton]
+Class=FixedSizeContainer
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=SubMenuBackground
+		X=79
+	Component=ImageComponent
+		Image=SubMenuZigZag
+		Y=3
+	Component=Label
+		LocalizedFont=HUD_Fonts_EuroExt14
+		Text=ServerButton
+		Location=109,2
+		MouseEnter=Event,MouseOver.PlaySound
+		MouseEnter=Event,ServerButton.On
+		MouseExit=Event,ServerButton.Off
+		MouseClick=Event,MouseDown.PlaySound
+		MouseClick=Event,ResetMenus
+		MouseClick=NetMonkey,StartServer
+	Component=MultiStateComponent
+		State=NULL
+		State=ServerButtonHilite
+		Transition=ServerButton.On,0,1,0.2,ServerButtonHilite
+		Transition=ServerButton.Off,1,0,0.3,ServerButtonHilite
+		TweenLocation=false
+		TweenAlpha=true
+		Location=87,-2
+		DrawOrder=1
+	Register=ServerButton
+	Location=73,382
+DrawOrder=1
+
+[ServerButtonHilite]
+Class=ImageComponent
+Image=AdvancedGlow
+
+
+### Options menu ###
+
+[OptionsMenu]
+Class=TileContainer
+Vertical=true
+Component=FixedSizeContainer
+	Component=U2Label:OptionsTitle/71/-1
+	Size=418,35
+	DrawOrder=1
+Component=OptionWindow:237/35/262/36
+;Component=AdvancedOptions
+Component=RealComponent
+	Size=210,50
+Component=MainMenuBackButton:ShowMenuMainMenu
+Component=OptionButtons
+Align=HardCenter,HardCenter
+Location=-19,4
+Register=Options
+
+[OptionButtons]
+Class=TileContainer
+Horizontal=true
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=OptionZigZag
+		Location=-10,18
+	Component=ImageComponent
+		Image=OptionZigZagStretch
+		Width=265
+		Location=382,25
+	Width=82
+Component=OptionButton:Video/Video
+Component=XSpace:4
+Component=OptionButton:Audio/Audio
+Component=XSpace:4
+Component=OptionButton:Game/Game
+Component=XSpace:4
+Component=OptionButton:Shadows/Shadows
+Component=XSpace:4
+Component=OptionButton:Controls/Controls
+Component=XSpace:4
+Component=OptionButton:Input/Input
+Component=XSpace:4
+Component=OptionButton:HUD/HUD
+Register=OptionButtons
+DrawOrder=1
+
+[OptionButton]
+Class=FixedSizeContainer
+Component=Button
+	UpImage=OptionBackground
+	DownImage=OptionButtonDown
+	LocalizedFont=OptionButtonFont
+	;Color=254,241,194,255
+	Text=OptionButton%0%
+	Action=Event,Options.%1%
+	Action=Event,MouseDown.PlaySound
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,OptionButton.On
+	MouseExit=Event,OptionButton.Off
+	Size=79,23
+	Align=Center,Center
+	DrawOrder=1
+Component=MultiStateComponent
+	State=NULL
+	State=OptionButtonHilite
+	Transition=OptionButton.On,0,1,0.2,OptionButtonHilite
+	Transition=OptionButton.Off,1,0,0.3,OptionButtonHilite
+	TweenLocation=false
+	TweenAlpha=true
+	Align=Center,Center
+	DrawOrder=1
+Register=OptionButton
+Size=82,21
+DrawOrder=1
+
+[OptionButtonHilite]
+Class=ImageComponent
+Image=OptionGlow
+
+[OptionWindow]
+Class=FixedSizeContainer
+Component=MultiStateComponent
+	State=OptionMenu:VIDEO/%0%/%1%/%2%/%3%/SubTitleVideo
+	State=OptionMenu:AUDIO/%0%/%1%/%2%/%3%/SubTitleAudio
+	State=OptionMenu:GAME/%0%/%1%/%2%/%3%/SubTitleGame
+	State=OptionMenu:SHADOWS/%0%/%1%/%2%/%3%/SubTitleShadows
+	State=OptionMenu:CONTROLS/%0%/%1%/%2%/%3%/SubTitleControls
+	State=OptionMenu:INPUT/%0%/%1%/%2%/%3%/SubTitleInput
+	State=OptionMenu:HUD/%0%/%1%/%2%/%3%/SubTitleHUD
+	Transition=Options.Video,0,0,0,NULL
+	Transition=Options.Audio,1,1,0,NULL
+	//!!MERGE Transition=Options.Game,2,2,0,NULL
+	//!!MERGE Transition=Options.Shadows,3,3,0,NULL
+	Transition=Options.Controls,4,4,0,NULL
+	Transition=Options.Input,5,5,0,NULL
+	Transition=Options.HUD,6,6,0,NULL
+Size=600,356
+Location=0,17
+DrawOrder=1
+
+[OptionLabel]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=SubMenuBackground
+	X=79
+Component=ImageComponent
+	Image=SubMenuZigZag
+	Y=3
+Component=Label
+	LocalizedFont=OptionLabelFont
+	;Color=254,241,194,255
+	Text=%0%
+	Location=99,0
+Size=210,38
+Location=-6,6
+DrawOrder=1
+
+[OptionDescription]
+Class=Label
+LocalizedFont=HUD_Fonts_EuroExt14
+Text=OptionDescription%2%
+Location=0,%1%
+Align=Right,None
+MouseEnter=Event,OptionMouseOver.MouseOver%0%
+MouseExit=Event,OptionMouseOver.Clear
+
+[OptionMenu]
+Class=FixedSizeContainer
+Component=OptionLabel:%5%
+Component=OptionDescriptions_%0%:%1%/%2%
+Component=OptionWidgets_%0%:%3%/%4%
+
+[OptionMouseOvers]
+Class=MultiStateComponent
+State=NULL
+State=OptionMouseOver:MouseOver_%0%_01
+State=OptionMouseOver:MouseOver_%0%_02
+State=OptionMouseOver:MouseOver_%0%_03
+State=OptionMouseOver:MouseOver_%0%_04
+State=OptionMouseOver:MouseOver_%0%_05
+State=OptionMouseOver:MouseOver_%0%_06
+State=OptionMouseOver:MouseOver_%0%_07
+State=OptionMouseOver:MouseOver_%0%_08
+State=OptionMouseOver:MouseOver_%0%_09
+State=OptionMouseOver:MouseOver_%0%_10
+State=OptionMouseOver:MouseOver_%0%_11
+State=OptionMouseOver:MouseOver_%0%_12
+Transition=OptionMouseOver.Clear,0,0,0,NULL
+Transition=OptionMouseOver.MouseOver01,0,1,0.3,OptionMouseOver:MouseOver_%0%_01
+Transition=OptionMouseOver.MouseOver02,0,2,0.3,OptionMouseOver:MouseOver_%0%_02
+Transition=OptionMouseOver.MouseOver03,0,3,0.3,OptionMouseOver:MouseOver_%0%_03
+Transition=OptionMouseOver.MouseOver04,0,4,0.3,OptionMouseOver:MouseOver_%0%_04
+Transition=OptionMouseOver.MouseOver05,0,5,0.3,OptionMouseOver:MouseOver_%0%_05
+Transition=OptionMouseOver.MouseOver06,0,6,0.3,OptionMouseOver:MouseOver_%0%_06
+Transition=OptionMouseOver.MouseOver07,0,7,0.3,OptionMouseOver:MouseOver_%0%_07
+Transition=OptionMouseOver.MouseOver08,0,8,0.3,OptionMouseOver:MouseOver_%0%_08
+Transition=OptionMouseOver.MouseOver09,0,9,0.3,OptionMouseOver:MouseOver_%0%_09
+Transition=OptionMouseOver.MouseOver10,0,10,0.3,OptionMouseOver:MouseOver_%0%_10
+Transition=OptionMouseOver.MouseOver11,0,11,0.3,OptionMouseOver:MouseOver_%0%_11
+Transition=OptionMouseOver.MouseOver12,0,12,0.3,OptionMouseOver:MouseOver_%0%_12
+TweenLocation=false
+TweenAlpha=true
+Register=OptionMouseOver
+DrawOrder=1
+Location=-184,307
+
+[OptionMouseOver]
+Class=Label
+LocalizedFont=HUD_Fonts_EuroExt14
+Size=612,16
+Wrap=true
+Text=%0%
+
+### Option descriptions and widgets ###
+
+### GAME ###
+
+[OptionDescriptions_GAME]
+Class=FixedSizeContainer
+Location=%0%,%1%
+Component=OptionMouseOvers:GAME
+Component=OptionDescription:01/0/Game Difficulty
+Component=OptionDescription:02/26/Gore
+Component=OptionDescription:03/52/RagdollDetail
+Component=OptionDescription:04/78/FluidSurfaceDetail
+Component=OptionDescription:05/104/ActorDetail
+Component=OptionDescription:06/130/DecoLayerDensity
+Component=OptionDescription:07/156/Particle density
+Component=OptionDescription:08/182/Brightness
+Component=OptionDescription:09/208/Contrast
+Component=OptionDescription:10/234/Gamma
+Component=OptionDescription:11/260/ViewBob
+Component=OptionDescription:12/286/Dodging
+
+[OptionWidgets_GAME]
+Class=FixedSizeContainer
+Component=U2Selector:0
+	Group=OptionWidgets_GAME
+	ListItem=DifficultyHard,CodeMonkey,SetDifficulty2
+	ListItem=DifficultyNormal,CodeMonkey,SetDifficulty1
+	ListItem=DifficultyEasy,CodeMonkey,SetDifficulty0
+	CurrentAccess=CodeMonkey,GetDifficultyIndex
+Component=U2Selector:26
+	Group=OptionWidgets_GAME
+	ListItem=High,CodeMonkey,SetGoreLevel3
+	ListItem=Medium,CodeMonkey,SetGoreLevel2
+	ListItem=Low,CodeMonkey,SetGoreLevel1
+	ListItem=None,CodeMonkey,SetGoreLevel0
+	CurrentAccess=CodeMonkey,GetGoreLevelIndex
+	Locked=CodeMonkey,GetGoreLock
+Component=U2Selector:52
+	Group=OptionWidgets_GAME
+	ListItem=RagdollHigh,CodeMonkey,SetRagdoll3
+	ListItem=RagdollMedium,CodeMonkey,SetRagdoll2
+	ListItem=RagdollLow,CodeMonkey,SetRagdoll1
+	ListItem=RagdollOff,CodeMonkey,SetRagdoll0
+	CurrentAccess=CodeMonkey,GetRagdollIndex
+Component=U2Selector:78
+	Group=OptionWidgets_GAME
+	ListItem=FluidHigh,CodeMonkey,SetFluidSurfaceHigh
+	ListItem=FluidLow,CodeMonkey,SetFluidSurfaceLow
+	CurrentAccess=CodeMonkey,GetFluidSurfaceDetail
+Component=U2Selector:104
+	Group=OptionWidgets_GAME
+	ListItem=ActorDetailHigh,CodeMonkey,SetActorDetail2
+	ListItem=ActorDetailMedium,CodeMonkey,SetActorDetail1
+	ListItem=ActorDetailLow,CodeMonkey,SetActorDetail0
+	CurrentAccess=CodeMonkey,GetActorDetailIndex
+Component=U2Slider:130
+	Range=0,1
+	Format=Float2Format
+	Object=CodeMonkey
+	Variable=DecoLayerDensity
+Component=U2Slider:156
+	Range=0,255
+	Step=1
+	Format=ByteFormat
+	Object=CodeMonkey
+	Variable=ParticleDensity
+Component=U2Slider:182
+	Range=0,1
+	Format=Float2Format
+	Object=CodeMonkey
+	Variable=Brightness
+Component=U2Slider:208
+	Range=0,2
+	Format=Float2Format
+	Object=CodeMonkey
+	Variable=Contrast
+Component=U2Slider:234
+	Range=0.5,2.5
+	Format=Float2Format
+	Object=CodeMonkey
+	Variable=Gamma
+Component=U2SliderN:260
+	Range=0,0.15
+	Format=Float2Format
+	Object=CodeMonkey
+	Variable=ViewBob
+Component=U2Slider:286
+	Range=0,1
+	Format=Float2Format
+	Object=CodeMonkey
+	Variable=Dodging
+Location=%0%,%1%
+Register=OptionWidgets_GAME
+
+### VIDEO ###
+
+[OptionDescriptions_VIDEO]
+Class=FixedSizeContainer
+Location=%0%,%1%
+Component=OptionMouseOvers:VIDEO
+Component=OptionDescription:01/0/Resolution
+Component=OptionDescription:02/26/Bit-depth
+Component=OptionDescription:03/52/RefreshRate
+Component=OptionDescription:04/78/TextureDetailWorld
+Component=OptionDescription:05/104/TextureDetailPlayerSkin
+Component=OptionDescription:06/130/TextureDetailWeaponSkin
+Component=OptionDescription:07/156/TextureDetailTerrain
+Component=OptionDescription:08/182/TextureDetailLightmap
+Component=OptionDescription:09/208/DetailTextures
+Component=OptionDescription:10/234/Fullscreen
+Component=OptionDescription:11/260/VSync
+Component=OptionDescription:12/286/PlayerShadows
+Component=ApplyVideoSettings
+
+[OptionWidgets_VIDEO]
+Class=FixedSizeContainer
+Component=U2Selector:0
+	Group=OptionWidgets_VIDEO
+	Accessor=CodeMonkey,GetDisplayModes
+	Modifier=CodeMonkey,SetRes
+	CurrentText=CodeMonkey,GetRes
+	Name=DisplayMode
+Component=U2Selector:26
+	Group=OptionWidgets_VIDEO
+	ListItem=32-bit,CodeMonkey,SetBPP32
+	ListItem=16-bit,CodeMonkey,SetBPP16
+	CurrentAccess=CodeMonkey,GetBPPIndex
+	Name=BitDepth
+Component=U2Selector:52
+	Group=OptionWidgets_VIDEO
+	ListItem=85Hz,CodeMonkey,SetRefreshRate85
+	ListItem=75Hz,CodeMonkey,SetRefreshRate75
+	ListItem=72Hz,CodeMonkey,SetRefreshRate72
+	ListItem=70Hz,CodeMonkey,SetRefreshRate70
+	ListItem=60Hz,CodeMonkey,SetRefreshRate60
+	CurrentAccess=CodeMonkey,GetRefreshRate
+Component=U2Selector:78
+	Group=OptionWidgets_VIDEO
+	ListItem=UltraHigh,CodeMonkey,SetTextureDetailWorldUltraHigh
+	ListItem=VeryHigh,CodeMonkey,SetTextureDetailWorldVeryHigh
+	ListItem=High,CodeMonkey,SetTextureDetailWorldHigh
+	ListItem=Higher,CodeMonkey,SetTextureDetailWorldHigher
+	ListItem=Normal,CodeMonkey,SetTextureDetailWorldNormal
+	ListItem=Lower,CodeMonkey,SetTextureDetailWorldLower
+	ListItem=Low,CodeMonkey,SetTextureDetailWorldLow
+	ListItem=VeryLow,CodeMonkey,SetTextureDetailWorldVeryLow
+	ListItem=UltraLow,CodeMonkey,SetTextureDetailWorldUltraLow
+	CurrentAccess=CodeMonkey,GetTextureDetailWorldIndex
+Component=U2Selector:104
+	Group=OptionWidgets_VIDEO
+	ListItem=UltraHigh,CodeMonkey,SetTextureDetailPlayerSkinUltraHigh
+	ListItem=VeryHigh,CodeMonkey,SetTextureDetailPlayerSkinVeryHigh
+	ListItem=High,CodeMonkey,SetTextureDetailPlayerSkinHigh
+	ListItem=Higher,CodeMonkey,SetTextureDetailPlayerSkinHigher
+	ListItem=Normal,CodeMonkey,SetTextureDetailPlayerSkinNormal
+	ListItem=Lower,CodeMonkey,SetTextureDetailPlayerSkinLower
+	ListItem=Low,CodeMonkey,SetTextureDetailPlayerSkinLow
+	ListItem=VeryLow,CodeMonkey,SetTextureDetailPlayerSkinVeryLow
+	ListItem=UltraLow,CodeMonkey,SetTextureDetailPlayerSkinUltraLow
+	CurrentAccess=CodeMonkey,GetTextureDetailPlayerSkinIndex
+Component=U2Selector:130
+	Group=OptionWidgets_VIDEO
+	ListItem=UltraHigh,CodeMonkey,SetTextureDetailWeaponSkinUltraHigh
+	ListItem=VeryHigh,CodeMonkey,SetTextureDetailWeaponSkinVeryHigh
+	ListItem=High,CodeMonkey,SetTextureDetailWeaponSkinHigh
+	ListItem=Higher,CodeMonkey,SetTextureDetailWeaponSkinHigher
+	ListItem=Normal,CodeMonkey,SetTextureDetailWeaponSkinNormal
+	ListItem=Lower,CodeMonkey,SetTextureDetailWeaponSkinLower
+	ListItem=Low,CodeMonkey,SetTextureDetailWeaponSkinLow
+	ListItem=VeryLow,CodeMonkey,SetTextureDetailWeaponSkinVeryLow
+	ListItem=UltraLow,CodeMonkey,SetTextureDetailWeaponSkinUltraLow
+	CurrentAccess=CodeMonkey,GetTextureDetailWeaponSkinIndex
+Component=U2Selector:156
+	Group=OptionWidgets_VIDEO
+	ListItem=UltraHigh,CodeMonkey,SetTextureDetailTerrainUltraHigh
+	ListItem=VeryHigh,CodeMonkey,SetTextureDetailTerrainVeryHigh
+	ListItem=High,CodeMonkey,SetTextureDetailTerrainHigh
+	ListItem=Higher,CodeMonkey,SetTextureDetailTerrainHigher
+	ListItem=Normal,CodeMonkey,SetTextureDetailTerrainNormal
+	ListItem=Lower,CodeMonkey,SetTextureDetailTerrainLower
+	ListItem=Low,CodeMonkey,SetTextureDetailTerrainLow
+	ListItem=VeryLow,CodeMonkey,SetTextureDetailTerrainVeryLow
+	ListItem=UltraLow,CodeMonkey,SetTextureDetailTerrainUltraLow
+	CurrentAccess=CodeMonkey,GetTextureDetailTerrainIndex
+Component=U2Selector:182
+	Group=OptionWidgets_VIDEO
+	ListItem=UltraHigh,CodeMonkey,SetTextureDetailLightmapUltraHigh
+	ListItem=VeryHigh,CodeMonkey,SetTextureDetailLightmapVeryHigh
+	ListItem=High,CodeMonkey,SetTextureDetailLightmapHigh
+	ListItem=Higher,CodeMonkey,SetTextureDetailLightmapHigher
+	ListItem=Normal,CodeMonkey,SetTextureDetailLightmapNormal
+	ListItem=Lower,CodeMonkey,SetTextureDetailLightmapLower
+	ListItem=Low,CodeMonkey,SetTextureDetailLightmapLow
+	ListItem=VeryLow,CodeMonkey,SetTextureDetailLightmapVeryLow
+	ListItem=UltraLow,CodeMonkey,SetTextureDetailLightmapUltraLow
+	CurrentAccess=CodeMonkey,GetTextureDetailLightmapIndex
+Component=U2CheckBox:208
+	Object=CodeMonkey
+	Variable=DetailTextures
+Component=U2CheckBox:234
+	Object=CodeMonkey
+	Variable=Fullscreen
+Component=U2CheckBox:260
+	Object=CodeMonkey
+	Variable=UseVSync
+Component=U2CheckBox:286
+	Object=CodeMonkey
+	Variable=PlayerShadows
+Location=%0%,%1%
+Register=OptionWidgets_VIDEO
+
+[ApplyVideoSettings]
+Class=FixedSizeContainer
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=SubMenuBackground
+		X=79
+	Component=ImageComponent
+		Image=SubMenuZigZag
+		Y=3
+	Component=Label
+		LocalizedFont=HUD_Fonts_EuroExt14
+		Text=ApplyVideoSettings
+		Location=112,2
+		MouseEnter=Event,MouseOver.PlaySound
+		MouseEnter=Event,ApplyVideoSettings.On
+		MouseExit=Event,ApplyVideoSettings.Off
+		MouseClick=CodeMonkey,ApplyVideoSettings
+		MouseClick=Event,MouseDown.PlaySound
+		ColorAccess=CodeMonkey,GetApplyColor
+	Component=MultiStateComponent
+		State=NULL
+		State=ApplyVideoSettingsHilite
+		Transition=ApplyVideoSettings.On,0,1,0.2,ApplyVideoSettingsHilite
+		Transition=ApplyVideoSettings.Off,1,0,0.3,ApplyVideoSettingsHilite
+		Transition=FlashVideoSettings,1,0,1.0,ApplyVideoSettingsHilite
+		TweenLocation=false
+		TweenAlpha=true
+		Location=87,-2
+		DrawOrder=1
+	Register=ApplyVideoSettings
+	Location=205,321
+DrawOrder=1
+
+[ApplyVideoSettingsHilite]
+Class=ImageComponent
+Image=AdvancedGlow
+
+### Shadows ###
+
+[OptionDescriptions_SHADOWS]
+Class=FixedSizeContainer
+Location=%0%,%1%
+Component=OptionMouseOvers:SHADOWS
+Component=OptionDescription:01/0/MasterShadowDetail
+Component=OptionDescription:02/26/ShadowResolution
+Component=OptionDescription:03/52/MaxVisibleShadows
+Component=OptionDescription:04/78/ShadowCullDistance
+Component=OptionDescription:05/104/ShadowTraceDistance
+Component=OptionDescription:06/130/ShadowsEnabled
+;Component=OptionDescription:07/156/ExtraWeaponShadows
+Component=OptionDescription:07/156/LightSourceShadows
+Component=OptionDescription:08/182/Blob Shadows
+Component=OptionDescription:09/208/Blur Shadows
+
+[OptionWidgets_SHADOWS]
+Class=FixedSizeContainer
+Component=U2Selector:0
+	Group=OptionWidgets_SHADOWS
+	ListItem=ShadowHigh,CodeMonkey,SetMasterShadowDetail3
+	ListItem=ShadowMedium,CodeMonkey,SetMasterShadowDetail2
+	ListItem=ShadowLow,CodeMonkey,SetMasterShadowDetail1
+	ListItem=ShadowOff,CodeMonkey,SetMasterShadowDetail0
+	ListItem=ShadowCustom,CodeMonkey,SetMasterShadowDetailX
+	CurrentAccess=CodeMonkey,GetMasterShadowDetailIndex
+Component=U2Selector:26
+	Group=OptionWidgets_SHADOWS
+	ListItem=UltraHigh,CodeMonkey,SetShadowResUltraHigh
+	ListItem=High,CodeMonkey,SetShadowResHigh
+	ListItem=Medium,CodeMonkey,SetShadowResMedium
+	ListItem=Low,CodeMonkey,SetShadowResLow
+	CurrentAccess=CodeMonkey,GetShadowResIndex
+Component=U2Slider:52
+	Range=0,16
+	Step=1
+	Format=Int2Format
+	Object=CodeMonkey
+	Variable=MaxVisibleShadows
+Component=U2Slider:78
+	Range=256,4096
+	Step=64
+	Format=Int4Format
+	Object=CodeMonkey
+	Variable=ShadowCullDistance
+Component=U2Slider:104
+	Range=128,2048
+	Step=64
+	Format=Int4Format
+	Object=CodeMonkey
+	Variable=ShadowTraceDistance
+Component=U2CheckBox:130
+	Object=CodeMonkey
+	Variable=EnableShadows
+;Component=U2CheckBox:156
+;	Object=CodeMonkey
+;	Variable=WeaponShadows
+Component=U2CheckBox:156
+	Object=CodeMonkey
+	Variable=LightSourceShadows
+Component=U2CheckBox:182
+	Object=CodeMonkey
+	Variable=BlobShadows
+Component=U2CheckBox:208
+	Object=CodeMonkey
+	Variable=BlurShadows
+Location=%0%,%1%
+Register=OptionWidgets_SHADOWS
+
+### AUDIO ###
+
+[OptionDescriptions_AUDIO]
+Class=FixedSizeContainer
+Location=%0%,%1%
+Component=OptionMouseOvers:AUDIO
+Component=OptionDescription:01/0/SoundVolume
+Component=OptionDescription:02/26/MusicVolume
+Component=OptionDescription:03/52/Channels
+Component=OptionDescription:04/78/ReverseStereo
+Component=OptionDescription:05/104/EAX
+Component=OptionDescription:06/130/3DSound
+
+[OptionWidgets_AUDIO]
+Class=FixedSizeContainer
+Component=U2Slider:0
+	Range=0,1
+	Format=Float2Format
+	Object=CodeMonkey
+	Variable=SoundVolume
+Component=U2Slider:26
+	Range=0,1
+	Format=Float2Format
+	Object=CodeMonkey
+	Variable=MusicVolume
+Component=U2Slider:52
+	Range=8,32
+	Step=1
+	Format=Int2Format
+	Object=CodeMonkey
+	Variable=AudioChannels
+Component=U2CheckBox:78
+	Object=CodeMonkey
+	Variable=ReverseStereo
+Component=U2CheckBox:104
+	Object=CodeMonkey
+	Variable=UseEAX
+Component=U2CheckBox:130
+	Object=CodeMonkey
+	Variable=Use3DSound
+Location=%0%,%1%
+Register=OptionWidgets_AUDIO
+
+### HUD ###
+
+[OptionDescriptions_HUD]
+Class=FixedSizeContainer
+Location=%0%,%1%
+Component=OptionMouseOvers:HUD
+Component=OptionDescription:01/0/GUI mouse speed
+Component=OptionDescription:02/26/Crosshair alpha
+Component=OptionDescription:03/52/CrosshairGlows
+Component=OptionDescription:04/78/ShowSubtitles
+Component=OptionDescription:05/104/BroadcastObjectives
+
+[OptionWidgets_HUD]
+Class=FixedSizeContainer
+Component=U2Slider:0
+	Range=0.1,3
+	Object=CodeMonkey
+	Variable=MouseSpeed
+Component=U2Slider:26
+	Range=0,255
+	Step=1
+	Format=Int1Format
+	Object=Player
+	Variable=UIAlpha
+Component=U2CheckBox:52
+	Object=CodeMonkey
+	Variable=CrosshairGlows
+Component=U2CheckBox:78
+	Object=CodeMonkey
+	Variable=ShowSubtitles
+Component=U2CheckBox:104
+	Object=CodeMonkey
+	Variable=BroadcastObjectives
+Location=%0%,%1%
+Register=OptionWidgets_HUD
+
+### CONTROLS ###
+
+[OptionDescriptions_CONTROLS]
+Class=FixedSizeContainer
+Component=MultiStateComponent
+	State=OptionDescriptions_CONTROLS_Movement
+	State=OptionDescriptions_CONTROLS_Weapons
+	State=OptionDescriptions_CONTROLS_Extra
+	State=OptionDescriptions_CONTROLS_Menus
+	NextStateEvent=Dispatcher.Options_CONTROLS_Next
+	PrevStateEvent=Dispatcher.Options_CONTROLS_Prev
+Component=OptionsPrevNext
+Component=ResetKeyboard
+Component=UnbindText
+Location=%0%,%1%
+
+[UnbindText]
+Class=MultiStateComponent
+State=NULL
+State=UnbindTextLabel
+Transition=Unbind.HideText,0,0,0,NULL
+Transition=Unbind.ShowText,0,1,0.3,UnbindTextLabel
+TweenLocation=false
+TweenAlpha=true
+Y=307
+Register=Unbind
+DrawOrder=1
+
+[UnbindTextLabel]
+Class=Label
+LocalizedFont=HUD_Fonts_EuroExt14
+Text=Unbind
+
+[OptionsPrevNext]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=PrevNextBackground
+	Location=-1,-2
+Component=ImageComponent
+	Image=PrevNextButtons
+Component=OptionsPrevNextButton:PrevNextGlow/0/Options_CONTROLS_Prev/OptionUpGlow/-2
+Component=OptionsPrevNextButton:PrevNextGlowR/22/Options_CONTROLS_Next/OptionDownGlow/1
+Location=250,55
+
+[OptionsPrevNextButton]
+Class=FixedSizeContainer
+Component=Button
+	DownImage=%0%
+	Action=Event,Dispatcher.%2%
+	Action=Event,MouseDown.PlaySound
+	Size=31,19
+Component=MultiStateComponent
+	State=NULL
+	State=OptionsPrevNextGlowImage
+	Transition=OptionsPrevNextButton.On,0,1,0.2,OptionsPrevNextGlowImage
+	Transition=OptionsPrevNextButton.Off,1,0,0.3,OptionsPrevNextGlowImage
+	TweenLocation=false
+	TweenAlpha=true
+Register=OptionsPrevNextButton
+MouseEnter=Event,MouseOver.PlaySound
+MouseEnter=Event,OptionsPrevNextButton.On
+MouseExit=Event,OptionsPrevNextButton.Off
+Location=0,%1%
+Size=31,19
+DrawOrder=1
+
+[OptionsPrevNextGlowImage]
+Class=ImageComponent
+Image=%3%
+Location=-2,%4%
+
+[ResetKeyboard]
+Class=FixedSizeContainer
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=SubMenuBackground
+		X=79
+	Component=ImageComponent
+		Image=SubMenuZigZag
+		Y=3
+	Component=Label
+		LocalizedFont=HUD_Fonts_EuroExt14
+		Text=ResetKeyboard
+		Location=112,2
+		MouseEnter=Event,MouseOver.PlaySound
+		MouseEnter=Event,ResetKeyboard.On
+		MouseExit=Event,ResetKeyboard.Off
+		MouseClick=CodeMonkey,ResetKeyboard
+		MouseClick=Event,MouseDown.PlaySound
+	Component=MultiStateComponent
+		State=NULL
+		State=ResetKeyboardHilite
+		Transition=ResetKeyboard.On,0,1,0.2,ResetKeyboardHilite
+		Transition=ResetKeyboard.Off,1,0,0.3,ResetKeyboardHilite
+		TweenLocation=false
+		TweenAlpha=true
+		Location=87,-2
+		DrawOrder=1
+	Register=ResetKeyboard
+	Location=205,321
+DrawOrder=1
+
+[ResetKeyboardHilite]
+Class=ImageComponent
+Image=AdvancedGlow
+
+
+[OptionWidgets_CONTROLS]
+Class=FixedSizeContainer
+Component=MultiStateComponent
+	State=OptionWidgets_CONTROLS_Movement
+	State=OptionWidgets_CONTROLS_Weapons
+	State=OptionWidgets_CONTROLS_Extra
+	State=OptionWidgets_CONTROLS_Menus
+	NextStateEvent=Dispatcher.Options_CONTROLS_Next
+	PrevStateEvent=Dispatcher.Options_CONTROLS_Prev
+Location=%0%,%1%
+
+[OptionLabel_CONTROLS]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=SubMenuBackground
+	X=79
+Component=ImageComponent
+	Image=SubMenuZigZag
+	Y=3
+Component=Label
+	LocalizedFont=HUD_Fonts_EuroExt14
+	Text=Controls%0%
+	Location=99,2
+Location=207,69
+DrawOrder=1
+
+[OptionDescriptions_CONTROLS_Movement]
+Class=FixedSizeContainer
+Component=OptionLabel_CONTROLS:Movement
+Component=OptionMouseOvers:CONTROLS_Movement
+Component=OptionDescription:01/0/Move Forward
+Component=OptionDescription:02/26/Move Backward
+Component=OptionDescription:03/52/Strafe Left
+Component=OptionDescription:04/78/Strafe Right
+Component=OptionDescription:05/104/Jump
+Component=OptionDescription:06/130/Duck
+Component=OptionDescription:07/156/Sprint
+Component=OptionDescription:08/182/Use
+
+[OptionWidgets_CONTROLS_Movement]
+Class=FixedSizeContainer
+Component=U2InputSelector:0/MoveForward
+Component=U2InputSelector:26/MoveBackward
+Component=U2InputSelector:52/StrafeLeft
+Component=U2InputSelector:78/StrafeRight
+Component=U2InputSelector:104/Jump
+Component=U2InputSelector:130/Duck
+Component=U2InputSelector:156/Sprint
+Component=U2InputSelector:182/Use | OnRelease Unuse
+
+[OptionDescriptions_CONTROLS_Weapons]
+Class=FixedSizeContainer
+Component=OptionLabel_CONTROLS:Weapons
+Component=OptionMouseOvers:CONTROLS_Weapons
+Component=OptionDescription:01/0/Primary Fire
+Component=OptionDescription:02/26/Alternate Fire
+Component=OptionDescription:03/52/Reload
+Component=OptionDescription:04/78/Prev Weapon
+Component=OptionDescription:05/104/Next Weapon
+Component=OptionDescription:06/130/Switch Weapon 1
+Component=OptionDescription:07/156/Switch Weapon 2
+Component=OptionDescription:08/182/Switch Weapon 3
+Component=OptionDescription:09/208/Switch Weapon 4
+Component=OptionDescription:10/234/Switch Weapon 5
+Component=OptionDescription:11/260/SwitchToBestWeapon
+
+[OptionWidgets_CONTROLS_Weapons]
+Class=FixedSizeContainer
+Component=U2InputSelector:0/Fire
+Component=U2InputSelector:26/AltFire
+Component=U2InputSelector:52/Reload
+Component=U2InputSelector:78/PrevWeapon | ZoomIn
+Component=U2InputSelector:104/NextWeapon | ZoomOut
+Component=U2InputSelector:130/SwitchWeapon 1
+Component=U2InputSelector:156/SwitchWeapon 2
+Component=U2InputSelector:182/SwitchWeapon 3
+Component=U2InputSelector:208/SwitchWeapon 4
+Component=U2InputSelector:234/SwitchWeapon 5
+Component=U2InputSelector:260/SwitchToBestWeapon
+
+[OptionDescriptions_CONTROLS_Extra]
+Class=FixedSizeContainer
+Component=OptionLabel_CONTROLS:Extra
+Component=OptionMouseOvers:CONTROLS_Extra
+Component=OptionDescription:01/0/Look Up
+Component=OptionDescription:02/26/Look Down
+Component=OptionDescription:03/52/Center View
+Component=OptionDescription:04/78/Walk
+Component=OptionDescription:05/104/Strafe
+Component=OptionDescription:07/130/ToggleTimeDemo
+Component=OptionDescription:08/156/ShowObjectives
+Component=OptionDescription:09/182/QuickSave
+Component=OptionDescription:10/208/QuickLoad
+
+[OptionWidgets_CONTROLS_Extra]
+Class=FixedSizeContainer
+Component=U2InputSelector:0/LookUp
+Component=U2InputSelector:26/LookDown
+Component=U2InputSelector:52/CenterView
+Component=U2InputSelector:78/Walking
+Component=U2InputSelector:104/Strafe
+Component=U2InputSelector:130/ToggleTimeDemo
+Component=U2InputSelector:156/SendEvent ToggleObjectives
+Component=U2InputSelector:182/QuickSave
+Component=U2InputSelector:208/QuickLoad
+
+[OptionDescriptions_CONTROLS_Menus]
+Class=FixedSizeContainer
+Component=OptionLabel_CONTROLS:Menus
+Component=OptionMouseOvers:CONTROLS_Menus
+Component=OptionDescription:01/0/Type
+Component=OptionDescription:02/26/Show Console
+Component=OptionDescription:03/52/Pause
+Component=OptionDescription:04/78/shot
+Component=OptionDescription:05/104/Increase Gamma
+Component=OptionDescription:06/130/Increase Brightness
+Component=OptionDescription:07/156/Increase Contrast
+Component=OptionDescription:08/182/Talk
+Component=OptionDescription:09/208/TeamTalk
+
+[OptionWidgets_CONTROLS_Menus]
+Class=FixedSizeContainer
+Component=U2InputSelector:0/SendEvent Type
+Component=U2InputSelector:26/SendEvent ShowConsole
+Component=U2InputSelector:52/Pause
+Component=U2InputSelector:78/shot
+Component=U2InputSelector:104/Gamma +
+Component=U2InputSelector:130/Brightness +
+Component=U2InputSelector:156/Contrast +
+Component=U2InputSelector:182/SendEvent Talk
+Component=U2InputSelector:208/SendEvent TeamTalk
+
+### INPUT ###
+
+[OptionDescriptions_INPUT]
+Class=FixedSizeContainer
+Location=%0%,%1%
+Component=OptionMouseOvers:INPUT
+Component=OptionDescription:01/0/MouseSensitivity
+Component=OptionDescription:02/26/InvertMouse
+Component=OptionDescription:03/52/MouseSmoothing
+Component=OptionDescription:04/78/MouseLook
+Component=OptionDescription:05/104/LookSpring
+Component=OptionDescription:06/130/Toggle Crouch
+Component=OptionDescription:07/156/Toggle Walk
+Component=OptionDescription:08/182/SwitchOnPickup
+Component=OptionDescription:09/208/AutoSwitch
+
+[OptionWidgets_INPUT]
+Class=FixedSizeContainer
+Component=U2Slider:0
+	Range=0,10
+	Format=Float1Format
+	Object=CodeMonkey
+	Variable=MouseSensitivity
+Component=U2CheckBox:26
+	Object=CodeMonkey
+	Variable=InvertMouse
+Component=U2CheckBox:52
+	Object=CodeMonkey
+	Variable=MouseSmoothing
+Component=U2CheckBox:78
+	Object=CodeMonkey
+	Variable=MouseLook
+Component=U2CheckBox:104
+	Object=CodeMonkey
+	Variable=LookSpring
+Component=U2CheckBox:130
+	Object=CodeMonkey
+	Variable=DuckToggle
+Component=U2CheckBox:156
+	Object=CodeMonkey
+	Variable=RunToggle
+Component=U2CheckBox:182
+	Object=CodeMonkey
+	Variable=SwitchOnPickup
+Component=U2CheckBox:208
+	Object=CodeMonkey
+	Variable=AutoSwitch
+Location=%0%,%1%
+Register=OptionWidgets_INPUT
+
+
+### XMP Menu ###
+
+[XMPMenu]
+Class=TileContainer
+Vertical=true
+Component=FixedSizeContainer
+	Component=U2Label:XMPTitle/71/-1
+	Size=418,35
+	DrawOrder=1
+Component=XMPWindow:237/35/262/36
+Component=RealComponent
+	Size=210,50
+Component=MainMenuBackButton:ShowMenuMainMenu
+Component=XMPButtons
+Align=HardCenter,HardCenter
+Location=-19,4
+Register=XMP
+
+[XMPButtons]
+Class=TileContainer
+Horizontal=true
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=OptionZigZag
+		Location=-10,18
+	Component=ImageComponent
+		Image=OptionZigZagStretch
+		Width=265
+		Location=382,25
+	Width=82
+Component=XMPButton:Movement/Movement
+Component=XSpace:4
+Component=XMPButton:Inventory/Inventory
+Component=XSpace:4
+Component=XMPButton:Skills/Skills
+Register=XMPButtons
+DrawOrder=1
+
+[XMPButton]
+Class=FixedSizeContainer
+Component=Button
+	UpImage=OptionBackground
+	DownImage=OptionButtonDown
+	LocalizedFont=OptionButtonFont
+	;Color=254,241,194,255
+	Text=XMPButton%0%
+	Action=Event,XMP.%1%
+	Action=Event,MouseDown.PlaySound
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,XMPButton.On
+	MouseExit=Event,XMPButton.Off
+	Size=79,23
+	Align=Center,Center
+	DrawOrder=1
+Component=MultiStateComponent
+	State=NULL
+	State=XMPButtonHilite
+	Transition=XMPButton.On,0,1,0.2,XMPButtonHilite
+	Transition=XMPButton.Off,1,0,0.3,XMPButtonHilite
+	TweenLocation=false
+	TweenAlpha=true
+	Align=Center,Center
+	DrawOrder=1
+Register=XMPButton
+Size=82,21
+DrawOrder=1
+
+[XMPButtonHilite]
+Class=ImageComponent
+Image=OptionGlow
+
+[XMPWindow]
+Class=FixedSizeContainer
+Component=MultiStateComponent
+	State=XMPSubMenu:MOVEMENT/%0%/%1%/%2%/%3%/SubTitleMovement
+	State=XMPSubMenu:INVENTORY/%0%/%1%/%2%/%3%/SubTitleInventory
+	State=XMPSubMenu:SKILLS/%0%/%1%/%2%/%3%/SubTitleSkills
+	Transition=XMP.Movement,0,0,0,NULL
+	Transition=XMP.Inventory,1,1,0,NULL
+	Transition=XMP.Skills,2,2,0,NULL
+Size=600,356
+Location=0,17
+DrawOrder=1
+
+[XMPLabel]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=SubMenuBackground
+	X=79
+Component=ImageComponent
+	Image=SubMenuZigZag
+	Y=3
+Component=Label
+	LocalizedFont=OptionLabelFont
+	;Color=254,241,194,255
+	Text=%0%
+	Location=99,0
+Size=210,38
+Location=-6,6
+DrawOrder=1
+
+[XMPDescription]
+Class=Label
+LocalizedFont=HUD_Fonts_EuroExt14
+Text=XMPDescription%2%
+Location=0,%1%
+Align=Right,None
+MouseEnter=Event,XMPMouseOver.MouseOver%0%
+MouseExit=Event,XMPMouseOver.Clear
+
+[XMPSubMenu]
+Class=FixedSizeContainer
+Component=XMPLabel:%5%
+Component=XMPDescriptions_%0%:%1%/%2%
+Component=XMPWidgets_%0%:%3%/%4%
+
+[XMPMouseOvers]
+Class=MultiStateComponent
+State=NULL
+State=XMPMouseOver:MouseOver_%0%_01
+State=XMPMouseOver:MouseOver_%0%_02
+State=XMPMouseOver:MouseOver_%0%_03
+State=XMPMouseOver:MouseOver_%0%_04
+State=XMPMouseOver:MouseOver_%0%_05
+State=XMPMouseOver:MouseOver_%0%_06
+State=XMPMouseOver:MouseOver_%0%_07
+State=XMPMouseOver:MouseOver_%0%_08
+State=XMPMouseOver:MouseOver_%0%_09
+State=XMPMouseOver:MouseOver_%0%_10
+State=XMPMouseOver:MouseOver_%0%_11
+State=XMPMouseOver:MouseOver_%0%_12
+Transition=XMPMouseOver.Clear,0,0,0,NULL
+Transition=XMPMouseOver.MouseOver01,0,1,0.3,XMPMouseOver:MouseOver_%0%_01
+Transition=XMPMouseOver.MouseOver02,0,2,0.3,XMPMouseOver:MouseOver_%0%_02
+Transition=XMPMouseOver.MouseOver03,0,3,0.3,XMPMouseOver:MouseOver_%0%_03
+Transition=XMPMouseOver.MouseOver04,0,4,0.3,XMPMouseOver:MouseOver_%0%_04
+Transition=XMPMouseOver.MouseOver05,0,5,0.3,XMPMouseOver:MouseOver_%0%_05
+Transition=XMPMouseOver.MouseOver06,0,6,0.3,XMPMouseOver:MouseOver_%0%_06
+Transition=XMPMouseOver.MouseOver07,0,7,0.3,XMPMouseOver:MouseOver_%0%_07
+Transition=XMPMouseOver.MouseOver08,0,8,0.3,XMPMouseOver:MouseOver_%0%_08
+Transition=XMPMouseOver.MouseOver09,0,9,0.3,XMPMouseOver:MouseOver_%0%_09
+Transition=XMPMouseOver.MouseOver10,0,10,0.3,XMPMouseOver:MouseOver_%0%_10
+Transition=XMPMouseOver.MouseOver11,0,11,0.3,XMPMouseOver:MouseOver_%0%_11
+Transition=XMPMouseOver.MouseOver12,0,12,0.3,XMPMouseOver:MouseOver_%0%_12
+TweenLocation=false
+TweenAlpha=true
+Register=XMPMouseOver
+DrawOrder=1
+Location=-184,307
+
+[XMPMouseOver]
+Class=Label
+LocalizedFont=HUD_Fonts_EuroExt14
+Size=612,16
+Wrap=true
+Text=%0%
+
+### XMP descriptions and widgets ###
+
+[XMPDescriptions_MOVEMENT]
+Class=FixedSizeContainer
+Location=%0%,%1%
+Component=XMPMouseOvers:XMP_Movement
+Component=XMPDescription:01/0/Health
+Component=XMPDescription:02/26/MaxGroundSpeed
+Component=XMPDescription:03/52/Acceleration
+Component=XMPDescription:04/78/JumpZ
+Component=XMPDescription:05/104/SprintRatio
+Component=XMPDescription:06/130/StaminaMax
+Component=XMPDescription:07/156/StaminaRechargeRate
+Component=XMPDescription:08/182/StaminaPerSprintSec
+Component=XMPDescription:09/208/JumpJetZ
+Component=XMPDescription:10/234/JumpJetCost
+Component=XMPDescription:11/260/JumpJetSecs
+
+[XMPWidgets_MOVEMENT]
+Class=FixedSizeContainer
+Component=U2Slider:0
+	Range=0,1000
+	Step=1
+	Object=PawnMonkey
+	Format=Int4Format
+	Variable=Health
+Component=U2Slider:26
+	Range=0,1000
+	Step=1
+	Object=PawnMonkey
+	Format=Int4Format
+	Variable=GroundSpeed
+Component=U2Slider:52
+	Range=0,10000
+	Step=1
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=Acceleration
+Component=U2Slider:78
+	Range=10.0,1000.0
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=JumpZ
+Component=U2Slider:104
+	Range=1.0,3.0
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=SprintRatio
+Component=U2Slider:130
+	Range=0.0,100.0
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=StaminaMax
+Component=U2Slider:156
+	Range=0.0,100.0
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=StaminaRechargeRate
+Component=U2Slider:182
+	Range=1.0,200.0
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=SprintCost
+Component=U2Slider:208
+	Range=300.0,5000.0
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=JumpJetZ
+Component=U2Slider:234
+	Range=0.0,100.0
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=JumpJetCost
+Component=U2Slider:260
+	Range=0.0,10.0
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=JumpJetDuration
+Location=%0%,%1%
+Register=XMPWidgets_MOVEMENT
+
+
+[XMPDescriptions_INVENTORY]
+Class=FixedSizeContainer
+Location=%0%,%1%
+Component=XMPMouseOvers:XMP_Inventory
+Component=XMPDescription:01/0/AutoTurretSkillCost
+Component=XMPDescription:02/26/RocketTurretSkillCost
+Component=XMPDescription:03/52/FieldGeneratorSkillCost
+
+[XMPWidgets_INVENTORY]
+Class=FixedSizeContainer
+Component=U2Slider:0
+	Range=0,100
+	Step=1
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=AutoTurretCost
+Component=U2Slider:26
+	Range=0,100
+	Step=1
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=RocketTurretCost
+Component=U2Slider:52
+	Range=0,100
+	Step=1
+	Object=PawnMonkey
+	Format=Float2Format
+	Variable=FieldGeneratorCost
+Location=%0%,%1%
+Register=XMPWidgets_INVENTORY
+
+
+[XMPDescriptions_SKILLS]
+Class=FixedSizeContainer
+Location=%0%,%1%
+Component=XMPMouseOvers:XMP_Skills
+
+[XMPWidgets_SKILLS]
+Class=FixedSizeContainer
+Location=%0%,%1%
+Register=XMPWidgets_SKILLS
+
+
+### Credits ###
+
+[Credits]
+Class=FixedSizeContainer
+Component=Frame
+	Component=Credits.U2Credits:NormalCredits
+		CreditEvent=1.0,Event,EndCredits
+		Rate=24.0
+		Height=498
+	FrameSize=640,446
+	FrameLocation=0,9
+	Y=2
+	Align=HardCenter,HardCenter
+Component=CreditsDispatch
+Component=CreditsBack
+DrawOrder=1
+
+[CreditsDispatch]
+Class=MultiStateComponent
+State=NULL
+Transition=RollCredits,0,0,0,NULL
+Transition=EndCredits,0,0,0,NULL
+TriggerEvent=0,0.0,Event,CreditsScroll.BackOn
+TriggerEvent=0,0.0,Event,NormalCreditsStart
+TriggerEvent=0,0.0,Event,MainMenuBackgroundSmall.Hide
+TriggerEvent=1,0.0,Event,ShowMenuMainMenu
+TriggerEvent=1,0.0,Event,CreditsScroll.BackOff
+TriggerEvent=1,0.0,Event,NormalCreditsStop
+TriggerEvent=1,0.0,Event,MainMenuBackgroundSmall.Show
+Register=CreditsScroll
+DrawOrder=1
+
+[CreditsBack]
+Class=MultiStateComponent
+State=NULL
+State=CreditsBackC
+Transition=CreditsScroll.BackOn,1,1,0,NULL
+Transition=CreditsScroll.BackOff,0,0,0,NULL
+TweenLocation=false
+DrawOrder=1
+
+[CreditsBackC]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=BackStretchDotR
+	Location=-175,6
+	Size=175,1
+Component=ImageComponent
+	Image=BackR
+	Location=0,0
+Component=Label
+	LocalizedFont=SmallButtonFont
+	;Color=254,241,194,255
+	Text=BackButton
+	MouseClick=Event,EndCredits
+	MouseClick=Event,ShowMenuMainMenu
+	MouseClick=Event,MouseDown.PlaySound
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,BackButton.On
+	MouseExit=Event,BackButton.Off
+	Align=Center,Center
+	Location=52,8
+Component=MultiStateComponent
+	State=NULL
+	State=U2Menus.BackButtonHilite
+	Transition=BackButton.On,0,1,0.2,U2Menus.BackButtonHilite
+	Transition=BackButton.Off,1,0,0.3,U2Menus.BackButtonHilite
+	TweenLocation=false
+	TweenAlpha=true
+	Location=16,-2
+	DrawOrder=1
+Component=KeyEvent
+	Key=Escape,Press,Event,EndCredits
+	Key=Escape,Press,Event,ShowMenuMainMenu
+	Key=Mouse4,Release,Event,EndCredits
+	Key=Mouse4,Release,Event,ShowMenuMainMenu
+Register=BackButton
+Align=HardCenter,HardCenter
+Location=-304,219
+DrawOrder=1
+
+
+### Debug stuff ###
+
+[DebugMenu]
+Class=TileContainer
+Vertical=true
+Component=FixedSizeContainer
+	Component=U2Label:DebugMenuTitle/-135/-53
+Component=DebugButton:SummonMenuButton
+Component=DebugButton:DebugMenuButton
+Component=DebugButton:AudioStats
+Component=MainMenuBackButton:ShowMenuMainMenu
+Align=HardCenter,HardCenter
+
+[DebugButton]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=NewTextBackground
+Component=ImageComponent
+	Image=NewTextStretch
+	WidthAccess=exp(Parent.DebugButtonText.Width+32)
+	Location=42,1
+Component=ImageComponent
+	Image=NewOptionHolder
+	Location=-20,9
+Component=ImageComponent
+	Image=NewHolderGradientLeft
+	Size=58,2
+	Location=-78,12
+Component=ImageComponent
+	Image=NewHolderGradientRight
+	Size=154,2
+	Location=76,22
+Component=DebugButtonText
+Component=RealComponent
+	MouseClick=Event,Dispatcher.%0%
+	MouseClick=Event,MouseDown.PlaySound
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,DebugButton.On
+	MouseExit=Event,DebugButton.Off
+	Size=303,42
+Size=303,47
+DrawOrder=1
+
+[DebugButtonText]
+Class=MultiStateComponent
+State=DebugButtonLabel:%0%/255/255/255
+State=DebugButtonLabel:%0%/33/77/90
+Transition=DebugButton.On,0,1,0.2,DebugButtonLabel:%0%/0/0/0
+Transition=DebugButton.Off,1,0,0.3,DebugButtonLabel:%0%/0/0/0
+TweenLocation=false
+TweenColor=true
+Register=DebugButton
+Location=22,1
+DrawOrder=1
+
+[DebugButtonLabel]
+Class=TileContainer
+Horizontal=true
+Component=Label
+	LocalizedFont=NewButtonBigFont
+	Text=%0%Short
+Component=Container
+	Component=Label
+		LocalizedFont=HUD_Fonts_EuroExt14
+		Text=%0%Long
+		Y=3
+	DrawOrder=1
+Color=%1%,%2%,%3%
+
+### Misc pieces ###
+
+[U2Mouse]
+Class=MouseCursor
+Component=U2Cursor
+MoveTime=3.0
+Register=U2Mouse
+
+[U2Cursor]
+Class=MultiStateComponent
+State=U2CursorClosed
+State=U2CursorOpen
+Transition=U2Mouse.On,0,1,0.2,U2CursorClosed
+Transition=U2Mouse.Off,1,0,1.0,U2CursorClosed
+TriggerEvent=0,0.0,Event,MousePowerUp.PlaySound
+TriggerEvent=1,0.0,Event,MousePowerDown.PlaySound
+TweenLocation=true
+TweenAlpha=true
+
+[U2CursorOpen]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=MouseUnderGlow
+	Location=18,18
+Component=ImageComponent
+	Image=MouseMiddleBodySection
+	Location=31,31
+Component=ImageComponent
+	Image=MouseTranslucentPointers
+	Location=0,0
+Component=ImageComponent
+	Image=MouseLowerRightArm
+	Location=50,36
+Component=ImageComponent
+	Image=MouseLowerLeftArm
+	Location=36,50
+Component=ImageComponent
+	Image=MouseUpperRightArm
+	Location=29,18
+Component=ImageComponent
+	Image=MouseUpperLeftArm
+	Location=18,29
+Component=ImageWedge
+	Image=MouseGlowA
+	Location=41,41
+	Radius=-17
+	AngleAccess=Keyframe|0|0|360|7
+	AlphaAccess=Keyframe|120|0.4|255|0.3|180|0.35|200|0.45|150|0.26|210|0.5
+Component=ImageWedge
+	Image=MouseGlowB
+	Location=41,41
+	Radius=-22
+	AngleAccess=Keyframe|0|0|-360|13
+	AlphaAccess=Keyframe|210|0.3|110|0.2|240|0.25|180|0.55|255|0.36|160|0.23
+
+[U2CursorClosed]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=MouseUnderGlow
+	Location=18,18
+	Alpha=0
+Component=ImageComponent
+	Image=MouseMiddleBodySection
+	Location=31,31
+	LockAlpha=true
+Component=ImageComponent
+	Image=MouseTranslucentPointers
+	Location=0,0
+	Alpha=0
+Component=ImageComponent
+	Image=MouseLowerRightArm
+	Location=43,36
+	LockAlpha=true
+Component=ImageComponent
+	Image=MouseLowerLeftArm
+	Location=36,43
+	LockAlpha=true
+Component=ImageComponent
+	Image=MouseUpperRightArm
+	Location=24,22
+	LockAlpha=true
+Component=ImageComponent
+	Image=MouseUpperLeftArm
+	Location=22,24
+	LockAlpha=true
+Component=ImageWedge
+	Image=MouseGlowA
+	Location=41,41
+	Radius=-17
+	Alpha=0
+Component=ImageWedge
+	Image=MouseGlowB
+	Location=41,41
+	Radius=-22
+	Alpha=0
+
+[U2Button]
+Class=FixedSizeContainer
+Component=Button
+	UpImage=OptionBackground
+	DownImage=OptionButtonDown
+	LocalizedFont=OptionButtonFont
+	;Color=254,241,194,255
+	%Text
+	Action=Event,MouseDown.PlaySound
+	Action=%Object%,%Event%
+	Action=Event,%UIEvent%
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,U2Button.On
+	MouseExit=Event,U2Button.Off
+	Size=79,23
+	Align=Center,Center
+	DrawOrder=1
+	Y=-3
+Component=MultiStateComponent
+	State=NULL
+	State=U2ButtonHilite
+	Transition=U2Button.On,0,1,0.2,U2ButtonHilite
+	Transition=U2Button.Off,1,0,0.3,U2ButtonHilite
+	TweenLocation=false
+	TweenAlpha=true
+	Align=Center,Center
+	DrawOrder=1
+	Y=-3
+Register=U2Button
+Location=240,%0%
+Size=82,21
+DrawOrder=1
+
+[U2ButtonHilite]
+Class=ImageComponent
+Image=OptionGlow
+
+[U2Label]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=TypeBackground
+	Align=Center,None
+Component=ImageComponent
+	Image=CoverBar
+	Align=Center,None
+	Location=10,-2
+Component=ImageComponent
+	Image=ZigZagNextToTypeBackground
+	Location=174,19
+Component=ImageComponent
+	Image=LeftAngleGradientPiece
+	Location=-30,15
+Component=ImageComponent
+	Image=LeftAngleGradientPieceStretchDot
+	Location=13,37
+	Size=70,2
+Component=ImageComponent
+	Image=LeftAngleGradientPieceStretchDotR
+	Location=-224,19
+	Size=195,2
+Component=Label
+	LocalizedFont=LabelFont
+	;Color=254,241,194,255
+	Text=%0%
+	Align=Center,None
+	Location=-2,8
+Location=%1%,%2%
+Size=187,36
+DrawOrder=1
+
+[U2Selector]
+Class=FixedSizeContainer
+Component=Selector
+	LocalizedFont=UI_Fonts_Micro12
+	UnHighlight=33,77,90
+	Highlight=254,241,194
+	%Name
+	%Group
+	%OnSelect=PostSelect
+	%Accessor
+	%Modifier
+	%ListItem=Item
+	%CurrentAccess
+	%CurrentModify
+	%CurrentText
+	%Locked
+	%Register
+	Background=U2SelectorBackground
+	TopFrame=U2SelectorTop
+	BottomFrame=U2SelectorBottom
+Location=0,%0%
+DrawOrder=1
+
+[U2Slider]
+Class=FixedSizeContainer
+Component=Slider
+	SideBuffer=13
+	%Range
+	%Step
+	SetTarget=%Object%,Set%Variable%
+	GetTarget=%Object%,Get%Variable%
+	Image=U2SliderBack
+	Handle=U2SliderBar
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=SliderNumTop
+		Align=Center,Center
+		Y=2
+	Component=Label
+		LocalizedFont=HUD_Fonts_Micro12
+		Color=254,241,194,255
+		FloatAccess=exp(Parent.Parent.Slider.SliderValue)
+		%Format
+		Align=Center,Center
+	Location=200,9
+Location=0,%0%
+DrawOrder=1
+
+[U2SliderN]
+Class=FixedSizeContainer
+Component=Slider
+	SideBuffer=13
+	%Range
+	%Step
+	SetTarget=%Object%,Set%Variable%
+	GetTarget=%Object%,Get%Variable%
+	Image=U2SliderBack
+	Handle=U2SliderBar
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=SliderNumTop
+		Align=Center,Center
+		Y=2
+	Component=Label
+		LocalizedFont=HUD_Fonts_Micro12
+		;Color=254,241,194,255
+		FloatAccess=exp(Parent.Parent.Slider.SliderNormValue)
+		%Format
+		Align=Center,Center
+	Location=200,9
+Location=0,%0%
+DrawOrder=1
+
+[U2CheckBox]
+Class=FixedSizeContainer
+Component=CheckBox
+	SetTarget=%Object%,Set%Variable%
+	GetTarget=%Object%,Get%Variable%
+	Image=U2CheckBoxBack
+	Check=U2CheckBoxCheck
+	Size=31,17
+Location=0,%0%
+DrawOrder=1
+
+[U2InputSelector]
+Class=FixedSizeContainer
+Component=TileContainer
+	Horizontal=true
+	Component=U2InputSelectorI:0/%1%
+	Component=U2InputSelectorI:1/%1%
+Location=-26,%0%
+DrawOrder=1
+
+[U2InputSelectorI]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=ControlsBackground
+Component=InputSelector
+	LocalizedFont=UI_Fonts_Micro12
+	SelectedColor=Blue
+	DisplayAccess=PlayerCommand,GETKEYS INDEX=%0% BINDING=%1%
+	InputAccess=ConsoleCommand,SET INPUT %s %1%
+	InputReset=ConsoleCommand,SET INPUT %s
+	StartEvent=Event,U2InputSelector.StartListening
+	StopEvent=Event,U2InputSelector.StopListening
+	Size=97,17
+	Location=15,2
+	Register=Input
+Component=MultiStateComponent
+	State=NULL
+	State=InputActive
+	Transition=U2InputSelector.StartListening,0,1,0.15,InputActive
+	Transition=U2InputSelector.StopListening,1,0,0.25,InputActive
+	TweenLocation=false
+	TweenAlpha=true
+Component=MultiStateComponent
+	State=InputReset:128
+	State=InputReset:255
+	Transition=InputReset.Glow,0,1,0.15,InputReset:0
+	Transition=InputReset.UnGlow,1,0,1.0,InputReset:0
+	TweenLocation=false
+	TweenColor=true
+	Register=InputReset
+	MouseEnter=Event,InputReset.Glow
+	MouseEnter=Event,Unbind.ShowText
+	MouseExit=Event,InputReset.UnGlow
+	MouseExit=Event,Unbind.HideText
+	MouseClick=Event,Input.Reset
+	Location=112,2
+Register=U2InputSelector
+Width=123
+
+[InputReset]
+Class=ImageComponent
+Image=ControlsButton
+Color=%0%,%0%,%0%
+
+[InputActive]
+Class=ImageComponent
+Image=ControlsGlow
+Y=2
+
+[U2TextField]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=ControlsBackground
+Component=TextField
+	LocalizedFont=UI_Fonts_Micro12
+	TextColor=WHITE
+	Cursor=PulseCursor
+	DeselectOnEnter=true
+	Command=%Object%,Set%Variable%
+	Access=%Object%,Get%Variable%
+	Size=100,17
+	Location=20,2
+Location=0,%0%
+DrawOrder=1
+
+[PulseCursor]
+Class=ImageComponent
+Image=White
+Size=2,8
+AlphaAccess=Keyframe|255|0|255|0.5|0|0|0|0.5|255|0|255|0.5|0|0|0|0.5
+
+[XSpace]
+Class=FixedSizeContainer
+Size=%0%,0
+DrawOrder=1
+
+[YSpace]
+Class=FixedSizeContainer
+Size=0,%0%
+DrawOrder=1
+
+[Background]
+Class=ImageComponent
+Image=Black
+Size=2048,2048
+Align=HardLeft,HardTop
+DrawOrder=-999
+
+#####################################
+
+[U2MenuAssets]
+Class=FixedSizeContainer
+Component=U2MenuTextures
+Component=NewScreenTextures
+Component=LoadSaveTextures
+Component=ScrollBarTextures
+Component=OptionScreenTextures01
+Component=OptionScreenTextures02
+Component=MainMenuBackgroundTexture01
+Component=MainMenuBackgroundTexture02
+Component=MenuBackgroundSmallTexture
+Component=MouseTextures
+Component=U2Sounds
+
+[U2Sounds]
+Class=FixedSizeContainer
+Component=U2Sound:MouseOver
+Component=U2Sound:MouseDown
+Component=U2Sound:MouseUp
+Component=U2Sound:MousePowerUp
+Component=U2Sound:MousePowerDown
+
+[U2Sound]
+Class=SoundComponent
+Sound=UISounds.%0%
+Register=%0%
+
+[U2MenuTextures]
+Class=Image
+Material=UIResT.UI.UIPieces
+Image=UpperLine,45,128,464,8
+Image=UpperLineR,509,128,-464,8
+Image=CoverBar,326,136,183,10
+Image=LargeBackgroundGlow,266,148,242,5
+Image=LargeBackgroundGlowR,508,148,-242,5
+Image=SmallBackgroundGlow,266,156,242,6
+Image=SmallBackgroundGlowR,508,156,-242,6
+Image=UpperOuterBracket,1,166,331,30
+Image=LowerOuterBracket,2,283,332,30
+Image=Dot,3,318,5,5
+Image=DotGlow,12,315,7,7
+Image=LeftAngleGradientPiece,1,325,45,25
+Image=LeftAngleGradientPieceStretchDot,43,347,2,2
+Image=LeftAngleGradientPieceStretchDotR,1,329,2,2
+Image=Back,50,330,103,18
+Image=BackR,153,330,-103,18
+Image=BackStretchDot,152,336,2,1
+Image=BackStretchDotR,154,336,-2,1
+Image=SelectGlow,166,317,156,31
+Image=TypeBackground,0,350,155,35
+Image=ZigZagNextToTypeBackground,156,369,251,15
+Image=ButtonPressedPiece,4,257,139,23
+
+[MainMenuBackgroundTexture01]
+Class=Image
+Material=UIResT.UI.MenuBackground01d
+FullImage=MainMenuBackground01
+
+[MainMenuBackgroundTexture02]
+Class=Image
+Material=UIResT.UI.MenuBackground02d
+FullImage=MainMenuBackground02
+
+[MenuBackgroundSmallTexture]
+Class=Image
+Material=UIResT.UI.MenuBackgroundSmall
+Image=MenuBackgroundSmall,0,0,128,95
+
+[MouseTextures]
+Class=Image
+Material=UIResT.UI.UIPieces
+Image=MouseUpperRightArm,359,231,37,22
+Image=MouseUpperLeftArm,366,261,22,37
+Image=MouseLowerRightArm,422,231,15,21
+Image=MouseLowerLeftArm,418,263,21,15
+Image=MouseMiddleBodySection,452,230,24,24
+Image=MouseTranslucentPointers,393,439,41,40
+Image=MouseGlowA,353,449,34,34
+Image=MouseGlowB,166,387,44,44
+Image=MouseUnderGlow,301,441,46,46
+
+[OptionScreenTextures01]
+Class=Image
+Material=UIResT.UI.UIPieces
+Image=SubMenuZigZag,5,75,180,23
+Image=SubMenuBackground,195,73,144,20
+Image=LeftTextBackground,114,471,156,20
+Image=LeftTextEnd,278,476,3,10
+Image=U2SelectorTop,115,198,232,9
+Image=U2SelectorBottom,115,208,232,9
+Image=U2SelectorBackground,68,451,157,13
+Image=U2SliderBar,11,450,17,14
+Image=U2SliderBack,2,412,153,20
+Image=U2CheckBoxBack,8,392,31,17
+Image=U2CheckBoxCheck,132,391,31,17
+Image=AdvancedGlow,202,99,140,24
+Image=BackGlow,10,105,72,20
+Image=OptionGlow,342,321,85,29
+Image=OptionZigZag,108,496,393,11
+Image=OptionZigZagStretch,499,503,2,2
+Image=OptionBackground,142,225,79,23
+
+[OptionScreenTextures02]
+Class=Image
+Material=UIResT.UI.UIPieces
+Image=SliderNumTop,432,291,76,32
+Image=ControlsBackground,231,389,122,20
+Image=ControlsGlow,228,416,120,16
+Image=ControlsButton,357,390,8,8
+Image=PrevNextButtons,249,240,29,41
+Image=PrevNextBackground,285,238,31,45
+Image=PrevNextGlow,249,221,31,19
+Image=PrevNextGlowR,249,240,31,-19
+Image=TypeBox,368,173,129,20
+Image=OptionButtonDown,147,260,79,23
+Image=AdvancedButtonDown,231,207,106,15
+Image=BackButtonDown,358,75,41,14
+Image=OptionUpGlow,424,76,33,20
+Image=OptionDownGlow,465,260,33,20
+
+[ScrollBarTextures]
+Class=Image
+Material=UIResT.UI.UIPieces
+Image=ScrollDownDown,6,489,17,17
+Image=ScrollDownUp,23,489,16,17
+Image=ScrollUpDown,39,489,16,17
+Image=ScrollUpUp,55,489,16,17
+Image=ScrollBackground,71,489,17,17
+Image=ScrollSlider,88,474,16,32
+
+[LoadSaveTextures]
+Class=Image
+Material=UIResT.UI.UIPieces
+Image=LoadSaveTopBracket,0,3,487,21
+Image=LoadSaveBottomBracket,21,26,490,33
+Image=LoadSaveTranslucentPiece,109,140,124,23
+Image=LoadSaveGradientPiece,7,148,33,5
+Image=LoadSaveGradientPieceR,40,148,-33,5
+Image=LoadSaveEmptySlot,400,108,106,16
+
+[NewScreenTextures]
+Class=Image
+Material=UIResT.UI.UIPieces
+Image=NewOptionHolder,2,196,96,22
+Image=NewHolderGradientLeft,1,199,2,2
+Image=NewHolderGradientRight,97,209,2,2
+Image=NewTextBackground,55,224,42,30
+Image=NewTextStretch,95,225,4,22
+

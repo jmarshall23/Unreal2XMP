@@ -1,0 +1,29 @@
+class BaseGiantTurret extends XMPStationaryTurret
+	placeable;	
+
+defaultproperties
+{
+	bUsable=false
+	bUnlit=true
+	bProxyControlled=true
+	DrawType=DT_StaticMesh
+	StaticMesh=StaticMesh'Arch_TurretsM.TurretBaseGiantBase_TD_001'
+	RepSkinIndex=0
+	AlternateSkins(0)=Shader'Arch_TurretsT.Giant.TurretBaseGiantFX_TD_Red'
+	AlternateSkins(1)=Shader'Arch_TurretsT.Giant.TurretBaseGiantFX_TD_Blue'
+	bHardAttach=True
+	DrawScale=1
+	bArticulated=true
+	bRelativeRotation=true
+	GunBarrelClass=class'BaseGiantTurretBarrel'
+	Barrel1FiringOffset=(X=550,Y=0,Z=435)
+	Barrel2FiringOffset=(X=0,Y=0,Z=0)
+	CameraOffset=(X=-110,Y=0,Z=635)
+	//CameraOffset=(X=-550,Y=0,Z=435)
+	TurretOffset=(x=0,y=0.00,z=0)
+	RateOfFire=0.2
+	RotationCenter=(Pitch=-3192,Yaw=0,Roll=0)
+	PitchConstraint=6596
+	YawConstraint=65536
+	Health=600
+}

@@ -1,0 +1,7 @@
+To enable syntax highlighting for .uc, .dlg and .u2s files in Microsoft Visual Studio:
+
+VS6 Users: Refer to U2AiScripting.doc
+
+VS.net users: add the .reg files to your registry by double-clicking on them, then
+copy UserType.dat into the directory containing devenv.exe (usually Common7\IDE).
+

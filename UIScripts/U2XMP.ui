@@ -1,0 +1,152 @@
+
+[Root]
+Class=MultiStateComponent
+State=VoiceMenu
+State=XMPMenu
+Transition=ShowXMPMenu,1,1,0,NULL
+Transition=HideXMPMenu,0,0,0,NULL
+NextTransitionEvent=ToggleXMPMenu
+DrawOrder=1
+
+[XMPMenu]
+Class=TileContainer
+Vertical=true
+Component=XMPItem:1/NetMonkey/IsOnTeam0/SetTeam0/Red Team
+Component=XMPItem:2/NetMonkey/IsOnTeam1/SetTeam1/Blue Team
+Component=XMPItem:3/PawnMonkey/IsXMPClass0/SetXMPClass0/Ranger
+Component=XMPItem:4/PawnMonkey/IsXMPClass1/SetXMPClass1/Tech
+Component=XMPItem:5/PawnMonkey/IsXMPClass2/SetXMPClass2/Gunner
+Align=HardLeft,HardCenter
+Location=64,-60
+
+[XMPItem]
+Class=FixedSizeContainer
+Component=Label
+	Text=%0%: %4%
+	Color=CADETBLUE
+Component=KeyEvent
+	Key=%0%,Press,%1%,%3%
+Component=ImageComponent
+	Image=LeftArrow
+	EnabledAccess=%1%,%2%
+	Style=Alpha
+	Location=-16,4
+Size=440,32
+
+##############################
+
+[VoiceMenu]
+Class=MultiStateComponent
+State=NULL
+Transition=ShowVoiceMenu,0,0,3.0,VoiceMenuC
+Transition=ShowVoiceSubMenu1,0,0,2.0,VoiceSubMenu:VM_RequestHeader/Medic/Repairs/Supplies/Hacker
+Transition=ShowVoiceSubMenu2,0,0,2.0,VoiceSubMenu:VM_StatementHeader/Offense/Backup/Defense/Follow
+Transition=ShowVoiceSubMenu3,0,0,2.0,VoiceSubMenu:VM_TacticsHeader/Base/Generator/Artifact/AllClear
+Transition=ShowVoiceSubMenu4,0,0,2.0,VoiceSubMenu:VM_GeneralHeader/Acknowledged/Sorry/NoProblem/Thanks
+Transition=VoiceMenu.Hide,0,0,0.6,NULL,true
+Transition=VoiceMenu.Cancel,0,0,0,NULL
+Location=64,-60
+Align=HardLeft,HardCenter
+Register=VoiceMenu
+Localize=true
+DrawOrder=1
+
+[VoiceMenuC]
+Class=TileContainer
+Vertical=true
+Component=FixedSizeContainer
+	Component=Label
+		Text=VM_Header
+		Color=CADETBLUE
+		Align=None,Bottom
+		Size=440,32
+Component=VMItem:1/VM_Request
+Component=VMItem:2/VM_Statement
+Component=VMItem:3/VM_Tactics
+Component=VMItem:4/VM_General
+Align=None,Center
+
+[VoiceSubMenu]
+Class=TileContainer
+Vertical=true
+Component=FixedSizeContainer
+	Component=Label
+		Text=%0%
+		Color=CADETBLUE
+		Align=None,Bottom
+		Size=440,32
+Component=VMSubItem:1/VM_%1%
+Component=VMSubItem:2/VM_%2%
+Component=VMSubItem:3/VM_%3%
+Component=VMSubItem:4/VM_%4%
+Align=None,Center
+
+[VMItem]
+Class=FixedSizeContainer
+Component=Label
+	Text=%1%
+	Color=CADETBLUE
+Component=KeyEvent
+	Key=%0%,Press,Event,ShowVoiceSubMenu%0%
+	Key=F%0%,Press,Event,ShowVoiceSubMenu%0%
+	Key=Escape,Press,Event,VoiceMenu.Cancel
+Size=440,32
+
+[VMSubItem]
+Class=FixedSizeContainer
+Component=Label
+	Text=%1%
+	Color=CADETBLUE
+Component=KeyEvent
+	Key=%0%,Press,Player,%1%
+	Key=%0%,Press,Event,VoiceMenu.Hide
+	Key=F%0%,Press,Player,%1%
+	Key=F%0%,Press,Event,VoiceMenu.Hide
+	Key=Escape,Press,Event,VoiceMenu.Cancel
+Size=440,32
+
+##############################
+
+[DeployListing]
+Class=MultiStateComponent
+State=NULL
+State=DeployList
+Transition=ShowDeployList,1,1,0,NULL
+Transition=HideDeployList,0,0,0,NULL
+Transition=LevelChange,0,0,0,NULL
+TriggerEvent=2,0.0,PawnMonkey,ClearDeploySlots
+DrawOrder=1
+
+[DeployList]
+Class=TileContainer
+RightJustify=true
+ShortCircuit=true
+FixedSpacing=20
+Component=DeploySlot:0
+Component=DeploySlot:1
+Component=DeploySlot:2
+Component=DeploySlot:3
+Component=DeploySlot:4
+Component=DeploySlot:5
+Component=DeploySlot:6
+Component=DeploySlot:7
+Align=HardRight,HardCenter
+Y=-20
+
+[DeploySlot]
+Class=FixedSizeContainer
+Component=Label
+	Access=PawnMonkey,GetDeploySlotName%0%
+	ColorAccess=PawnMonkey,GetDeploySlotColor%0%
+	Align=Right,None
+	X=-32
+Component=MultiImageComponent
+	Access=PawnMonkey,GetDeploySlotIconIndex%0%
+	ColorAccess=PawnMonkey,GetDeploySlotColor%0%
+	Images=Player_Icon_Ranger
+	Images=Player_Icon_Tech
+	Images=Player_Icon_Gunner
+	Style=Alpha
+	Size=32,32
+	Align=Right,None
+EnabledAccess=PawnMonkey,GetDeploySlotEnabled%0%

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E28B3C1D-CADF-43AF-BC6D-453216DC91A0}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <NMakeBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NMAKE /f System.mak DEBUG</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NMAKE /f System.mak DEBUG_RebuildAll</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NMAKE /f System.mak Clean</NMakeCleanCommandLine>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <NMakeBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NMAKE /f System.mak RELEASE</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NMAKE /f System.mak RELEASE_RebuildAll</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NMAKE /f System.mak Clean</NMakeCleanCommandLine>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\U2XMP.ini" />
+    <None Include="..\UDNHelpTopics.ini" />
+    <None Include="..\UnrealEd.ini" />
+    <None Include="..\UnrealEdTips.ini" />
+    <None Include="..\User.ini" />
+    <None Include="..\ALAudio.int" />
+    <None Include="..\Console.int" />
+    <None Include="..\Core.int" />
+    <None Include="..\Credits.int" />
+    <None Include="..\D3DDrv.int" />
+    <None Include="..\Editor.int" />
+    <None Include="..\Engine.int" />
+    <None Include="..\GameOver.int" />
+    <None Include="..\Intro.int" />
+    <None Include="..\IpDrv.int" />
+    <None Include="..\NormalCredits.int" />
+    <None Include="..\SpecialCredits.int" />
+    <None Include="..\Startup.int" />
+    <None Include="..\Titles.int" />
+    <None Include="..\Tutorial.int" />
+    <None Include="..\U2HUD.int" />
+    <None Include="..\U2Menus.int" />
+    <None Include="..\U2XMP.int" />
+    <None Include="..\UI.int" />
+    <None Include="..\UWeb.int" />
+    <None Include="..\UnrealEd.int" />
+    <None Include="..\WinDrv.int" />
+    <None Include="..\Window.int" />
+    <None Include="..\..\Docs\Public\DevHelp\SyntaxHighlighting.txt" />
+    <None Include="..\..\Docs\Public\DevHelp\UserType.dat" />
+    <None Include="..\..\Docs\Public\DevHelp\dlg.reg" />
+    <None Include="..\..\Docs\Public\DevHelp\u2s.reg" />
+    <None Include="..\..\Docs\Public\DevHelp\uc.reg" />
+    <None Include="..\..\Docs\Public\Help\U2XMPCommands.doc" />
+    <None Include="..\..\Docs\Public\Help\UnrealIConsole.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\..\Docs\Private\U2AnimationInfo.txt" />
+    <None Include="System.mak" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

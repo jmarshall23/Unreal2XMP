@@ -1,0 +1,2383 @@
+
+##############################
+
+[Root]
+Class=FixedSizeContainer
+Component=TopPieces
+;Component=UseReticle
+Component=ObjectiveNotify
+Component=DeploymentNotify
+Component=ObjectivesScreen
+Component=Scoreboard
+;Component=DialogTrays
+EnabledAccess=Player,ShowHUD
+
+[TopPieces]
+Class=FixedSizeContainer
+;Component=TempEditor
+Component=WeaponPanel
+Component=U2Assets
+Component=DamageIndicator
+Component=Health
+Component=Shield
+Component=Clip
+Component=Ammo
+Component=RocketNotifies
+Component=WeaponTrays
+Component=LowerHUD.LeftFrame
+Component=LowerHUD.RightFrame
+;Component=ArtifactHolder
+Component=XMPHolder
+;Component=StaminaHolder
+;Component=SkillHolder
+Component=UseHolder
+;Component=WeaponHolder
+Component=TargetID
+Component=PID.Root
+Component=ReturnToBase
+Component=Console.GameMessageHolder
+Component=Console.EnergyMessageHolder
+Component=Console.DeathMessageHolder
+Component=Console.MessageHolder
+Component=Console.ScoreBoxHolder
+Component=U2XMP.Root
+Component=U2XMP.DeployListing
+Component=Passengers
+Component=TimeRemaining
+Component=PreMatchCountdown
+;EnabledAccess=GameFlag,bDisplayHud
+
+[TimeRemaining]
+Class=Label
+Access=Player,GetTimeRemaining
+Align=HardCenter,HardTop
+
+##############################
+
+[Health]
+Class=FixedSizeContainer
+Component=GlowFlash:Health/None/-14/-21
+Component=ImageComponent
+	Image=Health
+Component=ImageWipe
+	TopImage=OrangeBar
+	;BottomImage=BarBackground
+	Access=PlayerPawn,GetHealthPct
+	AutoSize=true
+	Location=48,0
+Component=LabelShadow
+	FloatAccess=PlayerPawn,GetHealth
+	Font=HUD_Fonts.Micro12
+	Format=%03.0f
+	Location=8,-1
+Align=HardLeft,HardTop
+Location=32,48
+
+[Shield]
+Class=FixedSizeContainer
+Component=GlowFlash:Shield/None/-14/-21
+Component=ImageComponent
+	Image=Shield
+Component=ImageWipe
+	TopImage=BlueBar
+	;BottomImage=BarBackground
+	Access=Player,GetPowerSuitPct
+	AutoSize=true
+	Location=48,0
+Component=LabelShadow
+	Access=Player,GetPowerSuitPowerString
+	Font=HUD_Fonts.Micro12
+	Location=8,-1
+Align=HardLeft,HardTop
+Location=64,74
+
+[Clip]
+Class=FixedSizeContainer
+Component=GlowFlash:Clip/Right/14/-21
+Component=ImageComponent
+	Image=Clip
+	Align=Right,None
+Component=ImageWipe
+	TopImage=OrangeBarR
+	;BottomImage=BarBackgroundR
+	Access=Player,GetAmmoClipPct
+	Invert=true
+	AutoSize=true
+	Location=-48,0
+	Align=Right,None
+Component=LabelShadow
+	Access=Player,GetClipRoundsRemaining
+	Font=HUD_Fonts.Micro12
+	Align=Right,None
+	Location=-8,-1
+Align=HardRight,HardTop
+Location=-32,48
+
+[Ammo]
+Class=FixedSizeContainer
+Component=GlowFlash:Ammo/Right/14/-21
+Component=ImageComponent
+	Image=Ammo
+	Align=Right,None
+Component=ImageWipe
+	TopImage=BlueBarR
+	;BottomImage=BarBackgroundR
+	Access=Player,GetAmmoTotalPct
+	Invert=true
+	AutoSize=true
+	Location=-48,0
+	Align=Right,None
+Component=LabelShadow
+	Access=Player,GetTotalAmmoString
+	Font=HUD_Fonts.Micro12
+	Align=Right,None
+	Location=-8,-1
+Align=HardRight,HardTop
+Location=-64,74
+
+[GlowFlash]
+Class=MultiStateComponent
+State=NULL
+State=GlowFlashImage
+Transition=%0%Flash,1,0,0.8,GlowFlashImage
+TweenLocation=false
+TweenAlpha=true
+Align=%1%,None
+Location=%2%,%3%
+DrawOrder=1
+
+[GlowFlashImage]
+Class=ImageComponent
+Image=%0%Glow
+Size=256,64
+
+##############################
+
+[WeaponTrays]
+Class=TileContainer
+Vertical=true
+FixedSpacing=30
+Component=WeaponTray:1
+Component=WeaponTray:2
+Component=WeaponTray:3
+Component=WeaponTray:4
+Component=WeaponTray:5
+Align=HardRight,HardCenter
+Location=0,-64
+
+[WeaponTray]
+Class=MultiStateComponent
+State=NULL
+State=WeaponTrayC
+Transition=ShowWeaponTray%0%,1,1,0,NULL
+Transition=HideWeaponTray%0%,1,0,0.25,WeaponTrayC
+TriggerEvent=0,0.0,Event,WeaponPanelInitiate.PlaySound
+TweenLocation=false
+TweenLinear=true
+TweenAlpha=true
+
+[WeaponTrayC]
+Class=FixedSizeContainer
+Component=WeaponDispatch
+Component=WeaponBackground
+Component=WeaponSlotNum
+Component=WeaponSlots
+Component=WeaponZag
+Component=WeaponZagGlow
+
+[WeaponDispatch]
+Class=MultiStateComponent
+State=NULL
+Transition=ShowWeaponTray%0%,0,0,1,NULL
+TriggerEvent=0,0.0,Event,WeaponDispatch.Reset
+TriggerEvent=0,0.3,Event,WeaponDispatch.FlashZig
+TriggerEvent=0,0.4,Event,WeaponDispatch.ShowWeapon_1
+TriggerEvent=0,0.5,Event,WeaponDispatch.ShowWeapon_2
+TriggerEvent=0,0.6,Event,WeaponDispatch.ShowWeapon_3
+TriggerEvent=0,0.7,Event,WeaponDispatch.ShowWeapon_4
+TriggerEvent=0,0.8,Event,WeaponDispatch.ShowWeapon_5
+TweenLocation=false
+Register=WeaponDispatch
+
+[WeaponBackground]
+Class=FixedSizeContainer
+Component=WeaponBackgroundA
+Align=Right,None
+WidthAccess=exp(Parent.WeaponSlots.Width+60)
+Height=27
+DrawOrder=1
+
+[WeaponBackgroundA]
+Class=MultiStateComponent
+State=WeaponBackgroundF:1/0
+State=WeaponBackgroundF:0/1
+Transition=ShowWeaponTray%0%,0,1,0.25,WeaponBackgroundF_tween:0/0
+TweenLocation=false
+TweenLinear=true
+
+[WeaponBackgroundF]
+Class=Frame
+Component=WeaponScreen
+Component=ImageComponent
+	Image=BackgroundBlock
+	WidthAccess=exp(Parent.Parent.Parent.Width)
+	Height=27
+Component=ImageComponent
+	Image=ThinTopLine
+	WidthAccess=exp(Parent.Parent.Parent.Width)
+	Height=1
+	Location=0,2
+FrameXPctAccessor=exp(%0%)
+FrameYPct=0
+FrameWidthPctAccessor=exp(%1%)
+FrameHeightPct=1
+
+[WeaponBackgroundF_tween]
+Class=Frame
+Component=WeaponScreen
+Component=ImageComponent
+	Image=BackgroundBlock
+	WidthAccess=exp(Parent.Parent.Parent.Width)
+	Height=27
+Component=ImageComponent
+	Image=ThinTopLine
+	WidthAccess=exp(Parent.Parent.Parent.Width)
+	Height=1
+	Location=0,2
+
+[WeaponScreen]
+Class=TileContainer
+Horizontal=true
+Component=ImageComponent
+	Image=ScreenTile
+	WidthAccess=exp(Parent.Parent.Parent.Parent.Width-88)
+	Height=22
+Component=ImageComponent
+	Image=ScreenFront
+Location=0,2
+Alpha=128
+DrawOrder=1
+
+[WeaponSlotNum]
+Class=MultiStateComponent
+State=NULL
+State=WeaponSlotNumL
+Transition=ShowWeaponTray%0%,0,1,1.0,WeaponSlotNumL
+TweenLocation=false
+TweenAlpha=true
+Align=Right,None
+Location=-3,1
+DrawOrder=1
+
+[WeaponSlotNumL]
+Class=Label
+Font=HUD_Fonts.Micro12
+Text=%0%
+
+[WeaponZag]
+Class=MultiStateComponent
+State=NULL
+State=WeaponZagI
+Transition=WeaponDispatch.FlashZig,1,1,0,NULL
+Transition=WeaponDispatch.Reset,0,0,0,NULL
+TweenLocation=false
+Align=Right,None
+Location=-7,9
+DrawOrder=1
+
+[WeaponZagI]
+Class=ImageComponent
+Image=ZigZag
+
+[WeaponZagGlow]
+Class=MultiStateComponent
+State=NULL
+State=WeaponZagGlowI
+Transition=WeaponDispatch.FlashZig,1,0,1.0,WeaponZagGlowI
+Transition=WeaponDispatch.Reset,0,0,0.0,NULL
+TweenLocation=false
+TweenAlpha=true
+Align=Right,None
+Location=-7,7
+DrawOrder=1
+
+[WeaponZagGlowI]
+Class=ImageComponent
+Image=ZigZagGlow
+
+[WeaponSlots]
+Class=TileContainer
+Horizontal=true
+Component=WeaponIndicator:%0%/5
+Component=WeaponIndicator:%0%/4
+Component=WeaponIndicator:%0%/3
+Component=WeaponIndicator:%0%/2
+Component=WeaponIndicator:%0%/1
+Align=Right,None
+Location=-62,2
+DrawOrder=1
+
+[WeaponIndicator]
+Class=MultiStateComponent
+State=NULL
+State=WeaponIndicatorC
+Transition=AddAllWeapons,1,1,0,NULL
+Transition=RemoveAllWeapons,0,0,0,NULL
+Transition=AddWeapon%0%_%1%,1,1,0,NULL
+Transition=RemoveWeapon%0%_%1%,0,0,0,NULL
+TweenLocation=false
+
+[WeaponIndicatorC]
+Class=FixedSizeContainer
+Component=WeaponTrayImage
+Component=WeaponHilite
+Component=MultiImageComponent
+	Access=WeaponPanel,GetWeaponIcon_%0%_%1%
+	AutoResize=true
+	Images=WI_Default
+	Images=WI_DP
+	Images=WI_P
+	Images=WI_AR
+	Images=WI_FT
+	Images=WI_RL
+	Images=WI_T
+	Images=WI_ER
+	Images=WI_LR
+	Images=WI_MC
+	Images=WI_SC
+	Images=WI_GL
+	Images=WI_S
+	Images=WI_LG
+	Images=WI_SR
+	Images=XMP_AT
+	Images=XMP_RT
+	Images=XMP_SG
+	Images=XMP_LM
+	Images=XMP_TM
+	Images=XMP_SP
+	Location=23,0
+Component=LabelShadow
+	Font=HUD_Fonts.Micro10
+	Access=WeaponPanel,GetWeaponAmmo_%0%_%1%
+	Location=10,11
+Size=64,22
+DrawOrder=1
+
+[WeaponTrayImage]
+Class=MultiStateComponent
+State=NULL
+State=WeaponTrayImageC
+Transition=WeaponDispatch.ShowWeapon_%1%,0,1,0.2,WeaponTrayImageC
+Transition=WeaponDispatch.Reset,0,0,0.0,NULL
+TriggerEvent=0,0.0,Event,WeaponPanelCascade.PlaySound
+TweenLocation=false
+TweenAlpha=true
+
+[WeaponTrayImageC]
+Class=ImageComponent
+Image=WeaponTray
+Alpha=128
+
+[WeaponHilite]
+Class=MultiStateComponent
+State=NULL
+State=WeaponHiliteImage
+Transition=HiliteAllWeapons,1,1,0,NULL
+Transition=UnHiliteAllWeapons,0,0,0,NULL
+Transition=HiliteWeapon%0%_%1%,1,1,0,NULL
+Transition=UnHiliteWeapon%0%_%1%,0,0,0,NULL
+TweenLocation=false
+DrawOrder=1
+
+[WeaponHiliteImage]
+Class=ImageComponent
+Image=WeaponHilite
+
+##############################
+
+[DialogMonkey]
+Helper=U2Dialog$DialogMonkey
+RegisterObj=DialogMonkey
+
+[DialogTrays]
+Class=TileContainer
+Vertical=true
+FixedSpacing=30
+Component=DialogMonkey
+Component=DialogTray_withSound:1
+Component=DialogTray:2
+Component=DialogTray:3
+Component=DialogTray:4
+Component=DialogTray:5
+Component=DialogTray:6
+Component=DialogTray:7
+Align=HardLeft,HardCenter
+
+[DialogTray_withSound]
+Class=MultiStateComponent
+State=NULL
+State=DialogTrayC
+Transition=DialogOn%0%,1,1,0,NULL
+Transition=DialogOff%0%,1,0,0.25,DialogTrayC
+Transition=DialogHide,1,0,0,NULL
+TriggerEvent=0,0.0,Event,DialogPanelCascade.PlaySound
+TweenLocation=false
+TweenLinear=true
+TweenAlpha=true
+
+[DialogTray]
+Class=MultiStateComponent
+State=NULL
+State=DialogTrayC
+Transition=DialogOn%0%,1,1,0,NULL
+Transition=DialogOff%0%,1,0,0.25,DialogTrayC
+Transition=DialogHide,1,0,0,NULL
+TweenLocation=false
+TweenLinear=true
+TweenAlpha=true
+
+[DialogTrayC]
+Class=FixedSizeContainer
+Component=DialogDispatch
+Component=DialogBackground
+Component=DialogSlotNum
+Component=DialogSlot
+Component=DialogZag
+Component=DialogZagGlow
+Component=DialogText
+
+[DialogText]
+Class=MultiStateComponent
+State=NULL
+State=DialogTextF:%0%/0/255
+State=DialogTextF:%0%/1/0
+Transition=DialogDispatch.ShowDialogText,1,2,0.3,DialogTextF_tween:%0%
+Transition=DialogDispatch.Reset,0,0,0.0,NULL
+TweenLocation=false
+TweenReverseEase=true
+Location=82,3
+DrawOrder=1
+
+[DialogTextF]
+Class=Frame
+Component=DialogLabel
+Component=DialogTextGlowB:%2%
+FrameWidthPctAccessor=exp(%1%)
+FrameHeightPct=1.0
+
+[DialogLabel]
+Class=Label
+LocalizedFont=DialogFont
+Access=DialogMonkey,GetText%0%
+
+[DialogTextF_tween]
+Class=Frame
+Component=Label
+	LocalizedFont=DialogFont
+	Access=DialogMonkey,GetText%0%
+Component=DialogTextGlowB_tween
+
+[DialogTextGlowA]
+Class=ImageComponent
+Image=TextGlowSwipe
+Alpha=%0%
+
+[DialogTextGlowA_tween]
+Class=ImageComponent
+Image=TextGlowSwipe
+Align=Right,None
+Location=8,-2
+
+[DialogTextGlowB]
+Class=AnimatedImageComponent
+Image=TextGlowSwipe
+Alpha=%0%
+
+[DialogTextGlowB_tween]
+Class=AnimatedImageComponent
+Image=TextGlowSwipeB01
+Image=TextGlowSwipeB02
+Image=TextGlowSwipeB03
+Image=TextGlowSwipeB04
+Image=TextGlowSwipeB01
+Image=TextGlowSwipeB02
+Image=TextGlowSwipeB03
+Image=TextGlowSwipeB04
+Align=Right,None
+Location=7,-4
+
+[DialogTextGlowC]
+Class=AnimatedImageComponent
+Image=TextGlowSwipe
+Alpha=%0%
+
+[DialogTextGlowC_tween]
+Class=AnimatedImageComponent
+Image=TextGlowSwipeC01
+Image=TextGlowSwipeC02
+Image=TextGlowSwipeC03
+Image=TextGlowSwipeC04
+Image=TextGlowSwipeC01
+Image=TextGlowSwipeC02
+Image=TextGlowSwipeC03
+Image=TextGlowSwipeC04
+Align=Right,None
+Location=7,-5
+
+[DialogDispatch]
+Class=MultiStateComponent
+State=NULL
+Transition=DialogOn%0%,0,0,1,NULL
+TriggerEvent=0,0.0,Event,DialogDispatch.Reset
+TriggerEvent=0,0.3,Event,DialogDispatch.FlashZig
+TriggerEvent=0,0.3,Event,DialogDispatch.ShowDialogText
+TriggerEvent=0,0.4,Event,DialogDispatch.ShowDialogTray
+TweenLocation=false
+Register=DialogDispatch
+
+[DialogBackground]
+Class=MultiStateComponent
+State=DialogBackgroundF:0
+State=DialogBackgroundF:1
+Transition=DialogOn%0%,0,1,0.25,DialogBackgroundF_tween
+TweenLocation=false
+TweenLinear=true
+DrawOrder=1
+
+[DialogBackgroundF]
+Class=Frame
+Component=DialogScreen
+Component=ImageComponent
+	Image=BackgroundBlockR
+	WidthAccess=exp(Parent.Parent.Parent.DialogText.DialogLabel.Width+96)
+	Height=27
+Component=ImageComponent
+	Image=ThinTopLineR
+	WidthAccess=exp(Parent.Parent.Parent.DialogText.DialogLabel.Width+96)
+	Height=1
+	Location=0,2
+FrameWidthPctAccessor=exp(%0%)
+FrameHeightPct=1
+
+[DialogBackgroundF_tween]
+Class=Frame
+Component=DialogScreen
+Component=ImageComponent
+	Image=BackgroundBlockR
+	WidthAccess=exp(Parent.Parent.Parent.DialogText.DialogLabel.Width+96)
+	Height=27
+Component=ImageComponent
+	Image=ThinTopLineR
+	WidthAccess=exp(Parent.Parent.Parent.DialogText.DialogLabel.Width+96)
+	Height=1
+	Location=0,2
+
+[DialogScreen]
+Class=TileContainer
+Horizontal=true
+Component=ImageComponent
+	Image=ScreenFrontR
+Component=ImageComponent
+	Image=ScreenTile
+	WidthAccess=exp(Parent.Parent.Parent.Parent.DialogText.DialogLabel.Width+8)
+	Height=22
+Location=0,2
+Alpha=128
+DrawOrder=1
+
+[DialogSlotNum]
+Class=MultiStateComponent
+State=NULL
+State=DialogSlotNumL
+Transition=DialogOn%0%,0,1,1.0,DialogSlotNumL
+TweenLocation=false
+TweenAlpha=true
+Location=3,1
+DrawOrder=1
+
+[DialogSlotNumL]
+Class=Label
+Font=HUD_Fonts.Micro12
+Text=%0%
+
+[DialogZag]
+Class=MultiStateComponent
+State=NULL
+State=DialogZagI
+Transition=DialogDispatch.FlashZig,1,1,0,NULL
+Transition=DialogDispatch.Reset,0,0,0,NULL
+TweenLocation=false
+Location=7,9
+DrawOrder=1
+
+[DialogZagI]
+Class=ImageComponent
+Image=ZigZagR
+
+[DialogZagGlow]
+Class=MultiStateComponent
+State=NULL
+State=DialogZagGlowI
+Transition=DialogDispatch.FlashZig,1,0,1.0,DialogZagGlowI
+Transition=DialogDispatch.Reset,0,0,0.0,NULL
+TweenLocation=false
+TweenAlpha=true
+Location=7,7
+DrawOrder=1
+
+[DialogZagGlowI]
+Class=ImageComponent
+Image=ZigZagGlowR
+
+[DialogSlot]
+Class=MultiStateComponent
+State=NULL
+State=DialogSlotC
+Transition=DialogDispatch.ShowDialogTray,0,1,0.2,DialogSlotC
+Transition=DialogDispatch.Reset,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+
+[DialogSlotC]
+Class=TileContainer
+Horizontal=true
+Component=ImageComponent
+	Image=DialogTrayFront
+Component=ImageComponent
+	Image=DialogTrayMiddle
+	WidthAccess=exp(Parent.Parent.Parent.DialogLabel.Width-32)
+	Height=22
+Component=ImageComponent
+	Image=DialogTrayEnd
+Location=54,2
+Alpha=128
+DrawOrder=1
+
+##############################
+
+[ArtifactHolder]
+Class=FixedSizeContainer
+Component=ArtifactDispatch
+Component=ArtifactZag
+Component=ArtifactZagGlow
+Component=ArtifactSlot
+Align=HardLeft,HardBottom
+Y=-100
+
+[ArtifactDispatch]
+Class=MultiStateComponent
+State=NULL
+Transition=ArtifactTrayShow,0,0,1,NULL
+Transition=ArtifactTrayHide,0,0,1,NULL
+Transition=LevelChange,0,0,1,NULL
+TriggerEvent=0,0.0,Event,ArtifactDispatch.Reset
+TriggerEvent=0,0.0,Event,ArtifactDispatch.FlashZig
+TriggerEvent=0,0.1,Event,ArtifactDispatch.ShowArtifactSlot
+TriggerEvent=1,0.0,Event,ArtifactDispatch.Reset
+TriggerEvent=2,0.0,Event,ArtifactDispatch.Reset
+TweenLocation=false
+Register=ArtifactDispatch
+
+[ArtifactSlot]
+Class=MultiStateComponent
+State=NULL
+State=ArtifactSlotI
+Transition=ArtifactDispatch.ShowArtifactSlot,0,1,0.2,ArtifactSlotI
+Transition=ArtifactDispatch.Reset,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=1
+
+[ArtifactSlotI]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=ArtifactHolder
+Component=ArtifactIcons
+X=34
+
+[ArtifactZag]
+Class=MultiStateComponent
+State=NULL
+State=ArtifactZagI
+Transition=ArtifactDispatch.FlashZig,1,1,0,NULL
+Transition=ArtifactDispatch.Reset,0,0,0,NULL
+TweenLocation=false
+Y=27
+DrawOrder=1
+
+[ArtifactZagI]
+Class=ImageComponent
+Image=ArtifactZigZag
+
+[ArtifactZagGlow]
+Class=MultiStateComponent
+State=NULL
+State=ArtifactZagGlowI
+Transition=ArtifactDispatch.FlashZig,1,0,1.0,ArtifactZagGlowI
+Transition=ArtifactDispatch.Reset,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+Y=24
+DrawOrder=1
+
+[ArtifactZagGlowI]
+Class=ImageComponent
+Image=ArtifactZigZagGlow
+
+[ArtifactIcons]
+Class=MultiStateComponent
+State=NULL
+State=ArtifactIcon:Damage
+State=ArtifactIcon:Defense
+State=ArtifactIcon:Health
+State=ArtifactIcon:Shield
+State=ArtifactIcon:Skill
+State=ArtifactIcon:Stamina
+Transition=ArtifactReset,0,0,0,NULL
+Transition=ArtifactShowDamage,1,1,0,NULL
+Transition=ArtifactShowDefense,2,2,0,NULL
+Transition=ArtifactShowHealth,3,3,0,NULL
+Transition=ArtifactShowShield,4,4,0,NULL
+Transition=ArtifactShowSkill,5,5,0,NULL
+Transition=ArtifactShowStamina,6,6,0,NULL
+NextTransitionEvent=ArtifactShowNext
+Location=25,16
+DrawOrder=1
+
+[ArtifactIcon]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=Artifact_%0%
+	Align=Center,Center
+Component=Label
+	Text=%0%
+	Location=25,-10
+Component=ArtifactState:Stolen
+Component=ArtifactState:InUse
+
+[ArtifactState]
+Class=MultiStateComponent
+State=NULL
+State=ArtifactStateLabel:%0%
+Transition=Artifact%0%,0,1,0,ArtifactStateLabel:%0%
+Transition=ArtifactTrayHide,1,0,0,ArtifactStateLabel:%0%
+TweenLocation=false
+
+[ArtifactStateLabel]
+Class=Label
+Text=%0%
+Location=25,-25
+
+##############################
+
+[UseHolder]
+Class=FixedSizeContainer
+Component=UseTextures
+Component=UseText
+Component=UseBar
+Y=-128
+Align=HardCenter,HardBottom
+
+[UseText]
+Class=Label
+LocalizedFont=DialogFont
+Location=-37,38
+Accessor=Player,GetUseText
+
+[UseBar]
+Class=FixedSizeContainer
+Component=ImageWipe
+	TopImage=UseBarFill
+	Access=Player,GetUseBarPercent
+	AutoSize=true
+	Location=-33,14
+	DrawOrder=1
+Component=ImageComponent
+	Image=UseBar
+	Align=Center,None
+	DrawOrder=0
+Component=MultiImageComponent
+	Access=Player,GetUseBarIconIndex
+	Images=Player_Icon_Ranger
+	Images=Player_Icon_Tech
+	Images=Player_Icon_Gunner
+	Images=Skull
+	Location=-82,17
+	DrawOrder=1
+EnabledAccess=Player,GetUseBarEnable
+
+[UseTextures]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=UseBar,1,257,188,59
+Image=UseBarFill,20,360,115,14
+
+##############################
+
+[WeaponHolder]
+Class=FixedSizeContainer
+Component=WeaponText
+Component=WeaponBar
+EnabledAccess=Player,WeaponInfoEnabled
+
+[WeaponText]
+Class=Label
+Location=-10,-24
+Alignment=HardRight,HardBottom
+Accessor=Player,GetWeaponSeq
+
+[WeaponBar]
+Class=ImageWipe
+Invert=true
+TopImage=Green
+BottomImage=Gray
+Access=Player,GetWeaponSeqPct
+Size=77,14
+Location=-10,-8
+Alignment=HardRight,HardBottom
+
+##############################
+
+[XMPHolder]
+Class=FixedSizeContainer
+Component=XMPDispatch
+Component=XMPZag
+Component=XMPZagGlow
+Component=XMPSlot
+Align=HardRight,HardBottom
+Y=-200
+
+[XMPDispatch]
+Class=MultiStateComponent
+State=NULL
+Transition=XMPTrayShow,0,0,1,NULL
+Transition=XMPTrayHide,0,0,1,NULL
+TriggerEvent=0,0.0,Event,XMPDispatch.Reset
+TriggerEvent=0,0.0,Event,XMPDispatch.FlashZig
+TriggerEvent=0,0.1,Event,XMPDispatch.ShowXMPSlot
+TriggerEvent=1,0.0,Event,XMPDispatch.Reset
+TweenLocation=false
+Register=XMPDispatch
+
+[XMPSlot]
+Class=MultiStateComponent
+State=NULL
+State=XMPSlotI
+Transition=XMPDispatch.ShowXMPSlot,0,1,0.2,XMPSlotI
+Transition=XMPDispatch.Reset,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=1
+
+[XMPSlotI]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=XMPHolder
+	Align=Right,None
+Component=XMPIcons
+X=-34
+
+[XMPZag]
+Class=MultiStateComponent
+State=NULL
+State=XMPZagI
+Transition=XMPDispatch.FlashZig,1,1,0,NULL
+Transition=XMPDispatch.Reset,0,0,0,NULL
+TweenLocation=false
+Align=Right,None
+Y=27
+DrawOrder=1
+
+[XMPZagI]
+Class=ImageComponent
+Image=XMPZigZag
+
+[XMPZagGlow]
+Class=MultiStateComponent
+State=NULL
+State=XMPZagGlowI
+Transition=XMPDispatch.FlashZig,1,0,1.0,XMPZagGlowI
+Transition=XMPDispatch.Reset,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+Align=Right,None
+Y=24
+DrawOrder=1
+
+[XMPZagGlowI]
+Class=ImageComponent
+Image=XMPZigZagGlow
+
+[XMPIcons]
+Class=MultiStateComponent
+State=XMPIcon:XMP_Unknown
+State=XMPIcon:AutoTurret
+State=XMPIcon:RocketTurret
+State=XMPIcon:FieldGenerator
+State=XMPIcon:ProximitySensor
+Transition=XMPShowDefault,0,0,0,NULL
+Transition=XMPShowAutoTurret,1,1,0,NULL
+Transition=XMPShowRocketTurret,2,2,0,NULL
+Transition=XMPShowFieldGenerator,3,3,0,NULL
+Transition=XMPShowProximitySensor,4,4,0,NULL
+NextTransitionEvent=XMPShowNext
+Location=-25,16
+DrawOrder=1
+
+[XMPIcon]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=XMPTextBackground
+	Align=Right,None
+	Location=-26,-16
+	WidthAccess=exp(Parent.LabelShadow.Width-30)
+Component=ImageComponent
+	Image=XMPTextEnd
+	Align=Right,None
+	XAccess=exp(4-Parent.LabelShadow.Width)
+	Y=-16
+Component=ImageComponent
+	Image=%0%
+	Align=Center,Center
+Component=LabelShadow
+	LocalizedFont=XMPFont
+	Text=%0%
+	Align=Right,None
+	Location=-19,5
+	Localize=true
+	
+##############################
+
+[ObjectiveNotify]
+Class=MultiStateComponent
+State=NULL
+State=ObjectiveNotifyText
+Transition=NewObjective,1,0,4.0,ObjectiveNotifyText:NewObjective
+Transition=ObjectiveCompleted,1,0,4.0,ObjectiveNotifyText:ObjectiveCompleted
+Transition=ObjectiveFailed,1,0,4.0,ObjectiveNotifyText:ObjectiveFailed
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=1
+
+[ObjectiveNotifyText]
+Class=Label
+LocalizedFont=ObjectiveFont
+Text=%0%
+Localize=true
+Align=HardLeft,HardBottom
+Y=-4
+
+##############################
+
+[ReturnToBase]
+Class=Label
+Text=ReturnToBase
+Localize=true
+Color=YELLOW
+AlphaAccess=Keyframe|255|0.0|0|1.0|255|0.0|0|1.0|255|0.0|0|1.0|255|0.0|0|1.0
+EnabledAccess=Player,HasArtifact
+Align=HardCenter,HardTop
+Y=98
+DrawOrder=1
+
+##############################
+
+[DeploymentNotify]
+Class=TileContainer
+Component=DeploymentTextC:SpawnNowCheat/WHITE
+Component=DeploymentTextC:CanEnterLimbo/WHITE
+Component=DeploymentTextC:ShowDeployPoint/YELLOW
+Component=DeploymentTextC:SetDeployPoint/RED
+Component=DeploymentTextC:SwitchDeployPoint/WHITE
+Component=DeploymentTimerC:TimeToDeploy/WHITE
+Align=HardCenter,HardBottom
+Y=-23
+
+[DeploymentTextC]
+Class=MultiStateComponent
+State=NULL
+State=DeploymentText:%0%/%1%
+Transition=HideDeploymentText,0,0,0,NULL
+Transition=%0%On,0,1,0.3,DeploymentText:%0%/%1%
+Transition=%0%Off,1,0,0.7,NULL
+TweenLocation=false
+TweenAlpha=true
+TweenColor=true
+DrawOrder=1
+Align=Center,None
+
+[DeploymentText]
+Class=Label
+LocalizedFont=LimboFont
+Text=%0%
+Localize=true
+Color=%1%
+
+[DeploymentTimerC]
+Class=MultiStateComponent
+State=NULL
+State=DeploymentTimer:%0%/%1%
+Transition=HideDeploymentTimer,0,0,0,NULL
+Transition=%0%On,0,1,0.3,DeploymentTimer:%0%/%1%
+Transition=%0%Off,1,0,0.7,NULL
+TweenLocation=false
+TweenAlpha=true
+TweenColor=true
+DrawOrder=1
+Align=Center,None
+
+[DeploymentTimer]
+Class=TileContainer
+Horizontal=true
+Component=DeploymentText:%0%/%1%
+Component=DeploymentTime:%0%/%1%
+
+[DeploymentTime]
+Class=Label
+LocalizedFont=LimboFont
+Format=%.2f
+FloatAccess=Player,Get%0%
+Color=%1%
+
+##############################
+
+[DamageIndicator]
+Class=MultiStateComponent
+State=NULL
+State=DamageIndicatorC
+Transition=PainFlash,1,0,0.6,DamageIndicatorC
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=1
+
+[DamageIndicatorC]
+Class=FixedSizeContainer
+Component=ImageWedge
+	Image=DamageIndicator
+	Radius=94
+	AngleAccess=PlayerPawn,GetDamageIndicatorAngleA
+	Align=HardCenter,HardCenter
+Component=ImageWedge
+	Image=DamageIndicatorR
+	Radius=94
+	AngleAccess=PlayerPawn,GetDamageIndicatorAngleB
+	Align=HardCenter,HardCenter
+
+##############################
+
+[ObjectivesScreen]
+Class=MultiStateComponent
+State=ObjectivesScreenBlah
+Transition=ObjectivesScreen.B,0,0,0,NULL
+Transition=ObjectivesScreen.A,0,0,0.01,NULL
+TriggerEvent=0,0,Event,ObjectivesScreen.Hide
+TriggerEvent=0,0,CodeMonkey,UnPause_Objectives
+TriggerEvent=0,0,CodeMonkey,RestoreHUD
+TriggerEvent=1,0,Event,ObjectivesScreen.Show
+TriggerEvent=1,0,CodeMonkey,Pause_Objectives
+TriggerEvent=1,0,CodeMonkey,HideHUD
+TriggerEvent=1,0.1,Event,LevelActionOff
+NextTransitionEvent=ToggleObjectives
+TweenLocation=false
+Register=ObjectivesScreen
+DrawOrder=1
+
+[ObjectivesScreenBlah]
+Class=MultiStateComponent
+State=NULL
+State=ObjectivesScreenC
+Transition=ObjectivesScreen.Show,1,1,0,NULL
+Transition=ObjectivesScreen.Hide,0,0,0,NULL
+Transition=LevelChange,0,0,0,NULL
+TriggerEvent=2,0.0,Event,ObjectivesScreen.B
+TweenLocation=false
+DrawOrder=1
+
+[TempEditor]
+Class=MultiStateComponent
+State=NULL
+State=TempEditorC
+NextStateEvent=ToggleEditor
+DrawOrder=10000000
+
+[TempEditorC]
+Class=FixedSizeContainer
+Component=MouseCursor
+	Image=MouseCursor
+Component=Editor
+
+[ObjectivesScreenC]
+Class=FixedSizeContainer
+;Component=TempEditor
+Component=TileContainer
+	Horizontal=true
+	Component=ImageComponent
+		Image=ObjectivesBackground
+		Height=310
+	Component=ImageComponent
+		Image=ObjectivesBackgroundR
+		Height=310
+	Align=Center,Center
+	DrawOrder=1
+Component=TextArea
+	LocalizedFont=ObjectiveTextFont
+	;Access=Player,GetObjectives
+	Access=CodeMonkey,GetObjectives
+	ForceWrap=true
+	Align=Center,Center
+	Size=460,240
+	Y=-7
+Component=ImageComponent
+	Image=ObjectivesTopBracket
+	Align=Center,Center
+	Y=-139
+Component=ImageComponent
+	Image=ObjectivesBottomBracket
+	Align=Center,Center
+	Y=135
+Component=ImageComponent
+	Image=ObjectivesTranslucentPiece
+	Align=Center,Center
+	Location=79,136
+Component=ObjectivesTitle
+Component=KeyEvent
+	Key=Escape,Press,Event,ToggleObjectives
+	Key=Mouse4,Release,Event,ToggleObjectives
+Align=HardCenter,HardCenter
+Y=66
+
+[ObjectivesTitle]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=TypeBackground
+	Align=Center,None
+Component=ImageComponent
+	Image=CoverBar
+	Align=Center,None
+	Location=10,-2
+Component=ImageComponent
+	Image=ZigZagNextToTypeBackground
+	Location=174,19
+Component=ImageComponent
+	Image=LeftAngleGradientPiece
+	Location=-30,15
+Component=ImageComponent
+	Image=LeftAngleGradientPieceStretchDot
+	Location=13,37
+	Size=70,2
+Component=ImageComponent
+	Image=LeftAngleGradientPieceStretchDotR
+	Location=-224,19
+	Size=195,2
+Component=Label
+	LocalizedFont=ObjectiveTitleFont
+	Color=254,241,194,255
+	Text=Objectives
+	Align=Center,None
+	Location=-2,8
+	Localize=true
+Align=Center,Center
+Location=-163,-177
+Size=187,36
+DrawOrder=1
+
+##############################
+
+[LevelAction]
+Class=MultiStateComponent
+State=NULL
+State=LevelActionA
+Transition=LevelActionOn,1,1,0,NULL
+Transition=LevelActionShow,1,1,0,NULL
+Transition=LevelActionOff,0,0,0,NULL
+TriggerEvent=0,0.0,Event,LevelAction.On
+TriggerEvent=1,0.0,Event,LevelAction.Show
+TweenLocation=false
+DrawOrder=1
+
+[LevelActionA]
+Class=MultiStateComponent
+State=LevelActionC:0/5/-4/-7/0
+State=LevelActionC:255/0/-16/-2/12
+Transition=LevelAction.On,1,1,0.0,NULL
+Transition=LevelAction.Show,0,1,0.8,LevelActionC:0/0/0/0/0/%0%
+TweenAlpha=true
+Register=LevelAction
+
+[LevelActionC]
+Class=FixedSizeContainer
+Component=TileContainer
+	Horizontal=true
+	Component=ImageComponent
+		Image=ObjectivesBackground
+		Height=60
+		Alpha=%0%
+	Component=ImageComponent
+		Image=ObjectivesBackgroundR
+		Height=60
+		Alpha=%0%
+	Align=Center,Center
+	DrawOrder=1
+Component=LabelShadow
+	LocalizedFont=LevelActionFont
+	Access=Console,GetLevelAction
+	Align=Center,Center
+	Alpha=%0%
+	Y=-1
+Component=ImageComponent
+	Image=ObjectivesTopBracket
+	Align=Center,Center
+	Location=%1%,%2%
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=ObjectivesBottomBracket
+		Align=Center,Center
+	Component=ImageComponent
+		Image=ObjectivesTranslucentPiece
+		Location=79,1
+		Align=Center,Center
+	Location=%3%,%4%
+	DrawOrder=1
+;Component=MultiStateComponent
+;	State=NULL
+;	State=LoadingBar
+;	Transition=ShowLoadingBar,1,1,0,NULL
+;	Transition=LevelActionOff,0,0,0,NULL
+Align=HardCenter,HardCenter
+
+[LoadingBar]
+Class=FixedSizeContainer
+Component=ImageWipe
+	TopImage=Gray
+	Access=CodeMonkey,GetLevelLoadPct
+	AlphaAccess=CodeMonkey,GetLevelLoadAlpha
+	Size=220,1
+	Location=51,-19
+	Align=HardCenter,HardCenter
+Component=ImageWipe
+	TopImage=Gray
+	Access=CodeMonkey,GetLevelLoadPct
+	AlphaAccess=CodeMonkey,GetLevelLoadAlpha
+	Size=220,1
+	Location=-105,21
+	Invert=true
+	Align=HardCenter,HardCenter
+
+##############################
+
+[EndGame]
+Class=FixedSizeContainer
+Component=EndGameMenu
+Component=EndGameBackground
+DrawOrder=1
+
+[EndGameBackground]
+Class=MultiStateComponent
+State=NULL
+Transition=EndGame,0,0,8.0,NULL
+Transition=EndGameMenu.FadeToBlack,0,0,3.0,NULL
+Transition=EndGameMenu.Reset,0,0,0,NULL
+Transition=LevelChange,0,0,0,NULL
+TriggerEvent=0,0.0,DisableEvent,QuickSave
+TriggerEvent=0,0.0,DisableEvent,QuickLoad
+TriggerEvent=0,1.0,Event,EndGameMenu.FadeToBlack
+TriggerEvent=1,0.0,Event,LevelEnd.FadeToBlack
+TriggerEvent=1,0.7,Event,EndGameMenu.Show
+TriggerEvent=1,1.0,CodeMonkey,Pause
+TriggerEvent=2,0.0,CodeMonkey,UnPause
+TriggerEvent=2,0.0,EnableEvent,QuickSave
+TriggerEvent=2,0.0,EnableEvent,QuickLoad
+TriggerEvent=3,0.0,Event,EndGameMenu.Reset
+TweenLocation=false
+TweenLinear=true
+TweenAlpha=true
+DrawOrder=0
+
+[EndGameMenu]
+Class=MultiStateComponent
+State=NULL
+State=EndGameMenuFade
+Transition=EndGameMenu.Show,1,1,0,NULL
+Transition=EndGameMenu.Reset,0,0,0,NULL
+TweenLocation=false
+Register=EndGameMenu
+DrawOrder=1
+
+[EndGameMenuFade]
+Class=MultiStateComponent
+State=NULL
+State=EndGameButtons
+Transition=EndGameMenu.Show,0,1,0.6,EndGameButtons_NoMouse
+Transition=EndGameMenu.Reset,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=1
+
+[EndGameButtons]
+Class=FixedSizeContainer
+Component=U2Menus.U2Mouse
+;Component=U2Menus.UIEditor
+Component=TileContainer
+	Horizontal=true
+	Component=EndGameButton:LoadMenu
+	Component=EndGameButton:QuickLoad
+		EnabledAccess=Codemonkey,QuickLoadExists
+	Component=EndGameButton:RestartLevel
+	Align=HardCenter,HardCenter
+	Location=-48,55
+Component=EndGameQuit
+
+[EndGameButtons_NoMouse]
+Class=FixedSizeContainer
+Component=TileContainer
+	Horizontal=true
+	Component=EndGameButton:LoadMenu
+	Component=EndGameButton:QuickLoad
+		EnabledAccess=Codemonkey,QuickLoadExists
+	Component=EndGameButton:RestartLevel
+	Align=HardCenter,HardCenter
+	Location=-48,55
+Component=EndGameQuit
+
+[EndGameButton]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=SubMenuBackground
+	X=79
+Component=ImageComponent
+	Image=SubMenuZigZag
+	Y=3
+Component=Label
+	LocalizedFont=ButtonFont
+	Text=EndGame_%0%
+	Location=112,2
+	Localize=true
+Component=RealComponent
+	Size=144,25
+	X=79
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,EndGameButton.On
+	MouseExit=Event,EndGameButton.Off
+	MouseClick=CodeMonkey,EndGame_%0%
+	MouseClick=Event,MouseDown.PlaySound
+	;MouseClick=Event,EndGameMenu.Reset
+	%EnabledAccess
+Component=MultiStateComponent
+	State=NULL
+	State=EndGameButtonHilite
+	Transition=EndGameButton.On,0,1,0.2,EndGameButtonHilite
+	Transition=EndGameButton.Off,1,0,0.3,EndGameButtonHilite
+	TweenLocation=false
+	TweenAlpha=true
+	Location=87,-2
+	DrawOrder=1
+Register=EndGameButton
+%EnabledAccess
+Size=176,40
+DrawOrder=1
+
+[EndGameButtonHilite]
+Class=ImageComponent
+Image=AdvancedGlow
+
+[EndGameQuit]
+Class=FixedSizeContainer
+Component=Button
+	UpImage=OptionBackground
+	DownImage=OptionButtonDown
+	LocalizedFont=QuitFont
+	;Color=254,241,194,255
+	Text=EndGame_Quit
+	Localize=true
+	Action=ConsoleCommand,EXIT
+	Action=Event,MouseDown.PlaySound
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,EndGameQuit.On
+	MouseExit=Event,EndGameQuit.Off
+	Size=79,23
+	Align=Center,Center
+	DrawOrder=1
+Component=MultiStateComponent
+	State=NULL
+	State=EndGameQuitHilite
+	Transition=EndGameQuit.On,0,1,0.2,EndGameQuitHilite
+	Transition=EndGameQuit.Off,1,0,0.3,EndGameQuitHilite
+	TweenLocation=false
+	TweenAlpha=true
+	Align=Center,Center
+	DrawOrder=1
+Component=ImageComponent
+	Image=OptionZigZag
+	Location=-92,18
+Component=ImageComponent
+	Image=OptionZigZagStretch
+	Width=265
+	Location=300,25
+Register=EndGameQuit
+Size=82,21
+Align=HardRight,HardBottom
+Location=-63,-21
+DrawOrder=1
+
+[EndGameQuitHilite]
+Class=ImageComponent
+Image=OptionGlow
+
+##############################
+
+[Confirmation]
+Class=FixedSizeContainer
+Component=ConfirmationMenu:%1%/%2%/%3%/%4%
+Component=ConfirmationText:%0%
+Component=ConfirmationBackground:%0%
+%DrawOrder
+DrawOrder=1
+
+[ConfirmationBackground]
+Class=MultiStateComponent
+State=NULL
+State=ConfirmationBackgroundImage
+Transition=Confirmation_%0%,0,1,1.0,ConfirmationBackgroundImage
+Transition=ConfirmationMenu.Reset,0,0,0,NULL
+Transition=LevelChange,0,0,0,NULL
+TriggerEvent=0,0.0,Event,ConfirmationMenu.Show
+TriggerEvent=0,0.0,CodeMonkey,Pause_withDraw
+TriggerEvent=0,0.001,Event,LevelActionOff
+TriggerEvent=1,0.0,CodeMonkey,UnPause_withDraw
+TriggerEvent=2,0.0,Event,ConfirmationMenu.Reset
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=-1
+
+[ConfirmationBackgroundImage]
+Class=ImageComponent
+Image=Black
+Size=4096,4096
+Align=HardCenter,HardCenter
+Alpha=179
+
+[ConfirmationMenu]
+Class=MultiStateComponent
+State=NULL
+State=ConfirmationMenuPieces:%0%/%1%/%2%/%3%
+Transition=ConfirmationMenu.Show,1,1,0,NULL
+Transition=ConfirmationMenu.Reset,0,0,0,NULL
+TweenLocation=false
+Register=ConfirmationMenu
+DrawOrder=1
+
+[ConfirmationMenuPieces]
+Class=FixedSizeContainer
+Component=U2Menus.U2Mouse
+Component=ConfirmationMenuFade:%0%/%1%/%2%/%3%
+Component=KeyEvent
+	Key=Escape,Press,Event,ConfirmationMenu.Reset
+	Key=Mouse4,Release,Event,ConfirmationMenu.Reset
+
+[ConfirmationMenuFade]
+Class=MultiStateComponent
+State=NULL
+State=ConfirmationButtons:%0%/%1%/%2%/%3%
+Transition=ConfirmationMenu.Show,0,1,0.6,ConfirmationButtons:%0%/%1%/%2%/%3%
+Transition=ConfirmationMenu.Reset,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=1
+
+[ConfirmationButtons]
+Class=TileContainer
+Horizontal=true
+Component=ConfirmationButton:%0%/%1%
+Component=ConfirmationButton:%2%/%3%
+Align=HardCenter,HardCenter
+Location=-64,55
+DrawOrder=1
+
+[ConfirmationButton]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=SubMenuBackground
+	X=79
+Component=ImageComponent
+	Image=SubMenuZigZag
+	Y=3
+Component=Label
+	ButtonFont=HUD_Fonts.EuroExt14
+	Text=Confirmation_%0%
+	Location=112,2
+	Localize=true
+Component=RealComponent
+	Size=144,25
+	X=79
+	MouseEnter=Event,MouseOver.PlaySound
+	MouseEnter=Event,ConfirmationButton.On
+	MouseExit=Event,ConfirmationButton.Off
+	MouseClick=CodeMonkey,%1%
+	MouseClick=Event,MouseDown.PlaySound
+	MouseClick=Event,ConfirmationMenu.Reset
+Component=MultiStateComponent
+	State=NULL
+	State=ConfirmationButtonHilite
+	Transition=ConfirmationButton.On,0,1,0.2,ConfirmationButtonHilite
+	Transition=ConfirmationButton.Off,1,0,0.3,ConfirmationButtonHilite
+	TweenLocation=false
+	TweenAlpha=true
+	Location=87,-2
+	DrawOrder=1
+Register=ConfirmationButton
+Size=176,40
+DrawOrder=1
+
+[ConfirmationButtonHilite]
+Class=ImageComponent
+Image=AdvancedGlow
+
+[ConfirmationText]
+Class=MultiStateComponent
+State=NULL
+State=ConfirmationTextA:%0%
+Transition=ConfirmationMenu.Show,1,1,0,NULL
+Transition=ConfirmationMenu.Reset,0,0,0,NULL
+TriggerEvent=0,0.0,Event,ConfirmationText.Show
+TweenLocation=false
+DrawOrder=0
+
+[ConfirmationTextA]
+Class=MultiStateComponent
+State=ConfirmationTextC:0/5/-4/-7/0/%0%
+State=ConfirmationTextC:255/0/-16/-2/12/%0%
+Transition=ConfirmationText.Show,0,1,0.8,ConfirmationTextC:0/0/0/0/0/%0%
+TweenLocation=true
+TweenAlpha=true
+Register=ConfirmationText
+DrawOrder=0
+
+[ConfirmationTextC]
+Class=FixedSizeContainer
+Component=TileContainer
+	Horizontal=true
+	Component=ImageComponent
+		Image=ObjectivesBackground
+		Height=60
+		Alpha=%0%
+	Component=ImageComponent
+		Image=ObjectivesBackgroundR
+		Height=60
+		Alpha=%0%
+	Align=Center,Center
+	DrawOrder=1
+Component=LabelShadow
+	LocalizedFont=ConfirmationFont
+	Text=Confirmation_%5%
+	Localize=true
+	Align=Center,Center
+	Alpha=%0%
+	Y=-1
+Component=ImageComponent
+	Image=ObjectivesTopBracket
+	Align=Center,Center
+	Location=%1%,%2%
+Component=FixedSizeContainer
+	Component=ImageComponent
+		Image=ObjectivesBottomBracket
+		Align=Center,Center
+	Component=ImageComponent
+		Image=ObjectivesTranslucentPiece
+		Location=79,1
+		Align=Center,Center
+	Location=%3%,%4%
+	DrawOrder=1
+Align=HardCenter,HardCenter
+
+##############################
+
+[TargetID]
+Class=MultiStateComponent
+State=NULL
+State=TargetIDFader
+Transition=TargetIDOn,1,1,0,NULL
+Transition=TargetID.Lock,0,0,0,NULL
+TweenLocation=false
+Register=TargetID
+DrawOrder=1
+
+[TargetIDFader]
+Class=MultiStateComponent
+State=NULL
+State=TargetIDLabel
+Transition=TargetIDOn,1,1,0,NULL
+Transition=TargetIDOff,1,0,1.5,TargetIDLabel
+Transition=LevelChange,0,0,0,NULL
+TriggerEvent=0,0.0,EnableEvent,TargetIDOff
+TriggerEvent=1,0.0,DisableEvent,TargetIDOff
+TriggerEvent=1,1.0,Event,TargetID.Lock
+TriggerEvent=2,0.0,Event,TargetID.Lock
+;TweenReverseEase=true
+TweenLocation=false
+TweenAlpha=true
+
+[TargetIDLabel]
+Class=Label
+Access=Weapon,GetTargetName
+LocalizedFont=EE16
+YAccess=exp(Root.Height/6)
+Align=HardCenter,HardCenter
+
+##############################
+
+[Scoreboard]
+Class=MultiStateComponent
+State=NULL
+State=ScoreboardC
+Transition=LevelChange,0,0,0,NULL
+TriggerEvent=0,0.0,NetMonkey,ResetScoreboard
+NextStateEvent=ToggleScores
+
+[ScoreboardC]
+Class=TileContainer
+Horizontal=true
+Component=ScoreTeam
+	Team=Red
+Component=ScoreTeam
+	Team=Blue
+Component=FixedSizeContainer
+	Component=Label
+		Access=NetMonkey,GetCurrentMapName
+		Align=HardCenter,None
+		Y=-28
+OnEnabled=NetMonkey,ResetScoreboard
+Align=HardCenter,HardCenter
+X=40
+
+[ScoreTeam]
+Class=FixedSizeContainer
+Component=RealComponent
+	Enabled=true
+Component=TileContainer
+	Component=PlayerScore:01
+	Component=PlayerScore:02
+	Component=PlayerScore:03
+	Component=PlayerScore:04
+	Component=PlayerScore:05
+	Component=PlayerScore:06
+	Component=PlayerScore:07
+	Component=PlayerScore:08
+	Component=PlayerScore:09
+	Component=PlayerScore:10
+	Component=PlayerScore:11
+	Component=PlayerScore:12
+	ShortCircuit=true
+	Align=Right,None
+Component=ImageComponent
+	Image=%Team%
+	Alpha=32
+	Size=280,260
+	X=-40
+	DrawOrder=-9999999999
+	Align=Right,Center
+Component=ImageWipe
+	Invert=true
+	TopImage=%Team%
+	BottomImage=Gray
+	Access=Player,GetEnergy%Team%
+	Size=168,4
+	Location=17,-6
+Component=Label
+	FloatAccess=Player,GetEnergyAmt%Team%
+	Font=Engine.DefaultFont
+	Format=[%.0f]
+	Location=189,-9
+Size=280,240
+
+[PlayerScore]
+Class=FixedSizeContainer
+Component=FixedSizeContainer
+	Component=Label
+		LocalizedFont=DialogFont
+		Access=NetMonkey,GetPlayerName_%Team%%0%
+		X=8
+	Component=FixedSizeContainer
+		Component=Label
+			Text=%0%:
+			LocalizedFont=DialogFont
+			Align=Right,None
+			X=-15
+	X=22
+Component=Label
+	FloatAccess=NetMonkey,GetPlayerPing_%Team%%0%
+	Font=Engine.DefaultFont
+	Format=[%.0f]
+	Align=Right,None
+	Location=-41,3
+;Component=Label
+;	FloatAccess=NetMonkey,GetPlayerDeaths_%Team%%0%
+;	LocalizedFont=DialogFont
+;	Format=%.0f
+;	Align=Right,None
+;	X=-102
+Component=Label
+	FloatAccess=NetMonkey,GetPlayerScore_%Team%%0%
+	LocalizedFont=DialogFont
+	Format=%.0f
+	Align=Right,None
+	X=-78
+Component=FixedSizeContainer
+	Component=PlayerIcon
+	Component=ArtifactIndicator
+	Location=-41,-6
+EnabledAccess=NetMonkey,IsEnabled_%Team%%0%
+Size=260,20
+
+[PlayerIcon]
+Class=MultiImageComponent
+Access=NetMonkey,GetPlayerIconIndex_%Team%%0%
+Images=Player_Icon_Ranger
+Images=Player_Icon_Tech
+Images=Player_Icon_Gunner
+Location=52,6
+Size=16,16
+
+[ArtifactIndicator]
+Class=MultiImageComponent
+Access=NetMonkey,GetArtifactIndex_%Team%%0%
+EnabledAccess=NetMonkey,GetArtifactEnabled_%Team%%0%
+Images=Artifact_Damage
+Images=Artifact_Defense
+Images=Artifact_Health
+Images=Artifact_Shield
+Images=Artifact_Skill
+Images=Artifact_Stamina
+AutoSize=true
+Align=Right,None
+Location=14,-1
+
+##############################
+
+[PreMatchCountdown]
+Class=Container
+Component=TimeToStart
+Component=FireToJoin
+
+[TimeToStart]
+Class=MultiStateComponent
+State=NULL
+State=TimeToStartC
+Transition=StartMatchCountdownOn,0,1,0.8,TimeToStartC
+Transition=StartMatchCountdownOff,1,0,0.8,TimeToStartC
+Align=HardCenter,HardTop
+TweenAlpha=true
+Y=15
+
+[TimeToStartC]
+Class=TileContainer
+Horizontal=true
+Component=TimeToStartText
+Component=TimeToStartTime
+
+[TimeToStartTime]
+Class=Label
+FloatAccess=Player,GetTimeToStart
+Format=%02.2f
+
+[TimeToStartText]
+Class=Label
+Text=TimeToStartMatch
+Localize=true
+
+[FireToJoin]
+Class=MultiStateComponent
+State=NULL
+State=FireToJoinC
+Transition=FireToJoinOn,0,1,0.8,FireToJoinC
+Transition=FireToJoinOff,1,0,0.8,FireToJoinC
+Align=HardCenter,HardTop
+TweenAlpha=true
+Y=30
+
+[FireToJoinC]
+Class=Label
+Text=FireToJoinMatch
+Localize=true
+Color=RED
+
+##############################
+
+[ScoreStats]
+Class=Container
+Component=ScoreMonkey
+Component=ScoreStatsTransition
+DrawOrder=1
+
+[ScoreMonkey]
+Helper=U2$ScoreMonkey
+RegisterObj=ScoreMonkey
+
+[ScoreStatsTransition]
+Class=MultiStateComponent
+State=NULL
+State=ScoreStatsC
+;Transition=LevelLoadStart,1,1,0,NULL
+;Transition=LevelLoadEnd,0,0,0,NULL
+Transition=ShowScoreStats,1,1,0,NULL
+Transition=HideScoreStats,0,0,0,NULL
+TriggerEvent=0,0.0,ScoreMonkey,UpdateScoreData
+TriggerEvent=1,0.0,ScoreMonkey,UpdateScoreData
+NextStateEvent=ToggleScoreStats
+DrawOrder=1
+
+[ScoreStatsC]
+Class=TileContainer
+Horizontal=true
+Component=ScoreNameC:Category/ScoreHeadingCategory/None/190
+Component=ScoreStatC:Personal/ScoreHeadingPlayerScore/Right/25
+Component=ScoreNameC:MVPName/ScoreHeadingMVPName/Right/76
+Component=ScoreStatC:MVPStat/ScoreHeadingMVPScore/Right/38
+;Component=ScoreStatsCancel
+Align=HardLeft,HardBottom
+Location=12,-30
+
+[ScoreStatsCancel]
+Class=MultiStateComponent
+State=NULL
+State=ScoreStatCancelC
+Transition=LevelLoadEnd,1,1,0,NULL
+DrawOrder=1
+Align=HardCenter,HardBottom
+
+[ScoreStatCancelC]
+Class=FixedSizeContainer
+Component=U2Menus.U2Mouse
+
+[ScoreNameC]
+Class=FixedSizeContainer
+Component=ScoreNameColumn:%0%/%1%/%2%
+	ColumnWidth=%3%
+Size=%3%,400
+DrawOrder=1
+
+[ScoreStatC]
+Class=FixedSizeContainer
+Component=ScoreStatColumn:%0%/%1%/%2%
+	ColumnWidth=%3%
+Size=%3%,400
+DrawOrder=1
+
+[ScoreNameColumn]
+Class=TileContainer
+FixedSpacing=8
+Component=FixedSizeContainer
+	Component=Label
+		Color=GOLDENROD
+		ShadowColor=GRAY
+		ShadowOffset=2,2
+		LocalizedFont=DialogFont
+		Localized=true
+		Text=%1%
+		Align=%2%,None
+		Y=-10
+	Width=%ColumnWidth%
+Component=ScoreName:%0%/00/%2%
+Component=ScoreName:%0%/01/%2%
+Component=ScoreName:%0%/02/%2%
+Component=ScoreName:%0%/03/%2%
+Component=ScoreName:%0%/04/%2%
+Component=ScoreName:%0%/05/%2%
+Component=ScoreName:%0%/06/%2%
+Component=ScoreName:%0%/07/%2%
+Component=ScoreName:%0%/08/%2%
+Component=ScoreName:%0%/09/%2%
+Component=ScoreName:%0%/10/%2%
+Component=ScoreName:%0%/11/%2%
+Component=ScoreName:%0%/12/%2%
+Component=ScoreName:%0%/13/%2%
+Component=ScoreName:%0%/14/%2%
+Component=ScoreName:%0%/15/%2%
+Component=ScoreName:%0%/16/%2%
+Component=ScoreName:%0%/17/%2%
+Component=ScoreName:%0%/18/%2%
+Component=ScoreName:%0%/19/%2%
+Component=ScoreName:%0%/20/%2%
+Component=ScoreName:%0%/21/%2%
+Component=ScoreName:%0%/22/%2%
+Component=ScoreName:%0%/23/%2%
+Component=ScoreName:%0%/24/%2%
+Component=ScoreName:%0%/25/%2%
+Component=ScoreName:%0%/26/%2%
+Component=ScoreName:%0%/27/%2%
+Component=BonusName:%0%/00/%2%
+Component=BonusName:%0%/01/%2%
+Component=BonusName:%0%/02/%2%
+Component=BonusName:%0%/03/%2%
+Component=BonusName:%0%/04/%2%
+Component=BonusName:%0%/05/%2%
+Component=BonusName:%0%/06/%2%
+Component=BonusName:%0%/07/%2%
+Component=BonusName:%0%/08/%2%
+Component=BonusName:%0%/09/%2%
+Component=BonusName:%0%/10/%2%
+Component=BonusName:%0%/11/%2%
+Component=BonusName:%0%/12/%2%
+Component=BonusName:%0%/13/%2%
+Component=BonusName:%0%/14/%2%
+Component=BonusName:%0%/15/%2%
+Component=BonusName:%0%/16/%2%
+Component=BonusName:%0%/17/%2%
+Component=BonusName:%0%/18/%2%
+Component=BonusName:%0%/19/%2%
+Component=BonusName:%0%/20/%2%
+Component=BonusName:%0%/21/%2%
+Component=BonusName:%0%/22/%2%
+DrawOrder=1
+
+[ScoreStatColumn]
+Class=TileContainer
+FixedSpacing=8
+Component=FixedSizeContainer
+	Component=Label
+		Color=GOLDENROD
+		ShadowColor=GRAY
+		ShadowOffset=2,2
+		LocalizedFont=DialogFont
+		Localized=true
+		Text=%1%
+		Align=%2%,None
+		Y=-10
+	Width=%ColumnWidth%
+Component=ScoreStat:%0%/00/%2%
+Component=ScoreStat:%0%/01/%2%
+Component=ScoreStat:%0%/02/%2%
+Component=ScoreStat:%0%/03/%2%
+Component=ScoreStat:%0%/04/%2%
+Component=ScoreStat:%0%/05/%2%
+Component=ScoreStat:%0%/06/%2%
+Component=ScoreStat:%0%/07/%2%
+Component=ScoreStat:%0%/08/%2%
+Component=ScoreStat:%0%/09/%2%
+Component=ScoreStat:%0%/10/%2%
+Component=ScoreStat:%0%/11/%2%
+Component=ScoreStat:%0%/12/%2%
+Component=ScoreStat:%0%/13/%2%
+Component=ScoreStat:%0%/14/%2%
+Component=ScoreStat:%0%/15/%2%
+Component=ScoreStat:%0%/16/%2%
+Component=ScoreStat:%0%/17/%2%
+Component=ScoreStat:%0%/18/%2%
+Component=ScoreStat:%0%/19/%2%
+Component=ScoreStat:%0%/20/%2%
+Component=ScoreStat:%0%/21/%2%
+Component=ScoreStat:%0%/22/%2%
+Component=ScoreStat:%0%/23/%2%
+Component=ScoreStat:%0%/24/%2%
+Component=ScoreStat:%0%/25/%2%
+Component=ScoreStat:%0%/26/%2%
+Component=ScoreStat:%0%/27/%2%
+Component=BonusStat:%0%/00/%2%
+Component=BonusStat:%0%/01/%2%
+Component=BonusStat:%0%/02/%2%
+Component=BonusStat:%0%/03/%2%
+Component=BonusStat:%0%/04/%2%
+Component=BonusStat:%0%/05/%2%
+Component=BonusStat:%0%/06/%2%
+Component=BonusStat:%0%/07/%2%
+Component=BonusStat:%0%/08/%2%
+Component=BonusStat:%0%/09/%2%
+Component=BonusStat:%0%/10/%2%
+Component=BonusStat:%0%/11/%2%
+Component=BonusStat:%0%/12/%2%
+Component=BonusStat:%0%/13/%2%
+Component=BonusStat:%0%/14/%2%
+Component=BonusStat:%0%/15/%2%
+Component=BonusStat:%0%/16/%2%
+Component=BonusStat:%0%/17/%2%
+Component=BonusStat:%0%/18/%2%
+Component=BonusStat:%0%/19/%2%
+Component=BonusStat:%0%/20/%2%
+Component=BonusStat:%0%/21/%2%
+Component=BonusStat:%0%/22/%2%
+DrawOrder=1
+
+[ScoreName]
+Class=FixedSizeContainer
+Component=Label
+	Access=ScoreMonkey,GetScore%0%%1%
+	Font=Engine.DefaultFont
+	Align=%2%,None
+Width=%ColumnWidth%
+DrawOrder=1
+
+[BonusName]
+Class=FixedSizeContainer
+Component=Label
+	Access=ScoreMonkey,GetBonus%0%%1%
+	Font=Engine.DefaultFont
+	Align=%2%,None
+Width=%ColumnWidth%
+DrawOrder=1
+
+[ScoreStat]
+Class=FixedSizeContainer
+Component=Label
+	FloatAccess=ScoreMonkey,GetScore%0%%1%
+	Font=Engine.DefaultFont
+	Format=%.0f
+	Align=%2%,None
+Width=%ColumnWidth%
+DrawOrder=1
+
+[BonusStat]
+Class=FixedSizeContainer
+Component=Label
+	FloatAccess=ScoreMonkey,GetBonus%0%%1%
+	Font=Engine.DefaultFont
+	Format=%.0f
+	Align=%2%,None
+Width=%ColumnWidth%
+DrawOrder=1
+
+##############################
+
+[RocketNotifies]
+Class=FixedSizeContainer
+Component=RocketNotifyTextures
+Component=RocketNotify:A/45
+Component=RocketNotify:B/135
+Component=RocketNotify:C/225
+Component=RocketNotify:D/315
+DrawOrder=1
+
+[RocketNotify]
+Class=MultiStateComponent
+State=NULL
+Transition=RocketNotify%0%,0,0,2.0,RocketNotifyTri
+Transition=RocketNotifyFlash%0%,0,0,2.0,RocketNotifyTriFlash
+Transition=RocketNotifyHide%0%,0,0,0,NULL
+Transition=LevelChange,0,0,0,NULL
+TweenLocation=false
+
+[RocketNotifyTri]
+Class=FixedSizeContainer
+Component=ImageWedge
+	Image=RocketTriFrame
+	Angle=%1%
+	RadiusAccess=exp(Root.Width*0.25)
+	Align=HardCenter,HardCenter
+
+[RocketNotifyTriFlash]
+Class=FixedSizeContainer
+Component=ImageWedge
+	Image=RocketTriFrame
+	Angle=%1%
+	RadiusAccess=exp(Root.Width*0.25)
+	Align=HardCenter,HardCenter
+Component=ImageWedge
+	Image=RocketTri
+	Angle=%1%
+	RadiusAccess=exp(Root.Width*0.25)
+	Align=HardCenter,HardCenter
+	AlphaAccess=Keyframe|255|0.0|16|0.45|255|0.0|16|0.45|255|0.0|16|0.45
+	Color=RED
+
+[RocketNotifyTextures]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=RocketTriFrame,360,5,24,24
+Image=RocketTri,384,5,24,24
+
+##############################
+
+[ProgressMessages]
+Class=TileContainer
+Component=ProgressMessage:A
+Component=ProgressMessage:B
+Component=ProgressMessage:C
+Component=ProgressMessage:D
+FixedSpacing=32
+Align=HardCenter,HardCenter
+EnabledAccess=Player,ProgressEnabled
+DrawOrder=1
+Y=-64
+
+[ProgressMessage]
+Class=Label
+Access=Player,GetProgressMessage%0%
+ColorAccess=Player,GetProgressColor%0%
+Align=Center,None
+
+##############################
+
+[Passengers]
+Class=MultiStateComponent
+State=NULL
+State=PassengerList
+Transition=ShowPassengers,1,1,0,NULL
+Transition=HidePassengers,0,0,0,NULL
+Transition=LevelChange,0,0,0,NULL
+DrawOrder=1
+
+[PassengerList]
+Class=TileContainer
+RightJustify=true
+;ShortCircuit=true
+FixedSpacing=40
+Component=PassengerSlot:0
+Component=PassengerSlot:1
+Component=PassengerSlot:2
+Align=HardRight,HardCenter
+Y=-56
+
+[PassengerSlot]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=Vehicle_Bar
+	Align=Right,Center
+Component=MultiStateComponent
+	StateAccess=PlayerPawn,GetPassengerIconIndex%0%
+	State=VehicleIcon:Driver/-139/-2
+	State=VehicleIcon:TurretA/-147/-3
+	State=VehicleIcon:TurretB/-141/-4
+	Align=None,Center
+	DrawOrder=1
+Component=MultiImageComponent
+	Access=PlayerPawn,GetPassengerClassIndex%0%
+	Images=Player_Icon_Ranger
+	Images=Player_Icon_Tech
+	Images=Player_Icon_Gunner
+	Size=16,16
+	Align=None,Center
+	Location=-97,3
+Component=Label
+	LocalizedFont=DialogFont
+	Access=PlayerPawn,GetPassengerName%0%
+	Align=None,Center
+	Location=-80,2
+EnabledAccess=PlayerPawn,GetPassengerEnabled%0%
+
+[VehicleIcon]
+Class=ImageComponent
+Image=Vehicle_%0%
+Location=%1%,%2%
+
+##############################
+
+[WeaponPanel]
+Helper=U2$WeaponPanel
+RegisterObj=WeaponPanel
+
+[U2Assets]
+Class=FixedSizeContainer
+Component=U2HUDTextures
+Component=U2HUDTextures_more
+Component=GlowTextures
+Component=ArtifactTextures
+Component=WeaponIconTextures
+Component=WeaponIconTextures_xmp
+Component=ScreenTileImage
+Component=UseReticleTextures
+Component=ProximityReticleTextures
+Component=SwipeTextures
+Component=ObjectivesTextures
+Component=DamageIndicatorTextures
+Component=U2HUDSounds
+Component=LeftArrowTexture
+Component=VehicleTextures
+
+[U2HUDSounds]
+Class=FixedSizeContainer
+Component=U2Sound:DialogPanelCascade
+Component=U2Sound:WeaponPanelCascade
+Component=U2Sound:WeaponPanelInitiate
+
+[U2Sound]
+Class=SoundComponent
+Sound=UISounds.%0%
+Register=%0%
+
+[U2HUDTextures]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image2=OrangeBar,3,1,136,7
+Image2=BlueBar,3,9,136,15
+Image2=BarBackground,3,17,136,23
+Image2=OrangeBarR,136,1,3,7
+Image2=BlueBarR,136,9,3,15
+Image2=BarBackgroundR,136,17,3,23
+Image2=Clip,3,25,188,47
+Image2=Ammo,3,50,188,72
+Image2=Health,3,75,188,97
+Image2=Shield,3,100,188,122
+Image2=DialogTrayFront,14,137,59,163
+Image2=DialogTrayMiddle,86,137,237,159
+Image2=DialogTrayEnd,212,95,238,117
+Image2=WeaponTray,126,175,198,198
+Image2=ZigZag,37,212,109,220
+Image2=ThinTopLine,12,224,10,224
+Image2=BackgroundBlock,3,227,253,253
+Image2=ScreenFront,166,1,255,24
+Image2=ZigZagR,109,212,37,220
+Image2=ThinTopLineR,10,224,12,224
+Image2=BackgroundBlockR,253,227,3,253
+Image2=ScreenFrontR,255,1,167,24
+
+[U2HUDTextures_more]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=ZigZagGlow,134,161,75,13
+Image=ZigZagGlowR,209,161,-75,13
+Image=WeaponHilite,255,6,69,23
+Image=ArtifactHolder,264,34,116,34
+Image=XMPHolder,331,165,51,34
+Image=AutoTurret,292,212,25,29
+Image=RocketTurret,334,210,26,31
+Image=FieldGenerator,404,169,10,33
+Image=ProximitySensor,434,171,17,32
+Image=TextGlowSwipe,336,3,16,30
+Image=XMPZigZag,37,220,72,-8
+Image=XMPZigZagGlow,134,174,75,-13
+Image=XMPTextEnd,266,165,38,34
+Image=XMPTextBackground,304,165,27,34
+
+[GlowTextures]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=HealthGlow,258,133,128,32
+Image=ShieldGlow,258,133,128,32
+Image=ClipGlow,386,133,-128,32
+Image=AmmoGlow,386,133,-128,32
+
+[DamageIndicatorTextures]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=DamageIndicator,256,256,256,256
+Image=DamageIndicatorR,512,256,-256,256
+
+[ArtifactTextures]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=Artifact_Shield,427,15,15,28
+Image=Artifact_Damage,457,17,23,28
+Image=Artifact_Health,459,56,30,20
+Image=Artifact_Defense,456,97,32,23
+Image=Artifact_Skill,463,134,14,29
+Image=Artifact_Stamina,485,160,16,31
+Image=ArtifactZigZag,109,220,-72,-8
+Image=ArtifactZigZagGlow,209,174,-75,-13
+
+[SwipeTextures]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=TextGlowSwipeB01,287,73,25,30
+Image=TextGlowSwipeB02,328,73,25,30
+Image=TextGlowSwipeB03,368,73,25,30
+Image=TextGlowSwipeB04,408,73,25,30
+Image=TextGlowSwipeC01,292,121,21,32
+Image=TextGlowSwipeC02,332,121,21,32
+Image=TextGlowSwipeC03,372,121,21,32
+Image=TextGlowSwipeC04,412,121,21,32
+
+[WeaponIconTextures]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=WI_DP,235,56,18,13
+Image=WI_P,217,190,26,14
+Image=WI_AR,15,171,37,14
+Image=WI_FT,49,189,27,16
+Image=WI_RL,79,178,42,15
+Image=WI_T,108,161,15,14
+Image=WI_ER,204,73,48,9
+Image=WI_LR,12,192,32,12
+Image=WI_MC,226,169,19,14
+Image=WI_SC,199,56,31,14
+Image=WI_GL,205,121,39,13
+Image=WI_S,181,203,35,13
+Image=WI_LG,230,83,24,14
+Image=WI_SR,122,204,47,12
+Image=WI_Default,211,33,14,14
+Image=XMP_Unknown,211,33,14,14
+
+[WeaponIconTextures_xmp]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=XMP_AT,269,112,21,21
+Image=XMP_RT,290,112,21,21
+Image=XMP_SG,310,113,18,18
+Image=XMP_LM,347,112,21,21
+Image=XMP_TM,251,114,18,18
+Image=XMP_SP,367,111,23,23
+
+[ScreenTileImage]
+Class=Image
+Material=UIResT.HUD.ScreenTile
+FullImage=ScreenTile,true
+
+[UseReticleTextures]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=UseCornerNW,421,230,26,15
+Image=UseCornerNE,447,230,-26,15
+Image=UseCornerSW,421,245,26,-15
+Image=UseCornerSE,447,245,-26,-15
+Image=UseTopNW,431,215,16,8
+Image=UseTopNE,447,215,-16,8
+Image=UseTopSW,431,223,16,-8
+Image=UseTopSE,447,223,-16,-8
+Image=UseLineTop,448,215,8,8
+Image=UseLineBottom,448,223,8,-8
+Image=UseSideNW,426,116,15,32
+Image=UseSideNE,441,116,-15,32
+Image=UseSideSW,426,148,15,-32
+Image=UseSideSE,441,148,-15,-32
+Image=UseLineLeft,426,148,15,4
+Image=UseLineRight,441,148,-15,4
+
+[ProximityReticleTextures]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=ProximityCornerNW,375,230,26,15
+Image=ProximityCornerNE,401,230,-26,15
+Image=ProximityCornerSW,375,245,26,-15
+Image=ProximityCornerSE,401,245,-26,-15
+Image=ProximityTopNW,385,215,16,8
+Image=ProximityTopNE,401,215,-16,8
+Image=ProximityTopSW,385,223,16,-8
+Image=ProximityTopSE,401,223,-16,-8
+Image=ProximityLineTop,402,215,8,8
+Image=ProximityLineBottom,402,223,8,-8
+Image=ProximitySideNW,407,116,15,16
+Image=ProximitySideNE,422,116,-15,16
+Image=ProximitySideSW,407,132,15,-16
+Image=ProximitySideSE,422,132,-15,-16
+;Image=ProximitySideNW,426,116,15,32
+;Image=ProximitySideNE,441,116,-15,32
+;Image=ProximitySideSW,426,148,15,-32
+;Image=ProximitySideSE,441,148,-15,-32
+Image=ProximityLineLeft,407,148,15,4
+Image=ProximityLineRight,422,148,-15,4
+
+[ObjectivesTextures]
+Class=Image
+Material=UIResT.UI.UIPieces
+Image=ObjectivesTopBracket,0,3,487,21
+Image=ObjectivesBottomBracket,21,26,490,33
+Image=ObjectivesTranslucentPiece,109,140,124,23
+Image=ObjectivesBackground,266,156,242,6
+Image=ObjectivesBackgroundR,508,156,-242,6
+Image=TypeBackground,0,350,155,35
+Image=CoverBar,326,136,183,10
+Image=ZigZagNextToTypeBackground,156,369,251,15
+Image=LeftAngleGradientPiece,1,325,45,25
+Image=LeftAngleGradientPieceStretchDot,43,347,2,2
+Image=LeftAngleGradientPieceStretchDotR,1,329,2,2
+
+[LeftArrowTexture]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=LeftArrow,340,6,16,16
+
+[VehicleTextures]
+Class=Image
+Material=UIResT.HUD.U2HUD
+Image=Vehicle_Driver,24,418,26,26
+Image=Vehicle_TurretA,50,421,36,23
+Image=Vehicle_TurretB,86,421,-36,23
+Image=Vehicle_Bar,17,320,158,40
+

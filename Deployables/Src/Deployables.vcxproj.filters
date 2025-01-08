@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{0fd0793f-e173-4935-ae50-ae2e23713f87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ForceFields">
+      <UniqueIdentifier>{d042b04d-22b4-428d-ac1b-91fc147f26b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Turrets">
+      <UniqueIdentifier>{c1fe1ec7-cf5a-4988-9574-b4e7ae69667e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Packs">
+      <UniqueIdentifier>{0afbd603-9d31-4c41-9621-eb26534228f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Mines">
+      <UniqueIdentifier>{5ee59c03-5601-43ba-853b-8d2b34524d37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Effects">
+      <UniqueIdentifier>{36909e3e-3e21-438d-986d-f8fde9981f89}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\DamageFilterDeployed.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DeployableAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DeployableInventory.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\DeployedUnit.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ProxyPawn.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\StationaryPawnControllerDefensive.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\StationaryPawnControllerOffensive.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FieldGenerator.uc">
+      <Filter>Classes\ForceFields</Filter>
+    </None>
+    <None Include="..\Classes\FieldGeneratorAmmo.uc">
+      <Filter>Classes\ForceFields</Filter>
+    </None>
+    <None Include="..\Classes\FieldGeneratorDeployable.uc">
+      <Filter>Classes\ForceFields</Filter>
+    </None>
+    <None Include="..\Classes\ForceWall.uc">
+      <Filter>Classes\ForceFields</Filter>
+    </None>
+    <None Include="..\Classes\ForceWallBeam.uc">
+      <Filter>Classes\ForceFields</Filter>
+    </None>
+    <None Include="..\Classes\AutoTurret.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\AutoTurretAmmo.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\AutoTurretDeployable.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\ProximitySensor.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\ProximitySensorAmmo.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\ProximitySensorController.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\ProximitySensorDeployable.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\RocketTurret.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\RocketTurretAmmo.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\RocketTurretDeployable.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\RocketTurretProjectile.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\Turret.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\TurretController.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\WeaponAutoTurret.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\WeaponAutoTurretAmmo.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\WeaponRocketTurret.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\WeaponRocketTurretAmmo.uc">
+      <Filter>Classes\Turrets</Filter>
+    </None>
+    <None Include="..\Classes\AmmoPacks.uc">
+      <Filter>Classes\Packs</Filter>
+    </None>
+    <None Include="..\Classes\EnergyPacks.uc">
+      <Filter>Classes\Packs</Filter>
+    </None>
+    <None Include="..\Classes\HealthPacks.uc">
+      <Filter>Classes\Packs</Filter>
+    </None>
+    <None Include="..\Classes\PackBase.uc">
+      <Filter>Classes\Packs</Filter>
+    </None>
+    <None Include="..\Classes\PackBaseAmmo.uc">
+      <Filter>Classes\Packs</Filter>
+    </None>
+    <None Include="..\Classes\DamageTypeMine.uc">
+      <Filter>Classes\Mines</Filter>
+    </None>
+    <None Include="..\Classes\DamageTypeTripMine.uc">
+      <Filter>Classes\Mines</Filter>
+    </None>
+    <None Include="..\Classes\LandMineAmmo.uc">
+      <Filter>Classes\Mines</Filter>
+    </None>
+    <None Include="..\Classes\LandMineDeployable.uc">
+      <Filter>Classes\Mines</Filter>
+    </None>
+    <None Include="..\Classes\LandMines.uc">
+      <Filter>Classes\Mines</Filter>
+    </None>
+    <None Include="..\Classes\LaserTripMineAmmo.uc">
+      <Filter>Classes\Mines</Filter>
+    </None>
+    <None Include="..\Classes\LaserTripMineDeployable.uc">
+      <Filter>Classes\Mines</Filter>
+    </None>
+    <None Include="..\Classes\LaserTripMines.uc">
+      <Filter>Classes\Mines</Filter>
+    </None>
+    <None Include="..\Classes\MineBase.uc">
+      <Filter>Classes\Mines</Filter>
+    </None>
+    <None Include="..\Classes\ExplosionAutoTurret.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="..\Classes\ExplosionFieldGenerator.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="..\Classes\ExplosionProximitySensor.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="..\Classes\ExplosionRocketTurret.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+  </ItemGroup>
+</Project>

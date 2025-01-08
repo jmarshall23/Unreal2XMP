@@ -1,0 +1,7 @@
+[Project]
+Inputs=Textures/*.pcx
+Inputs=Models/*.ase
+Inputs=Classes/*.uc
+ClientOptional=False
+ServerSideOnly=False
+AllowDownload=False

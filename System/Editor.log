@@ -1,0 +1,1238 @@
+Log: Log file open, 01/07/25 15:25:57
+Init: Name subsystem initialized
+Init: Detected: Microsoft Windows NT 6.2 (Build: 9200)
+Init: Version: 2226
+Init: Compiled: Jan  7 2025 14:18:25
+Init: Command line: 
+Init: Base directory: C:\Projects\Unreal2\System\
+Init: Character set: Unicode
+Progress: Bound to Editor.dll
+Progress: Calling PackageInit
+Progress: Bound to Engine.dll
+Progress: Calling PackageInit
+Progress: Bound to Core.dll
+Progress: Calling PackageInit
+Progress: Bound to Window.dll
+Progress: Calling PackageInit
+Init: Object subsystem initialized
+Init: Computer: LAZEROUS
+Init: User: justi
+Init: CPU Page size=4096, Processors=28
+Init: CPU Detected: PentiumPro-class processor (GenuineIntel)
+Init: CPU Features: CMov FPU RDTSC PAE MMX SSE
+Init: CPU Speed=3424.589645 MHz
+Init: Memory total: Phys=2097151K Pagef=4194303K Virt=2097024K
+Init: Working set: 32000 / 159000
+Progress: Bound to Fire.dll
+Progress: Calling PackageInit
+Init: Unreal engine initialized
+Progress: Bound to ALAudio.dll
+Progress: Calling PackageInit
+Init: ALAudio: subsystem initialized.
+Init: Transaction tracking system initialized
+Progress: Bound to UI.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Progress: Bound to ParticleSystems.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Progress: Bound to IpDrv.dll
+Progress: Calling PackageInit
+Progress: Bound to UWeb.dll
+Progress: Calling PackageInit
+Progress: Bound to Legend.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Progress: Bound to U2.dll
+Progress: Calling PackageInit
+Progress: Found packageinit
+Progress: Bound to WinDrv.dll
+Progress: Calling PackageInit
+Init: Client initialized
+Progress: Bound to D3DDrv.dll
+Progress: Calling PackageInit
+Init: Direct3D adapters detected:
+Log: 	nvldumd.dll/NVIDIA GeForce RTX 4090
+Log: 	nvldumd.dll/NVIDIA GeForce RTX 4090
+Log: 	nvldumd.dll/NVIDIA GeForce RTX 4090
+Log: 	nvldumd.dll/NVIDIA GeForce RTX 4090
+Init: D3D Driver: MaxTextureBlendStages=8
+Init: D3D Driver: MaxSimultaneousTextures=8
+Init: D3D Driver: MaxActiveLights=8
+Init: D3D Driver: MaxPrimitiveCount=16777215
+Init: D3D Driver: MaxVertexIndex=16777215
+Init: D3D Driver: MaxStreams=16
+Init: D3D Driver: MaxStreamStride=255
+Init: D3D Driver: MaxVertexShaderConst=256
+Init: D3D Driver: VertexShaderVersion=1.1
+Init: D3D Driver: PixelShaderVersion=1.4
+Init: D3D Driver: AGP support detected
+Init: D3D Driver: Using w- pixel fog
+Init: D3D Driver: Supports trilinear
+Init: D3D Driver: Supports BLENDDIFFUSEALPHA
+Init: D3D Driver: Supports LOD biasing
+Init: D3D Driver: Supports Z biasing
+Init: D3D Driver: Supports D3DTOP_ADDSIGNED2X
+Init: D3D Driver: Supports D3DTOP_BUMPENVMAP
+Init: D3D Driver: Supports D3DTOP_BUMPENVMAPLUMINANCE
+Init: D3D Driver: Supports D3DTOP_DOTPRODUCT3
+Init: D3D Driver: Supports D3DTOP_MODULATEALPHA_ADDCOLOR
+Init: D3D Driver: Supports D3DTOP_MODULATECOLOR_ADDALPHA
+Init: Unreal Engine Direct3D support - internal version: SB3
+Init: D3D Device: szDriver=nvldumd.dll
+Init: D3D Device: szDescription=NVIDIA GeForce RTX 4090
+Init: D3D Device: wProduct=32
+Init: D3D Device: wVersion=0
+Init: D3D Device: wSubVersion=15
+Init: D3D Device: wBuild=6636
+Init: D3D Device: dwVendorId=4318
+Init: D3D Device: dwDeviceId=9860
+Init: D3D Device: dwSubSysId=1086264408
+Init: D3D Device: dwRevision=161
+Init: D3D Detected: NVidia video card
+Init: D3D Device: using cubemaps [with mipmaps]
+Init: Editor engine initialized
+Log: Startup time: 1.161540 seconds
+Cmd: MODE MAPEXT=unr
+Init: Input system initialized for TerrainHeightmap
+Log: Opened viewport
+Log: Enter SetRes: 386x55 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating device
+Init: D3D Driver: CreateDevice: will use hardware transform and lighting.
+Init: D3D Driver: CreateDevice: will use hardware vertex processing
+Log: Creating IME context.
+Init: Input system initialized for TerrainLayers
+Log: Opened viewport
+Log: Enter SetRes: 420x174 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Init: Input system initialized for TerrainDecoLayers
+Log: Opened viewport
+Log: Enter SetRes: 420x174 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Init: Input system initialized for MatineeScenes
+Log: Opened viewport
+Log: Enter SetRes: 320x177 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Init: Input system initialized for MatineeActions
+Log: Opened viewport
+Log: Enter SetRes: 320x177 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Init: Input system initialized for MatineeSubActions
+Log: Opened viewport
+Log: Enter SetRes: 320x177 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Init: Input system initialized for U2Viewport0
+Log: Opened viewport
+Log: Enter SetRes: 320x200 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 314x0 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 44x23 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 44x23 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Init: Input system initialized for U2Viewport1
+Log: Opened viewport
+Log: Enter SetRes: 320x200 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 314x0 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 44x23 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 44x23 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Init: Input system initialized for U2Viewport2
+Log: Opened viewport
+Log: Enter SetRes: 320x200 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 314x0 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 44x23 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 44x23 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Init: Input system initialized for U2Viewport3
+Log: Opened viewport
+Log: Enter SetRes: 320x200 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 314x0 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 44x23 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 44x23 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 71x0 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 35x0 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 71x0 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 35x0 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Init: Input system initialized for MeshViewer
+Log: Opened viewport
+Log: Enter SetRes: 256x256 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Cmd: CAMERA UPDATE NAME=MeshViewer MESH="" FLAGS=641 REN=19 MISC1=0 MISC2=0
+Cmd: CAMERA UPDATE NAME=MeshViewer MESH="" FLAGS=641 REN=19 MISC1=0 MISC2=0
+Log: Enter SetRes: 428x336 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 428x356 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 428x336 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Init: Input system initialized for AnimationViewer
+Log: Opened viewport
+Log: Enter SetRes: 256x256 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Log: Enter SetRes: 0x0 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 342x325 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Cmd: CAMERA UPDATE NAME=AnimationViewer MESH="GunnerA" FLAGS=16810633 REN=26 MISC1=-1 MISC2=0
+Cmd: CAMERA UPDATE NAME=AnimationViewer MESH="GunnerA" FLAGS=16810633 REN=26 MISC1=-1 MISC2=0
+Cmd: CAMERA UPDATE NAME=AnimationViewer MESH="GunnerA" FLAGS=16810633 REN=26 MISC1=0 MISC2=0
+Log: Allocating 65536 byte dynamic vertex buffer.
+Cmd: CAMERA UPDATE NAME=AnimationViewer MESH="GunnerA" FLAGS=16810633 REN=26 MISC1=0 MISC2=0
+Init: Input system initialized for PrefabBrowser
+Log: Opened viewport
+Log: Enter SetRes: 320x200 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Cmd: CAMERA UPDATE FLAGS=545425097 REN=20 NAME=PrefabBrowser
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 428x347 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Init: Input system initialized for StaticMeshBrowser
+Log: Opened viewport
+Log: Enter SetRes: 320x200 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Log: Enter SetRes: 320x200 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 0x0 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 523x87 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Init: Input system initialized for TextureBrowser
+Log: Opened viewport
+Log: Enter SetRes: 320x200 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Log: Enter SetRes: 466x178 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Init: Input system initialized for TextureBrowserUsed
+Log: Opened viewport
+Log: Enter SetRes: 320x200 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Log: Enter SetRes: 466x224 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Init: Input system initialized for TextureBrowserMRU
+Log: Opened viewport
+Log: Enter SetRes: 320x200 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating IME context.
+Log: Enter SetRes: 466x224 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 0x0 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 578x276 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Cmd: CAMERA UPDATE FLAGS=1073742464 MISC2=0 REN=17 NAME=TextureBrowser PACKAGE="343T" GROUP="Projectiles"
+Log: Enter SetRes: 869x479 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 465x479 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 869x479 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Enter SetRes: 465x479 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 1613x613 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 866x613 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 1613x613 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Enter SetRes: 866x613 Fullscreen 0
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Allocating 65536 byte dynamic vertex buffer.
+Cmd: AltFire
+Cmd: Fire
+Cmd: AltFire
+Log: Creating IME context.
+Cmd: MAYBEAUTOSAVE
+Cmd: MAYBEAUTOSAVE
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: Closed viewport
+Log: appRequestExit(0)
+Exit: Preparing to exit.
+Log: Purging garbage
+Progress: Unbound to Editor.dll
+Progress: Unbound to Engine.dll
+Progress: Unbound to Core.dll
+Progress: Unbound to Window.dll
+Log: 163921.5ms Unloading: Package UnrealEd
+Log: 163921.6ms Unloading: Package Core
+Log: 163921.7ms Unloading: Package Engine
+Log: 163922.0ms Unloading: Package Editor
+Progress: Unbound to Fire.dll
+Log: 163922.2ms Unloading: Package Fire
+Exit: Editor shut down
+Progress: Unbound to ALAudio.dll
+Exit: OpenAL Audio subsystem shut down.
+Exit: Transaction tracking system shut down
+Progress: Unbound to UI.dll
+Log: 164043.6ms Unloading: Package UI
+Progress: Unbound to ParticleSystems.dll
+Log: 164044.5ms Unloading: Package ParticleSystems
+Progress: Unbound to IpDrv.dll
+Log: 164045.4ms Unloading: Package IpDrv
+Progress: Unbound to UWeb.dll
+Log: 164045.9ms Unloading: Package UWeb
+Progress: Unbound to Legend.dll
+Log: 164046.1ms Unloading: Package Legend
+Progress: Unbound to U2.dll
+Log: 164047.0ms Unloading: Package U2
+Log: 164047.2ms Unloading: Package U2A
+Log: 164047.3ms Unloading: Package XMPT
+Log: 164047.4ms Unloading: Package XMPWorldItemsT
+Log: 164047.4ms Unloading: Package SpecialFX
+Log: 164047.5ms Unloading: Package XMPM
+Log: 164047.6ms Unloading: Package HUD_Fonts
+Log: 164047.7ms Unloading: Package U2XMPA
+Log: 164047.8ms Unloading: Package XMPWorldItemsM
+Log: 164047.9ms Unloading: Package Pickup_FX
+Log: 164048.1ms Unloading: Package Artifact_Carry_FX
+Log: 164048.2ms Unloading: Package ScottT
+Log: 164048.2ms Unloading: Package JamesT
+Log: 164048.3ms Unloading: Package Station_FX
+Log: 164048.4ms Unloading: Package Deploy_FX
+Log: 164048.4ms Unloading: Package U2Ambient2A
+Log: 164048.5ms Unloading: Package onfire_fx
+Log: 164048.5ms Unloading: Package EMP_Hit_FX
+Log: 164048.6ms Unloading: Package Toxic_Hit_FX
+Log: 164048.7ms Unloading: Package WeaponsA
+Log: 164050.5ms Unloading: Package Vehicles
+Log: 164050.6ms Unloading: Package VehiclesT
+Log: 164050.7ms Unloading: Package DetailTextures
+Log: 164050.7ms Unloading: Package VehiclesM
+Log: 164050.8ms Unloading: Package Arch_TurretsM
+Log: 164051.0ms Unloading: Package Arch_TurretsT
+Log: 164051.1ms Unloading: Package Arch_BuildingsT
+Log: 164051.1ms Unloading: Package VehiclesA
+Log: 164051.2ms Unloading: Package Vehicle_WheelDust_FX
+Log: 164051.3ms Unloading: Package Vehicle_GutBlower_FX
+Log: 164051.3ms Unloading: Package U2AmbientA
+Log: 164051.4ms Unloading: Package Vehicle_Explosion_FX
+Log: 164051.5ms Unloading: Package Vehicle_Damage_FX
+Log: 164052.0ms Unloading: Package Weapons
+Log: 164052.1ms Unloading: Package AssaultFX
+Log: 164052.2ms Unloading: Package PrimitivesK
+Log: 164052.3ms Unloading: Package WeaponsK
+Log: 164052.4ms Unloading: Package WeaponsT
+Log: 164052.4ms Unloading: Package Weapons3rdPK
+Log: 164052.5ms Unloading: Package Turret_Harbinger_FX
+Log: 164052.6ms Unloading: Package Turret_SwingArm_FX
+Log: 164052.6ms Unloading: Package Turret_Post_FX
+Log: 164052.8ms Unloading: Package Turret_Roundhouse_FX
+Log: 164052.9ms Unloading: Package 343M
+Log: 164053.1ms Unloading: Package 343T
+Log: 164053.1ms Unloading: Package Arch_WalkwaysT
+Log: 164053.2ms Unloading: Package EnergyFX
+Log: 164053.3ms Unloading: Package ShotgunFX
+Log: 164053.3ms Unloading: Package Turret_Artillery_Plasma_FX
+Log: 164053.4ms Unloading: Package PistolEffects
+Log: 164053.4ms Unloading: Package Turret_Chaingun_FX
+Log: 164053.5ms Unloading: Package Turret_Winged_FX
+Log: 164053.6ms Unloading: Package RocketEffects
+Log: 164053.6ms Unloading: Package Flamethrower_Effects
+Log: 164053.7ms Unloading: Package Pyro
+Log: 164053.8ms Unloading: Package Turret_Artillery_FX
+Log: 164053.9ms Unloading: Package RocketEffects2
+Log: 164054.2ms Unloading: Package Turret_Juggernaut_FX
+Log: 164054.3ms Unloading: Package GrenadeFX
+Log: 164054.4ms Unloading: Package Turret_Juggernaut_Flame_FX
+Log: 164054.5ms Unloading: Package FlameAltFX
+Log: 164054.5ms Unloading: Package SniperTracer
+Log: 164054.6ms Unloading: Package SniperFX
+Log: 164054.7ms Unloading: Package ER_Alt_Projectile_volatile
+Log: 164054.8ms Unloading: Package concussion_grenade_FX
+Log: 164054.8ms Unloading: Package GL_cluster_fx
+Log: 164055.0ms Unloading: Package ER_EMP
+Log: 164055.1ms Unloading: Package GL_EMP
+Log: 164055.1ms Unloading: Package GL_Frag
+Log: 164055.3ms Unloading: Package GL_Smoke
+Log: 164055.4ms Unloading: Package GL_Toxic
+Log: 164055.4ms Unloading: Package Blood
+Log: 164055.5ms Unloading: Package ImpactFX
+Log: 164055.5ms Unloading: Package Impact_Metal_AR
+Log: 164056.5ms Unloading: Package Deployables
+Log: 164056.6ms Unloading: Package LaserTripMine_FX
+Log: 164056.7ms Unloading: Package DeveloperT
+Log: 164057.5ms Unloading: Package Pawns
+Log: 164057.6ms Unloading: Package XMPPlayerA
+Log: 164057.7ms Unloading: Package JumpJet_FX
+Log: 164057.8ms Unloading: Package Ranger
+Log: 164058.1ms Unloading: Package CharactersT
+Log: 164058.2ms Unloading: Package Gunner
+Log: 164058.3ms Unloading: Package Tech
+Progress: Unbound to WinDrv.dll
+Exit: Windows client shut down
+Progress: Unbound to D3DDrv.dll
+Log: FTimerManager::ValidateRefs
+Log: Garbage: objects: 26018->0; refs: 0
+Exit: Object subsystem successfully closed.
+Exit: Exiting.
+Log: Waiting for file streaming thread to finish...
+Uninitialized: Name subsystem shut down
+Uninitialized: Unfreed memory:
+Uninitialized:            16 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <
+>
+Uninitialized:            64 new <>
+Uninitialized:            76 new <>
+Uninitialized:           168 new <>
+Uninitialized:           152 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:            44 new <>
+Uninitialized:            12 FArray <Prefs>
+Uninitialized:           100 new <>
+Uninitialized:            14 FArray <Notify>
+Uninitialized:           100 new <>
+Uninitialized:            18 FArray <Sequence>
+Uninitialized:           100 new <>
+Uninitialized:            28 FArray <Animation Set>
+Uninitialized:           100 new <>
+Uninitialized:           132 FArray <>
+Uninitialized:            10 FArray <Mesh>
+Uninitialized:           100 new <>
+Uninitialized:           132 FArray <>
+Uninitialized:            76 new <>
+Uninitialized:            92 new <>
+Uninitialized:            64 new <>
+Uninitialized:            76 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            76 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:           168 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            76 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:           184 new <>
+Uninitialized:            76 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            76 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            64 new <>
+Uninitialized:            76 new <>
+Uninitialized:           132 FArray <>
+Uninitialized:            16 FArray <Default>
+Uninitialized:          1452 FArray <>
+Uninitialized:            18 FArray <TEXSCALE>
+Uninitialized:            20 FArray <Tex Scale>
+Uninitialized:            20 FArray <TEXROTATE>
+Uninitialized:            22 FArray <Tex Rotate>
+Uninitialized:            14 FArray <TEXPAN>
+Uninitialized:            16 FArray <Tex Pan>
+Uninitialized:            18 FArray <EDGETURN>
+Uninitialized:            20 FArray <Edge Turn>
+Uninitialized:            22 FArray <VISIBILITY>
+Uninitialized:            22 FArray <Visibility>
+Uninitialized:            16 FArray <FLATTEN>
+Uninitialized:            16 FArray <Flatten>
+Uninitialized:            12 FArray <NOISE>
+Uninitialized:            12 FArray <Noise>
+Uninitialized:            14 FArray <SMOOTH>
+Uninitialized:            20 FArray <Smoothing>
+Uninitialized:            12 FArray <COLOR>
+Uninitialized:            12 FArray <Color>
+Uninitialized:            12 FArray <PAINT>
+Uninitialized:            18 FArray <Painting>
+Uninitialized:            14 FArray <SELECT>
+Uninitialized:            14 FArray <Select>
+Uninitialized:            22 FArray <VERTEXEDIT>
+Uninitialized:            30 FArray <Vertex Editing>
+Uninitialized:          3432 FArray <>
+Uninitialized:            30 FArray <MyUnrealEd.ini>
+Uninitialized:            58 FArray <Hardware StreamSourceChanges>
+Uninitialized:            40 FArray <StreamSourceChanges>
+Uninitialized:            52 FArray <Hardware IndexBufferBytes>
+Uninitialized:            34 FArray <IndexBufferBytes>
+Uninitialized:            54 FArray <Hardware VertexStreamBytes>
+Uninitialized:            36 FArray <VertexStreamBytes>
+Uninitialized:            50 FArray <Hardware NumIndexBuffers>
+Uninitialized:            32 FArray <NumIndexBuffers>
+Uninitialized:            52 FArray <Hardware NumVertexStreams>
+Uninitialized:            34 FArray <NumVertexStreams>
+Uninitialized:            40 FArray <Hardware DynIBBytes>
+Uninitialized:            22 FArray <DynIBBytes>
+Uninitialized:            40 FArray <Hardware DynVBBytes>
+Uninitialized:            22 FArray <DynVBBytes>
+Uninitialized:            46 FArray <Hardware DynVBDiscards>
+Uninitialized:            28 FArray <DynVBDiscards>
+Uninitialized:            38 FArray <Hardware DynVBLock>
+Uninitialized:            20 FArray <DynVBLock>
+Uninitialized:            38 FArray <Hardware DynVBLock>
+Uninitialized:            20 FArray <DynVBLock>
+Uninitialized:            30 FArray <Hardware Clear>
+Uninitialized:            12 FArray <Clear>
+Uninitialized:            30 FArray <Hardware Clear>
+Uninitialized:            12 FArray <Clear>
+Uninitialized:            36 FArray <Hardware LightSet>
+Uninitialized:            18 FArray <LightSet>
+Uninitialized:            36 FArray <Hardware LightSet>
+Uninitialized:            18 FArray <LightSet>
+Uninitialized:            44 FArray <Hardware LightChanges>
+Uninitialized:            26 FArray <LightChanges>
+Uninitialized:            44 FArray <Hardware LightChanges>
+Uninitialized:            26 FArray <LightChanges>
+Uninitialized:            52 FArray <Hardware TransformChanges>
+Uninitialized:            34 FArray <TransformChanges>
+Uninitialized:            52 FArray <Hardware TransformChanges>
+Uninitialized:            34 FArray <TransformChanges>
+Uninitialized:            48 FArray <Hardware TextureChanges>
+Uninitialized:            30 FArray <TextureChanges>
+Uninitialized:           936 FArray <>
+Uninitialized:            48 FArray <Hardware TextureChanges>
+Uninitialized:            30 FArray <TextureChanges>
+Uninitialized:            44 FArray <Hardware StateChanges>
+Uninitialized:            26 FArray <StateChanges>
+Uninitialized:            44 FArray <Hardware StateChanges>
+Uninitialized:            26 FArray <StateChanges>
+Uninitialized:            34 FArray <Hardware Present>
+Uninitialized:            16 FArray <Present>
+Uninitialized:            34 FArray <Hardware Present>
+Uninitialized:            16 FArray <Present>
+Uninitialized:            32 FArray <Hardware Unlock>
+Uninitialized:            14 FArray <Unlock>
+Uninitialized:            32 FArray <Hardware Unlock>
+Uninitialized:            14 FArray <Unlock>
+Uninitialized:            28 FArray <Hardware Lock>
+Uninitialized:            10 FArray <Lock>
+Uninitialized:            28 FArray <Hardware Lock>
+Uninitialized:            10 FArray <Lock>
+Uninitialized:            46 FArray <Hardware DrawPrimitive>
+Uninitialized:            28 FArray <DrawPrimitive>
+Uninitialized:            46 FArray <Hardware DrawPrimitive>
+Uninitialized:            28 FArray <DrawPrimitive>
+Uninitialized:            36 FArray <Hardware SetDynIB>
+Uninitialized:            18 FArray <SetDynIB>
+Uninitialized:            36 FArray <Hardware SetDynIB>
+Uninitialized:            18 FArray <SetDynIB>
+Uninitialized:            30 FArray <Hardware SetIB>
+Uninitialized:            12 FArray <SetIB>
+Uninitialized:            30 FArray <Hardware SetIB>
+Uninitialized:            12 FArray <SetIB>
+Uninitialized:            44 FArray <Hardware SetDynStream>
+Uninitialized:            26 FArray <SetDynStream>
+Uninitialized:            44 FArray <Hardware SetDynStream>
+Uninitialized:            26 FArray <SetDynStream>
+Uninitialized:            50 FArray <Hardware SetVertexStream>
+Uninitialized:            32 FArray <SetVertexStream>
+Uninitialized:            50 FArray <Hardware SetVertexStream>
+Uninitialized:            32 FArray <SetVertexStream>
+Uninitialized:            58 FArray <Hardware SetMaterialBlending>
+Uninitialized:            40 FArray <SetMaterialBlending>
+Uninitialized:            58 FArray <Hardware SetMaterialBlending>
+Uninitialized:            40 FArray <SetMaterialBlending>
+Uninitialized:            42 FArray <Hardware SetMaterial>
+Uninitialized:            24 FArray <SetMaterial>
+Uninitialized:            42 FArray <Hardware SetMaterial>
+Uninitialized:            24 FArray <SetMaterial>
+Uninitialized:            50 FArray <Hardware SetRenderTarget>
+Uninitialized:            32 FArray <SetRenderTarget>
+Uninitialized:            50 FArray <Hardware SetRenderTarget>
+Uninitialized:            32 FArray <SetRenderTarget>
+Uninitialized:            36 FArray <Hardware PopState>
+Uninitialized:            18 FArray <PopState>
+Uninitialized:            36 FArray <Hardware PopState>
+Uninitialized:            18 FArray <PopState>
+Uninitialized:            38 FArray <Hardware PushState>
+Uninitialized:            20 FArray <PushState>
+Uninitialized:            38 FArray <Hardware PushState>
+Uninitialized:            20 FArray <PushState>
+Uninitialized:            50 FArray <Hardware Total Resources>
+Uninitialized:            32 FArray <Total Resources>
+Uninitialized:            44 FArray <Hardware TextureBytes>
+Uninitialized:            26 FArray <TextureBytes>
+Uninitialized:            42 FArray <Hardware NumTextures>
+Uninitialized:            24 FArray <NumTextures>
+Uninitialized:            48 FArray <Hardware NumSVPVertices>
+Uninitialized:            30 FArray <NumSVPVertices>
+Uninitialized:            46 FArray <Hardware NumPrimitives>
+Uninitialized:            28 FArray <NumPrimitives>
+Uninitialized:          3996 new <>
+Uninitialized:          3060 new <>
+Uninitialized:          3952 new <>
+Uninitialized:           264 FArray <>
+Uninitialized:          4032 new <>
+Uninitialized:           264 FArray <>
+Uninitialized:          4032 new <>
+Uninitialized:          4080 new <>
+Uninitialized:          2040 new <>
+Uninitialized:            24 FArray <´>
+Uninitialized:            32 HashMapHash <Uninitialized:          4032 new <>
+Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <ˆ>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <X>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <’>
+Uninitialized:            32 HashMapHash <Uninitialized:          4056 new <>
+Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:          4032 new <>
+Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:            24 FArray <>
+Uninitialized:            32 HashMapHash <Uninitialized:          4032 new <>
+Uninitialized:           264 FArray <**>
+Uninitialized:          4088 new <>
+Uninitialized:           264 FArray <>
+Uninitialized:          3996 new <>
+Uninitialized:           264 FArray <>
+Uninitialized:          4056 new <>
+Uninitialized:          4056 new <>
+Uninitialized:           264 FArray <>
+Uninitialized:           264 FArray <>
+Uninitialized:           264 FArray <>
+Uninitialized:           264 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:             8 FArray <—>
+Uninitialized:          4080 new <>
+Uninitialized:           264 FArray <>
+Uninitialized:          1188 FArray <>
+Uninitialized:            40 FArray <Audio StoppedSounds>
+Uninitialized:            28 FArray <StoppedSounds>
+Uninitialized:            28 FArray <Audio Regular>
+Uninitialized:            16 FArray <Regular>
+Uninitialized:          2700 FArray <>
+Uninitialized:            32 FArray <Audio Streaming>
+Uninitialized:          2700 FArray <>
+Uninitialized:            20 FArray <Streaming>
+Uninitialized:          2700 FArray <>
+Uninitialized:           900 FArray <>
+Uninitialized:           900 FArray <>
+Uninitialized:            26 FArray <Audio Update>
+Uninitialized:            14 FArray <Update>
+Uninitialized:            32 FArray <Audio Occlusion>
+Uninitialized:            20 FArray <Occlusion>
+Uninitialized:            32 FArray <Audio Occlusion>
+Uninitialized:            20 FArray <Occlusion>
+Uninitialized:            32 FArray <Audio PlaySound>
+Uninitialized:            20 FArray <PlaySound>
+Uninitialized:           396 FArray <‡>
+Uninitialized:            32 FArray <Audio PlaySound>
+Uninitialized:            20 FArray <PlaySound>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:            16 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:             8 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:            12 FArray <—>
+Uninitialized:            12 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             8 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:            24 FArray <>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:            40 FArray <Visibility Traverse>
+Uninitialized:            18 FArray <Traverse>
+Uninitialized:            34 FArray <Visibility Setup>
+Uninitialized:            12 FArray <Setup>
+Uninitialized:            48 FArray <Visibility ScratchBytes>
+Uninitialized:            26 FArray <ScratchBytes>
+Uninitialized:            42 FArray <Visibility MeshLight>
+Uninitialized:            20 FArray <MeshLight>
+Uninitialized:            42 FArray <Visibility MaskTests>
+Uninitialized:            20 FArray <MaskTests>
+Uninitialized:            46 FArray <Visibility MaskRejects>
+Uninitialized:            24 FArray <MaskRejects>
+Uninitialized:            40 FArray <Visibility BoxTests>
+Uninitialized:            18 FArray <BoxTests>
+Uninitialized:            44 FArray <Visibility BoxRejects>
+Uninitialized:            22 FArray <BoxRejects>
+Uninitialized:            36 FArray <Terrain Triangles>
+Uninitialized:            20 FArray <Triangles>
+Uninitialized:            32 FArray <Terrain Sectors>
+Uninitialized:            16 FArray <Sectors>
+Uninitialized:            30 FArray <Terrain Render>
+Uninitialized:            14 FArray <Render>
+Uninitialized:            46 FArray <Terrain DrawPrimitives>
+Uninitialized:            30 FArray <DrawPrimitives>
+Uninitialized:            36 FArray <Collision Terrain>
+Uninitialized:            16 FArray <Terrain>
+Uninitialized:            36 FArray <Stencil Triangles>
+Uninitialized:            20 FArray <Triangles>
+Uninitialized:            30 FArray <Stencil Render>
+Uninitialized:            14 FArray <Render>
+Uninitialized:            28 FArray <Stencil Nodes>
+Uninitialized:            12 FArray <Nodes>
+Uninitialized:            38 FArray <Frame Stats Render>
+Uninitialized:            26 FArray <Stats Render>
+Uninitialized:            76 FArray <StaticMesh UnbatchedUnsortedTriangles>
+Uninitialized:            54 FArray <UnbatchedUnsortedTriangles>
+Uninitialized:            74 FArray <StaticMesh UnbatchedUnsortedSections>
+Uninitialized:            52 FArray <UnbatchedUnsortedSections>
+Uninitialized:            72 FArray <StaticMesh UnbatchedSortedTriangles>
+Uninitialized:            50 FArray <UnbatchedSortedTriangles>
+Uninitialized:            70 FArray <StaticMesh UnbatchedSortedSections>
+Uninitialized:            48 FArray <UnbatchedSortedSections>
+Uninitialized:            50 FArray <StaticMesh UnbatchedSort>
+Uninitialized:            28 FArray <UnbatchedSort>
+Uninitialized:            54 FArray <StaticMesh UnbatchedRender>
+Uninitialized:            32 FArray <UnbatchedRender>
+Uninitialized:            42 FArray <StaticMesh Triangles>
+Uninitialized:            20 FArray <Triangles>
+Uninitialized:            42 FArray <StaticMesh Triangles>
+Uninitialized:            20 FArray <Triangles>
+Uninitialized:            42 FArray <Collision StaticMesh>
+Uninitialized:            22 FArray <StaticMesh>
+Uninitialized:            50 FArray < StaticMesh Cache Misses>
+Uninitialized:            48 FArray <StaticMesh Cache Misses>
+Uninitialized:            46 FArray < StaticMesh Cache Hits>
+Uninitialized:            44 FArray <StaticMesh Cache Hits>
+Uninitialized:            52 FArray < StaticMesh Cache Flushes>
+Uninitialized:            50 FArray <StaticMesh Cache Flushes>
+Uninitialized:            38 FArray <StaticMesh Batches>
+Uninitialized:            16 FArray <Batches>
+Uninitialized:            72 FArray <StaticMesh BatchedUnsortedTriangles>
+Uninitialized:            50 FArray <BatchedUnsortedTriangles>
+Uninitialized:            70 FArray <StaticMesh BatchedUnsortedSections>
+Uninitialized:            48 FArray <BatchedUnsortedSections>
+Uninitialized:            68 FArray <StaticMesh BatchedSortedTriangles>
+Uninitialized:            46 FArray <BatchedSortedTriangles>
+Uninitialized:            66 FArray <StaticMesh BatchedSortedSections>
+Uninitialized:            44 FArray <BatchedSortedSections>
+Uninitialized:            46 FArray <StaticMesh BatchedSort>
+Uninitialized:            24 FArray <BatchedSort>
+Uninitialized:            50 FArray <StaticMesh BatchedRender>
+Uninitialized:            28 FArray <BatchedRender>
+Uninitialized:            28 FArray <Game UIRender>
+Uninitialized:            18 FArray <UIRender>
+Uninitialized:            24 FArray <Game UIGame>
+Uninitialized:            14 FArray <UIGame>
+Uninitialized:            40 FArray <Particle Projectors>
+Uninitialized:            22 FArray <Projectors>
+Uninitialized:            34 FArray <Particle Flushes>
+Uninitialized:            16 FArray <Flushes>
+Uninitialized:           936 FArray <>
+Uninitialized:            44 FArray <Particle NumParticles>
+Uninitialized:            26 FArray <NumParticles>
+Uninitialized:            38 FArray <Particle NumForces>
+Uninitialized:            20 FArray <NumForces>
+Uninitialized:            42 FArray <Particle ForceCycles>
+Uninitialized:            24 FArray <ForceCycles>
+Uninitialized:            40 FArray <Particle TickCycles>
+Uninitialized:            22 FArray <TickCycles>
+Uninitialized:            40 FArray <Particle DrawCycles>
+Uninitialized:            22 FArray <DrawCycles>
+Uninitialized:            40 FArray <Projector Triangles>
+Uninitialized:            20 FArray <Triangles>
+Uninitialized:            34 FArray <Projector Render>
+Uninitialized:            14 FArray <Render>
+Uninitialized:            42 FArray <Projector Projectors>
+Uninitialized:            22 FArray <Projectors>
+Uninitialized:            34 FArray <Projector Attach>
+Uninitialized:            14 FArray <Attach>
+Uninitialized:            20 FArray <Net Speed>
+Uninitialized:            12 FArray <Speed>
+Uninitialized:            18 FArray <Net Ping>
+Uninitialized:            10 FArray <Ping>
+Uninitialized:            28 FArray <Net Unordered>
+Uninitialized:            20 FArray <Unordered>
+Uninitialized:            24 FArray <Net Packets>
+Uninitialized:            16 FArray <Packets>
+Uninitialized:            30 FArray <Net PacketLoss>
+Uninitialized:            22 FArray <PacketLoss>
+Uninitialized:            20 FArray <Net Bytes>
+Uninitialized:            12 FArray <Bytes>
+Uninitialized:            24 FArray <Net Bunches>
+Uninitialized:            16 FArray <Bunches>
+Uninitialized:            18 FArray <Game RPC>
+Uninitialized:             8 FArray <RPC>
+Uninitialized:            20 FArray <Game Reps>
+Uninitialized:            10 FArray <Reps>
+Uninitialized:            16 FArray <Game PV>
+Uninitialized:             6 FArray <PV>
+Uninitialized:            26 FArray <Net Unorderd>
+Uninitialized:            18 FArray <Unorderd>
+Uninitialized:            24 FArray <Net Packets>
+Uninitialized:            16 FArray <Packets>
+Uninitialized:            30 FArray <Net PacketLoss>
+Uninitialized:            22 FArray <PacketLoss>
+Uninitialized:            20 FArray <Net Bytes>
+Uninitialized:            12 FArray <Bytes>
+Uninitialized:            24 FArray <Net Bunches>
+Uninitialized:            16 FArray <Bunches>
+Uninitialized:           396 FArray <F>
+Uninitialized:            26 FArray <Net Channels>
+Uninitialized:            18 FArray <Channels>
+Uninitialized:            20 FArray <Mesh Skin>
+Uninitialized:            10 FArray <Skin>
+Uninitialized:            20 FArray <Mesh Skel>
+Uninitialized:            10 FArray <Skel>
+Uninitialized:            22 FArray <Mesh Rigid>
+Uninitialized:            12 FArray <Rigid>
+Uninitialized:            24 FArray <Mesh Result>
+Uninitialized:            14 FArray <Result>
+Uninitialized:            20 FArray <Mesh Pose>
+Uninitialized:            10 FArray <Pose>
+Uninitialized:            18 FArray <Mesh LOD>
+Uninitialized:             8 FArray <LOD>
+Uninitialized:            20 FArray <Mesh Draw>
+Uninitialized:            10 FArray <Draw>
+Uninitialized:            26 FArray <Matinee Tick>
+Uninitialized:            10 FArray <Tick>
+Uninitialized:            34 FArray <LightMap Updates>
+Uninitialized:            16 FArray <Updates>
+Uninitialized:            28 FArray <LightMap Time>
+Uninitialized:            10 FArray <Time>
+Uninitialized:            38 FArray <Karma   TrilistGen>
+Uninitialized:            26 FArray <  TrilistGen>
+Uninitialized:            22 FArray <Karma Temp>
+Uninitialized:            10 FArray <Temp>
+Uninitialized:            42 FArray <Karma RagdollTrilist>
+Uninitialized:            30 FArray <RagdollTrilist>
+Uninitialized:            46 FArray <Karma physKarmaRagdoll>
+Uninitialized:            34 FArray <physKarmaRagdoll>
+Uninitialized:            54 FArray <Karma physKarma Constraint>
+Uninitialized:            42 FArray <physKarma Constraint>
+Uninitialized:            32 FArray <Karma physKarma>
+Uninitialized:            20 FArray <physKarma>
+Uninitialized:            30 FArray <Karma Dynamics>
+Uninitialized:            18 FArray <Dynamics>
+Uninitialized:            38 FArray <Karma   ContactGen>
+Uninitialized:            26 FArray <  ContactGen>
+Uninitialized:            32 FArray <Karma Collision>
+Uninitialized:            20 FArray <Collision>
+Uninitialized:            26 FArray <Game Terrain>
+Uninitialized:            16 FArray <Terrain>
+Uninitialized:            22 FArray <Game Level>
+Uninitialized:            12 FArray <Level>
+Uninitialized:           936 FArray <>
+Uninitialized:            22 FArray <Game Actor>
+Uninitialized:            12 FArray <Actor>
+Uninitialized:            22 FArray <Game Trace>
+Uninitialized:            12 FArray <Trace>
+Uninitialized:            26 FArray <Game CScript>
+Uninitialized:            16 FArray <CScript>
+Uninitialized:            20 FArray <Game Hear>
+Uninitialized:            10 FArray <Hear>
+Uninitialized:            32 FArray <Game RenderData>
+Uninitialized:            22 FArray <RenderData>
+Uninitialized:            24 FArray <Game Unused>
+Uninitialized:            14 FArray <Unused>
+Uninitialized:            28 FArray <Game Spawning>
+Uninitialized:            18 FArray <Spawning>
+Uninitialized:            18 FArray <Game See>
+Uninitialized:             8 FArray <See>
+Uninitialized:            32 FArray <Game ScriptTick>
+Uninitialized:            22 FArray <ScriptTick>
+Uninitialized:            34 FArray <Game ScriptDebug>
+Uninitialized:            24 FArray <ScriptDebug>
+Uninitialized:            24 FArray <Game Script>
+Uninitialized:            14 FArray <Script>
+Uninitialized:            26 FArray <Game Physics>
+Uninitialized:            16 FArray <Physics>
+Uninitialized:            20 FArray <Game Move>
+Uninitialized:            10 FArray <Move>
+Uninitialized:            18 FArray <Game Net>
+Uninitialized:             8 FArray <Net>
+Uninitialized:            28 FArray <Game MPChecks>
+Uninitialized:            18 FArray <MPChecks>
+Uninitialized:            20 FArray <Game Move>
+Uninitialized:            10 FArray <Move>
+Uninitialized:            28 FArray <Game MLChecks>
+Uninitialized:            18 FArray <MLChecks>
+Uninitialized:            42 FArray <Game Interaction Pre>
+Uninitialized:            32 FArray <Interaction Pre>
+Uninitialized:            44 FArray <Game Interaction Post>
+Uninitialized:            34 FArray <Interaction Post>
+Uninitialized:            40 FArray <Game HUD PostRender>
+Uninitialized:            30 FArray <HUD PostRender>
+Uninitialized:            20 FArray <Game Path>
+Uninitialized:            10 FArray <Path>
+Uninitialized:            44 FArray <Game CleanupDestroyed>
+Uninitialized:            34 FArray <CleanupDestroyed>
+Uninitialized:            24 FArray <Game Canvas>
+Uninitialized:            14 FArray <Canvas>
+Uninitialized:            22 FArray <Game Audio>
+Uninitialized:            12 FArray <Audio>
+Uninitialized:            30 FArray <Game Animation>
+Uninitialized:            20 FArray <Animation>
+Uninitialized:            22 FArray <Game Actor>
+Uninitialized:            12 FArray <Actor>
+Uninitialized:            24 FArray <Frame Frame>
+Uninitialized:            12 FArray <Frame>
+Uninitialized:            24 FArray <Frame Temp3>
+Uninitialized:            12 FArray <Temp3>
+Uninitialized:            24 FArray <Frame Temp2>
+Uninitialized:            12 FArray <Temp2>
+Uninitialized:            24 FArray <Frame Temp1>
+Uninitialized:            12 FArray <Temp1>
+Uninitialized:            28 FArray <Frame Overlay>
+Uninitialized:            16 FArray <Overlay>
+Uninitialized:            26 FArray <Frame Render>
+Uninitialized:            14 FArray <Render>
+Uninitialized:            32 FArray <Fluid VertexGen>
+Uninitialized:            20 FArray <VertexGen>
+Uninitialized:            30 FArray <Fluid Simulate>
+Uninitialized:            18 FArray <Simulate>
+Uninitialized:            26 FArray <Fluid Render>
+Uninitialized:            14 FArray <Render>
+Uninitialized:            40 FArray <DecoLayer Triangles>
+Uninitialized:            20 FArray <Triangles>
+Uninitialized:            34 FArray <DecoLayer Render>
+Uninitialized:            14 FArray <Render>
+Uninitialized:            44 FArray <DecoLayer Decorations>
+Uninitialized:            24 FArray <Decorations>
+Uninitialized:            34 FArray <Collision Corona>
+Uninitialized:            14 FArray <Corona>
+Uninitialized:            28 FArray <BSP Triangles>
+Uninitialized:            20 FArray <Triangles>
+Uninitialized:            26 FArray <BSP Sections>
+Uninitialized:            18 FArray <Sections>
+Uninitialized:            22 FArray <BSP Render>
+Uninitialized:            14 FArray <Render>
+Uninitialized:            20 FArray <BSP Nodes>
+Uninitialized:            12 FArray <Nodes>
+Uninitialized:            36 FArray <BSP DynamicLights>
+Uninitialized:            28 FArray <DynamicLights>
+Uninitialized:            40 FArray <BSP DynamicLighting>
+Uninitialized:            32 FArray <DynamicLighting>
+Uninitialized:            28 FArray <Collision BSP>
+Uninitialized:             8 FArray <BSP>
+Uninitialized:            26 FArray <Batch Render>
+Uninitialized:            14 FArray <Render>
+Uninitialized:            34 FArray <Batch Primitives>
+Uninitialized:            22 FArray <Primitives>
+Uninitialized:            28 FArray <Batch Batches>
+Uninitialized:            16 FArray <Batches>
+Uninitialized:            16 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:             4 FArray <—>
+Uninitialized:            16 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:            16 FArray <>
+Uninitialized:             4 FArray <—>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:            24 FArray <>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:             4 FArray <—>
+Uninitialized:           132 FArray <o>
+Uninitialized:            24 new <Uninitialized:             4 new <>
+Uninitialized:           132 FArray <—>
+Uninitialized:            16 FArray <Enabled>
+Uninitialized:            18 FArray <New Path>
+Uninitialized:            16 FArray <MyLevel>
+Uninitialized:            26 FArray <MyStaticMesh>
+Uninitialized:            22 FArray <NewTexture>
+Uninitialized:            16 FArray <MyLevel>
+Uninitialized:            16 FArray <MyClass>
+Uninitialized:            16 FArray <MyLevel>
+Uninitialized:          4176 WindowsFileWriter <~>
+Uninitialized: End of list: 114446 Bytes still allocated
+Uninitialized:              833 Chunks allocated
+Uninitialized: Log file closed, 01/07/25 15:28:42

@@ -1,0 +1,6 @@
+[General]
+DebugFont=Engine.DefaultFont
+EE16=SubTFonts.EE16
+SmallFont=Engine.DefaultFont
+Talk=Say 
+TeamTalk=TeamSay 

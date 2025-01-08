@@ -1,0 +1,644 @@
+<html>
+
+
+
+<head>
+
+<title>Unreal Console Commands</title>
+
+<style>
+
+<!--
+
+@import URL(UnrealTech.css);
+
+@import URL(http://unreal.epicgames.com/UnrealTech.css);
+
+-->
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<h1>Unreal Console Commands</h1>
+
+
+
+<address>
+
+  Tim Sweeney<br>
+
+  Epic MegaGames, Inc.<br>
+
+  http://www.epicgames.com/ 
+
+</address>
+
+
+
+<p>Audience: Advanced Users, Server Administrators, Programmers.<br>
+
+Last Updated: <!--webbot bot="Timestamp" startspan S-Type="REGENERATED"
+
+S-Format="%m/%d/%y" -->07/21/99<!--webbot bot="Timestamp" i-checksum="13978" endspan --></p>
+
+
+
+<h3>Command Line Parameters</h3>
+
+
+
+<ul>
+
+  <li>-alladmin: Enable all players administrative access to the server.</li>
+
+  <li>-conflicts: Show objects of different classes whose names conflict.</li>
+
+  <li>-editor: Runs Unreal for editing.</li>
+
+  <li>-firstrun: Re-asks the &quot;First Run&quot; questions in Unreal.</li>
+
+  <li>-log: Runs with the log window initially visible.</li>
+
+  <li>-nobind: Don't treat UnrealScript/C++ binding errors as critical, for rebuilding scripts
+
+    and avoiding the chicken-and-egg binding problem.</li>
+
+  <li>-noddraw: Disables DirectDraw support.</li>
+
+  <li>-nodsound: Disables DirectSound support.</li>
+
+  <li>-nogc: Disables garbage collection.</li>
+
+  <li>-nohard: Disables 3d hardware support.</li>
+
+  <li>-nok6: Disable AMD K6-3D support.</li>
+
+  <li>-nolog: Don't show log window.</li>
+
+  <li>-nommx: Disables MMX support.</li>
+
+  <li>-noreplace: Don't automatically replace textures, sounds, and music if they are not
+
+    found.</li>
+
+  <li>-nosound: Disables sound.</li>
+
+  <li>-nowarn: Disables warning message boxes on the screen.</li>
+
+  <li>-profile: When C++ is compiled with DO_SLOW_GUARD=1, generates an UnrealScript function
+
+    profile using the timings in the most recently played level only.</li>
+
+  <li>-make: Rebuilds all .u files from their source .uc files.</li>
+
+  <li>-make -h: Rebuilds all .u files from their source .uc files and generate a C++ header
+
+    for each package.</li>
+
+  <li>-safe: Runs Unreal in &quot;safe mode&quot;, avoiding loading any device drivers which
+
+    could crash if there are hardware/driver problems.</li>
+
+  <li>-server: Runs as a dedicated server.</li>
+
+  <li>-showdep: Causes script compiler to log dependency information when recompiling scripts.</li>
+
+  <li>-silent: Run silently, with no log window, and no display of error messages. Critical
+
+    errors just cause the engine to exit silently.</li>
+
+  <li>-strict: Treat all script warnings as critical errors; useful for tracking down the call
+
+    stack when debugging scripts.</li>
+
+  <li>INI=inifilename: Sets the .ini file to use for configuration, normally Unreal.ini.</li>
+
+  <li>LOG=logfilename: Uses the specified log file instead of Unreal.log. Useful when running
+
+    multiple copies on the same machine.</li>
+
+  <li>MULTIHOME=12.34.56.78: Sets the &quot;home&quot; ip address (in numerical format) for
+
+    Unreal of a machine with multiple network cards.</li>
+
+  <li>PORT=num: Sets the UDP port number for the Internet server.</li>
+
+  <li>READINI=inifilename: Sets the .ini file for reading only (not for writing); overrides
+
+    the INI= option.</li>
+
+</ul>
+
+
+
+<h3>C++ Console Commands (Only works on the local machine)</h3>
+
+
+
+<ul>
+
+  <li>ADMIN: Sends a console command to the server you're connected to. You must be an
+
+    administrator in order to use this.</li>
+
+  <li>BRIGHTNESS: Cycle through 10 screen brightness values.</li>
+
+  <li>CHAT: Brings up a prompt to type chat text.</li>
+
+  <li>CANCEL: Cancels an &quot;open&quot; command in progress that is trying to connect to a
+
+    network server.</li>
+
+  <li>CDTRACK num: Play the specified CD track.</li>
+
+  <li>CONSOLE FULL: Make the console fullscreen.</li>
+
+  <li>CONSOLE HIDE: Hide the console.</li>
+
+  <li>CONSOLE SHOW: Show the console.</li>
+
+  <li>CPUSPEED=#: Identify your CPU speed, useful for machines which don't autodetect their
+
+    speed properly. For example, CPUSPEED=266.</li>
+
+  <li>DEBUG CRASH: Test crashing the game by appError.</li>
+
+  <li>DEBUG EATMEM: Test allocating memory until it fills up.</li>
+
+  <li>DEBUG GPF: Test a general protection fault.</li>
+
+  <li>DEBUG RECURSE: Test crash by infinite recursion.</li>
+
+  <li>DUMPCACHE: Display the contents of the memory cache GCache.</li>
+
+  <li>DUMPNATIVES: Display a list of unused native function ids.</li>
+
+  <li>EDITACTOR CLASS=classname: During game play, edits the properties of the nearest actor
+
+    belonging to that class. Cool for debugging.</li>
+
+  <li>ENDFULLSCREEN: Go back to playing in a window.</li>
+
+  <li>EXEC filename: Execute the console commands in the filename, default is in the System
+
+    directory.</li>
+
+  <li>EXIT: Exit the program.</li>
+
+  <li>FLUSH: Flush all caches. Regenerates all lighting, 3d hardware textures, etc.</li>
+
+  <li>FLY: Fly around (instead of walking). See WALK.</li>
+
+  <li>FOV angle: Set the field of view, for example &quot;FOV 90&quot; for 90 degrees.</li>
+
+  <li>GHOST: Fly around and go through walls (see WALK).</li>
+
+  <li>HIDEACTORS: Hide actors during game play.</li>
+
+  <li>JUMPTO x y z: In UnrealEd, move the viewport to a certain X,Y,Z location, useful in
+
+    conjunction with tester reports generated with the REPORT command.</li>
+
+  <li>LOADGAME num: Load a game in position 0-9.</li>
+
+  <li>MARK: Mark all objects that are in memory (for garbage collection debugging in
+
+    conjunction with MARKCHECK).</li>
+
+  <li>MARKCHECK: Display a list of all unmarked objects that are in memory (for garbage
+
+    collection debugging in conjunction with MARK).</li>
+
+  <li>MEM: List memory usage; only works when Unreal is compiled with the memory-tracking
+
+    option (it's usually not).</li>
+
+  <li>MEMSTAT: Show Windows overall memory statistics.</li>
+
+  <li>MUSICORDER num: Change to a certain track in the song (0=ambient, 1=action, 2=suspense).</li>
+
+  <li>OBJ CLASSES: Prints a list of all loaded classes.</li>
+
+  <li>OBJ DEPENDENCIES PACKAGE=pkgname EXCLUDE1=otherpackage EXCLUDE2=otherpackage...: !!</li>
+
+  <li>OBJ GARBAGE: Collect and purge garbage (&quot;garbage&quot; means objects which are no
+
+    longer in use).</li>
+
+  <li>OBJ HASH: Show object hashing statistics.</li>
+
+  <li>OBJ LINKERS: Show a list of active linkers (each linker is responsible for loading
+
+    objects from a package file).</li>
+
+  <li>OBJ LIST CLASS=objectclass INSIDE=insideclass: List all objects belonging to the class
+
+    and residing inside the specified object.&nbsp; If the class isn't specified, lists ALL
+
+    objects.&nbsp; If the inside object isn't specified, shows all objects.&nbsp; Gives a
+
+    summary of memory usage.&nbsp; This is very useful during game play for figuring out how
+
+    much memory is being used.&nbsp; In UnrealEd, this statistic isn't useful because a huge
+
+    amount of extra stuff is loaded which might not be used by your map.</li>
+
+  <li>OBJ REFS CLASS=objectclass NAME=objectname: Show a list of objects which reference the
+
+    object you specify.&nbsp; When trimming memory usage, this is useful for figuring out why
+
+    some object is being loaded.</li>
+
+  <li>OPEN url: Opens a local map (i.e. &quot;unreal.unr&quot;) or an Internet server (i.e.
+
+    &quot;200.0.1.16&quot; or &quot;unreal.epicgames.com&quot;).</li>
+
+  <li>PREFERENCES: Displays the preferences in a window.</li>
+
+  <li>REPORT: Copies a report of the current gameplay situation to the clipboard.&nbsp; You
+
+    can then paste the resulting text into an email program, Notepad, etc. Extremely useful
+
+    for beta testers, because it dumps the player's X,Y,Z location, the difficulty level, etc.</li>
+
+  <li>RMODE: Set the rendering mode. 0-9.</li>
+
+  <li>SAVEGAME num: Save the game in a specified position, 0-9.</li>
+
+  <li>SHOT: Take a screenshot and save it in the System directory with a consecutive name like
+
+    Shot0001.bmp.</li>
+
+  <li>SHOWACTORS: Shows actors during gameplay.</li>
+
+  <li>SOCKETS: In network play, shows a list of network sockets (UNetConnection's) in use.</li>
+
+  <li>STAT ACTOR: Shows various statistics.</li>
+
+  <li>STAT CACHE</li>
+
+  <li>STAT CLIP</li>
+
+  <li>STAT FILTER</li>
+
+  <li>STAT FPS</li>
+
+  <li>STAT GAME</li>
+
+  <li>STAT GLOBAL</li>
+
+  <li>STAT HARDWARE</li>
+
+  <li>STAT ILLUM</li>
+
+  <li>STAT LIGHT</li>
+
+  <li>STAT MESH</li>
+
+  <li>STAT POLYC</li>
+
+  <li>STAT POLYV</li>
+
+  <li>STAT REJECT</li>
+
+  <li>STAT OCCLUSION</li>
+
+  <li>STAT SOFT</li>
+
+  <li>STAT SPAN</li>
+
+  <li>STAT ZONE</li>
+
+  <li>TOGGLEFULLSCREEN: Toggles fullscreen mode on and off.</li>
+
+  <li>TYPE: Types text on the console.</li>
+
+  <li>URL urlname: In network play, parses a URL and displays its components.</li>
+
+  <li>VIEWUP: Sizes the view up.</li>
+
+  <li>VIEWDOWN: Sizes the view down.</li>
+
+  <li>WALK: Walk around normally (see FLY, GHOST).</li>
+
+</ul>
+
+
+
+<h3>UnrealScript console commands (Can be used by remote administrators)</h3>
+
+
+
+<ul>
+
+  <li>ADDBOTS &lt;number&gt;: Adds more bots to the game.</li>
+
+  <li>ALLAMMO: Gives you all the ammo for your current weapons.</li>
+
+  <li>GOD: Makes you invincible.</li>
+
+  <li>INVISIBLE: Makes you invisible.</li>
+
+  <li>KILLALL &lt;class name&gt;: Kills all actors of a certain class, for example
+
+    &quot;KILLALL UNREALI.BRUTE&quot;.</li>
+
+  <li>KILLPAWNS: Kills all monsters.</li>
+
+  <li>PLAYERSONLY: Pauses all non-player actors in the game. Cool for debugging scripts,
+
+    taking screenshots.</li>
+
+  <li>SAY &lt;message string&gt;: Broadcast a message to other players in the game.</li>
+
+  <li>SLOMO &lt;number&gt;: Sets the game speed, 1.0 is normal.</li>
+
+  <li>SETNAME &lt;newname&gt;: Change your name (works in network play too).</li>
+
+  <li>SETTEAM &lt;newname&gt;: Change your team (works in network play only when the rules
+
+    allow).</li>
+
+  <li>SUMMON &lt;class name&gt;: Spawns an actor of the specified class (for example, SUMMON
+
+    UNREALI.BRUTE) in front of the player.</li>
+
+  <li>SWITCHCOOPLEVEL &lt;new level URL&gt;: Causes the server (or local machine, in a
+
+    single-player game) to switch to a new level with coop-style weapon carrying between
+
+    levels.</li>
+
+  <li>SWITCHLEVEL &lt;new level URL&gt;: Causes the server (or local machine, in a
+
+    single-player game) to switch to a new level.</li>
+
+</ul>
+
+
+
+<h3>Console configuration commands</h3>
+
+
+
+<ul>
+
+  <li>GET &lt;classname&gt; &lt;variablename&gt;</li>
+
+</ul>
+
+
+
+<p>Gets a configurable class parameter.&nbsp; &lt;classname&gt; may be a partial
+
+classname, such as &quot;playerpawn&quot;, or a qualified classname such as
+
+&quot;engine.playerpawn&quot;.&nbsp; The class must be loaded in memory, otherwise GET
+
+returns an empty string.&nbsp; &lt;variablename&gt; must be the name of a variable that is
+
+designated as configurable (either in UnrealScript using the &quot;config&quot; keyword or
+
+in C++ using CPF_Config).&nbsp; This returns the value of the configured variable,
+
+converted to a string.&nbsp; The value returned by GET reflects the class's default value
+
+(for scripted classes, this is the default value that was set for the class using its
+
+property sheet).&nbsp; At any time, zero or more instances of objects belonging to
+
+&lt;classname&gt; may be in memory, and may have modified values of &lt;variablename&gt;,
+
+and they don't affect the value returned by &quot;GET&quot;. 
+
+
+
+<ul>
+
+  <li>SET &lt;classname&gt; &lt;variablename&gt; &lt;value&gt;</li>
+
+</ul>
+
+
+
+<p>Sets the default value of a class's variable.&nbsp; If the class is designated as
+
+configurable (using the &quot;config&quot; keyword in UnrealScript or CLASS_Config in
+
+C++), and so is the variable, this function updates the Unreal.ini file to reflect the new
+
+default value. If any instances of objects belonging to &lt;classname&gt; are in memory,
+
+all of those objects are updated.&nbsp; When an object's config variables are updated,
+
+they are notified as follows: 
+
+
+
+<ol>
+
+  <li>The object's PreEditChange() function is called, basically saying &quot;Get ready to be
+
+    modified!&quot;</li>
+
+  <li>The object's configurable variables are updated with the newly configured values.</li>
+
+  <li>The object's PostEditChange() function is called, saying &quot;You've been modified, so
+
+    validate and update yourself&quot;.</li>
+
+</ol>
+
+
+
+<p>This procedure enables objects to validate their configurable properties and update
+
+themselves.&nbsp; For example, the audio subsystem's PostEditChange() function clamps the
+
+sound volume to a safe range of 0.0 - 1.0 (because the SET command enables users to set it
+
+to ridiculous values) and then updates the actual volume of the sound effects that are
+
+playing.</p>
+
+
+
+<h3>Unreal Key Bindings</h3>
+
+
+
+<p>In the Unreal key bindings (under Advanced Options / Advanced / Raw Key Bindings), you
+
+can associate console commands and other special input commands with key presses and
+
+releases.&nbsp; In the text box next to a key name, you can type in one or more console
+
+commands, separated by the &quot;|&quot; character.&nbsp; For example, to bind the
+
+&quot;S&quot; key to the &quot;Jump&quot; alias, type this:</p>
+
+
+
+<pre>    Jump</pre>
+
+
+
+<p>That causes the &quot;Jump&quot; alias to be executed when th user presses the
+
+&quot;S&quot; key.&nbsp; For another example, if you want to bind a chat message to a key,
+
+use this:</p>
+
+
+
+<pre>    Say &quot;Come get some!&quot;</pre>
+
+
+
+<p>In addition, you can bind multiple actions to a keypress like this, to make the
+
+&quot;S&quot; key both jump and say a message.</p>
+
+
+
+<pre>    Jump | Say &quot;Come get some!&quot;</pre>
+
+
+
+<p>You can also bind an action to the release of a key by using the OnRelease keyword. For
+
+example, you can make the &quot;S&quot; key fire when it's released:</p>
+
+
+
+<pre>    OnRelease Fire</pre>
+
+
+
+<p>Or you can make the key jump when pressed, and fire when released:</p>
+
+
+
+<pre>    Jump | OnRelease Fire</pre>
+
+
+
+<p>Keys can be bound to any of the following kinds of things: 
+
+
+
+<ul>
+
+  <li>Any console command in the above lists.</li>
+
+  <li>Any key alias (explained below).</li>
+
+  <li>Any special input command.</li>
+
+</ul>
+
+
+
+<p>&quot;Special input command&quot; refers to console commands which only make sense in
+
+conjunction with the press or release of a key, or the movement of the mouse or joystick
+
+along an axis. The special input commands are: 
+
+
+
+<ul>
+
+  <li>BUTTON &lt;UnrealScript boolean variable name&gt;, for example &quot;BUTTON bFire&quot;:
+
+    Maps a button to an UnrealScript variable stored in the Pawn class or any subclass. &nbsp;
+
+    This tells the input system to automatically set the variable to True when the key is held
+
+    down, and False when it's not pressed.&nbsp; For example, the Pawn script looks at bFire
+
+    to tell whether the fire button is being held.&nbsp; The setting of bFire is not some
+
+    hardcoded behavior of the engine, rather it is propagated into UnrealScript code by the
+
+    input system, as a result of binding a key to &quot;BUTTON bFire&quot;.</li>
+
+  <li>TOGGLE &lt;UnrealScript boolean variable name&gt;, for example &quot;TOGGLE bLook&quot;:
+
+    Like the BUTTON command, but simply tells the input system to toggle the boolean
+
+    variable's value when the key is pressed.</li>
+
+  <li>AXIS &lt;UnrealScript floating point variable name&gt; &lt;SPEED=some number&gt;, for
+
+    example &quot;Axis aStrafe Speed=-300.0&quot;. Maps an analog input axis movement to an
+
+    UnrealScript variable, scaling it by some factor.&nbsp; The current axis keys listed in
+
+    the Advanced Options menu are: MouseX, MouseY, MouseW (Intellimouse wheel), JoyX, JoyY,
+
+    JoyZ, JoyR (joystick rudder), JoyU, JoyV (joystick alternate axis for example the Panther
+
+    XL trackball). Supported PlayerPawn axes are aBaseX, aBaseY (base movements which are
+
+    translated to rotating, strafing, looking, and forward movement based on context),
+
+    aMouseX, aMouseY, aForward, aTurn, aStrafe, aUp (not used), aLookUp, aExtra0-aExtra4 (not
+
+    used). To see how the game code processes movement, see the PlayerPawn class's PlayerInput
+
+    and PlayerTick functions.</li>
+
+</ul>
+
+
+
+<p>In addition to the Advance Options menu, you can also bind keys from the console using
+
+the following command:</p>
+
+
+
+<pre>	SET INPUT &lt;keyname&gt; &lt;binding&gt;</pre>
+
+
+
+<p>For example:</p>
+
+
+
+<pre>	SET INPUT X Fire
+
+	SET INPUT Enter Fire</pre>
+
+
+
+<h3>Unreal Key Aliases</h3>
+
+
+
+<p>Key aliases are listed in Advanced Options / Advanced / Input Aliases.&nbsp; Aliases
+
+provide a convenient way to map one word (for example, &quot;Jump&quot;) to a complex
+
+series of console commands that carry out a particular action.&nbsp; For example, the
+
+&quot;Fire&quot; alias is defined as: &quot;Fire | Button bFire&quot;.&nbsp; This has the
+
+effect of calling the UnrealScript &quot;PlayerPawn.Fire&quot; function (aliases are not
+
+recursive), and then causing the input button bJump to be set to True as long as the key
+
+is held.</p>
+
+</body>
+
+</html>
+

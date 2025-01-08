@@ -1,0 +1,25 @@
+
+
+ Unreal skeletal exporter - Model information for [FT_TP.psk] 
+
+ Skin faces:    738
+ Skin vertices:    479
+ Skin wedges (vertices with unique U,V):    811
+ Total bone-to-vertex linkups:    479
+ Reference bones:      3
+ Unique materials:      1
+
+ = materials =
+ * Index: [ 0]  name: Material #13  
+   Original bitmap: FT_TP_Skin1.tga  Path: D:\!Meshes\Weapons\Flamethrower\1stPMesh\textures
+    - Skin Index:  0
+   - render mode flags:
+ 
+
+ BONE LIST        [3] total bones in reference skeleton. 
+  number     name                           (parent) 
+  [  0 ]    [Weapon01                       ]      (  0 ) 
+  [  1 ]    [#Muzzleflash                   ]      (  0 ) 
+  [  2 ]    [#AltFireMuzzleflash            ]      (  0 ) 
+ 
+

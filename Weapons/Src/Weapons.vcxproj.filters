@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{fbb81733-c233-4417-9c51-056054653ac7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\AssaultAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AssaultExplosionAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AssaultProjectileAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AssaultRifle.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AssaultRifleAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\AssaultRifleAmmoAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Blood.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\CarnivalMG.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\CarnivalMGAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\CarnivalMGAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Dirt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\EMPExplosion.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\EMPProjectile.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\EnergyCannon.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\EnergyCannonAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\EnergyCannonAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\EnergyRifle.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\EnergyRifleAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\EnergyRifleAmmoAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\EnergyRifleAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FT_Light.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Flamethrower.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FlamethrowerAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FlamethrowerAmmoAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\FlamethrowerAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GardenMG.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GardenMGAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GardenMGAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GenericExplosionBlower.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GenericExplosionBlowerSmall.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeEffectEMP.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeEffectEMPbeams.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncher.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncherAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncherAmmoConcussion.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncherAmmoEMP.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncherAmmoFragment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncherAmmoIncendiary.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncherAmmoSmoke.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncherAmmoToxic.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncherAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncherHeavy.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncherLight.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeLauncherMedium.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeProjectile.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeProjectileConcussion.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeProjectileEMP.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeProjectileFragment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeProjectileIncendiary.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeProjectileSmoke.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\GrenadeProjectileToxic.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautCannon.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautCannonAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautCannonAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautCannonProjectile.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautFlamethrower.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautFlamethrowerAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\JuggernautFlamethrowerAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LowLandsGiantMortar.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LowlandsGiantMortarAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LowlandsGiantMortarAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LowlandsGiantMortarProjectile.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Mortar.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MortarAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MortarAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MortarProjectile.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MultiRocket.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MultiRocketAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MultiRocketAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MultiRocketProjectile.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Pistol.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\PistolAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\PistolAmmoAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\PistolAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RL_Blower.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RL_Explosion.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RL_ExplosionAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RL_Sucker.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorMG.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorMGAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RaptorMGAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RocketAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RocketLauncher.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RocketLauncherAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RocketLauncherAmmoAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RocketLauncherEx.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RocketProjectileAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RocketProjectileDrunken.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RocketProjectileHeavy.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RocketProjectileSeeking.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RoundHouseMG.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RoundHouseMGAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\RoundHouseMGAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Shotgun.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ShotgunAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ShotgunAmmoAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ShotgunAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ShotgunProjectile.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ShotgunProjectileAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SniperAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SniperRifle.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SniperRifleAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\SniperRifleAmmoAlt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\Sparks.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TurretWeapon.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\WingedCannon.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\WingedCannonAmmo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\WingedCannonAttachment.uc">
+      <Filter>Classes</Filter>
+    </None>
+  </ItemGroup>
+</Project>

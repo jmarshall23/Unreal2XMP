@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F9EF52AB-DC4E-4270-B40E-1F76AB7EAC8E}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\Lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm512  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\Inc;..\..\Core\Inc;..\..\Engine\Inc;..\..\metoolkit\include;..\..\Core\Loki;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>PARTICLESYSTEMS_API=__declspec(dllexport);_WINDOWS;NDEBUG;UNICODE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ParticleSystems.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Release/ParticleSystems.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>..\..\Core\Lib\Core.lib;..\..\Engine\Lib\Engine.lib;..\..\Feast\Lib\Feast_mtdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../system/ParticleSystems.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>LIBCD;LIBCMTD;MSVCRTD;LIBC;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>..\Lib/ParticleSystems.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>../Lib/ParticleSystems.lib</ImportLibrary>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Lib/ParticleSystems.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm512  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Inc;..\..\Core\Inc;..\..\Engine\Inc;..\..\metoolkit\include;..\..\Core\Loki;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>PARTICLESYSTEMS_API=__declspec(dllexport);_WINDOWS;UNICODE;_DEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>UninitializedLocalUsageCheck</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ParticleSystems.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/ParticleSystems.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>..\..\Core\Lib\Core.lib;..\..\Engine\Lib\Engine.lib;..\..\Feast\Lib\Feast_mtdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../system/ParticleSystems.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>LIBCD;LIBCMTD;MSVCRTD;LIBC;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\Lib/ParticleSystems.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>../Lib/ParticleSystems.lib</ImportLibrary>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/ParticleSystems.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\Classes\ActorParticleTemplate.uc" />
+    <None Include="..\Classes\BendiBeamTemplate.uc" />
+    <None Include="..\Classes\LineManagerTemplate.uc" />
+    <None Include="..\Classes\ParticleDecalTemplate.uc" />
+    <None Include="..\Classes\PointParticleTemplate.uc" />
+    <None Include="..\Classes\PulseLineTemplate.uc" />
+    <None Include="..\Classes\RecursiveParticleTemplate.uc" />
+    <None Include="..\Classes\RotatingParticleTemplate.uc" />
+    <None Include="..\Classes\Sprite3DParticleTemplate.uc" />
+    <None Include="..\Classes\SpriteParticleTemplate.uc" />
+    <None Include="..\Classes\StrandParticleTemplate.uc" />
+    <None Include="..\Classes\StreakParticleTemplate.uc" />
+    <None Include="..\Classes\TarpBuilderTemplate.uc" />
+    <None Include="..\Classes\TexturedStreakParticleTemplate.uc" />
+    <None Include="..\Classes\TriParticleTemplate.uc" />
+    <None Include="..\Classes\TriangleParticleTemplate.uc" />
+    <None Include="..\Classes\ViewVelocityScaledParticleTemplate.uc" />
+    <None Include="..\Classes\WetWindshildParticleTemplate.uc" />
+    <None Include="..\Classes\BarbbieHareDesigner.uc" />
+    <None Include="..\Classes\BendiBeamGenerator.uc" />
+    <None Include="..\Classes\LineManager.uc" />
+    <None Include="..\Classes\ParticleRadiator.uc" />
+    <None Include="..\Classes\ParticleSalamander.uc" />
+    <None Include="..\Classes\ParticleSkeleton.uc" />
+    <None Include="..\Classes\PulseLineGenerator.uc" />
+    <None Include="..\Classes\SoundHolder.uc" />
+    <None Include="..\Classes\TarpBuilder.uc" />
+    <None Include="..\Classes\Force.uc" />
+    <None Include="..\Classes\ParticleGenerator.uc" />
+    <None Include="..\Classes\ParticleTemplate.uc" />
+    <None Include="..\Classes\ActorCollisionNotifier.uc" />
+    <None Include="..\Classes\AnchorForce.uc" />
+    <None Include="..\Classes\AttractionForce.uc" />
+    <None Include="..\Classes\BlowerForce.uc" />
+    <None Include="..\Classes\BoneLocatorForce.uc" />
+    <None Include="..\Classes\CollisionAnchor.uc" />
+    <None Include="..\Classes\CollisionDiscForce.uc" />
+    <None Include="..\Classes\CollisionGlider.uc" />
+    <None Include="..\Classes\CollisionSphereForce.uc" />
+    <None Include="..\Classes\ColorForce.uc" />
+    <None Include="..\Classes\DecayForce.uc" />
+    <None Include="..\Classes\DestroyOnDamage.uc" />
+    <None Include="..\Classes\FadeForce.uc" />
+    <None Include="..\Classes\FadeInForce.uc" />
+    <None Include="..\Classes\FadeOutForce.uc" />
+    <None Include="..\Classes\FrictionForce.uc" />
+    <None Include="..\Classes\GeoCollideAndMerge.uc" />
+    <None Include="..\Classes\GeometryCollider.uc" />
+    <None Include="..\Classes\GeometryColliderEx.uc" />
+    <None Include="..\Classes\GlobalAccelerator.uc" />
+    <None Include="..\Classes\InertiaForce.uc" />
+    <None Include="..\Classes\LimitedResizeForce.uc" />
+    <None Include="..\Classes\LocationGrouped.uc" />
+    <None Include="..\Classes\LocatorForce.uc" />
+    <None Include="..\Classes\MaxVelocityForce.uc" />
+    <None Include="..\Classes\MeshAnchor.uc" />
+    <None Include="..\Classes\MinDecayForce.uc" />
+    <None Include="..\Classes\MoveZig.uc" />
+    <None Include="..\Classes\MultiTemplateForce.uc" />
+    <None Include="..\Classes\NeuralNetForce.uc" />
+    <None Include="..\Classes\OnDestroyForce.uc" />
+    <None Include="..\Classes\OscillatingPerParticleForce.uc" />
+    <None Include="..\Classes\ParticleDamage.uc" />
+    <None Include="..\Classes\ParticleSalamanderForce.uc" />
+    <None Include="..\Classes\PerParticleFriction.uc" />
+    <None Include="..\Classes\PerParticleGravity.uc" />
+    <None Include="..\Classes\RepulsionForce.uc" />
+    <None Include="..\Classes\ResizeForce.uc" />
+    <None Include="..\Classes\RigidBody.uc" />
+    <None Include="..\Classes\RotationForce.uc" />
+    <None Include="..\Classes\RotationGrouped.uc" />
+    <None Include="..\Classes\SlipForce.uc" />
+    <None Include="..\Classes\SpringForce.uc" />
+    <None Include="..\Classes\SpringLocator.uc" />
+    <None Include="..\Classes\TarpCollider.uc" />
+    <None Include="..\Classes\TriForce.uc" />
+    <None Include="..\Classes\TriangleForce.uc" />
+    <None Include="..\Classes\VariablePerParticleGravity.uc" />
+    <None Include="..\Classes\VoidDestroyer.uc" />
+    <None Include="..\Classes\WindForce.uc" />
+    <None Include="..\Classes\NewWind.uc" />
+    <None Include="..\Classes\ParticleAffector.uc" />
+    <None Include="..\Classes\ParticleBlower.uc" />
+    <None Include="..\Classes\ParticleColliderDisc.uc" />
+    <None Include="..\Classes\ParticleColliderSphere.uc" />
+    <None Include="..\Classes\ElectricGenerator.uc" />
+    <None Include="..\Classes\ParticleLoader.uc" />
+    <None Include="..\Classes\ParticleRef.uc" />
+    <None Include="..\Classes\ParticleSpawner.uc" />
+    <None Include="..\Classes\ParticleSystemAssets.uc" />
+    <None Include="..\Classes\ReplicatedEffect.uc" />
+    <None Include="..\Classes\Squib.uc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ABarbbieHareDesigner.cpp" />
+    <ClCompile Include="AElectricGenerator.cpp" />
+    <ClCompile Include="ALineManager.cpp" />
+    <ClCompile Include="AParticleGenerator.cpp" />
+    <ClCompile Include="AParticleRadiator.cpp" />
+    <ClCompile Include="AParticleRef.cpp" />
+    <ClCompile Include="AParticleSalamander.cpp" />
+    <ClCompile Include="AParticleSkeleton.cpp" />
+    <ClCompile Include="APulseLineGenerator.cpp" />
+    <ClCompile Include="ATarpBuilder.cpp" />
+    <ClCompile Include="ParticleSystems.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SerializeParticles.cpp" />
+    <ClCompile Include="UBendiBeamTemplate.cpp" />
+    <ClCompile Include="UForce.cpp" />
+    <ClCompile Include="UParticleTemplate.cpp" />
+    <ClCompile Include="UPulseLineTemplate.cpp" />
+    <ClCompile Include="UTarpBuilderTemplate.cpp" />
+    <ClCompile Include="UnAffectors.cpp" />
+    <ClCompile Include="UnForces.cpp" />
+    <ClCompile Include="UnGeneratorPrimitive.cpp" />
+    <ClCompile Include="UnTemplates.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Inc\ParticleSystems.h" />
+    <ClInclude Include="..\Inc\ParticleSystemsClasses.h" />
+    <ClInclude Include="..\Inc\SerializeParticles.h" />
+    <ClInclude Include="..\Inc\UForce.h" />
+    <ClInclude Include="..\Inc\UParticleTemplate.h" />
+    <ClInclude Include="..\Inc\UnForceVars.h" />
+    <ClInclude Include="..\Inc\UnGeneratorPrimitive.h" />
+    <ClInclude Include="..\Inc\UnParticleRender.h" />
+    <ClInclude Include="..\Inc\UnParticleRenderTypes.h" />
+    <ClInclude Include="..\Inc\UnParticles.h" />
+    <ClInclude Include="..\Inc\UActorCollisionNotifier.h" />
+    <ClInclude Include="..\Inc\UAnchorForce.h" />
+    <ClInclude Include="..\Inc\UAttractionForce.h" />
+    <ClInclude Include="..\Inc\UBlowerForce.h" />
+    <ClInclude Include="..\Inc\UBoneLocatorForce.h" />
+    <ClInclude Include="..\Inc\UCollisionDiscForce.h" />
+    <ClInclude Include="..\Inc\UCollisionSphereForce.h" />
+    <ClInclude Include="..\Inc\UColorForce.h" />
+    <ClInclude Include="..\Inc\UDecayForce.h" />
+    <ClInclude Include="..\Inc\UDestroyOnDamage.h" />
+    <ClInclude Include="..\Inc\UFadeForce.h" />
+    <ClInclude Include="..\Inc\UFadeInForce.h" />
+    <ClInclude Include="..\Inc\UFadeOutForce.h" />
+    <ClInclude Include="..\Inc\UFrictionForce.h" />
+    <ClInclude Include="..\Inc\UGeoCollideAndMerge.h" />
+    <ClInclude Include="..\Inc\UGeometryCollider.h" />
+    <ClInclude Include="..\Inc\UGeometryColliderEx.h" />
+    <ClInclude Include="..\Inc\UGlobalAccelerator.h" />
+    <ClInclude Include="..\Inc\UInertiaForce.h" />
+    <ClInclude Include="..\Inc\ULimitedResizeForce.h" />
+    <ClInclude Include="..\Inc\ULocationGrouped.h" />
+    <ClInclude Include="..\Inc\ULocatorForce.h" />
+    <ClInclude Include="..\Inc\UMaxVelocityForce.h" />
+    <ClInclude Include="..\Inc\UMeshAnchor.h" />
+    <ClInclude Include="..\Inc\UMinDecayForce.h" />
+    <ClInclude Include="..\Inc\UMoveZig.h" />
+    <ClInclude Include="..\Inc\UMultiTemplateForce.h" />
+    <ClInclude Include="..\Inc\UNeuralNetForce.h" />
+    <ClInclude Include="..\Inc\UOnDestroyForce.h" />
+    <ClInclude Include="..\Inc\UOscillatingPerParticleForce.h" />
+    <ClInclude Include="..\Inc\UParticleSalamanderForce.h" />
+    <ClInclude Include="..\Inc\UPerParticleFriction.h" />
+    <ClInclude Include="..\Inc\UPerParticleGravity.h" />
+    <ClInclude Include="..\Inc\URepulsionForce.h" />
+    <ClInclude Include="..\Inc\UResizeForce.h" />
+    <ClInclude Include="..\Inc\URigidBody.h" />
+    <ClInclude Include="..\Inc\URotationForce.h" />
+    <ClInclude Include="..\Inc\URotationGrouped.h" />
+    <ClInclude Include="..\Inc\USlipForce.h" />
+    <ClInclude Include="..\Inc\USpringForce.h" />
+    <ClInclude Include="..\Inc\USpringLocator.h" />
+    <ClInclude Include="..\Inc\UTarpCollider.h" />
+    <ClInclude Include="..\Inc\UTriForce.h" />
+    <ClInclude Include="..\Inc\UTriangleForce.h" />
+    <ClInclude Include="..\Inc\UVariablePerParticleGravity.h" />
+    <ClInclude Include="..\Inc\UVoidDestroyer.h" />
+    <ClInclude Include="..\Inc\UWindForce.h" />
+    <ClInclude Include="..\Inc\UActorParticleTemplate.h" />
+    <ClInclude Include="..\Inc\UBendiBeamTemplate.h" />
+    <ClInclude Include="..\Inc\ULineManagerTemplate.h" />
+    <ClInclude Include="..\Inc\UParticleDecalTemplate.h" />
+    <ClInclude Include="..\Inc\UPointParticleTemplate.h" />
+    <ClInclude Include="..\Inc\UPulseLineTemplate.h" />
+    <ClInclude Include="..\Inc\URecursiveParticleTemplate.h" />
+    <ClInclude Include="..\Inc\URotatingParticleTemplate.h" />
+    <ClInclude Include="..\Inc\USprite3DParticleTemplate.h" />
+    <ClInclude Include="..\Inc\USpriteParticleTemplate.h" />
+    <ClInclude Include="..\Inc\UStrandParticleTemplate.h" />
+    <ClInclude Include="..\Inc\UStreakParticleTemplate.h" />
+    <ClInclude Include="..\Inc\UTarpBuilderTemplate.h" />
+    <ClInclude Include="..\Inc\UTexturedStreakParticleTemplate.h" />
+    <ClInclude Include="..\Inc\UTriParticleTemplate.h" />
+    <ClInclude Include="..\Inc\UTriangleParticleTemplate.h" />
+    <ClInclude Include="..\Inc\UViewVelocityScaledParticleTemplate.h" />
+    <ClInclude Include="..\Inc\UWetWindshildParticleTemplate.h" />
+    <ClInclude Include="..\Inc\ABarbbieHareDesigner.h" />
+    <ClInclude Include="..\Inc\AElectricGenerator.h" />
+    <ClInclude Include="..\Inc\ALineManager.h" />
+    <ClInclude Include="..\Inc\AParticleAffector.h" />
+    <ClInclude Include="..\Inc\AParticleBlower.h" />
+    <ClInclude Include="..\Inc\AParticleColliderDisc.h" />
+    <ClInclude Include="..\Inc\AParticleColliderSphere.h" />
+    <ClInclude Include="..\Inc\AParticleGenerator.h" />
+    <ClInclude Include="..\Inc\AParticleRadiator.h" />
+    <ClInclude Include="..\Inc\AParticleRef.h" />
+    <ClInclude Include="..\Inc\AParticleSalamander.h" />
+    <ClInclude Include="..\Inc\AParticleSkeleton.h" />
+    <ClInclude Include="..\Inc\APulseLineGenerator.h" />
+    <ClInclude Include="..\Inc\ATarpBuilder.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

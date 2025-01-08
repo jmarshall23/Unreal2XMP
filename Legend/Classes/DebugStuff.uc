@@ -1,0 +1,20 @@
+class DebugStuff extends Object
+	abstract;
+
+#exec TEXTURE IMPORT NAME=JLSSWhite FILE=Textures\Debug\LSSWhite.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSYellow FILE=Textures\Debug\LSSYellow.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSRed FILE=Textures\Debug\LSSRed.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSGreen FILE=Textures\Debug\LSSGreen.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSBlue FILE=Textures\Debug\LSSBlue.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSDarkRed FILE=Textures\Debug\LSSDarkRed.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSDarkGreen FILE=Textures\Debug\LSSDarkGreen.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSDarkBlue FILE=Textures\Debug\LSSDarkBlue.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSCyan FILE=Textures\Debug\LSSCyan.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSMagenta FILE=Textures\Debug\LSSMagenta.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSBlack FILE=Textures\Debug\LSSBlack.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSWhite FILE=Textures\Debug\LSSWhite.PCX GROUP=Skins FLAGS=2
+#exec TEXTURE IMPORT NAME=JLSSGrey FILE=Textures\Debug\LSSGrey.PCX GROUP=Skins FLAGS=2
+
+defaultproperties
+{
+}

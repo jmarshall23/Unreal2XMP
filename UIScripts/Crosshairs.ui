@@ -1,0 +1,1255 @@
+
+[Root]
+Class=MultiStateComponent
+State=NULL
+State=AR_Cross
+State=SR_Cross
+State=Pistol_Cross
+State=RL_Cross
+State=S_Cross
+State=ER_Cross
+State=GL_Cross
+State=XMP_Cross
+State=LR_Cross
+State=LG_Cross
+State=FT_Cross
+;State=Takkra_Cross
+;State=DP_Cross
+;State=SC_Cross
+Transition=LevelChange,0,0,0,NULL
+Transition=HideCrosshair,0,0,0,NULL
+Transition=Crosshair_AR,1,1,0,NULL
+Transition=Crosshair_SR,2,2,0,NULL
+Transition=Crosshair_Pistol,3,3,0,NULL
+Transition=Crosshair_RL,4,4,0,NULL
+Transition=Crosshair_S,5,5,0,NULL
+Transition=Crosshair_ER,6,6,0,NULL
+Transition=Crosshair_GL,7,7,0,NULL
+Transition=Crosshair_XMP,8,8,0,NULL
+Transition=Crosshair_LR,9,9,0,NULL
+Transition=Crosshair_LG,10,10,0,NULL
+Transition=Crosshair_FT,11,11,0,NULL
+;Transition=Crosshair_Takkra,12,12,0,NULL
+;Transition=Crosshair_DP,13,13,0,NULL
+;Transition=Crosshair_SC,14,14,0,NULL
+
+## Assault Rifle ##
+
+[AR_Cross]
+Class=FixedSizeContainer
+Component=AR_Images
+Component=AR_Ring2
+Component=AR_Ring
+Component=AR_Dot
+Component=AR_DotG
+Component=AR_TriBits:90
+Component=AR_TriBits:210
+Component=AR_TriBits:330
+;EnabledAccess=GameFlag,bDisplayHud
+
+[AR_Images]
+Class=Image
+Material=UIResT.Crosshairs.AR_Cross
+Image=AR_Dot,16,34,8,8
+Image=AR_DotGlow,0,34,16,16
+Image=AR_Tri,46,0,12,30
+Image=AR_TriGlow,34,0,12,30
+Image=AR_Ring,30,30,34,34
+Image=AR_Ring2,0,0,34,34
+Image=AR_Bracket,0,53,28,11
+
+[AR_Ring]
+Class=ImageComponent
+Image=AR_Ring
+Style=Alpha
+AlphaAccess=Player,GetUIAlpha
+Alignment=HardCenter,HardCenter
+
+[AR_Ring2]
+Class=ImageComponent
+Image=AR_Ring2
+Style=Alpha
+Alpha=55
+Alignment=HardCenter,HardCenter
+
+[AR_Dot]
+Class=ImageComponent
+Image=AR_Dot
+Style=Alpha
+Alignment=HardCenter,HardCenter
+
+[AR_DotGlow]
+Class=ImageComponent
+Image=AR_DotGlow
+Alignment=HardCenter,HardCenter
+
+[AR_DotG]
+Class=MultiStateComponent
+State=None
+State=AR_DotGlow
+Transition=Glow,0,1,0.3,AR_DotGlow
+Transition=UnGlow,1,0,1,AR_DotGlow
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=10
+
+[AR_TriBits]
+Class=FixedSizeContainer
+Component=AR_Bracket
+Component=AR_Tri
+Component=AR_TriG
+
+[AR_TriG]
+Class=MultiStateComponent
+State=NULL
+State=AR_TriGlow
+Transition=Glow,0,1,0.3,AR_TriGlow
+Transition=UnGlow,1,0,1,AR_TriGlow
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=10
+
+[AR_Tri]
+Class=ImageWedge
+Image=AR_Tri
+Style=Alpha
+AlphaAccess=Player,GetUIAlpha
+Radius=-14
+Angle=%0%
+AngleAccess=Weapon,GetCrosshairAngle%0%
+Alignment=HardCenter,HardCenter
+
+[AR_TriGlow]
+Class=ImageWedge
+Image=AR_TriGlow
+Style=Alpha
+Radius=-14
+Angle=%0%
+AngleAccess=Weapon,GetCrosshairAngle%0%
+Alignment=HardCenter,HardCenter
+
+[AR_Bracket]
+Class=ImageWedge
+Image=AR_Bracket
+Style=Alpha
+AlphaAccess=Player,GetUIAlpha
+Radius=7
+Angle=%0%
+AngleAccess=Weapon,GetCrosshairAngle%0%
+Alignment=HardCenter,HardCenter
+
+
+## Sniper Rifle ##
+
+[SR_Cross]
+Class=ScaleContainer
+RelativeSize=1024,768
+Component=FixedSizeContainer
+	Component=SR_Textures
+	Component=SR_Dot
+	Component=SR_DotG
+	Component=SR_BigRing
+	Component=SR_Ring
+	Component=SR_Prongs
+	;Component=SR_ProngsG
+	Component=SR_HolderRotateA
+	Component=SR_HolderRotateB
+	Component=SR_HolderRotateC
+	Component=SR_HolderRotateD
+;EnabledAccess=GameFlag,bDisplayHud
+
+[SR_Textures]
+Class=Image
+Material=UIResT.Crosshairs.SR_Cross
+Image=SR_BigRing1,256,0,256,256
+Image=SR_BigRing2,0,0,256,256
+Image=SR_Filler,0,256,256,256
+Image=SR_Ring,256,256,256,64
+Image=SR_Holder,384,320,128,32
+Image=SR_ProngGlow,504,352,8,8
+Image=SR_DotGlow,496,352,8,8
+Image=SR_Prong,489,353,6,6
+Image=SR_Dot,480,352,8,8
+
+[SR_Dot]
+Class=ImageComponent
+Image=SR_Dot
+Alignment=HardCenter,HardCenter
+
+[SR_DotGlow]
+Class=ImageComponent
+Image=SR_DotGlow
+Alignment=HardCenter,HardCenter
+
+[SR_DotG]
+Class=MultiStateComponent
+State=None
+State=SR_DotGlow
+Transition=Glow,0,1,0.3,SR_DotGlow
+Transition=UnGlow,1,0,1,SR_DotGlow
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=10
+
+[SR_HolderRotateA]
+Class=MultiStateComponent
+State=SR_HolderBig:0
+State=SR_HolderSmallA:135
+Transition=Rotate,0,1,0.15,SR_HolderSmallA:0
+Transition=UnRotate,1,0,0.15,SR_HolderSmallA:0
+Transition=LevelChange,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+TweenSize=true
+
+[SR_HolderRotateB]
+Class=MultiStateComponent
+State=SR_HolderBig:180
+State=SR_HolderSmallA:315
+Transition=Rotate,0,1,0.15,SR_HolderSmallA:180
+Transition=UnRotate,1,0,0.15,SR_HolderSmallA:180
+Transition=LevelChange,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+TweenSize=true
+
+[SR_HolderRotateC]
+Class=MultiStateComponent
+State=SR_HolderBig:0
+State=SR_HolderSmall:45
+Transition=Rotate,0,1,0.15,SR_HolderSmallA:0
+Transition=UnRotate,1,0,0.15,SR_HolderSmallA:0
+Transition=LevelChange,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+TweenSize=true
+
+[SR_HolderRotateD]
+Class=MultiStateComponent
+State=SR_HolderBig:180
+State=SR_HolderSmall:225
+Transition=Rotate,0,1,0.15,SR_HolderSmallA:180
+Transition=UnRotate,1,0,0.15,SR_HolderSmallA:180
+Transition=LevelChange,0,0,0,NULL
+TweenLocation=false
+TweenAlpha=true
+TweenSize=true
+
+[SR_HolderBig]
+Class=ImageWedge
+Image=SR_Holder
+Style=Alpha
+AlphaAccess=Player,GetUIAlpha
+Angle=%0%
+Radius=18
+Size=64,16
+Alignment=HardCenter,HardCenter
+
+[SR_HolderSmall]
+Class=ImageWedge
+Image=SR_Holder
+Style=Alpha
+AlphaAccess=Player,GetUIAlpha
+Angle=%0%
+Radius=28
+Alignment=HardCenter,HardCenter
+
+[SR_HolderSmallA]
+Class=ImageWedge
+Image=SR_Holder
+Style=Alpha
+Alpha=64
+Angle=%0%
+Radius=28
+Alignment=HardCenter,HardCenter
+
+[SR_Prongs]
+Class=FixedSizeContainer
+Component=SR_Prong:33/90
+Component=SR_Prong:148/180
+Component=SR_Prong:213/270
+Component=SR_Prong:328/360
+
+[SR_Prong]
+Class=MultiStateComponent
+State=SR_ProngImageSmall:%0%
+State=SR_ProngImageBig:%1%
+Transition=Rotate,0,1,0.3,SR_ProngImageSmall:%0%
+Transition=UnRotate,1,0,0.2,SR_ProngImageSmall:%0%
+Transition=LevelChange,0,0,0,NULL
+TweenSize=true
+
+[SR_ProngImageSmall]
+Class=ImageWedge
+Image=SR_Prong
+Angle=%0%
+Radius=14
+Style=Alpha
+Alpha=96
+Size=2,16
+Alignment=HardCenter,HardCenter
+
+[SR_ProngImageBig]
+Class=ImageWedge
+Image=SR_Prong
+Angle=%0%
+Radius=64
+RadiusAccess=Weapon,GetCrosshairRadius
+Style=Alpha
+Alpha=96
+Size=2,128
+Alignment=HardCenter,HardCenter
+
+[SR_ProngsG]
+Class=FixedSizeContainer
+Component=SR_ProngG:45/90
+Component=SR_ProngG:135/180
+Component=SR_ProngG:225/270
+Component=SR_ProngG:315/360
+
+[SR_ProngG]
+Class=MultiStateComponent
+State=SR_ProngGImageSmall:%0%
+State=SR_ProngGImageBig:%1%
+Transition=Rotate,0,1,0.3,SR_ProngGImageSmall:%0%
+Transition=UnRotate,1,0,0.2,SR_ProngGImageSmall:%0%
+Transition=LevelChange,0,0,0,NULL
+TweenSize=true
+
+[SR_ProngGImageSmall]
+Class=ImageWedge
+Image=SR_ProngGlow
+Angle=%0%
+Radius=14
+Style=Alpha
+Size=2,16
+Alignment=HardCenter,HardCenter
+AlphaAccess=exp(Parent.Parent.Parent.SR_DotG.Alpha)
+
+[SR_ProngGImageBig]
+Class=ImageWedge
+Image=SR_ProngGlow
+Angle=%0%
+Radius=64
+RadiusAccess=Weapon,GetCrosshairRadius
+Style=Alpha
+Size=2,128
+Alignment=HardCenter,HardCenter
+AlphaAccess=exp(Parent.Parent.Parent.SR_DotG.Alpha)
+
+[SR_Ring]
+Class=MultiStateComponent
+State=NULL
+State=SR_RingSegs
+Transition=Rotate,0,1,0.3,SR_RingSegs
+Transition=UnRotate,1,0,1,SR_RingSegs
+Transition=LevelChange,0,0,0,NULL
+TweenColor=true
+LocationAccess=Weapon,GetCrosshairRingLocation
+Alignment=HardCenter,HardCenter
+
+[SR_RingSegs]
+Class=FixedSizeContainer
+Component=SR_RingImage:0
+Component=SR_RingImage:90
+Component=SR_RingImage:180
+Component=SR_RingImage:270
+
+[SR_RingImage]
+Class=ImageWedge
+Image=SR_Ring
+Angle=%0%
+Radius=63
+Style=Alpha
+Alpha=30
+
+[SR_BigRing]
+Class=MultiStateComponent
+State=SR_BigRingPieces:0
+State=SR_BigRingPieces:180
+Transition=Rotate,0,1,0.3,SR_BigRingPieces:0
+Transition=UnRotate,1,0,1,SR_BigRingPieces:0
+Transition=LevelChange,0,0,0,NULL
+TweenAlpha=true
+
+[SR_BigRingPieces]
+Class=FixedSizeContainer
+Component=SR_BigRingImage:1/0/%0%
+Component=SR_BigRingImage:1/24/%0%
+Component=SR_BigRingImage:2/48/%0%
+Component=SR_BigRingImage:1/72/%0%
+Component=SR_BigRingImage:1/96/%0%
+Component=SR_BigRingImage:1/120/%0%
+Component=SR_BigRingImage:2/144/%0%
+Component=SR_BigRingImage:1/168/%0%
+Component=SR_BigRingImage:2/192/%0%
+Component=SR_BigRingImage:1/216/%0%
+Component=SR_BigRingImage:1/240/%0%
+Component=SR_BigRingImage:1/264/%0%
+Component=SR_BigRingImage:2/288/%0%
+Component=SR_BigRingImage:1/312/%0%
+Component=SR_BigRingImage:2/336/%0%
+Component=SR_Filler:37/%0%
+Component=SR_Filler:143/%0%
+Component=SR_Filler:217/%0%
+Component=SR_Filler:323/%0%
+
+[SR_BigRingImage]
+Class=ImageWedge
+Image=SR_BigRing%0%
+Style=Alpha
+Alpha=%2%
+Radius=312
+Angle=%1%
+AngleAccess=Weapon,GetCrosshairAngle%1%
+Alignment=HardCenter,HardCenter
+
+[SR_Filler]
+Class=ImageWedge
+Image=SR_Filler
+Style=Alpha
+Alpha=%1%
+Radius=-788
+Angle=%0%
+Alignment=HardCenter,HardCenter
+
+
+## Pistol ##
+
+[Pistol_Cross]
+Class=FixedSizeContainer
+Component=Pistol_Textures
+Component=Pistol_RingSeg:45
+Component=Pistol_RingSeg:135
+Component=Pistol_RingSeg:225
+Component=Pistol_RingSeg:315
+Component=Pistol_Piece:Image/Dot
+Component=Pistol_Piece:Wedge/Tri/0
+Component=Pistol_Piece:Wedge/Tri/90
+Component=Pistol_Piece:Wedge/Tri/180
+Component=Pistol_Piece:Wedge/Tri/270
+Alignment=HardCenter,HardCenter
+;EnabledAccess=GameFlag,bDisplayHud
+
+[Pistol_Textures]
+Class=Image
+Material=UIResT.Crosshairs.P_Cross
+Image=Pistol_tri,1,1,6,7
+Image=Pistol_triglow,22,1,8,9
+Image=Pistol_ring,11,24,10,4
+Image=Pistol_dot,4,12,8,8
+Image=Pistol_dotglow,19,12,8,8
+
+[Pistol_Piece]
+Class=FixedSizeContainer
+Component=Pistol_Fade:%0%/%1%Glow/%2%
+Component=Pistol_%0%:%1%/128/128/255/128/%2%
+
+[Pistol_Fade]
+Class=MultiStateComponent
+State=Pistol_%0%:%1%/128/128/255/0/%2%
+State=Pistol_%0%:%1%/128/255/128/128/%2%
+State=Pistol_%0%:%1%/255/128/128/0/%2%
+State=Pistol_%0%:%1%/255/128/128/128/%2%
+Transition=Glow,0,1,0.3,Pistol_%0%:%1%/0/0/0/0/%2%
+Transition=UnGlow,1,0,1,Pistol_%0%:%1%/0/0/0/0/%2%
+Transition=GlowEnemy,2,3,0.3,Pistol_%0%:%1%/0/0/0/0/%2%
+Transition=UnGlowEnemy,3,2,1,Pistol_%0%:%1%/0/0/0/0/%2%
+TweenColor=true
+
+[Pistol_Image]
+Class=ImageComponent
+Image=Pistol_%0%
+Color=%1%,%2%,%3%,%4%
+Alignment=HardCenter,HardCenter
+
+[Pistol_Wedge]
+Class=ImageWedge
+Image=Pistol_%0%
+Color=%1%,%2%,%3%,%4%
+Radius=2
+Angle=%5%
+
+[Pistol_RingSeg]
+Class=MultiStateComponent
+State=Pistol_RingWedge:80/%0%
+State=Pistol_RingWedge:0/%0%
+Transition=RingUnGlow,0,1,1.5,Pistol_RingWedge:0/%0%
+Transition=RingGlow,1,0,0.1,Pistol_RingWedge:0/%0%
+TriggerEvent=0,1,Event,RingGlow
+TweenAlpha=True
+
+[Pistol_RingWedge]
+Class=ImageWedge
+Image=Pistol_Ring
+Color=128,128,255
+Alpha=%0%
+Radius=2
+Angle=%1%
+
+
+## RocketLauncher ##
+
+[RL_Cross]
+Class=FixedSizeContainer
+Component=RL_Textures
+Component=RL_Frame
+Component=RL_Corner:01
+Component=RL_Corner:02
+Component=RL_Corner:03
+Component=RL_Corner:04
+;EnabledAccess=GameFlag,bDisplayHud
+
+[RL_Textures]
+Class=Image
+Material=UIResT.Crosshairs.RL_Cross
+Image=RL_Frame,0,0,64,48
+Image=RL_B01,40,48,24,16
+Image=RL_B02,64,48,-24,16
+Image=RL_B03,64,64,-24,-16
+Image=RL_B04,40,64,24,-16
+Image=RL_C01,0,48,16,16
+Image=RL_C02,16,48,-16,16
+Image=RL_C03,16,64,-16,-16
+Image=RL_C04,0,64,16,-16
+Image=RL_D01,16,48,24,16
+Image=RL_D02,40,48,-24,16
+Image=RL_D03,40,64,-24,-16
+Image=RL_D04,16,64,24,-16
+
+[RL_Frame]
+Class=ImageComponent
+Image=RL_Frame
+AlphaAccess=Player,GetUIAlpha
+Alignment=HardCenter,HardCenter
+
+[RL_Corner]
+Class=FixedSizeContainer
+Component=RL_CornerImage:C/%0%/60
+Component=RL_Glows:%0%
+
+[RL_Glows]
+Class=MultiStateComponent
+State=RL_DefaultGlow:%0%
+State=RL_CornerImage:D/%0%/255
+State=RL_CornerImage:B/%0%/255
+Transition=RL_Default,0,0,0,None
+Transition=RL_Fire,1,1,0,None
+Transition=RL_AltFire,2,2,0,None
+TweenLocation=false
+
+[RL_DefaultGlow]
+Class=FixedSizeContainer
+Component=RL_Glow:D/%0%/128
+Component=RL_Glow:B/%0%/128
+
+[RL_Glow]
+Class=MultiStateComponent
+State=None
+State=RL_CornerImage:%0%/%1%/%2%
+Transition=Glow,0,1,0.3,RL_CornerImage:%0%/%1%/0
+Transition=UnGlow,1,0,1,RL_CornerImage:%0%/%1%/0
+TweenLocation=false
+TweenAlpha=true
+
+[RL_CornerImage]
+Class=ImageComponent
+Image=RL_%0%%1%
+Alpha=%2%
+Alignment=HardCenter,HardCenter
+LocationAccess=Weapon,GetRocketLocation%1%
+
+## Shotgun ##
+
+[S_Cross]
+Class=FixedSizeContainer
+Component=S_Textures
+Component=S_Ring
+Component=S_Tri:45
+Component=S_Tri:135
+Component=S_Tri:-45
+Component=S_Tri:-135
+Component=S_TriGlow:45
+Component=S_TriGlow:135
+Component=S_TriGlow:-45
+Component=S_TriGlow:-135
+;EnabledAccess=GameFlag,bDisplayHud
+
+[S_Textures]
+Class=FixedSizeContainer
+Component=Image
+	Material=UIResT.Crosshairs.S_Ring
+	FullImage=S_Ring
+Component=Image
+	Material=UIResT.Crosshairs.S_Tri
+	FullImage=S_Tri
+Component=Image
+	Material=UIResT.Crosshairs.S_TriGlow
+	FullImage=S_TriGlow
+
+[S_Ring]
+Class=ImageComponent
+Image=S_Ring
+Style=Alpha
+AlphaAccess=Player,GetUIAlpha
+Alignment=HardCenter,HardCenter
+
+[S_Tri]
+Class=MultiStateComponent
+State=S_TriWedge:%0%/6
+State=S_TriWedge:%0%/2
+Transition=Glow,0,1,0.3,S_TriWedge:%0%/0
+Transition=UnGlow,1,0,1,S_TriWedge:%0%/0
+TweenLocation=false
+
+[S_TriWedge]
+Class=ImageWedge
+Image=S_Tri
+Style=Alpha
+AlphaAccess=Player,GetUIAlpha
+Radius=%1%
+Angle=%0%
+Alignment=HardCenter,HardCenter
+
+[S_TriGlow]
+Class=MultiStateComponent
+State=S_TriGlowWedge:%0%/6/0
+State=S_TriGlowWedge:%0%/2/255
+Transition=Glow,0,1,0.3,S_TriGlowWedge:%0%/0
+Transition=UnGlow,1,0,1,S_TriGlowWedge:%0%/0
+TweenLocation=false
+TweenAlpha=true
+
+[S_TriGlowWedge]
+Class=ImageWedge
+Image=S_TriGlow
+Style=Alpha
+Alpha=%2%
+Radius=%1%
+Angle=%0%
+Alignment=HardCenter,HardCenter
+
+
+## Dispersion ##
+
+[DP_Cross]
+Class=FixedSizeContainer
+Component=DP_Textures
+Component=DP_Frame
+Component=DP_BlueFade
+Component=DP_Image:Cross
+Component=DP_Glow
+Component=DP_Charge
+Component=DP_FireEnds
+;EnabledAccess=GameFlag,bDisplayHud
+
+[DP_Textures]
+Class=FixedSizeContainer
+Component=Image
+	Material=UIResT.Crosshairs.DP_Cross1
+	Image=DP_Frame,0,0,64,64
+	Image=DP_BlueBack,64,0,64,64
+	Image=DP_Cross,0,64,64,64
+	Image=DP_CrossGlow,64,64,64,64
+Component=Image
+	Material=UIResT.Crosshairs.DP_Cross2
+	Image=DP_Charge,0,0,64,64
+	Image=DP_FireEnds,64,0,64,64
+
+[DP_BlueFade]
+Class=MultiStateComponent
+State=DP_Blue
+State=None
+Transition=DP_Fire,1,0,1,DP_Blue
+TweenLocation=false
+TweenAlpha=true
+
+[DP_Blue]
+Class=ImageComponent
+Image=DP_BlueBack
+Style=Alpha
+Alignment=HardCenter,HardCenter
+Alpha=60
+
+[DP_Charge]
+Class=ImageComponent
+Image=DP_Charge
+Style=Alpha
+Align=HardCenter,HardCenter
+AlphaAccess=Weapon,GetAltEnergyPct
+EnabledAccess=Weapon,IsAltCharging
+
+[DP_Glow]
+Class=MultiStateComponent
+State=None
+State=DP_Image:CrossGlow
+Transition=Glow,0,1,0.3,DP_Image:CrossGlow
+Transition=UnGlow,1,0,1,DP_Image:CrossGlow
+Transition=GlowEnemy,0,1,0.3,DP_Image:CrossGlow
+Transition=UnGlowEnemy,1,0,1,DP_Image:CrossGlow
+TweenLocation=false
+TweenColor=false
+TweenAlpha=true
+DrawOrder=10
+
+[DP_FireEnds]
+Class=MultiStateComponent
+State=None
+State=DP_Image:FireEnds
+Transition=DP_Charged,0,1,0,None
+Transition=DP_AltFire,1,0,2,DP_Image:FireEnds
+TweenLocation=false
+TweenColor=false
+TweenAlpha=true
+
+[DP_Image]
+Class=ImageComponent
+Image=DP_%0%
+Style=Alpha
+Alignment=HardCenter,HardCenter
+
+[DP_Frame]
+Class=ImageComponent
+Image=DP_Frame
+Style=Alpha
+Alignment=HardCenter,HardCenter
+AlphaAccess=Player,GetUIAlpha
+DrawOrder=10
+
+
+## Energy Rifle ##
+
+[ER_Cross]
+Class=FixedSizeContainer
+Component=ER_Textures
+Component=ER_WingB:L/-120/-16/-6/-80/-14/-4
+Component=ER_WingB:R/-60/16/-6/-100/14/-4
+Component=ER_WingB:L/60/16/6/100/14/4
+Component=ER_WingB:R/120/-16/6/80/-14/4
+Component=ER_WingA:L/-120/-16/-6/-80/-14/-4
+Component=ER_WingA:R/-60/16/-6/-100/14/-4
+Component=ER_WingA:L/60/16/6/100/14/4
+Component=ER_WingA:R/120/-16/6/80/-14/4
+Component=ER_Image:Center
+;EnabledAccess=GameFlag,bDisplayHud
+
+[ER_Textures]
+Class=Image
+Material=UIResT.Crosshairs.ER_Cross
+Image=ER_Center,2,1,44,14
+Image=ER_WingFrameR,3,15,30,22
+Image=ER_WingFrameL,33,15,-30,22
+Image=ER_WingGlowR,34,15,30,22
+Image=ER_WingGlowL,64,15,-30,22
+Image=ER_WingFillR,3,37,30,22
+Image=ER_WingFillL,33,37,-30,22
+Image=ER_Dot,35,51,8,8
+Image=ER_DotGlow,51,51,8,8
+
+[ER_WingA]
+Class=MultiStateComponent
+State=ER_Wing:Frame%0%/%1%/%2%/%3%
+State=ER_Wing:Frame%0%/%4%/%5%/%6%
+Transition=ER_Fire,0,1,0.25,ER_Wing:Frame%0%/0/0/0
+Transition=ER_UnFire,1,0,2,ER_Wing:Frame%0%/0/0/0
+Transition=ER_AltFire,0,1,0.25,ER_Wing:Frame%0%/0/0/0
+Transition=ER_AltUnFire,1,0,3,ER_Wing:Frame%0%/0/0/0
+TriggerEvent=2,0.0,Event,Glow
+TriggerEvent=2,1.0,Event,UnGlow
+TriggerEvent=2,1.0,Event,ER_AltUnFire
+TweenLocation=true
+
+[ER_WingB]
+Class=MultiStateComponent
+State=ER_Wing:Fill%0%/%1%/%2%/%3%
+State=ER_Wing:Glow%0%/%4%/%5%/%6%
+Transition=ER_Fire,0,1,0.25,ER_Wing:Glow%0%/0/0/0
+Transition=ER_UnFire,1,0,2,ER_Wing:Fill%0%/0/0/0
+Transition=ER_AltFire,0,1,0.25,ER_Wing:Glow%0%/0/0/0
+Transition=ER_AltUnFire,1,0,3,ER_Wing:Fill%0%/0/0/0
+TweenLocation=true
+
+[ER_Wing]
+Class=ImageWedge
+Image=ER_Wing%0%
+Style=Alpha
+Alignment=HardCenter,HardCenter
+Radius=-8
+Angle=%1%
+Location=%2%,%3%
+
+[ER_Image]
+Class=ImageComponent
+Image=ER_%0%
+Alignment=HardCenter,HardCenter
+
+## Grenade Launcher ##
+
+[GL_Cross]
+Class=FixedSizeContainer
+Component=GL_Textures
+Component=GL_FrameImage
+;Component=GL_BackImage
+Component=GL_CogImage
+;Component=GL_Glow
+;Component=GL_Gem:A/136/0/145/239/0/255
+;Component=GL_Gem:B/84/145/0/147/255/0
+;Component=GL_Gem:C/145/0/0/255/0/0
+;Component=GL_Gem:D/145/99/0/255/174/0
+;Component=GL_Gem:E/109/109/109/255/255/255
+;Component=GL_Gem:F/0/91/145/0/160/255
+;Component=GL_Label
+;EnabledAccess=GameFlag,bDisplayHud
+
+[GL_Textures]
+Class=Image
+Material=UIResT.Crosshairs.GL_Cross
+Image=GL_Cog,0,0,42,42
+Image=GL_Frame,72,80,56,48
+Image=GL_Glow,0,64,64,64
+Image=GL_Back,64,0,64,74
+Image=GL_Empty,0,48,16,16
+Image=GL_Gem,16,48,16,16
+Image=GL_GemGlow,32,48,16,16
+
+[GL_Label]
+Class=Label
+Font=HUD_Fonts.Micro12
+Color=WHITE
+Alpha=120
+Align=HardCenter,HardCenter
+Location=2,-28
+Accessor=Weapon,GetGrenadeTypeStr
+
+[GL_Gem]
+Class=MultiStateComponent
+State=GL_GemImage:%0%/0/0/0/Gem
+State=GL_GemGlow:%0%/%1%/%2%/%3%/%4%/%5%/%6%
+Transition=GemEnable%0%,0,1,0,None
+Transition=GemDisable%0%,1,0,0,None
+TweenLocation=false
+
+[GL_GemGlow]
+Class=MultiStateComponent
+State=GL_GemImage:%0%/%1%/%2%/%3%/Gem
+State=GL_GemImage:%0%/%4%/%5%/%6%/GemGlow
+Transition=GemGlow%0%,0,1,0,None
+Transition=GemUnGlow%0%,1,0,0,None
+TweenLocation=false
+
+[GL_GemImage]
+Class=ImageWedge
+Image=GL_%4%
+Alignment=HardCenter,HardCenter
+Radius=7
+AngleAccess=Weapon,GetGemAngle%0%
+Color=%1%,%2%,%3%,255
+
+[GL_CogImage]
+Class=ImageWedge
+Image=GL_Cog
+Alignment=HardCenter,HardCenter
+Radius=-21
+;AngleAccess=Weapon,GetCogAngle
+Alpha=90
+DrawOrder=-1
+
+[GL_FrameImage]
+Class=ImageComponent
+Image=GL_Frame
+Alignment=HardCenter,HardCenter
+;Alpha=120
+AlphaAccess=Player,GetUIAlpha
+DrawOrder=8
+
+[GL_BackImage]
+Class=ImageComponent
+Image=GL_Back
+Alignment=HardCenter,HardCenter
+Alpha=60
+DrawOrder=-1
+
+[GL_Glow]
+Class=MultiStateComponent
+State=None
+State=GL_GlowImage
+Transition=Glow,0,1,0.3,GL_GlowImage
+Transition=UnGlow,1,0,1,GL_GlowImage
+Transition=GlowEnemy,0,1,0.3,GL_GlowImage
+Transition=UnGlowEnemy,1,0,1,GL_GlowImage
+TweenAlpha=true
+DrawOrder=10
+
+[GL_GlowImage]
+Class=ImageComponent
+Image=GL_Glow
+Alignment=HardCenter,HardCenter
+Alpha=180
+
+## Leaning ##
+
+[LeaningOnOff]
+Class=FixedSizeContainer
+Component=Image
+	Material=UIResT.Misc.Lean_LRU
+	FullImage=Lean_LRU
+Component=MultiStateComponent
+	State=NULL
+	State=Leaning
+	Transition=Leaning.LeanOn,0,1,0,NULL
+	Transition=Leaning.LeanOff,1,0,0,NULL
+	Register=Leaning
+
+[Leaning]
+Class=FixedSizeContainer
+Component=LeaningExpand:0/R
+Component=LeaningExpand:90/F
+Component=LeaningExpand:180/L
+Component=LeaningExpand:270/U
+
+[LeaningExpand]
+Class=MultiStateComponent
+State=LeanImage:%0%/16/16/16/128
+State=LeanImage:%0%/128/64/128/64
+State=LeanImage:%0%/16/16/16/0
+Transition=Leaning.Expand%1%,0,1,0.25,LeanImage:%0%/32/32/0/0
+Transition=Leaning.Reset,0,0,0,NULL
+Transition=Leaning.Fade,0,2,1,LeanImage:%0%/16/16/0/0
+TweenColor=True
+TweenSize=True
+TweenAlpha=True
+
+[LeanImage]
+Class=ImageWedge
+Image=Lean_LRU
+Color=%4%,%4%,%4%,%4%
+Alignment=HardCenter,HardCenter
+Angle=%0%
+Size=%1%,%2%
+Radius=%3%
+
+## XMP Items ##
+
+[XMP_Cross]
+Class=FixedSizeContainer
+Component=XMP_Textures
+Component=ImageComponent
+	Image=XMP_Dot
+	Align=HardCenter,HardCenter
+Component=MultiStateComponent
+	State=None
+	State=XMP_DotGlow
+	Transition=Glow,0,1,0.3,XMP_DotGlow
+	Transition=UnGlow,1,0,1,XMP_DotGlow
+	TweenLocation=false
+	TweenAlpha=true
+	DrawOrder=1
+;EnabledAccess=GameFlag,bDisplayHud
+
+[XMP_DotGlow]
+Class=ImageComponent
+Image=XMP_DotGlow
+Align=HardCenter,HardCenter
+
+[XMP_Textures]
+Class=Image
+Material=UIResT.Crosshairs.XMP_Cross
+Image=XMP_Dot,0,0,8,8
+Image=XMP_DotGlow,8,0,8,8
+
+## LaserRifle ##
+
+[LR_Cross]
+Class=FixedSizeContainer
+Component=LR_Textures
+Component=LR_MovePieces
+Component=ImageComponent
+	Image=LR_Dot
+	Align=HardCenter,HardCenter
+Component=LR_DotGlow
+;EnabledAccess=GameFlag,bDisplayHud
+
+[LR_MovePieces]
+Class=MultiStateComponent
+State=LR_MovePiecesC:14/8/23/9
+State=LR_MovePiecesC:12/14/28/11
+Transition=LR_Pulse,0,1,0.2,LR_MovePiecesC:0/0/0/0
+Transition=LR_Expand,0,1,0.2,LR_MovePiecesC:0/0/0/0
+Transition=LR_Contract,1,0,-0.15,LR_MovePiecesC:0/0/0/0
+TriggerEvent=0,1.0,Event,LR_Contract
+DrawOrder=1
+
+[LR_MovePiecesC]
+Class=FixedSizeContainer
+Component=LR_SmallPieces:%0%/%1%
+Component=LR_LargePieces:%2%/%3%
+
+[LR_LargePieces]
+Class=FixedSizeContainer
+Component=LR_LargePiece:A/-%0%/-%1%/Left/Top
+Component=LR_LargePiece:B/%0%/-%1%/Right/Top
+Component=LR_LargePiece:C/-%0%/%1%/Left/Bottom
+Component=LR_LargePiece:D/%0%/%1%/Right/Bottom
+Align=HardCenter,HardCenter
+DrawOrder=1
+
+[LR_SmallPieces]
+Class=FixedSizeContainer
+Component=LR_SmallPiece:A/-%0%/-%1%/Left/Top
+Component=LR_SmallPiece:B/%0%/-%1%/Right/Top
+Component=LR_SmallPiece:C/-%0%/%1%/Left/Bottom
+Component=LR_SmallPiece:D/%0%/%1%/Right/Bottom
+Align=HardCenter,HardCenter
+DrawOrder=1
+
+[LR_LargePiece]
+Class=ImageComponent
+Image=LR_LargePiece%0%
+Location=%1%,%2%
+Align=%3%,%4%
+AlphaAccess=Player,GetUIAlpha
+
+[LR_SmallPiece]
+Class=ImageComponent
+Image=LR_SmallPiece%0%
+Location=%1%,%2%
+Align=%3%,%4%
+AlphaAccess=Player,GetUIAlpha
+
+[LR_DotGlow]
+Class=MultiStateComponent
+State=None
+State=LR_DotGlowImage
+Transition=Glow,0,1,0.3,LR_DotGlowImage
+Transition=UnGlow,1,0,1,LR_DotGlowImage
+TweenLocation=false
+TweenAlpha=true
+DrawOrder=1
+
+[LR_DotGlowImage]
+Class=ImageComponent
+Image=LR_DotGlow
+Align=HardCenter,HardCenter
+
+[LR_Textures]
+Class=Image
+Material=UIResT.Crosshairs.LR_Cross
+Image=LR_LargePieceA,1,1,17,10
+Image=LR_LargePieceB,18,1,-17,10
+Image=LR_LargePieceC,1,11,17,-10
+Image=LR_LargePieceD,18,11,-17,-10
+Image=LR_SmallPieceA,1,17,12,6
+Image=LR_SmallPieceB,13,17,-12,6
+Image=LR_SmallPieceC,1,23,12,-6
+Image=LR_SmallPieceD,13,23,-12,-6
+Image=LR_Dot,3,31,8,8
+Image=LR_DotGlow,19,31,8,8
+
+## Singularity Cannon ##
+
+[SC_Cross]
+Class=FixedSizeContainer
+Component=SC_Textures
+Component=MultiStateComponent
+	State=None
+	State=SC_Pieces:128
+	State=SC_Pieces:255
+	Transition=Glow,0,1,1.0,SC_Pieces:0
+	Transition=UnGlow,1,0,1.0,SC_Pieces:0
+	Transition=SC_Fade,2,0,6.0,SC_Pieces:0
+	TweenLocation=false
+	TweenAlpha=true
+	DrawOrder=1
+Component=ImageComponent
+	Image=SC_Dot
+	Alignment=HardCenter,HardCenter
+Component=MultiStateComponent
+	State=None
+	State=SC_DotGlow
+	Transition=Glow,0,1,0.3,SC_DotGlow
+	Transition=UnGlow,1,0,1,SC_DotGlow
+	TweenLocation=false
+	TweenAlpha=true
+	DrawOrder=1
+;EnabledAccess=GameFlag,bDisplayHud
+
+[SC_DotGlow]
+Class=ImageComponent
+Image=SC_DotGlow
+Align=HardCenter,HardCenter
+
+[SC_Pieces]
+Class=ScaleContainer
+RelativeSize=640,480
+Component=FixedSizeContainer
+	Align=HardCenter,HardCenter
+	Size=640,480
+	Component=ImageComponent
+		Image=SC_PieceA
+		Align=Center,Bottom
+	Component=ImageComponent
+		Image=SC_PieceB
+		Align=Left,Bottom
+	Component=ImageComponent
+		Image=SC_PieceC
+		Align=Left,Center
+	Component=ImageComponent
+		Image=SC_PieceD
+		Align=Left,Top
+	Component=ImageComponent
+		Image=SC_PieceE
+		Align=Center,Top
+	Component=ImageComponent
+		Image=SC_PieceF
+		Align=Right,Top
+	Component=ImageComponent
+		Image=SC_PieceG
+		Align=Right,Center
+	Alpha=%0%
+
+[SC_Textures]
+Class=Image
+Material=UIResT.Crosshairs.SC_Cross
+Image=SC_PieceA,257,421,171,91
+Image=SC_PieceB,2,407,176,105
+Image=SC_PieceC,2,236,114,165
+Image=SC_PieceD,2,3,96,176
+Image=SC_PieceE,96,3,215,116
+Image=SC_PieceF,321,4,191,110
+Image=SC_PieceG,365,207,147,159
+Image=SC_Dot,496,504,8,8
+Image=SC_DotGlow,504,504,8,8
+
+## Leech Gun ##
+
+[LG_Cross]
+Class=FixedSizeContainer
+Component=LG_Textures
+Component=ImageComponent
+	Image=LG_Dot
+	Align=HardCenter,HardCenter
+Component=ImageComponent
+	Image=LG_Ring
+	Align=HardCenter,HardCenter
+Component=MultiStateComponent
+	State=None
+	State=LG_RingGlow
+	Transition=Glow,0,1,0.3,LG_RingGlow
+	Transition=UnGlow,1,0,1,LG_RingGlow
+	TweenLocation=false
+	TweenAlpha=true
+	DrawOrder=1
+;EnabledAccess=GameFlag,bDisplayHud
+
+[LG_RingGlow]
+Class=ImageComponent
+Image=LG_RingGlow
+Align=HardCenter,HardCenter
+
+[LG_Textures]
+Class=Image
+Material=UIResT.Crosshairs.LG_Cross
+Image=LG_Ring,63,2,44,38
+Image=LG_RingGlow,0,1,47,40
+Image=LG_Dot,50,1,8,8
+
+## Flamethrower ##
+
+[FT_Cross]
+Class=FixedSizeContainer
+Component=FT_Textures
+Component=ImageComponent
+	Image=FT_Dot
+	X=8
+	Align=HardCenter,HardCenter
+Component=ImageComponent
+	Image=FT_Dot
+	X=-8
+	Align=HardCenter,HardCenter
+Component=FT_Piece:A/Left/Top
+Component=FT_Piece:B/Right/Top
+Component=FT_Piece:C/Left/Bottom
+Component=FT_Piece:D/Right/Bottom
+Align=HardCenter,HardCenter
+;EnabledAccess=GameFlag,bDisplayHud
+
+[FT_Piece]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=FT_Bracket%0%
+Component=MultiStateComponent
+	State=None
+	State=FT_BracketGlow
+	Transition=Glow,0,1,0.3,FT_BracketGlow:%0%
+	Transition=UnGlow,1,0,1,FT_BracketGlow:%0%
+	TweenLocation=false
+	TweenAlpha=true
+	DrawOrder=1
+LocationAccess=Weapon,GetCrossPos%0%
+Size=15,15
+Align=%1%,%2%
+
+[FT_BracketGlow]
+Class=ImageComponent
+Image=FT_BracketGlow%0%
+
+[FT_Textures]
+Class=Image
+Material=UIResT.Crosshairs.FT_Cross
+Image=FT_BracketA,6,5,15,15
+Image=FT_BracketB,21,5,-15,15
+Image=FT_BracketC,6,20,15,-15
+Image=FT_BracketD,21,20,-15,-15
+Image=FT_BracketGlowA,27,6,16,16
+Image=FT_BracketGlowB,42,6,-16,16
+Image=FT_BracketGlowC,27,21,16,-16
+Image=FT_BracketGlowD,42,21,-16,-16
+Image=FT_Dot,49,12,8,8
+
+## Takkra ##
+
+[Takkra_Cross]
+Class=FixedSizeContainer
+Component=Takkra_Textures
+Component=ImageComponent
+	Image=Takkra_Dot
+	Align=HardCenter,HardCenter
+Component=Takkra_Piece:A/Left/Top
+Component=Takkra_Piece:B/Right/Top
+Component=Takkra_Piece:C/Left/Bottom
+Component=Takkra_Piece:D/Right/Bottom
+;EnabledAccess=GameFlag,bDisplayHud
+
+[Takkra_Piece]
+Class=FixedSizeContainer
+Component=ImageComponent
+	Image=Takkra_Bracket%0%
+Component=MultiStateComponent
+	State=None
+	State=Takkra_BracketGlow
+	Transition=Glow,0,1,0.3,Takkra_BracketGlow:%0%
+	Transition=UnGlow,1,0,1,Takkra_BracketGlow:%0%
+	TweenLocation=false
+	TweenAlpha=true
+	DrawOrder=1
+LocationAccess=Weapon,GetCrossPos%0%
+Size=15,15
+Align=%1%,%2%
+
+[Takkra_BracketGlow]
+Class=ImageComponent
+Image=Takkra_BracketGlow%0%
+
+[Takkra_Textures]
+Class=Image
+Material=UIResT.Crosshairs.Takkra_Cross
+Image=Takkra_BracketA,6,5,15,15
+Image=Takkra_BracketB,21,5,-15,15
+Image=Takkra_BracketC,6,20,15,-15
+Image=Takkra_BracketD,21,20,-15,-15
+Image=Takkra_BracketGlowA,27,6,16,16
+Image=Takkra_BracketGlowB,42,6,-16,16
+Image=Takkra_BracketGlowC,27,21,16,-16
+Image=Takkra_BracketGlowD,42,21,-16,-16
+Image=Takkra_Dot,49,12,8,8
+

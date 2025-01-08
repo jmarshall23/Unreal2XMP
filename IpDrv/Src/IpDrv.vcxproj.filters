@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{ce42ddc3-94c4-44c7-839f-a4c9da60da9d}</UniqueIdentifier>
+      <Extensions>*.cpp;*.h</Extensions>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{ccf6d335-eec2-40f5-bb70-ca16876e4be2}</UniqueIdentifier>
+      <Extensions>*.uc</Extensions>
+    </Filter>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{2499e46d-1573-4ffc-b66e-7bf81350d13d}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HTTPDownload.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="InternetLink.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="IpDrv.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="MasterServerClient.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="MasterServerUplink.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpLink.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpNetDriver.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UCompressCommandlet.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UdpLink.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="UnSocket.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\BufferedTCPLink.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ClientBeaconReceiver.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\InternetLink.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\IpDrv.upkg">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\LANQueryClient.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MasterServerClient.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MasterServerGameStats.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MasterServerLink.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\MasterServerUplink.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\ServerQueryClient.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\TcpLink.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\UdpBeacon.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\UdpGamespyQuery.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\UdpGamespyUplink.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\UdpLink.uc">
+      <Filter>Classes</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Inc\GameSpyClasses.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\GameSpyClassesPublic.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\HTTPDownload.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\InternetLink.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\IpDrvClasses.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnIpDrv.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnIpDrvCommandlets.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnSocket.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\UnTcpNetDriver.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
